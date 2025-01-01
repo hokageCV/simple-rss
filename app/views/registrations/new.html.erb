@@ -1,0 +1,26 @@
+<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
+<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+
+<%= form_for @user, url: registrations_path do |form| %>
+  <%= form.label :name do %>
+    Name:
+    <%= form.text_field :name, required: true, autofocus: true %>
+  <% end %>
+
+  <%= form.label :email_address do %>
+    Email:
+    <%= form.email_field :email_address, required: true %>
+  <% end %>
+
+  <%= form.label :password do %>
+    Password:
+    <%= form.password_field :password, required: true %>
+  <% end %>
+
+  <%= form.label :password_confirmation do %>
+    Confirmation:
+    <%= form.password_field :password_confirmation, required: true %>
+  <% end %>
+
+  <%= form.submit "Register" %>
+<% end %>

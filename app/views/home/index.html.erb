@@ -1,6 +1,7 @@
 <h1>Home#index</h1>
 <% if @user %>
   <p>Hello, <%= @user.name %>!</p>
+  <%= button_to "logout", session_path, method: :delete %>
 <% else %>
   <p>Welcome, guest!</p>
 <% end %>
