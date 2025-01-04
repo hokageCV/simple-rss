@@ -25,6 +25,30 @@ Rails.application.configure do
     config.action_controller.perform_caching = false
   end
 
+  if true
+    severity_map = { "DEBUG" => "D", "INFO" => "I", "WARN" => "W", "ERROR" => "E", "FATAL" => "F", "UNKNOWN" => "U" }
+    config.log_level = :debug
+    config.logger = ActiveSupport::Logger.new(Rails.root.join("log", "custom.log").to_s)
+    config.logger.formatter = proc do |severity, datetime, progname, msg|
+      change_color = "\e[38;5;234m"
+      reset_color = "\e[0m"
+      # exclude query trace and cache logs
+      if !msg.include?("Query Trace") && !msg.include?("CACHE")
+        datetime = "#{datetime.strftime("%Y-%m-%d %H:%M:%S")}"
+        "#{change_color} #{datetime} - #{severity_map[severity]} | #{reset_color}#{msg}\n"
+      end
+    end
+  else
+    config.log_level = :info
+    config.logger = ActiveSupport::Logger.new(Rails.root.join("log", "custom.log").to_s)
+    config.logger.formatter = proc do |severity, datetime, progname, msg|
+      # Capture only specific log entries
+      if severity == "INFO" && (msg.include?("Controller:") || msg.include?("Parameter") || msg.include?("Render") || msg.include?("Error"))
+        "#{severity} #{msg}\n"
+      end
+    end
+  end
+
   # Change to :null_store to avoid any caching.
   config.cache_store = :memory_store
 
