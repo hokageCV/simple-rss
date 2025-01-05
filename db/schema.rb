@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_04_192634) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_05_151019) do
+  create_table "articles", force: :cascade do |t|
+    t.integer "feed_id", null: false
+    t.string "title", null: false
+    t.string "url", null: false
+    t.datetime "published_at"
+    t.integer "user_id", null: false
+    t.string "status", default: "unread"
+    t.text "content"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["feed_id"], name: "index_articles_on_feed_id"
+    t.index ["user_id"], name: "index_articles_on_user_id"
+  end
+
   create_table "feeds", force: :cascade do |t|
     t.string "name"
     t.string "url"
@@ -38,6 +53,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_04_192634) do
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
+  add_foreign_key "articles", "feeds", on_delete: :cascade
+  add_foreign_key "articles", "users", on_delete: :cascade
   add_foreign_key "feeds", "users"
   add_foreign_key "sessions", "users"
 end
