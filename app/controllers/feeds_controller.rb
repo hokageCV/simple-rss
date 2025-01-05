@@ -25,11 +25,13 @@ class FeedsController < ApplicationController
 
     @feed = Current.user.feeds.build
 
-    @feed.name = feed_data&.fetch(:title, "No name")
+    @feed.name = feed_data&.fetch(:name, "No name")
     @feed.url = feed_data&.fetch(:url, feed_params[:url])
 
     respond_to do |format|
       if @feed.save
+        SaveArticlesService.new(@feed, feed_data[:articles]).call
+
         format.html { redirect_to @feed, notice: "Feed was successfully created." }
         format.json { render :show, status: :created, location: @feed }
       else

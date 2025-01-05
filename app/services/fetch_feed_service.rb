@@ -23,8 +23,8 @@ class FetchFeedService
         {
           title: entry.title,
           url: entry.url,
-          summary: entry.summary,
-          published: entry.published,
+          description: entry.summary,
+          published_at: entry.published,
           content: entry.content
         }
       end
