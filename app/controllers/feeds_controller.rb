@@ -21,7 +21,12 @@ class FeedsController < ApplicationController
 
   # POST /feeds or /feeds.json
   def create
-    @feed = Current.user.feeds.build(feed_params)
+    feed_data = FetchFeedService.new(feed_params[:url]).call
+
+    @feed = Current.user.feeds.build
+
+    @feed.name = feed_data&.fetch(:title, "No name")
+    @feed.url = feed_data&.fetch(:url, feed_params[:url])
 
     respond_to do |format|
       if @feed.save
@@ -65,6 +70,6 @@ class FeedsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def feed_params
-      params.expect(feed: [ :name, :url ])
+      params.expect(feed: [ :url ])
     end
 end

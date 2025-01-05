@@ -18,7 +18,6 @@ class RegistrationsController < ApplicationController
       redirect_to after_authentication_url, notice: "Welcome!"
     else
       flash[:alert] = "Email or password confirmation invalid."
-      binding.pry
       render :new, status: :unprocessable_entity
     end
   end

@@ -69,3 +69,5 @@ group :test do
 end
 
 gem "tailwindcss-rails"
+gem "feedjira"
+gem "httparty"
