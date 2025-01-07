@@ -1,0 +1,10 @@
+<% articles.each do |article| %>
+  <div class='mb-1'>
+    <p class='mb-0'>
+      <%= link_to article.title, article %>
+    </p>
+    <p class='m-0 p-0'>
+      <%= sanitize(article.description) %>
+    </p>
+  </div>
+<% end %>
