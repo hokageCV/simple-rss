@@ -1,31 +1,28 @@
 <div id="<%= dom_id article %>">
-  <p class="my-5">
-    <strong class="font-medium mb-1">Feed:</strong>
+  <h1> <strong> <%= article.title %> </strong> </h1>
+
+  <p class='m-0'>
+    <strong class="font-medium">Feed:</strong>
     <%= article.feed.name %>
   </p>
 
-  <p class="my-5">
-    <strong class="font-medium mb-1">Title:</strong>
-    <%= article.title %>
-  </p>
-
-  <p class="my-5">
-    <strong class="font-medium mb-1">Url:</strong>
+  <p class='m-0'>
+    <strong class="font-medium">Url:</strong>
     <%= article.url %>
   </p>
 
-  <p class="my-5">
-    <strong class="font-medium mb-1">Published at:</strong>
+  <p class='m-0'>
+    <strong class="font-medium">Published at:</strong>
     <%= format_date(article.published_at) %>
   </p>
 
-  <p class="my-5">
-    <strong class="font-medium mb-1">Status:</strong>
+  <p class='m-0'>
+    <strong class="font-medium">Status:</strong>
     <%= article.status %>
   </p>
 
-  <p class="my-5">
-    <strong class="font-medium mb-1">Content:</strong>
+  <p class='m-0'>
+    <strong class="font-medium">Content:</strong>
     <%= sanitize(article.content) %>
   </p>
 

@@ -6,12 +6,10 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
-    <%= render @feed %>
+    <h2> <%= link_to @feed.name, @feed %> </h2>
 
-    <%= link_to "Edit this feed", edit_feed_path(@feed), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "Back to feeds", feeds_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">
-      <%= button_to "Destroy this feed", @feed, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+      <%= button_to "\u{1F5D1}", @feed, method: :delete, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded" %>
     </div>
 
     <%= render 'articles/articles', articles: @articles if @articles.present? %>
