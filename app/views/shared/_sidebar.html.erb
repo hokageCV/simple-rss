@@ -1,0 +1,16 @@
+<nav class='bg-red-800 flex flex-col w-1/6 min-h-screen sticky'>
+  <div class='flex items-center'>
+    <p class='text-xl'>Hello, <%= Current.user.name %>!</p>
+  </div>
+  <div class='flex items-center'>
+    <%= link_to 'Home', home_index_path %>
+  </div>
+  <div class='flex items-center'>
+    <%= link_to 'Feed List', feeds_path %>
+  </div>
+  <div class='flex items-center'>
+    <%= button_to 'Logout', session_path, method: :delete,
+      class: 'btn-logout'
+    %>
+  </div>
+</nav>
