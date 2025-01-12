@@ -1,24 +1,40 @@
-# README
+# Simple RSS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple-RSS is an RSS aggregator that allows users to subscribe to their favorite RSS feeds, view the latest updates, and read content directly within the app.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Subscribe to and manage multiple RSS feeds.
+- Read articles directly within the app.
+- Clean and user-friendly interface for easy navigation.
 
-* System dependencies
+## Installation
 
-* Configuration
+### Prerequisites
 
-* Database creation
+Install the minimum version of ruby mentioned in .ruby-version
 
-* Database initialization
+### Setup
+- Clone repository
+```bash
+git clone https://github.com/hokageCV/simple-rss.git
+cd simple-rss
+```
+- Install dependencies
+```bash
+bundle install
+```
+- Migrate database
+```bash
+rails db:migrate
+```
+- Tailwind live reload
+```bash
+rails tailwindcss:watch
+```
+- Start server
+```bash
+rails server
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The application should now be running.
