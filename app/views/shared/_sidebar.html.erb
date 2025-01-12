@@ -1,16 +1,38 @@
-<nav class='bg-red-800 flex flex-col w-1/6 min-h-screen sticky'>
-  <div class='flex items-center'>
+<nav class='bg-red-800 flex flex-col min-h-screen sticky'
+  data-expanded="<%= cookies[:sidebar_expanded] || 'true' %>"
+  data-controller='sidebar'
+>
+  <div class='flex items-center [[data-expanded=true]_&]:hidden'>
     <p class='text-xl'>Hello, <%= Current.user.name %>!</p>
   </div>
+
   <div class='flex items-center'>
-    <%= link_to 'Home', home_index_path %>
+    <%= button_to nil, data: { action: 'sidebar#toggle' } do %>
+      <span class="[[data-expanded=true]_&]:hidden">⬅</span>
+      <span class="[[data-expanded=true]_&]:hidden">Toggle</span>
+
+      <span class="[[data-expanded=false]_&]:hidden">➡</span>
+    <% end %>
   </div>
+
   <div class='flex items-center'>
-    <%= link_to 'Feed List', feeds_path %>
+    <%= link_to home_index_path  do %>
+      <span class="[[data-expanded=true]_&]:hidden">&#x1F3E0; Home</span>
+      <span class="[[data-expanded=false]_&]:hidden">&#x1F3E0;</span>
+    <% end%>
   </div>
+
   <div class='flex items-center'>
-    <%= button_to 'Logout', session_path, method: :delete,
-      class: 'btn-logout'
-    %>
+    <%= link_to feeds_path do %>
+      <span class="[[data-expanded=true]_&]:hidden">&#x1F4F0; Feeds</span>
+      <span class="[[data-expanded=false]_&]:hidden">&#x1F4F0;</span>
+    <% end%>
+  </div>
+
+  <div class='flex items-center'>
+    <%= button_to session_path, method: :delete, class: 'btn-logout' do %>
+      <span class="[[data-expanded=true]_&]:hidden">&#x1F6AA; Logout</span>
+      <span class="[[data-expanded=false]_&]:hidden">&#x1F6AA;</span>
+    <% end %>
   </div>
 </nav>
