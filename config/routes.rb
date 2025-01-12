@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   resources :home, only: [ :index ]
   resources :registrations, except: [ :index, :show, :destroy ]
 
-  resources :feeds
+  resources :feeds do
+    member do
+      patch :update_articles
+    end
+  end
   resources :articles
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

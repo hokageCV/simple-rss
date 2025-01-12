@@ -1,5 +1,5 @@
 class FeedsController < ApplicationController
-  before_action :set_feed, only: %i[ show edit update destroy ]
+  before_action :set_feed, only: %i[ show edit update destroy update_articles ]
 
   # GET /feeds or /feeds.json
   def index
@@ -8,7 +8,7 @@ class FeedsController < ApplicationController
 
   # GET /feeds/1 or /feeds/1.json
   def show
-    @articles = @feed.articles
+    @articles = @feed.articles.order("published_at DESC")
   end
 
   # GET /feeds/new
@@ -53,6 +53,12 @@ class FeedsController < ApplicationController
         format.json { render json: @feed.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def update_articles
+    include_all_articles = params[:include_all_articles].present?
+    feed_data = FetchFeedService.new(@feed.url).call
+    SaveArticlesService.new(@feed, feed_data[:articles], { include_all_articles: }).call
   end
 
   # DELETE /feeds/1 or /feeds/1.json
