@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
     @user = Current.user
-    @articles = @user.articles
+    @articles = @user.articles.recent_first
   end
 end

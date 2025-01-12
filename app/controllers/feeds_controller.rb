@@ -8,7 +8,7 @@ class FeedsController < ApplicationController
 
   # GET /feeds/1 or /feeds/1.json
   def show
-    @articles = @feed.articles.order("published_at DESC")
+    @articles = @feed.articles.recent_first
   end
 
   # GET /feeds/new
@@ -59,6 +59,12 @@ class FeedsController < ApplicationController
     include_all_articles = params[:include_all_articles].present?
     feed_data = FetchFeedService.new(@feed.url).call
     SaveArticlesService.new(@feed, feed_data[:articles], { include_all_articles: }).call
+
+    @articles = @feed.articles.recent_first
+
+    respond_to do |format|
+      format.turbo_stream
+    end
   end
 
   # DELETE /feeds/1 or /feeds/1.json

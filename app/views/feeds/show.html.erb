@@ -7,7 +7,13 @@
     <h2> <%= link_to @feed.name, @feed %> </h2>
 
     <div class="inline-block ml-2">
-      <%= button_to "\u{21BB} Fetch all articles", update_articles_feed_path(@feed.id), method: :patch,
+      <%= button_to "\u{21BB} Fetch Latest articles", update_articles_feed_path(@feed.id), method: :patch,
+        remote: true,
+        class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded"
+      %>
+    </div>
+    <div class="inline-block ml-2">
+      <%= button_to "Fetch all articles", update_articles_feed_path(@feed.id), method: :patch,
         remote: true, params: {include_all_articles: true},
         class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded"
       %>
@@ -20,6 +26,11 @@
       %>
     </div>
 
-    <%= render 'articles/articles', articles: @articles if @articles.present? %>
+    <% if @articles.present? %>
+      <p class='text-2xl'>Articles</p>
+      <div id='article-list'>
+        <%= render 'articles/articles', articles: @articles %>
+      </div>
+    <% end %>
   </div>
 </div>
