@@ -15,7 +15,8 @@
     <div class="inline-block ml-2">
       <%= button_to "\u{1F5D1}", @feed,
         method: :delete,
-        class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded"
+        data: { turbo_confirm: 'Sure to delete this feed?' },
+        class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded'
       %>
     </div>
 
