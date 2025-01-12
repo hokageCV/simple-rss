@@ -6,10 +6,17 @@ class SaveArticlesService
   end
 
   def call
-    @articles_data.each do |article|
-      existing_article = @feed.articles.find_by(url: article[:url])
+    urls = @articles_data.map { |article| article[:url] }
+    existing_articles_set = Set.new
 
-      if existing_article.nil? && (include_article?(article))
+    @feed.articles
+      .where(url: urls)
+      .find_each(batch_size: 500) { |article| existing_articles_set.add(article.url) }
+
+    @articles_data.each do |article|
+      article_not_exist = !existing_articles_set.include?(article[:url])
+
+      if article_not_exist && include_article?(article)
         @feed.articles.create(article.merge(user_id: @feed.user_id))
       end
     end
