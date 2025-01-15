@@ -1,29 +1,18 @@
 <div id="<%= dom_id article %>">
-  <h1> <strong> <%= article.title %> </strong> </h1>
+  <header class="article-header pb-5">
+    <h1 class="text-4xl font-bold">
+      <%= link_to article.title, article.url, class: ' hover:underline' %>
+    </h1>
 
-  <p class='m-0'>
-    <strong class="font-medium">Feed:</strong>
-    <%= article.feed.name %>
-  </p>
+    <div class="meta text-sm text-gray-500">
+      <p> By <span class="font-semibold"><%= article.feed.name %></span> </p>
+      <p> Published on <time datetime="<%= article.published_at.iso8601 %>"><%= format_date(article.published_at) %></time> </p>
+      <p> Status: <span class=" text-green-600"><%= article.status.capitalize %></span> </p>
+    </div>
+  </header>
 
-  <p class='m-0'>
-    <strong class="font-medium">Url:</strong>
-    <%= article.url %>
-  </p>
-
-  <p class='m-0'>
-    <strong class="font-medium">Published at:</strong>
-    <%= format_date(article.published_at) %>
-  </p>
-
-  <p class='m-0'>
-    <strong class="font-medium">Status:</strong>
-    <%= article.status %>
-  </p>
-
-  <p class='m-0'>
-    <strong class="font-medium">Content:</strong>
+  <article class='prose-rss prose-inherit text-text-1 pb-3 max-w-screen-md'>
     <%= sanitize(article.content) %>
-  </p>
+  </article>
 
 </div>

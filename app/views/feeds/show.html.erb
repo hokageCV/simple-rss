@@ -4,7 +4,7 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
-    <h2> <%= link_to @feed.name, @feed %> </h2>
+    <h2 class='text-3xl pb-4'> <%= link_to @feed.name, @feed %> </h2>
 
     <div class="inline-block ml-2">
       <%= button_to "\u{21BB} Fetch Latest articles", update_articles_feed_path(@feed.id), method: :patch,
@@ -27,7 +27,7 @@
     </div>
 
     <% if @articles.present? %>
-      <p class='text-2xl'>Articles</p>
+      <p class='text-2xl my-4'>Articles</p>
       <div id='article-list'>
         <%= render 'articles/articles', articles: @articles %>
       </div>

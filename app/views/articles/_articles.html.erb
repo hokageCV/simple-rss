@@ -1,9 +1,9 @@
 <% articles.each do |article| %>
-  <div class='mb-1'>
+  <div class='mb-3'>
     <p class='mb-0 text-lg'>
       <%= link_to article.title, article %>
     </p>
-    <p class='m-0 p-0 text-sm'>
+    <p class='m-0 p-0 text-sm text-text-3'>
       <%= sanitize(article.description) %>
     </p>
   </div>

@@ -1,2 +1,6 @@
-
-<%= render 'articles/articles', articles: @articles if @articles.present? %>
+<div class="flex justify-center px-auto">
+  <div class="mx-auto max-w-screen-sm">
+    <h6 class="text-3xl pb-5">Recent Articles</h6>
+    <%= render 'articles/articles', articles: @articles if @articles.present? %>
+  </div>
+</div>
