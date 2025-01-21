@@ -3,7 +3,7 @@ class FeedsController < ApplicationController
 
   # GET /feeds or /feeds.json
   def index
-    @feeds = Current.user.feeds.all
+    @feeds = Current.user.feeds.all.alphabetically
   end
 
   # GET /feeds/1 or /feeds/1.json

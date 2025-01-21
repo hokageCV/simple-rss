@@ -25,7 +25,7 @@ class GenerateOpmlService
   private
 
   def generate_outlines
-    @user.feeds.map do |feed|
+    @user.feeds.alphabetically.map do |feed|
       "\t\t<outline type=\"rss\" text=\"#{feed.name}\" title=\"#{feed.name}\" xmlUrl=\"#{feed.url}\" />"
     end.join("\n")
   end

@@ -4,7 +4,7 @@
       <%= link_to article.title, article %>
     </p>
     <p class='m-0 p-0 text-sm text-text-3'>
-      <%= sanitize(article.description) %>
+      <%= truncate(strip_tags(article.description), length: 250, omission: '...') %>
     </p>
   </div>
 <% end %>
