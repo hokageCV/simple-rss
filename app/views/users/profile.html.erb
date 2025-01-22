@@ -1,0 +1,44 @@
+<div class='w-full'>
+
+  <% if flash[:alert] %>
+    <div class="bg-red-500 text-white p-4 rounded-md mb-4">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+
+  <% if flash[:notice] %>
+    <div class="bg-green-500 text-white p-4 rounded-md mb-4">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <h3 class='text-4xl'>Details</h3>
+
+  <div class='flex items-center'>
+    <label class='block mr-3'>Name:</label>
+    <%= tag.input value: @user.name,
+      readonly: true,
+      class: 'mt-1 p-2 bg-text-1 text-slate-800 border rounded-md w-2/4'
+    %>
+  </div>
+
+  <div class='flex items-center mt-3 '>
+    <label class='block mr-3'>Email:</label>
+    <%= tag.input value: @user.email_address,
+      readonly: true,
+      class: 'mt-1 p-2 bg-text-1 text-slate-700 border rounded-md w-2/4'
+    %>
+  </div>
+
+  <hr class="mt-6 mb-2"/>
+
+  <h3 class='text-4xl'>Data</h3>
+
+  <div class="flex justify-between space-x-4">
+    <div class="flex-1">
+      <%= link_to export_opml_users_path, class: 'max-w-xs rounded-lg py-3 px-5 bg-accent text-baseBg block text-center font-medium' do %>
+        Export OPML
+      <% end %>
+    </div>
+  </div>
+</div>

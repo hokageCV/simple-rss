@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resources :articles
 
   resources :users do
+    get :profile, on: :member
+
     collection do
       get :export_opml
     end

@@ -10,6 +10,9 @@ class UsersController < ApplicationController
       disposition: "attachment"
   end
 
+  def profile
+  end
+
   private
 
   def set_user

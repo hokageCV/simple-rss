@@ -4,7 +4,9 @@
   data-controller='sidebar'
 >
   <div class='flex items-center border-b border-gray-200 mb-4 [[data-expanded=true]_&]:hidden'>
-    <p class='text-xl'>Hello, <%= Current.user.name %>!</p>
+    <%= link_to profile_user_path(Current.user.id)  do %>
+      <p class='text-xl'>Hello, <%= Current.user.name %>!</p>
+    <% end %>
   </div>
 
   <div
@@ -25,12 +27,6 @@
     <%= link_to feeds_path do %>
       <span class="[[data-expanded=true]_&]:hidden">&#x1F4F0; Feeds</span>
       <span class="[[data-expanded=false]_&]:hidden">&#x1F4F0;</span>
-    <% end%>
-  </div>
-
-  <div class='flex items-center mb-2 p-1 rounded-md transition-transform duration-200 hover:bg-sidebarBg-7'>
-    <%= link_to export_opml_users_path do %>
-      <span class="[[data-expanded=true]_&]:hidden">Export opml</span>
     <% end%>
   </div>
 
