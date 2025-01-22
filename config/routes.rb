@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   resources :users do
     get :profile, on: :member
+    post :import_via_opml, on: :member
 
     collection do
       get :export_opml

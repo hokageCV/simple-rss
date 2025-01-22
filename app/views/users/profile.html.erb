@@ -1,13 +1,13 @@
 <div class='w-full'>
 
   <% if flash[:alert] %>
-    <div class="bg-red-500 text-white p-4 rounded-md mb-4">
+    <div class="bg-red-500 text-white p-4 rounded-md mb-4 w-2/4">
       <%= flash[:alert] %>
     </div>
   <% end %>
 
   <% if flash[:notice] %>
-    <div class="bg-green-500 text-white p-4 rounded-md mb-4">
+    <div class="bg-green-500 text-white p-4 rounded-md mb-4 w-2/4">
       <%= flash[:notice] %>
     </div>
   <% end %>
@@ -32,13 +32,33 @@
 
   <hr class="mt-6 mb-2"/>
 
-  <h3 class='text-4xl'>Data</h3>
+  <h3 class="text-4xl font-semibold mb-8">Data</h3>
+  <div class="mt-6">
 
-  <div class="flex justify-between space-x-4">
-    <div class="flex-1">
-      <%= link_to export_opml_users_path, class: 'max-w-xs rounded-lg py-3 px-5 bg-accent text-baseBg block text-center font-medium' do %>
-        Export OPML
-      <% end %>
-    </div>
+    <h4 class="text-xl font-medium">Export OPML</h4>
+    <p class="text-lg">You can export your OPML file to back up your data or share it with others.</p>
+    <%= link_to export_opml_users_path, class: 'max-w-xs rounded-lg py-3 px-5 bg-accent text-baseBg block text-center font-medium transition duration-200 hover:bg-accent-dark' do %>
+      Export OPML
+    <% end %>
+  </div>
+
+  <div class="mt-6">
+    <h4 class="text-xl font-medium">Import OPML</h4>
+    <p class="text-lg">Upload OPML file to import your.</p>
+
+    <%= form_with(url: import_via_opml_user_path, local: true, method: :post, enctype: "multipart/form-data") do |form| %>
+      <div class="space-y-2">
+        <%= form.file_field :opml_file,
+          accept: '.opml',
+          class: 'block w-full text-sm border rounded-lg focus:ring-primary focus:border-primary max-w-xs'
+        %>
+      </div>
+
+      <div class="mt-4">
+        <%= form.submit "Import Feeds from OPML",
+          class: 'w-full py-3 px-5 rounded-lg font-medium bg-accent text-baseBg max-w-xs'
+        %>
+      </div>
+    <% end %>
   </div>
 </div>

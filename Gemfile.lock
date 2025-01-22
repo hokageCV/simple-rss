@@ -383,6 +383,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal
+  nokogiri
   propshaft
   pry
   pry-byebug

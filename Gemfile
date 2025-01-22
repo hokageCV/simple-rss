@@ -71,3 +71,4 @@ end
 gem "tailwindcss-rails"
 gem "feedjira"
 gem "httparty"
+gem "nokogiri"
