@@ -12,7 +12,10 @@ Rails.application.routes.draw do
       patch :update_articles
     end
   end
-  resources :articles
+
+  resources :articles do
+    patch :toggle_status, on: :member
+  end
 
   resources :users do
     get :profile, on: :member

@@ -7,8 +7,17 @@
     <div class="meta text-sm text-gray-500">
       <p> By <span class="font-semibold"><%= article.feed.name %></span> </p>
       <p> Published on <time datetime="<%= article.published_at.iso8601 %>"><%= format_date(article.published_at) %></time> </p>
-      <p> Status: <span class=" text-green-600"><%= article.status.capitalize %></span> </p>
-    </div>
+      <p>
+        Status:
+        <span class=" text-green-600" id="<%= dom_id(article, :status_text) %>">
+          <%= article.status.capitalize %>
+        </span>
+      </p>
+      <%= button_to 'Mark as read/unread',
+        toggle_status_article_path(article.id),
+        method: :patch,
+        class: 'px-2 py-1 text-sm text-gray-700 bg-gray-200 rounded hover:bg-gray-300'
+      %>
   </header>
 
   <article class='prose-rss prose-inherit text-text-1 pb-3 max-w-screen-md'>

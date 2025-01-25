@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :set_article
 
   # GET /articles or /articles.json
   def index
@@ -34,6 +34,15 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def toggle_status
+    @article.toggle_status!
+
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_to @article, notice: "Article status updated." }
+    end
+  end
+
   # PATCH/PUT /articles/1 or /articles/1.json
   def update
     respond_to do |format|
@@ -58,13 +67,17 @@ class ArticlesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_article
-      @article = Article.find(params.expect(:id))
-    end
 
-    # Only allow a list of trusted parameters through.
-    def article_params
-      params.expect(article: [ :feed_id, :title, :url, :published_at, :user_id, :status ])
+  def set_article
+    begin
+      @article = Article.find(params.expect(:id))
+    rescue ActiveRecord::RecordNotFound => e
+      redirect_to articles_path, alert: "Article not found."
     end
+  end
+
+  # Only allow a list of trusted parameters through.
+  def article_params
+    params.expect(article: [ :feed_id, :title, :url, :published_at, :user_id, :status ])
+  end
 end
