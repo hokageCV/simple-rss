@@ -74,3 +74,4 @@ gem "httparty"
 gem "nokogiri"
 
 gem "dotenv", "~> 3.1"
+gem "kramdown", "~> 2.5"
