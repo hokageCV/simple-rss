@@ -72,3 +72,5 @@ gem "tailwindcss-rails"
 gem "feedjira"
 gem "httparty"
 gem "nokogiri"
+
+gem "dotenv", "~> 3.1"

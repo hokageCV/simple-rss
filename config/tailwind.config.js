@@ -14,7 +14,11 @@ module.exports = {
         'transitional': ['Charter', 'Bitstream Charter', 'Sitka Text', 'Cambria', 'serif'],
       },
       colors: {
-        baseBg: '#0d2134',
+        baseBg: {
+          8: '#0d2134',
+          5: '#193f63',
+          3: '#255d92',
+        },
         sidebarBg: {
           4: '#d59455',
           6: '#905924',

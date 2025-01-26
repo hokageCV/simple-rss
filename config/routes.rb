@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :articles do
     patch :toggle_status, on: :member
+    post :summary, on: :member
   end
 
   resources :users do

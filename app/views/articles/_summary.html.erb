@@ -1,0 +1,11 @@
+<% if article.summary.blank? %>
+  <div id="<%= dom_id(article, :summary) %>" >
+    <%= button_to "Summarize btn",
+      summary_article_path(article.id),
+      method: :post,
+      class: "bg-baseBg-3 px-2 py-1 rounded rounded-lg"
+    %>
+  </div>
+<% else %>
+  <%= render_summary(article) %>
+<% end %>

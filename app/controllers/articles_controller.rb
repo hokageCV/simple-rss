@@ -43,6 +43,14 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def summary
+    SummarizeArticle.new(@article).call
+
+    respond_to do |format|
+      format.turbo_stream
+    end
+  end
+
   # PATCH/PUT /articles/1 or /articles/1.json
   def update
     respond_to do |format|

@@ -20,6 +20,8 @@
       %>
   </header>
 
+  <%= render "summary", article: article %>
+
   <article class='prose-rss prose-inherit text-text-1 pb-3 max-w-screen-md'>
     <%= sanitize(article.content) %>
   </article>

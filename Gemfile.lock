@@ -377,6 +377,7 @@ DEPENDENCIES
   brakeman
   capybara
   debug
+  dotenv (~> 3.1)
   feedjira
   hotwire-livereload
   httparty
