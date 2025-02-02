@@ -29,6 +29,7 @@ module.exports = {
           1: '#c5d0de',
           2: '#a6c8e8',
           3: '#77abdd',
+          4: '#6380A6',
         },
       },
       typography: {

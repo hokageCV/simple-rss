@@ -1,7 +1,14 @@
+<% show_author ||= false %>
+
 <% articles.each do |article| %>
-  <div class='mb-3'>
+  <div class='mb-4'>
     <p class='mb-0 text-lg'>
       <%= link_to article.title, article %>
+      <% if show_author %>
+        <span class='text-xs text-text-4'>
+          <%= article.feed.name %>
+        </span>
+      <% end %>
     </p>
     <p class='m-0 p-0 text-sm text-text-3'>
       <%= truncate(strip_tags(article.description), length: 250, omission: '...') %>

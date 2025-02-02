@@ -1,6 +1,12 @@
 <div class="flex justify-center px-auto">
   <div class="mx-auto max-w-screen-sm">
     <h6 class="text-3xl pb-5">Recent Articles</h6>
-    <%= render 'articles/articles', articles: @articles if @articles.present? %>
+    <div class="inline-block ml-2">
+      <%= button_to "\u{21BB} Refresh", home_update_feeds_path,
+        remote: true,
+        class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 mb-5 rounded"
+      %>
+    </div>
+    <%= render 'articles/articles', show_author: true, articles: @articles if @articles.present? %>
   </div>
 </div>
