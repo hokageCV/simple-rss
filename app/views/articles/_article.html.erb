@@ -1,4 +1,8 @@
-<div id="<%= dom_id article %>">
+<div
+  id="<%= dom_id article %>"
+  data-controller="scroll-tracker"
+  data-status="<%= article.status %>"
+>
   <header class="article-header pb-5">
     <h1 class="text-4xl font-bold">
       <%= link_to article.title, article.url, class: ' hover:underline' %>
@@ -26,4 +30,5 @@
     <%= sanitize(article.content) %>
   </article>
 
+  <div class="h-1 mt-12" data-scroll-tracker-target="sentinel" ></div>
 </div>

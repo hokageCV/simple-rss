@@ -40,6 +40,7 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.turbo_stream
       format.html { redirect_to @article, notice: "Article status updated." }
+      format.json { render json: { status: @article.status }, status: :ok }
     end
   end
 
