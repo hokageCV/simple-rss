@@ -2,6 +2,8 @@
 
 Simple-RSS is an RSS aggregator that allows users to subscribe to their favorite RSS feeds, view the latest updates, and read content directly within the app.
 
+![simple-rss-demo][media]
+
 ## Features
 
 - Subscribe to and manage multiple RSS feeds.
@@ -41,3 +43,5 @@ rails server
 ```
 
 The application should now be running.
+
+[media]: https://res.cloudinary.com/dmtacem5p/image/upload/v1739462281/github/simple-rss.gif
