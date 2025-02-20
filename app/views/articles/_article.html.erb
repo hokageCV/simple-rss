@@ -24,11 +24,13 @@
       %>
   </header>
 
-  <%= render "summary", article: article %>
+  <% if article.content %>
+    <%= render "summary", article: article %>
 
-  <article class='prose-rss prose-inherit text-text-1 pb-3 max-w-screen-md'>
-    <%= sanitize(article.content) %>
-  </article>
+    <article class='prose-rss prose-inherit text-text-1 pb-3 max-w-screen-md'>
+      <%= sanitize(article.content) %>
+    </article>
+  <% end %>
 
   <div class="h-1 mt-12" data-scroll-tracker-target="sentinel" ></div>
 </div>

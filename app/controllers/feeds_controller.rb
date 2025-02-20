@@ -85,6 +85,9 @@ class FeedsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def feed_params
-      params.expect(feed: [ :url ])
+      # params.expect(feed: [ :url ])
+      params.expect(feed: [:url]).tap do |permitted_params|
+        permitted_params[:url]&.strip!
+      end
     end
 end
