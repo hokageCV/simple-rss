@@ -1,11 +1,25 @@
-<% if article.summary.blank? %>
-  <div id="<%= dom_id(article, :summary) %>" >
-    <%= button_to "Summarize btn",
-      summary_article_path(article.id),
-      method: :post,
-      class: "bg-baseBg-3 px-2 py-1 rounded rounded-lg"
-    %>
-  </div>
-<% else %>
+<% if article.summary.present? %>
   <%= render_summary(article) %>
+<% else %>
+  <div
+    id="<%= dom_id(article, :summary) %>"
+    data-controller="handle-summary"
+    data-handle-summary-has-api-key-value="<%= Current.user.api_key.present? %>"
+  >
+
+    <button
+      id="summarize-btn"
+      data-action="click->handle-summary#handleClick"
+      class="bg-baseBg-3 px-2 py-1 rounded-lg relative"
+    >
+      Summarize btn
+    </button>
+
+    <%= form_with url: summary_article_path(article.id), method: :post, data: { turbo: true, turbo_stream: true }, html: { class: "hidden", "data-handle-summary-target": "form" } do |f| %>
+    <% end %>
+
+    <div popover class="bg-gray-200 p-2 rounded text-sm w-52 shadow">
+      Please add an API key first!
+    </div>
+  </div>
 <% end %>

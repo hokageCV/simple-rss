@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
     collection do
       get :export_opml
+      patch :update_api_key
     end
   end
 

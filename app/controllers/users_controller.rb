@@ -47,6 +47,18 @@ class UsersController < ApplicationController
   def profile
   end
 
+  def update_api_key
+    new_key = params[:user][:api_key].presence
+
+    if @user.update(api_key: new_key)
+      flash[:notice] = new_key ? "API key updated successfully." : "API key removed successfully."
+    else
+      flash[:alert] = "Failed to update API Key"
+    end
+
+    redirect_to request.referer || root_path
+  end
+
   private
 
   def set_user

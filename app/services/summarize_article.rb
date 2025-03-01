@@ -4,7 +4,7 @@ class SummarizeArticle
 
   def initialize(article)
     @article = article
-    @api_key = ENV["GEMINI_API_KEY"]
+    @api_key = Current.user.api_key
     @instructions = fetch_instructions
   end
 
@@ -35,12 +35,10 @@ class SummarizeArticle
     response = HTTParty.post(
       url,
       body: body,
-      headers: { "Content-Type" => "application/json"}
+      headers: { "Content-Type" => "application/json" }
     )
 
-    if not response.success?
-      raise "Error: #{response.code} - #{response.message}"
-    end
+    handle_api_error(response) if not response.success?
 
     summarized_content = format_response(response)
     @article.summary = summarized_content
@@ -56,5 +54,18 @@ class SummarizeArticle
   def format_response(response)
     markdown_content = response["candidates"].first["content"]["parts"].first["text"]
     Kramdown::Document.new(markdown_content).to_html
+  end
+
+  def handle_api_error(response)
+    case response.code
+    when 401
+      raise "Invalid API Key. Please check your key."
+    when 403
+      raise "Unauthorized access. API Key might not have permissions."
+    when 429
+      raise "Rate limit exceeded. Try again later."
+    else
+      raise "Something went wrong while communicating with Gemini API (#{response.code})."
+    end
   end
 end

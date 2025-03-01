@@ -45,10 +45,16 @@ class ArticlesController < ApplicationController
   end
 
   def summary
-    SummarizeArticle.new(@article).call
+    begin
+      SummarizeArticle.new(@article).call
 
-    respond_to do |format|
-      format.turbo_stream
+      respond_to do |format|
+        format.turbo_stream
+      end
+    rescue => e
+      flash[:alert] = e.message
+
+      redirect_to article_path(@article)
     end
   end
 
