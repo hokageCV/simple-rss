@@ -68,6 +68,10 @@ group :test do
   gem "selenium-webdriver"
 end
 
+group :production do
+  gem "pg", "~> 1.5"
+end
+
 gem "tailwindcss-rails"
 gem "feedjira"
 gem "httparty"
