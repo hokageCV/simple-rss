@@ -12,35 +12,25 @@ class UsersController < ApplicationController
 
   def import_via_opml
     uploaded_file = params[:opml_file]
-    return redirect_to profile_user_path(@user.id), alert: "Please upload a valid OPML file." unless uploaded_file.present?
+    return redirect_to profile_user_path(@user.id), alert: "Please upload a valid OPML file." if uploaded_file.blank?
 
     feed_urls = ParseOpmlService.new(uploaded_file).call
     return redirect_to profile_user_path(@user.id), alert: "No feed URLs found in the OPML file." if feed_urls.empty?
 
-    failed_feeds = []
-    feed_urls.each do |url|
-      @feed = Feed.find_or_initialize_by(user: @user, url: url)
+    existing_feeds = Feed.where(user: @user, url: feed_urls).index_by(&:url)
+    result = FeedManager.fetch_feeds(feed_urls - existing_feeds.keys)
+    all_feeds_data, failed_feeds = result[:feeds], result[:failed]
 
-      next unless @feed.new_record?
-      feed_data = FetchFeedService.new(url).call
-      @feed.name = feed_data.fetch(:name, "No name")
+    inserted_feeds = FeedManager.insert_new_feeds(@user.id, all_feeds_data)
 
-      unless @feed.save
-        failed_feeds << url
-        next
-      end
-      SaveArticlesService.new(@feed, feed_data[:articles]).call
-    end
+    # Map feed IDs for existing and newly inserted feeds for faster look up
+    feed_id_map = inserted_feeds
+      .index_by { |f| f["url"] }
+      .merge(existing_feeds.transform_values { |f| { "id" => f.id } })
 
-    flash_message =
-      if failed_feeds.any?
-        failed_urls = failed_feeds.join(", ")
-        { alert: "Some feeds failed to save: #{failed_urls}." }
-      else
-        { notice: "Feeds successfully imported." }
-      end
-    flash.update(flash_message)
+    FeedManager.save_feed_articles(all_feeds_data, feed_id_map)
 
+    set_flash_message(failed_feeds)
     redirect_to profile_user_path(@user.id)
   end
 
@@ -63,5 +53,13 @@ class UsersController < ApplicationController
 
   def set_user
     @user = Current.user
+  end
+
+  def set_flash_message(failed_feeds)
+    if failed_feeds.any?
+      { alert: "Some feeds failed to save: #{failed_feeds.join(", ")}." }
+    else
+      { notice: "Feeds successfully imported." }
+    end
   end
 end

@@ -6,26 +6,26 @@ class SaveArticlesService
   end
 
   def call
+    return if @articles_data.empty?
+
     urls = @articles_data.map { |article| article[:url] }
-    existing_articles_set = Set.new
+    existing_articles_set = Set.new(@feed.articles.where(url: urls).pluck(:url))
 
-    @feed.articles
-      .where(url: urls)
-      .find_each(batch_size: 500) { |article| existing_articles_set.add(article.url) }
-
-    @articles_data.each do |article|
+    new_articles = @articles_data.filter do |article|
       article_not_exist = !existing_articles_set.include?(article[:url])
-
-      if article_not_exist && include_article?(article)
-        @feed.articles.create(article.merge(user_id: @feed.user_id))
-      end
+      article_not_exist && include_article?(article)
     end
+    return if new_articles.empty?
+
+    @feed.articles.insert_all(
+      new_articles.map { |article| article.merge(user_id: @feed.user_id) }
+    )
   end
 
   private
 
   def include_article?(article)
-    # adding only last two months latest articles as default, to not bloat table
-    @include_all_articles || article[:published_at] > (Time.now - 2.months)
+    @time_threshold ||= 2.weeks.ago
+    @include_all_articles || article[:published_at] > @time_threshold
   end
 end

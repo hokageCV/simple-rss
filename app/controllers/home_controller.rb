@@ -6,10 +6,12 @@ class HomeController < ApplicationController
   end
 
   def update_feeds
-    @user.feeds.each do |feed|
-      feed_data = FetchFeedService.new(feed.url).call
-      SaveArticlesService.new(feed, feed_data[:articles]).call
-    end
+    user_feeds = @user.feeds
+    feed_urls = user_feeds.pluck(:url)
+
+    result = FeedManager.fetch_feeds(feed_urls)
+    all_feeds_data = result[:feeds]
+    FeedManager.save_feed_articles(all_feeds_data)
 
     @articles = @user.articles.unread.recent_first.of_this_week
     redirect_to home_index_path
