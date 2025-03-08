@@ -4,34 +4,27 @@
   </div>
 <% end %>
 
-<% if flash[:notice] %>
-  <div class="bg-green-500 text-white p-4 rounded-md mb-4">
-    <%= flash[:notice] %>
+<%= form_for @user, url: registrations_path, html: { class: 'space-y-6' } do |form| %>
+  <div class="space-y-4">
+    <% { name: 'Name', email_address: 'Email', password: 'Password', password_confirmation: 'Confirm Password' }.each do |field, label| %>
+        <div>
+          <%= form.label field, label, class: 'block text-sm font-medium text-text-1' %>
+          <%= input_field(
+            form,
+            field,
+            required: true,
+            autofocus: field == :name,
+            class: 'mt-1 p-2 border border-text-4 rounded-md w-full focus:ring-2 focus:ring-accent bg-baseBg-8 text-text-2'
+          ) %>
+        </div>
+    <% end %>
   </div>
-<% end %>
 
-<%= form_for @user, url: registrations_path, html: { class: 'space-y-4' } do |form| %>
   <div>
-    <%= form.label :name, 'Name:', class: 'block text-sm font-medium text-gray-700' %>
-    <%= form.text_field :name, required: true, autofocus: true, class: 'mt-1 p-2 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-indigo-500' %>
-  </div>
-
-  <div class='mt-3'>
-    <%= form.label :email_address, 'Email:', class: 'block text-sm font-medium text-gray-700' %>
-    <%= form.email_field :email_address, required: true, class: 'mt-1 p-2 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-indigo-500' %>
-  </div>
-
-  <div class='mt-3'>
-    <%= form.label :password, 'Password:', class: 'block text-sm font-medium text-gray-700' %>
-    <%= form.password_field :password, required: true, class: 'mt-1 p-2 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-indigo-500' %>
-  </div>
-
-  <div class='mt-3'>
-    <%= form.label :password_confirmation, 'Confirmation:', class: 'block text-sm font-medium text-gray-700' %>
-    <%= form.password_field :password_confirmation, required: true, class: 'mt-1 p-2 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-indigo-500' %>
-  </div>
-
-  <div class='mt-3'>
-    <%= form.submit 'Register', class: 'w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:ring-2 focus:ring-blue-500' %>
+    <%= form.submit 'Register', class: 'w-full py-2 px-4 bg-accent text-white rounded-md hover:bg-baseBg-3 focus:ring-2 focus:ring-text-3 hover:cursor-pointer' %>
   </div>
 <% end %>
+
+<div class="mt-4 text-center">
+  <%= link_to 'Log in', new_session_path, class: 'text-sm text-text-3 hover:text-accent' %>
+</div>

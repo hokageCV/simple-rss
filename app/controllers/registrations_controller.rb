@@ -1,5 +1,6 @@
 class RegistrationsController < ApplicationController
   allow_unauthenticated_access
+  include FormHelper
 
   rate_limit to: 10,
     within: 3.minutes,
@@ -17,9 +18,22 @@ class RegistrationsController < ApplicationController
       start_new_session_for @user
       redirect_to after_authentication_url, notice: "Welcome!"
     else
-      flash[:alert] = "Email or password confirmation invalid."
+      flash.now[:alert] =  @user.errors.full_messages.to_sentence
       render :new, status: :unprocessable_entity
     end
+  rescue ActiveRecord::RecordNotUnique
+    flash.now[:alert] = "This email is already taken. Please use a different one."
+    render :new, status: :unprocessable_entity
+  rescue ActiveRecord::NotNullViolation
+    flash.now[:alert] = "A required field is missing. Please fill in all fields."
+    render :new, status: :unprocessable_entity
+  rescue ActiveRecord::InvalidForeignKey
+    flash.now[:alert] = "There is an issue linking this user to another record. Please check related data."
+    render :new, status: :unprocessable_entity
+  rescue ActiveRecord::StatementInvalid => e
+    Rails.logger.error("Database error: #{e.message}")
+    flash.now[:alert] = "An unexpected error occurred. Please try again later."
+    render :new, status: :unprocessable_entity
   end
 
   private

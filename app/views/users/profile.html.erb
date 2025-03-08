@@ -60,7 +60,7 @@
 
     <div class="mt-4">
       <%= form.submit "Save API Key",
-        class: "py-3 px-5 rounded-lg font-medium bg-accent text-baseBg-8 max-w-xs"
+        class: "py-3 px-5 rounded-lg font-medium bg-accent text-baseBg-8 max-w-xs hover:cursor-pointer"
       %>
     </div>
   <% end %>
@@ -85,13 +85,14 @@
       <div class="space-y-2">
         <%= form.file_field :opml_file,
           accept: '.opml',
+          required: true,
           class: 'block w-full text-sm border rounded-lg focus:ring-primary focus:border-primary max-w-xs'
         %>
       </div>
 
       <div class="mt-4">
         <%= form.submit "Import Feeds from OPML",
-          class: 'w-full py-3 px-5 rounded-lg font-medium bg-accent text-baseBg-8 max-w-xs'
+          class: 'w-full py-3 px-5 rounded-lg font-medium bg-accent text-baseBg-8 max-w-xs hover:cursor-pointer'
         %>
       </div>
     <% end %>
