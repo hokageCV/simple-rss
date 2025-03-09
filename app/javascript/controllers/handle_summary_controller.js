@@ -18,7 +18,7 @@ export default class extends Controller {
   }
 
   showPopover() {
-    this.popover.classList.remove("hidden");
-    setTimeout(() => this.popover.classList.add("hidden"), 3000);
+    this.popover.showPopover()
+    setTimeout(() => this.popover.hidePopover(), 3000);
   }
 }

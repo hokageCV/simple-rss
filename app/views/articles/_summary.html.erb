@@ -11,6 +11,7 @@
       id="summarize-btn"
       data-action="click->handle-summary#handleClick"
       class="bg-baseBg-3 px-2 py-1 rounded-lg relative"
+      popovertarget="api-key-popover"
     >
       Summarize btn
     </button>
@@ -18,8 +19,16 @@
     <%= form_with url: summary_article_path(article.id), method: :post, data: { turbo: true, turbo_stream: true }, html: { class: "hidden", "data-handle-summary-target": "form" } do |f| %>
     <% end %>
 
-    <div popover class="bg-gray-200 p-2 rounded text-sm w-52 shadow">
-      Please add an API key first!
+    <div popover id="api-key-popover" class="bg-gray-200 p-2 rounded text-sm w-80 shadow">
+      <p>Please add an API key first!</p>
+      <p>
+        Go to
+        <%= link_to "profile page",
+          profile_user_path(Current.user.id),
+          class: "text-accent underline"
+        %>
+        to add key.
+      </p>
     </div>
   </div>
 <% end %>
