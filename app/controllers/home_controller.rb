@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   before_action :set_user
 
   def index
-    @articles = @user.articles.includes(:feed).unread.recent_first.of_this_week
+    @articles = @user.articles.includes(:feed).unread.recent_first.last_two_weeks
   end
 
   def update_feeds
