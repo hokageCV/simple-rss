@@ -25,6 +25,12 @@
         class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded'
       %>
     </div>
+    <div class="inline-block ml-2">
+      <%= button_to (@feed.is_paused ? 'Resume' : 'Pause'), toggle_pause_feed_path(@feed),
+        method: :patch,
+        class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded'
+      %>
+    </div>
 
     <% if @articles.present? %>
       <p class='text-2xl my-4'>Articles</p>

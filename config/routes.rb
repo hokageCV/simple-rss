@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :feeds do
     member do
       patch :update_articles
+      patch :toggle_pause
     end
   end
 

@@ -1,9 +1,10 @@
 class FeedsController < ApplicationController
-  before_action :set_feed, only: %i[ show edit update destroy update_articles ]
+  before_action :set_feed, only: %i[ show edit update destroy update_articles toggle_pause ]
 
   # GET /feeds or /feeds.json
   def index
-    @feeds = Current.user.feeds.all.alphabetically
+    @active_feeds = Current.user.feeds.all.active.alphabetically
+    @paused_feeds = Current.user.feeds.all.paused.alphabetically
   end
 
   # GET /feeds/1 or /feeds/1.json
@@ -67,6 +68,16 @@ class FeedsController < ApplicationController
     end
   end
 
+  def toggle_pause
+    if @feed.update(is_paused: !@feed.is_paused)
+      flash.now[:notice] = "Feed was successfully #{ @feed.is_paused ? 'paused' : 'resumed' }."
+    else
+      flash.now[:alert] = "Failed to update feed status."
+    end
+
+    redirect_to @feed
+  end
+
   # DELETE /feeds/1 or /feeds/1.json
   def destroy
     @feed.destroy!
@@ -78,16 +89,17 @@ class FeedsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_feed
-      @feed = Feed.find(params.expect(:id))
-    end
 
-    # Only allow a list of trusted parameters through.
-    def feed_params
-      # params.expect(feed: [ :url ])
-      params.expect(feed: [:url]).tap do |permitted_params|
-        permitted_params[:url]&.strip!
-      end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_feed
+    @feed = Feed.find(params.expect(:id))
+  end
+
+  # Only allow a list of trusted parameters through.
+  def feed_params
+    # params.expect(feed: [ :url ])
+    params.expect(feed: [:url]).tap do |permitted_params|
+      permitted_params[:url]&.strip!
     end
+  end
 end
