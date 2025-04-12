@@ -48,7 +48,9 @@ class SummarizeArticle
   private
 
   def fetch_instructions
-    File.read(Rails.root.join("config", "summarize_instructions.txt"))
+    ENV.fetch("SUMMARIZE_INSTRUCTIONS") do
+      raise "Missing ENV['SUMMARIZE_INSTRUCTIONS'] – please set it in credentials or .env"
+    end
   end
 
   def format_response(response)
