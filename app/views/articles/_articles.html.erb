@@ -13,12 +13,16 @@
       </p>
 
       <turbo-frame id="article_button_<%= article.id %>" class="article-btn opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity">
-        <%= button_to "\u{2611}", toggle_status_article_path(article, source: "list_view"),
+        <%= button_to toggle_status_article_path(article, source: "list_view"),
           method: :patch,
           form: { data: { turbo_stream: true } },
-          class: "ml-2 p-0 align-baseline inline",
-          form_class: "inline"
-        %>
+          class: "ml-2 p-0 align-baseline inline relative group/button",
+          form_class: "inline" do %>
+          <span>&#x2611;</span>
+          <span class="absolute left-full top-1/2 -translate-y-1/2 ml-2 text-sm text-gray-600 opacity-0 group-hover/button:opacity-100 transition-opacity whitespace-nowrap">
+            Mark as read
+          </span>
+        <% end %>
       </turbo-frame>
     </div>
 
