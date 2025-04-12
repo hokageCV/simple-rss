@@ -7,7 +7,7 @@ class FetchFeedService
 
   def call
     response = fetch_feed
-    return nil if response.nil?
+    return nil if response.body.nil?
 
     feed = parse_feed(response.body)
     return nil if feed.nil?

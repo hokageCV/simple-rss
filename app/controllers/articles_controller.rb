@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all.recent_first
+    @articles = Article.all.unread.recent_first
   end
 
   # GET /articles/1 or /articles/1.json
@@ -36,9 +36,16 @@ class ArticlesController < ApplicationController
 
   def toggle_status
     @article.toggle_status!
+    source = params[:source]
 
     respond_to do |format|
-      format.turbo_stream
+      format.turbo_stream do
+        if source == "list_view"
+          render turbo_stream: turbo_stream.remove("article_#{@article.id}")
+        else
+          render "toggle_status"
+        end
+      end
       format.html { redirect_to @article, notice: "Article status updated." }
       format.json { render json: { status: @article.status }, status: :ok }
     end
