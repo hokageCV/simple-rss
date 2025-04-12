@@ -9,7 +9,12 @@
     </h1>
 
     <div class="meta text-sm text-gray-500">
-      <p> By <span class="font-semibold"><%= article.feed.name %></span> </p>
+      <p>
+        By
+        <span class="font-semibold">
+          <%= link_to article.feed.name, article.feed %>
+        </span>
+      </p>
       <p> Published on <time datetime="<%= article.published_at.iso8601 %>"><%= format_date(article.published_at) %></time> </p>
       <p>
         Status:
