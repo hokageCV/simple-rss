@@ -1,7 +1,7 @@
 <% show_author ||= false %>
 
 <% articles.each do |article| %>
-  <div class='mb-4' id="<%= dom_id(article) %>" >
+  <div class='mb-4 relative group' id="<%= dom_id(article) %>">
     <div class='flex items-start flex-wrap'>
       <p class='mb-0 text-lg flex-1'>
         <%= link_to article.title, article, data: { turbo: false } %>
@@ -12,7 +12,7 @@
         <% end %>
       </p>
 
-      <turbo-frame id="article_button_<%= article.id %>">
+      <turbo-frame id="article_button_<%= article.id %>" class="article-btn opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity">
         <%= button_to "\u{2611}", toggle_status_article_path(article, source: "list_view"),
           method: :patch,
           form: { data: { turbo_stream: true } },
