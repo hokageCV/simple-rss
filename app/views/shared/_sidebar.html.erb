@@ -30,6 +30,8 @@
     <% end%>
   </div>
 
+  <%= render "folders/sidebar_folders" %>
+
   <div class='flex items-center mb-2 p-1 rounded-md transition-transform duration-200 hover:bg-sidebarBg-7'>
     <%= button_to session_path, method: :delete, class: 'btn-logout' do %>
       <span class="[[data-expanded=true]_&]:hidden">&#x1F6AA; Logout</span>

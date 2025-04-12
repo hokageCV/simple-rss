@@ -21,6 +21,9 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <%= render "layouts/cdn" %>
+    <%= render "layouts/controller_specific_js" %>
   </head>
 
   <body class='bg-baseBg-8 text-text-1 min-h-screen w-auto font-transitional'>

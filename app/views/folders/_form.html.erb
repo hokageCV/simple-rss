@@ -1,0 +1,30 @@
+<%= form_with(model: folder, class: "contents", local: true) do |form| %>
+  <% if folder.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(folder.errors.count, "error") %> prohibited this folder from being saved:</h2>
+
+      <ul>
+        <% folder.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-400 text-baseBg-8 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+  <%= form.label :feed_ids, "Feeds" %>
+  <%= form.collection_select :feed_ids, @user.feeds, :id, :name,
+    { selected: @folder.feed_ids },
+    { multiple: true, class: "w-full p-2 border rounded", id: "folder_feed_ids" }
+  %>
+
+</div>
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-accent text-baseBg-8 inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

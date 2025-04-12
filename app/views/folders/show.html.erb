@@ -1,0 +1,14 @@
+<div class="mx-auto md:w-2/3 w-full flex flex-col">
+  <div class="mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+    <h2 class='text-3xl pb-4'> <%= @folder.name %> </h2>
+    <%= link_to "\u{270E}", edit_folder_path(@folder), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded" %>
+  </div>
+
+  <% if @articles.present? %>
+    <h2 class='text-3xl'>Your Feed</h2>
+    <%= render 'articles/articles', show_author: true, articles: @articles if @articles.present? %>
+  <% end %>
+</div>
