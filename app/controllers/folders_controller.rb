@@ -21,8 +21,7 @@ class FoldersController < ApplicationController
   end
 
   def show
-    @feeds = @folder.feeds.active
-    @articles = @folder.articles.unread.recent_first.last_two_weeks.includes(:feed)
+    @articles = @folder.articles.from_active_feeds.unread.recent_first.last_two_weeks.includes(:feed)
   end
 
   def edit
@@ -65,7 +64,7 @@ class FoldersController < ApplicationController
   end
 
   def mark_all_as_read
-    @articles = @folder.articles.unread.recent_first.last_two_weeks
+    @articles = @folder.articles.from_active_feeds.unread.recent_first.last_two_weeks
     @articles.update_all(status: Article::STATUSES[:read])
 
     redirect_to @folder
