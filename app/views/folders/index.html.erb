@@ -10,9 +10,9 @@
     <%= link_to "New folder", new_folder_path, class: "rounded-lg py-3 px-5 bg-accent text-baseBg-8 block font-medium" %>
   </div>
 
-  <div id="folders" class="min-w-full">
+  <ul id="folders" class="min-w-full">
     <% @folders.each do |folder| %>
-      <%= link_to folder.name, folder %>
+     <li><%= link_to folder.name, folder %></li>
     <% end %>
-  </div>
+  </ul>
 </div>

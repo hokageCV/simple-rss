@@ -5,6 +5,20 @@
     <% end %>
     <h2 class='text-3xl pb-4'> <%= @folder.name %> </h2>
     <%= link_to "\u{270E}", edit_folder_path(@folder), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded" %>
+    <div class="inline-block ml-2">
+      <%= button_to "\u{21BB} Refresh", refresh_feed_folder_path,
+        remote: true,
+        method: :get,
+        class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 mb-5 rounded"
+      %>
+    </div>
+    <div class="inline-block ml-2">
+      <%= button_to "\u{1F5D1}", @folder,
+        method: :delete,
+        data: { turbo_confirm: 'Sure to delete this folder?' },
+        class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded'
+      %>
+    </div>
   </div>
 
   <% if @articles.present? %>

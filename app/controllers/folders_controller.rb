@@ -1,6 +1,6 @@
 class FoldersController < ApplicationController
   before_action :set_user
-  before_action :set_folder, only: %i[ show edit update ]
+  before_action :set_folder, only: %i[ show edit update destroy refresh_feed ]
 
   def index
     @folders = @user.folders.order(:name)
@@ -46,6 +46,26 @@ class FoldersController < ApplicationController
     render :edit, status: :unprocessable_entity
   end
 
+  def refresh_feed
+    feeds =  @folder.feeds.active
+    feed_urls = feeds.pluck(:url)
+    feed_ids = feeds.pluck(:id)
+
+    result = FeedManager.fetch_feeds(feed_urls)
+    all_feeds_data = result[:feeds]
+    FeedManager.save_feed_articles(all_feeds_data)
+
+    @articles = @folder.articles
+      .where(feed_id: feed_ids)
+      .unread.recent_first.last_two_weeks
+
+    redirect_to @folder
+  end
+
+  def destroy
+    @folder.destroy!
+    redirect_to folders_path, status: :see_other, notice: "Folder was successfully destroyed."
+  end
 
   private
 

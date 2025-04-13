@@ -16,14 +16,16 @@
     <%= form.text_field :name, class: "block shadow rounded-md border border-gray-400 text-baseBg-8 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="my-5">
-  <%= form.label :feed_ids, "Feeds" %>
-  <%= form.collection_select :feed_ids, @user.feeds, :id, :name,
-    { selected: @folder.feed_ids },
-    { multiple: true, class: "w-full p-2 border rounded", id: "folder_feed_ids" }
-  %>
+  <% if @folder.persisted? %>
+    <div class="my-5">
+      <%= form.label :feed_ids, "Feeds" %>
+      <%= form.collection_select :feed_ids, @user.feeds, :id, :name,
+        { selected: @folder.feed_ids },
+        { multiple: true, class: "w-full p-2 border rounded", id: "folder_feed_ids" }
+      %>
+    </div>
+  <% end %>
 
-</div>
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-accent text-baseBg-8 inline-block font-medium cursor-pointer" %>
   </div>
