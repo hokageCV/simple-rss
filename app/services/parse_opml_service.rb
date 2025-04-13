@@ -6,7 +6,9 @@ class ParseOpmlService
   end
 
   def call
-    reader = Nokogiri::XML::Reader(@uploaded_file.tempfile)
+    content = @uploaded_file.tempfile.read
+    sanitized_file = content.gsub(/&(?!\w+;|#\d+;)/, "&amp;")
+    reader = Nokogiri::XML::Reader(sanitized_file)
 
     reader.map do |node|
       node.attributes["xmlUrl"] if node.name == "outline" && node.attributes["xmlUrl"]
