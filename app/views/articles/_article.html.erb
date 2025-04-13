@@ -29,6 +29,12 @@
       %>
   </header>
 
+  <% if article.image_url.present? %>
+    <div class="pb-4">
+      <%= image_tag(article.image_url, alt: article.title, class: "rounded-lg max-w-full h-auto") %>
+    </div>
+  <% end%>
+
   <%= render_content(article) %>
 
   <div class="h-1 mt-12" data-scroll-tracker-target="sentinel" ></div>

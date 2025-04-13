@@ -7,10 +7,10 @@ class FetchFeedService
 
   def call
     response = fetch_feed
-    return nil if response.body.nil?
+    return nil if response&.body&.nil?
 
-    feed = parse_feed(response.body)
-    return nil if feed.nil?
+    feed = parse_feed(response&.body)
+    return nil if feed&.nil?
 
     format_feed(feed)
   end
@@ -60,9 +60,9 @@ class FetchFeedService
   end
 
   def article_image_url(article)
-    if article.media_thumbnail_url.present? # youtube
+    if article.respond_to?(:media_thumbnail_url) && article.media_thumbnail_url.present? # youtube
       article.media_thumbnail_url
-    elsif article.enclosure_url.present? # substack
+    elsif article.respond_to?(:enclosure_url) && article&.enclosure_url.present? # substack
       article.enclosure_url
     else
       nil
