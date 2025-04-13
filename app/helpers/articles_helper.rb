@@ -10,4 +10,18 @@ module ArticlesHelper
       end
     end
   end
+
+  def render_content(article)
+    return if not article.content
+    return if not [ Feed::GENERATORS[:default], Feed::GENERATORS[:substack] ].include?(article.feed.generator)
+
+    safe_join([
+      render("summary", article: article),
+      content_tag(
+        :article,
+        sanitize(article.content),
+        class: "prose-rss prose-inherit text-text-1 pb-3 max-w-screen-md"
+      )
+    ])
+  end
 end
