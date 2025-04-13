@@ -1,6 +1,6 @@
 class FoldersController < ApplicationController
   before_action :set_user
-  before_action :set_folder, only: %i[ show edit update destroy refresh_feed ]
+  before_action :set_folder, only: %i[ show edit update destroy refresh_feed mark_all_as_read ]
 
   def index
     @folders = @user.folders.order(:name)
@@ -22,7 +22,7 @@ class FoldersController < ApplicationController
 
   def show
     @feeds = @folder.feeds.active
-    @articles = @folder.articles.unread.recent_first.includes(:feed)
+    @articles = @folder.articles.unread.recent_first.last_two_weeks.includes(:feed)
   end
 
   def edit
@@ -49,15 +49,12 @@ class FoldersController < ApplicationController
   def refresh_feed
     feeds =  @folder.feeds.active
     feed_urls = feeds.pluck(:url)
-    feed_ids = feeds.pluck(:id)
 
     result = FeedManager.fetch_feeds(feed_urls)
     all_feeds_data = result[:feeds]
     FeedManager.save_feed_articles(all_feeds_data)
 
-    @articles = @folder.articles
-      .where(feed_id: feed_ids)
-      .unread.recent_first.last_two_weeks
+    @articles = @folder.articles.unread.recent_first.last_two_weeks
 
     redirect_to @folder
   end
@@ -65,6 +62,13 @@ class FoldersController < ApplicationController
   def destroy
     @folder.destroy!
     redirect_to folders_path, status: :see_other, notice: "Folder was successfully destroyed."
+  end
+
+  def mark_all_as_read
+    @articles = @folder.articles.unread.recent_first.last_two_weeks
+    @articles.update_all(status: Article::STATUSES[:read])
+
+    redirect_to @folder
   end
 
   private

@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 
   resources :folders do
     get :refresh_feed, on: :member
+    patch :mark_all_as_read, on: :member
   end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
