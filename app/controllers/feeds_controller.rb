@@ -29,6 +29,7 @@ class FeedsController < ApplicationController
 
     @feed.name = feed_data&.fetch(:name, "No name")
     @feed.url = feed_data&.fetch(:url, feed_params[:url])
+    @feed.generator = feed_generator(feed_params[:url])
 
     respond_to do |format|
       if @feed.save
@@ -102,4 +103,19 @@ class FeedsController < ApplicationController
       permitted_params[:url]&.strip!
     end
   end
+
+  def feed_generator(url)
+    url = url.downcase
+
+    if [ "youtube" ].any? { |substr| url.include?(substr) }
+      Feed::GENERATORS[:youtube]
+    elsif [ "reddit" ].any? { |substr| url.include?(substr) }
+      Feed::GENERATORS[:reddit]
+    elsif [ "substack" ].any? { |substr| url.include?(substr) }
+      Feed::GENERATORS[:substack]
+    else
+      Feed::GENERATORS[:default]
+    end
+  end
+
 end

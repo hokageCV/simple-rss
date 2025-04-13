@@ -10,4 +10,6 @@ class Feed < ApplicationRecord
   scope :active, -> { where(is_paused: false) }
   scope :paused, -> { where(is_paused: true) }
   scope :alphabetically, -> { order(Arel.sql("LOWER(name) ASC")) }
+
+  GENERATORS = { default: "", youtube: "youtube", reddit: "reddit", substack: "substack" }.freeze
 end
