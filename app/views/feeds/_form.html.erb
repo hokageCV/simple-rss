@@ -16,6 +16,17 @@
     <%= form.text_field :url, class: "block shadow rounded-md border border-gray-400 text-baseBg-8 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
+  <% if @feed.persisted? %>
+    <div class="my-5">
+      <%= form.label :generator %>
+      <%= form.select :generator,
+        Feed::GENERATORS.map { |key, value| [key.to_s.humanize, value] },
+        {},
+        class: "form-control rounded text-black"
+      %>
+    </div>
+  <% end %>
+
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-accent text-baseBg-8 inline-block font-medium cursor-pointer" %>
   </div>
