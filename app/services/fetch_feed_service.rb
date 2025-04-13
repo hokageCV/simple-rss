@@ -27,6 +27,7 @@ class FetchFeedService
           url: entry.url,
           description: entry.summary,
           published_at: entry.published,
+          image_url: article_image_url(entry),
           content: entry.content
         }
       end
@@ -56,5 +57,15 @@ class FetchFeedService
   rescue StandardError => e
     Rails.logger.info "🚧 Feedjira error while parsing feed: #{@url}, Error: #{e.message}"
     nil
+  end
+
+  def article_image_url(article)
+    if article.media_thumbnail_url.present? # youtube
+      article.media_thumbnail_url
+    elsif article.enclosure_url.present? # substack
+      article.enclosure_url
+    else
+      nil
+    end
   end
 end
