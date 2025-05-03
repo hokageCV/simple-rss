@@ -17,11 +17,20 @@ module ArticlesHelper
 
     safe_join([
       render("summary", article: article),
+      render_image(article),
       content_tag(
         :article,
         sanitize(article.content),
         class: "prose-rss prose-inherit text-text-1 pb-3 max-w-screen-md"
       )
     ])
+  end
+
+  def render_image(article)
+    return if article.image_url.blank?
+
+    content_tag(:div, class: "pb-4") do
+      image_tag(article.image_url, alt: article.title, class: "rounded-lg max-w-full h-auto")
+    end
   end
 end
