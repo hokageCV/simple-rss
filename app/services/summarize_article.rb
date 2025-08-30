@@ -10,7 +10,7 @@ class SummarizeArticle
 
   def call
     input_text = @article.content
-    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=#{@api_key}"
+    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
 
     body = {
       contents: [
@@ -35,7 +35,7 @@ class SummarizeArticle
     response = HTTParty.post(
       url,
       body: body,
-      headers: { "Content-Type" => "application/json" }
+      headers: { "Content-Type" => "application/json", "X-goog-api-key" => @api_key  }
     )
 
     handle_api_error(response) if not response.success?
