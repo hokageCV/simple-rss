@@ -7,7 +7,7 @@ class FetchFeedService
 
   def call
     response = fetch_feed
-    return nil if response&.body&.nil?
+    return nil if response&.body&.blank?
 
     feed = parse_feed(response&.body)
     return nil if feed&.nil?
@@ -19,11 +19,11 @@ class FetchFeedService
 
   def format_feed(feed_data)
     {
-      name: feed_data.title,
+      name: feed_data.try(:title).presence || "Feed Title",
       url: @url,
       articles: feed_data.entries.map do |entry|
         {
-          title: entry.title,
+          title: entry.try(:title).presence || "Untitled Article",
           url: entry.url,
           description: entry.summary,
           published_at: entry.published,
@@ -49,8 +49,10 @@ class FetchFeedService
   end
 
   def parse_feed(xml)
+    return nil if xml.blank?
+
     feed = Feedjira.parse(xml)
-    return feed if feed
+    return feed if feed.present?
 
     Rails.logger.info "🚧 Feedjira failed to parse feed: #{@url}"
     nil
