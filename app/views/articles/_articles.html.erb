@@ -19,17 +19,34 @@
             <% end %>
           </p>
 
-          <turbo-frame id="article_button_<%= article.id %>" class="article-btn opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity">
-            <%= button_to toggle_status_article_path(article, source: "list_view"),
-              method: :patch,
-              form: { data: { turbo_stream: true } },
-              class: "ml-2 p-0 align-baseline inline relative group/button",
-              form_class: "inline" do %>
-              <span>&#x2611;</span>
-              <span class="absolute left-full top-1/2 -translate-y-1/2 ml-2 text-sm text-gray-600 opacity-0 group-hover/button:opacity-100 transition-opacity whitespace-nowrap">
+          <turbo-frame id="article_button_<%= article.id %>" class="article-btn opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity flex items-center gap-2">
+            <div class="relative flex flex-col items-center group/button">
+              <%= button_to toggle_status_article_path(article, source: "list_view"),
+                method: :patch,
+                form: { data: { turbo_stream: true } },
+                class: "p-0 align-baseline inline relative",
+                form_class: "inline" do %>
+                <span>&#x2611;</span>
+              <% end %>
+              <span class="text-xs text-gray-600 opacity-0 group-hover/button:opacity-100 transition-opacity whitespace-nowrap mt-1">
                 Mark as read
               </span>
-            <% end %>
+            </div>
+
+            <div class="relative flex flex-col items-center group/button">
+              <%= button_to summary_article_path(article),
+                method: :post,
+                form: {
+                  target: "_blank",
+                  class: "inline"
+                },
+                class: "p-0 align-baseline inline relative" do %>
+                <span>&#x272F;</span>
+              <% end %>
+              <span class="text-xs text-gray-600 opacity-0 group-hover/button:opacity-100 transition-opacity whitespace-nowrap mt-1">
+                Summarize
+              </span>
+            </div>
           </turbo-frame>
         </div>
 

@@ -59,6 +59,13 @@ class SummarizeArticle
   end
 
   def handle_api_error(response)
+    api_message = begin
+      body = JSON.parse(response.body)
+      body.dig("error", "message")
+    rescue JSON::ParserError
+      nil
+    end
+
     case response.code
     when 401
       raise "Invalid API Key. Please check your key."
@@ -67,7 +74,7 @@ class SummarizeArticle
     when 429
       raise "Rate limit exceeded. Try again later."
     else
-      raise "Something went wrong while communicating with Gemini API (#{response.code})."
+      raise api_message.present? ? api_message : "Something went wrong while communicating with Gemini API (#{response.code})."
     end
   end
 end

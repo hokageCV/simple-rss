@@ -57,6 +57,7 @@ class ArticlesController < ApplicationController
 
       respond_to do |format|
         format.turbo_stream
+        format.html { redirect_to article_path(@article) }
       end
     rescue => e
       flash[:alert] = e.message
