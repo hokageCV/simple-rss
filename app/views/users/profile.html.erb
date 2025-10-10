@@ -30,6 +30,15 @@
     %>
   </div>
 
+  <div class="mt-6">
+    <h4 class="text-xl font-medium">Reset Password</h4>
+    <p class="text-lg">Click the button below to change your password.</p>
+
+    <%= link_to edit_password_path(token: @user.password_reset_token),
+          class: "mt-2 w-full max-w-xs py-3 px-5 rounded-lg font-medium bg-blue-600 text-white hover:bg-blue-700 text-center block" do %>
+      Reset Password
+    <% end %>
+  </div>
 
   <hr class="mt-6 mb-2"/>
 

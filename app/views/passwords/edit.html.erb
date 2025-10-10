@@ -5,5 +5,7 @@
 <%= form_with url: password_path(params[:token]), method: :put do |form| %>
   <%= form.password_field :password, required: true, autocomplete: "new-password", placeholder: "Enter new password", maxlength: 72 %><br>
   <%= form.password_field :password_confirmation, required: true, autocomplete: "new-password", placeholder: "Repeat new password", maxlength: 72 %><br>
-  <%= form.submit "Save" %>
+  <%= form.submit "Save",
+    class: "mt-2 w-full max-w-xs py-3 px-5 rounded-lg font-medium bg-blue-600 text-white hover:bg-blue-700 cursor-pointer"
+  %>
 <% end %>
