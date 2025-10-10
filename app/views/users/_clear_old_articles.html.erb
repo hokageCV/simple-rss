@@ -1,0 +1,9 @@
+<div class="mt-6">
+  <h4 class="text-xl font-medium">Clear Old Articles</h4>
+  <p class="text-lg">Remove all read articles older than a month.</p>
+
+  <%= button_to 'Delete Old Articles',
+        clear_old_articles_user_path(@user),
+        method: :delete,
+        class: 'mt-2 w-full max-w-xs py-3 px-5 rounded-lg font-medium bg-red-600 text-white hover:bg-red-700 cursor-pointer' %>
+</div>

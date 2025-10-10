@@ -20,8 +20,11 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    get :profile, on: :member
-    post :import_via_opml, on: :member
+    member do
+      get :profile
+      post :import_via_opml
+      delete :clear_old_articles
+    end
 
     collection do
       get :export_opml

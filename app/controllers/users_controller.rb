@@ -49,6 +49,11 @@ class UsersController < ApplicationController
     redirect_to request.referer || root_path
   end
 
+  def clear_old_articles
+    Article.clear_old_articles(@user)
+    redirect_to profile_user_path(@user.id), notice: "Old read articles deleted."
+  end
+
   private
 
   def set_user
