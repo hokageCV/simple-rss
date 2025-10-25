@@ -33,20 +33,22 @@
               </span>
             </div>
 
-            <div class="relative flex flex-col items-center group/button">
-              <%= button_to summary_article_path(article),
-                method: :post,
-                form: {
-                  target: "_blank",
-                  class: "inline"
-                },
-                class: "p-0 align-baseline inline relative" do %>
-                <span>&#x272F;</span>
-              <% end %>
-              <span class="text-xs text-gray-600 opacity-0 group-hover/button:opacity-100 transition-opacity whitespace-nowrap mt-1">
-                Summarize
-              </span>
-            </div>
+            <% if article.content.present? %>
+              <div class="relative flex flex-col items-center group/button">
+                <%= button_to summary_article_path(article),
+                  method: :post,
+                  form: {
+                    target: "_blank",
+                    class: "inline"
+                  },
+                  class: "p-0 align-baseline inline relative" do %>
+                  <span>&#x272F;</span>
+                <% end %>
+                <span class="text-xs text-gray-600 opacity-0 group-hover/button:opacity-100 transition-opacity whitespace-nowrap mt-1">
+                  Summarize
+                </span>
+              </div>
+            <% end %>
           </turbo-frame>
         </div>
 
