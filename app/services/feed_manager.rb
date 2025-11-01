@@ -3,8 +3,8 @@ class FeedManager
     all_feeds_data = []
     failed_feeds = []
 
-    threads = feed_urls.map do |url|
-      Thread.new do
+    feed_urls.each_with_index do |url, index|
+      begin
         feed_data = FetchFeedService.new(url).call
 
         if feed_data
@@ -12,11 +12,13 @@ class FeedManager
         else
           failed_feeds << url
         end
+      rescue => e
+        failed_feeds << url
+        Rails.logger.error "🚨 Error processing feed #{url}: #{e.message}"
       end
-    end
 
-    # doing some operation with threads so that it finishes, and function doesn't return before their execution
-    threads.each(&:join)
+      GC.start if (index + 1) % 5 == 0
+    end
 
     { feeds: all_feeds_data, failed: failed_feeds }
   end
@@ -33,6 +35,8 @@ class FeedManager
   end
 
   def self.save_feed_articles(feeds_data, feed_id_map = nil)
+    return if feeds_data.empty?
+
     feed_id_map =
       if feed_id_map.present?
         feed_id_map
@@ -44,14 +48,20 @@ class FeedManager
           .transform_values { |f| { "id" => f.id } }
       end
 
-    feed_records = Feed.where(id: feed_id_map.values.map { |f| f["id"] }).index_by(&:id)
+    feeds_data.each_with_index do |feed_data, index|
+      begin
+        feed_id = feed_id_map.dig(feed_data[:url], "id")
+        next unless feed_id
 
-    feeds_data.each do |feed_data|
-      feed_id = feed_id_map.dig(feed_data[:url], "id")
-      next if not feed_id
+        feed = Feed.find_by(id: feed_id)
+        next unless feed
 
-      feed = feed_records[feed_id]
-      SaveArticlesService.new(feed, feed_data[:articles]).call
+        SaveArticlesService.new(feed, feed_data[:articles]).call
+
+        GC.start if (index + 1) % 3 == 0
+      rescue => e
+        Rails.logger.error "🚨 Error saving articles for feed #{feed_data[:url]}: #{e.message}"
+      end
     end
   end
 end

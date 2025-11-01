@@ -6,22 +6,30 @@ class FetchFeedService
   end
 
   def call
-    response = fetch_feed
-    return nil if response&.body&.blank?
+    Timeout.timeout(30) do
+      response = fetch_feed
+      return nil if response&.body&.blank?
 
-    feed = parse_feed(response&.body)
-    return nil if feed&.nil?
+      feed = parse_feed(response&.body)
+      return nil if feed&.nil?
 
-    format_feed(feed)
+      format_feed(feed)
+    end
+  rescue Timeout::Error
+    Rails.logger.error "⏰ Timeout fetching feed: #{@url}"
+    nil
+  rescue => e
+    Rails.logger.error "🚨 Unexpected error in FetchFeedService for #{@url}: #{e.message}"
+    nil
   end
 
   private
 
   def format_feed(feed_data)
-    {
+    formatted_feed = {
       name: feed_data.try(:title).presence || "Feed Title",
       url: @url,
-      articles: feed_data.entries.map do |entry|
+      articles: feed_data&.entries.map do |entry|
         {
           title: entry.try(:title).presence || "Untitled Article",
           url: entry.url,
@@ -32,10 +40,15 @@ class FetchFeedService
         }
       end
     }
+
+    feed_data = nil
+    GC.start if formatted_feed[:articles]&.size.to_i > 50
+
+    formatted_feed
   end
 
   def fetch_feed
-    response = HTTParty.get(@url)
+    response = HTTParty.get(@url, timeout: 20)
     return response if response.success?
 
     Rails.logger.info "🚧 Failed to fetch feed: #{@url}, HTTP Code: #{response.code}, Error: #{response.message}"

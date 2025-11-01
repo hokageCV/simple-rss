@@ -46,12 +46,16 @@ class FoldersController < ApplicationController
   end
 
   def refresh_feed
+    GC.start
+
     feeds =  @folder.feeds.active
     feed_urls = feeds.pluck(:url)
 
     result = FeedManager.fetch_feeds(feed_urls)
     all_feeds_data = result[:feeds]
     FeedManager.save_feed_articles(all_feeds_data)
+
+    GC.start
 
     @articles = @folder.articles.unread.recent_first.last_two_weeks
 

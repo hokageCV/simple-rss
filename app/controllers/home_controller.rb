@@ -9,6 +9,8 @@ class HomeController < ApplicationController
   end
 
   def update_feeds
+    GC.start
+
     user_feeds = @user.feeds.active
     feed_urls = user_feeds.pluck(:url)
 
@@ -16,12 +18,12 @@ class HomeController < ApplicationController
     all_feeds_data = result[:feeds]
     FeedManager.save_feed_articles(all_feeds_data)
 
-    @articles = @user.articles
-      .includes(:feed)
-      .where(feeds: { is_paused: false })
-      .unread.recent_first.last_two_weeks
+    GC.start
 
     redirect_to home_index_path
+  rescue => e
+    Rails.logger.error "🚨 Error updating feeds: #{e.message}"
+    redirect_to home_index_path, alert: "Failed to update some feeds. Please try again."
   end
 
   private
