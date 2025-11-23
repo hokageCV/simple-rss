@@ -29,7 +29,7 @@ class FetchFeedService
     formatted_feed = {
       name: feed_data.try(:title).presence || "Feed Title",
       url: @url,
-      articles: feed_data&.entries.map do |entry|
+      articles: feed_data&.entries&.map do |entry|
         {
           title: entry.try(:title).presence || "Untitled Article",
           url: entry.url,

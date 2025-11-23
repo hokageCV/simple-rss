@@ -6,7 +6,7 @@ class SaveArticlesService
   end
 
   def call
-    return if @articles_data.empty?
+    return if @articles_data.blank?
 
     urls = @articles_data.map { |article| article[:url] }
     existing_articles_set = Set.new(@feed.articles.where(url: urls).pluck(:url))
@@ -15,7 +15,7 @@ class SaveArticlesService
       article_not_exist = !existing_articles_set.include?(article[:url])
       article_not_exist && include_article?(article)
     end
-    return if new_articles.empty?
+    return if new_articles.blank?
 
     @feed.articles.insert_all(
       new_articles.map { |article| article.merge(user_id: @feed.user_id) }
