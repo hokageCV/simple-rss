@@ -35,6 +35,7 @@ class UsersController < ApplicationController
   end
 
   def profile
+    @raindrop_account = Current.user.external_accounts.find_by(provider: "raindrop")
   end
 
   def update_api_key

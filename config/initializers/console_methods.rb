@@ -13,7 +13,7 @@ end
 
 module DebugHelpers
   # debug_print
-  def dp(label_str = nil, *objs, start_marker: '🔥', end_marker: '💧')
+  def dp(label_str = nil, *objs, start_marker: "🔥", end_marker: "💧")
     return if not Rails.env.development? || Rails.env.test?
 
     puts "\n#{start_marker}"
@@ -25,4 +25,3 @@ end
 
 # Make it available globally in app code
 Object.include(DebugHelpers)
-

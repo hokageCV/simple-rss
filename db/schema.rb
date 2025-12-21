@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_13_142155) do
+ActiveRecord::Schema[8.0].define(version: 2025_12_20_161002) do
   create_table "articles", force: :cascade do |t|
     t.integer "feed_id", null: false
     t.string "title", null: false
@@ -28,10 +28,22 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_13_142155) do
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
+  create_table "external_accounts", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "provider", null: false
+    t.text "access_token", null: false
+    t.jsonb "metadata", default: {}, null: false
+    t.datetime "connected_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "provider"], name: "index_external_accounts_on_user_id_and_provider", unique: true
+    t.index ["user_id"], name: "index_external_accounts_on_user_id"
+  end
+
   create_table "feed_folders", force: :cascade do |t|
-    t.integer "feed_id", null: false
-    t.integer "folder_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "feed_id", null: false
+    t.bigint "folder_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["feed_id", "folder_id"], name: "index_feed_folders_on_feed_id_and_folder_id", unique: true
@@ -54,7 +66,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_13_142155) do
 
   create_table "folders", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_folders_on_user_id"
@@ -81,6 +93,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_13_142155) do
 
   add_foreign_key "articles", "feeds", on_delete: :cascade
   add_foreign_key "articles", "users", on_delete: :cascade
+  add_foreign_key "external_accounts", "users"
   add_foreign_key "feed_folders", "feeds"
   add_foreign_key "feed_folders", "folders"
   add_foreign_key "feed_folders", "users"

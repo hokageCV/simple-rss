@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :articles, dependent: :destroy
   has_many :folders, dependent: :destroy
   has_many :feed_folders, dependent: :destroy
+  has_many :external_accounts, dependent: :destroy
 
   normalizes :email_address, with: ->(e) { e.strip.downcase }
 
@@ -15,4 +16,9 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:password_digest] }
 
   encrypts :api_key, deterministic: true
+
+
+  def raindrop_connected?
+    external_accounts.exists?(provider: "raindrop")
+  end
 end

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :passwords, param: :token
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  draw :oauth
+
   resources :registrations, except: [ :index, :show, :destroy ]
 
   resources :feeds do
@@ -15,8 +17,11 @@ Rails.application.routes.draw do
   end
 
   resources :articles do
-    patch :toggle_status, on: :member
-    post :summary, on: :member
+    member do
+      patch :toggle_status
+      post :summary
+      post :save_to_raindrop
+    end
   end
 
   resources :users do

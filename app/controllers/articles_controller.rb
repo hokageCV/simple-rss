@@ -89,6 +89,14 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def save_to_raindrop
+    SaveArticleToRaindrop.new(article: @article, user: Current.user).call
+    redirect_to root_path, notice: "Saved to Raindrop"
+  rescue ActiveRecord::RecordInvalid, StandardError => e
+    Rails.logger.error("Save to Raindrop failed: #{e.message}")
+    redirect_to article_path(@article), alert: "Failed to save article to Raindrop"
+  end
+
   private
 
   def set_article

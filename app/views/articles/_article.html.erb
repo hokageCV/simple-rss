@@ -22,11 +22,22 @@
           <%= article.status.capitalize %>
         </span>
       </p>
-      <%= button_to 'Mark as read/unread',
-        toggle_status_article_path(article.id),
-        method: :patch,
-        class: 'px-2 py-1 text-sm text-gray-700 bg-gray-200 rounded hover:bg-gray-300'
-      %>
+
+      <div class="flex flex-wrap gap-2">
+        <%= button_to 'Mark as read/unread',
+          toggle_status_article_path(article.id),
+          method: :patch,
+          class: 'px-2 py-1 text-sm text-gray-700 bg-gray-200 rounded hover:bg-gray-300 cursor-pointer'
+        %>
+
+        <% if Current.user.raindrop_connected? %>
+          <%= button_to 'Save to Raindrop',
+            save_to_raindrop_article_path(article),
+            method: :post,
+            class: 'px-2 py-1 text-sm text-gray-700 bg-gray-200 rounded hover:bg-gray-300 cursor-pointer'
+          %>
+        <% end %>
+      </div>
   </header>
 
   <%= render_content(article) %>

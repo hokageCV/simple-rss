@@ -1,0 +1,36 @@
+<div class="mt-8 space-y-6">
+  <h4 class="text-2xl font-semibold">Integrations</h4>
+
+  <div>
+    <h5 class="text-xl font-medium mb-4">Raindrop.io</h5>
+
+    <% if @raindrop_account.present? %>
+      <div class="space-y-4">
+        <p>
+          <span class="text-green-500">Connected on:</span>
+          <span class="font-medium"><%= @raindrop_account.connected_at.strftime("%B %d, %Y at %I:%M %p") %></span>
+        </p>
+
+        <%= button_to "Disconnect Raindrop",
+              oauth_raindrop_disconnect_path,
+              method: :delete,
+              class: "px-4 py-2 border border-red-300 text-red-700 rounded-lg hover:bg-red-50 transition-colors duration-200",
+              data: {
+                confirm: "Disconnect from Raindrop.io? ",
+                turbo_confirm: "Disconnect from Raindrop.io? "
+              } %>
+      </div>
+    <% else %>
+      <div class="space-y-4">
+        <p>
+          Connect to Raindrop.io to save articles directly to your collections.
+        </p>
+
+        <%= link_to oauth_raindrop_connect_path,
+              class: "inline-flex items-center space-x-2 px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200" do %>
+          <span>Connect Raindrop.io</span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
