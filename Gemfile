@@ -76,3 +76,4 @@ gem "nokogiri"
 
 gem "dotenv", "~> 3.1"
 gem "kramdown", "~> 2.5"
+gem "ruby_llm", "~> 1.9"

@@ -1,0 +1,31 @@
+<h3 class="text-4xl font-semibold mb-8">Manage API Key</h3>
+
+<% if @user.api_key? %>
+  <p class="text-lg text-gray-600">
+    You have an API key saved.
+  </p>
+  <%= form_with model: @user, url: update_api_key_users_path, method: :patch do |form| %>
+    <div class="mt-4">
+      <%= form.hidden_field :api_key, value: "" %>
+      <%= form.submit "Remove API Key", class: "px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700", data: { confirm: "Are you sure you want to remove your API key?" } %>
+    </div>
+  <% end %>
+<% else %>
+  <p class="text-lg text-red-600">
+    No API key saved.
+  </p>
+<% end %>
+<%= form_with(model: @user, url: update_api_key_users_path, method: :patch, local: true) do |form| %>
+  <div class="mt-4">
+    <label class="block text-lg font-medium">API Key</label>
+    <%= form.password_field :api_key,
+      placeholder: "Enter your API key",
+      class: "block w-2/4 p-2 border rounded-lg text-slate-800" %>
+  </div>
+
+  <div class="mt-4">
+    <%= form.submit "Save API Key",
+      class: "py-3 px-5 rounded-lg font-medium bg-accent text-baseBg-8 max-w-xs hover:cursor-pointer"
+    %>
+  </div>
+<% end %>
