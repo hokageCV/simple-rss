@@ -4,7 +4,7 @@ class SummarizeArticle
     @instructions = summarize_instructions
 
     @user_context = RubyLLM.context do |config|
-      config.openai_api_key = Current.user.api_key
+      config.openai_api_key = article.user.api_key
     end
   end
 

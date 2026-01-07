@@ -53,7 +53,9 @@ class ArticlesController < ApplicationController
 
   def summary
     begin
-      SummarizeArticle.new(@article).call
+      SummarizeArticleJob.perform_later(@article.id)
+
+      flash[:notice] = "Summary is being generated…"
 
       respond_to do |format|
         format.turbo_stream
@@ -61,7 +63,6 @@ class ArticlesController < ApplicationController
       end
     rescue => e
       flash[:alert] = e.message
-
       redirect_to article_path(@article)
     end
   end

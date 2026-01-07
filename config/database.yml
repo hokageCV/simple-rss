@@ -6,10 +6,17 @@
 #
 
 development:
-  adapter: sqlite3
-  database: <%= Rails.root.join("storage", "development", "development.sqlite3") %>
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+  primary:
+    adapter: sqlite3
+    database: <%= Rails.root.join("storage", "development", "development.sqlite3") %>
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    timeout: 5000
+  queue:
+    adapter: sqlite3
+    database: <%= Rails.root.join("storage", "development", "development_queue.sqlite3") %>
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    timeout: 5000
+    migrations_paths: db/queue_migrate
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -20,10 +27,17 @@ test:
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
-
 # Store production database in the storage/ directory, which by default
 # is mounted as a persistent Docker volume in config/deploy.yml.
 production:
-  adaptor: postgresql
-  encoding: unicode
-  url: <%= ENV["DATABASE_URL"] %>
+  primary:
+    adapter: postgresql
+    encoding: unicode
+    url: <%= ENV["DATABASE_URL"] %>
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  queue:
+    adapter: postgresql
+    encoding: unicode
+    url: <%= ENV["SOLID_QUEUE_DATABASE_URL"] || ENV["DATABASE_URL"] %>
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    migrations_paths: db/queue_migrate

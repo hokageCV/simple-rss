@@ -20,6 +20,10 @@ class SaveArticlesService
     @feed.articles.insert_all(
       new_articles.map { |article| article.merge(user_id: @feed.user_id) }
     )
+
+    new_article_urls = new_articles.pluck(:url)
+    article_ids = @feed.articles.where(url: new_article_urls).pluck(:id)
+    article_ids.each { |id| SummarizeArticleJob.perform_later(id) }
   end
 
   private
