@@ -24,4 +24,8 @@ class Article < ApplicationRecord
   def self.clear_old_articles(user, cutoff: 1.month.ago)
     user.articles.read.older_than(cutoff).destroy_all
   end
+
+  def is_read?
+    self.status == STATUSES[:read]
+  end
 end

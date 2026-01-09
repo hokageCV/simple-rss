@@ -51,8 +51,10 @@ Rails.application.configure do
     end
   end
 
-  config.active_job.queue_adapter = :solid_queue
-  config.solid_queue.connects_to = { database: { writing: :queue } }
+  config.good_job.execution_mode = :async_server
+  config.good_job.max_threads = 1
+  config.good_job.poll_interval = 1
+  config.good_job.queues = 'summarization:1'
 
   # Change to :null_store to avoid any caching.
   config.cache_store = :memory_store

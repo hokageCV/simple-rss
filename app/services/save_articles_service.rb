@@ -21,9 +21,11 @@ class SaveArticlesService
       new_articles.map { |article| article.merge(user_id: @feed.user_id) }
     )
 
-    new_article_urls = new_articles.pluck(:url)
-    article_ids = @feed.articles.where(url: new_article_urls).pluck(:id)
-    article_ids.each { |id| SummarizeArticleJob.perform_later(id) }
+    if @feed.user.api_key.present?
+      new_article_urls = new_articles.pluck(:url)
+      article_ids = @feed.articles.where(url: new_article_urls).pluck(:id)
+      article_ids.each { |id| SummarizeArticleJob.perform_later(article_id: id) }
+    end
   end
 
   private
