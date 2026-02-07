@@ -30,6 +30,7 @@ class FeedsController < ApplicationController
     @feed.name = feed_data&.fetch(:name, "No name")
     @feed.url = feed_data&.fetch(:url, feed_params[:url])
     @feed.generator = feed_generator(feed_params[:url])
+    @feed.skip_summarization = feed_params[:skip_summarization]
 
     respond_to do |format|
       if @feed.save
@@ -97,7 +98,7 @@ class FeedsController < ApplicationController
   end
 
   def feed_params
-    params.expect(feed: [ :url, :generator ]).tap do |permitted_params|
+    params.expect(feed: [ :url, :generator, :skip_summarization ]).tap do |permitted_params|
       permitted_params[:url]&.strip!
     end
   end
