@@ -21,7 +21,7 @@ class SaveArticlesService
       new_articles.map { |article| article.merge(user_id: @feed.user_id) }
     )
 
-    if @feed.user.api_key.present?
+    if should_summarize_articles?
       new_article_urls = new_articles.pluck(:url)
       article_ids = @feed.articles.where(url: new_article_urls).pluck(:id)
       article_ids.each { |id| SummarizeArticleJob.perform_later(article_id: id) }
@@ -33,5 +33,9 @@ class SaveArticlesService
   def include_article?(article)
     @time_threshold ||= 2.weeks.ago
     @include_all_articles || article[:published_at] > @time_threshold
+  end
+
+  def should_summarize_articles?
+    !@feed.skip_summarization && @feed.user.api_key.present?
   end
 end

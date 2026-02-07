@@ -1,5 +1,7 @@
 <% if article.summary.present? %>
   <%= render_summary(article) %>
+<% elsif article.feed.skip_summarization %>
+  <%# render nothing %>
 <% else %>
   <div
     id="<%= dom_id(article, :summary) %>"

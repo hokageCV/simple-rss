@@ -27,6 +27,11 @@
     </div>
   <% end %>
 
+  <div class="my-5">
+    <%= form.label :skip_summarization, "Skip summarization" %>
+    <%= form.check_box :skip_summarization %>
+  </div>
+
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-accent text-baseBg-8 inline-block font-medium cursor-pointer" %>
   </div>
