@@ -8,6 +8,9 @@ module Providers
       def export(article)
         client.create_bookmark(payload_for(article))
         true
+      rescue TokenRefreshed
+        client.create_bookmark(payload_for(article))
+        true
       end
 
       private
@@ -15,13 +18,13 @@ module Providers
       attr_reader :external_account
 
       def client
-        @client ||= Client.new(access_token: external_account.access_token)
+        @client ||= Client.new(external_account)
       end
 
       def payload_for(article)
         {
           link: article.url,
-          title: article.title,
+          title: article.title
         }.compact
       end
     end

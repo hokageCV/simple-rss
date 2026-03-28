@@ -15,10 +15,11 @@ module Oauth
         return
       end
 
-      token = exchange_code_for_token(params[:code])
+      token_data = exchange_code_for_token(params[:code])
       external_account = Current.user.external_accounts.find_or_initialize_by(provider: "raindrop")
       external_account.update!(
-        access_token: token,
+        access_token: token_data["access_token"],
+        metadata: external_account.metadata.merge("refresh_token" => token_data["refresh_token"]),
         connected_at: Time.current
       )
 
@@ -61,7 +62,7 @@ module Oauth
         raise "Invalid token response from Raindrop: #{response&.body}"
       end
 
-      response.parsed_response["access_token"]
+      response.parsed_response
     end
   end
 end
