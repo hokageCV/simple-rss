@@ -1,0 +1,53 @@
+<% def format_cost(cost)
+  if cost < 0.01
+    number_to_currency(cost, precision: 6)
+  else
+    number_to_currency(cost)
+  end
+end %>
+
+<% content_for(:title, "Cost by User") %>
+
+<% users_with_cost = @totals.reject { |user_id, cost| cost.to_f <= 0 || user_id.nil? || user_id == "unknown" } %>
+
+<% if users_with_cost.any? %>
+  <div class="box">
+    <h2 class="title is-4">Total Cost by User</h2>
+    <table class="table is-fullwidth is-striped">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Total Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users_with_cost.sort_by { |_, cost| -cost }.each do |user_id, cost| %>
+          <tr>
+            <td><%= user_display_name(user_id) %></td>
+            <td><%= format_cost(cost) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box">
+    <h2 class="title is-4">Cost Distribution</h2>
+    <% max_cost = users_with_cost.values.max %>
+    <% users_with_cost.sort_by { |_, cost| -cost }.each do |user_id, cost| %>
+      <div class="level">
+        <div class="level-left">
+          <div class="level-item"><%= user_display_name(user_id) %></div>
+        </div>
+        <div class="level-right">
+          <div class="level-item"><%= format_cost(cost) %></div>
+        </div>
+      </div>
+      <progress class="progress" value="<%= (cost.to_f / max_cost * 100).round %>" max="100"></progress>
+    <% end %>
+  </div>
+<% else %>
+  <div class="box">
+    <p class="has-text-grey">No LLM usage recorded yet.</p>
+  </div>
+<% end %>

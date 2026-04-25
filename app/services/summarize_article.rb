@@ -9,11 +9,13 @@ class SummarizeArticle
   end
 
   def call
-    response = @user_context
-      .chat(model: summarize_model, provider: :openai)
-      .with_instructions(@instructions)
-      .with_temperature(0.4)
-      .ask(@article.content)
+    response = RubyLLM::Instrumentation.with(user_id: @article.user_id) do
+      @user_context
+        .chat(model: summarize_model, provider: :openai)
+        .with_instructions(@instructions)
+        .with_temperature(0.4)
+        .ask(@article.content)
+    end
 
     @article.summary = Kramdown::Document.new(response.content).to_html
     @article.save
