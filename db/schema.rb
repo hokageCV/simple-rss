@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_01_07_150819) do
+ActiveRecord::Schema[8.0].define(version: 2026_04_25_142518) do
   create_table "articles", force: :cascade do |t|
     t.integer "feed_id", null: false
     t.string "title", null: false
@@ -164,6 +164,29 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_07_150819) do
     t.index ["scheduled_at"], name: "index_good_jobs_on_scheduled_at", where: "(finished_at IS NULL)"
   end
 
+  create_table "ruby_llm_monitoring_events", force: :cascade do |t|
+    t.integer "allocations"
+    t.float "cost"
+    t.float "cpu_time"
+    t.float "duration"
+    t.float "end"
+    t.float "gc_time"
+    t.float "idle_time"
+    t.string "name"
+    t.json "payload"
+    t.float "time"
+    t.string "transaction_id"
+    t.virtual "provider", type: :string, as: "(payload ->> 'provider'::text)", stored: true
+    t.virtual "model", type: :string, as: "(payload ->> 'model'::text)", stored: true
+    t.virtual "input_tokens", type: :integer, as: "((payload ->> 'input_tokens'::text))::integer", stored: true
+    t.virtual "output_tokens", type: :integer, as: "((payload ->> 'output_tokens'::text))::integer", stored: true
+    t.virtual "exception_class", type: :string, as: "((payload -> 'exception'::text) ->> 0)", stored: true
+    t.virtual "exception_message", type: :string, as: "((payload -> 'exception'::text) ->> 1)", stored: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.virtual "thinking_tokens", type: :integer, as: "((payload ->> 'thinking_tokens'::text))::integer", stored: true
+  end
+
   create_table "sessions", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "ip_address"
@@ -180,6 +203,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_07_150819) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "api_key"
+    t.boolean "is_admin", default: false, null: false
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 

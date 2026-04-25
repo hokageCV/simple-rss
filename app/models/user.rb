@@ -21,4 +21,8 @@ class User < ApplicationRecord
   def raindrop_connected?
     external_accounts.exists?(provider: "raindrop")
   end
+
+  def admin?
+    is_admin?
+  end
 end
