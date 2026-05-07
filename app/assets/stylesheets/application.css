@@ -12,3 +12,7 @@
 @view-transition {
   navigation: auto;
 }
+
+.optimistic-removed {
+  display: none;
+}

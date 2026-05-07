@@ -69,10 +69,12 @@ group :production do
   gem "pg", "~> 1.5"
 end
 
+gem "minitest", "~> 6.0"
+gem "ffi", "~> 1.17"
 gem "tailwindcss-rails"
 gem "feedjira"
 gem "httparty"
-gem "nokogiri"
+gem "nokogiri", "~> 1.19"
 
 gem "dotenv", "~> 3.1"
 gem "kramdown", "~> 2.5"

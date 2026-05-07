@@ -23,7 +23,7 @@
             <div class="relative flex flex-col items-center group/button">
               <%= button_to toggle_status_article_path(article, source: "list_view"),
                 method: :patch,
-                form: { data: { turbo_stream: true } },
+                form: { data: { turbo_stream: true, controller: "optimistic-remove" } },
                 class: "p-0 align-baseline inline relative",
                 form_class: "inline" do %>
                 <span>&#x2611;</span>
