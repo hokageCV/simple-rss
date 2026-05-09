@@ -23,6 +23,38 @@ class FeedManager
     { feeds: all_feeds_data, failed: failed_feeds }
   end
 
+  def self.fetch_and_save_feeds(feed_urls, user_id = nil)
+    failed_feeds = []
+
+    feed_urls.each_with_index do |url, index|
+      begin
+        feed_data = FetchFeedService.new(url).call
+
+        if feed_data
+          feed = Feed.find_or_initialize_by(url: url)
+
+          if feed.new_record? && user_id
+            feed.assign_attributes(name: feed_data[:name], user_id: user_id)
+          elsif feed_data[:name].present?
+            feed.assign_attributes(name: feed_data[:name])
+          end
+
+          feed.save!
+          SaveArticlesService.new(feed, feed_data[:articles]).call
+        else
+          failed_feeds << url
+        end
+      rescue => e
+        failed_feeds << url
+        Rails.logger.error "🚨 Error processing feed #{url}: #{e.message}"
+      end
+
+      GC.start if (index + 1) % 5 == 0
+    end
+
+    { feeds: [], failed: failed_feeds }
+  end
+
   def self.insert_new_feeds(user_id, feeds_data)
     return [] if feeds_data.empty?
 

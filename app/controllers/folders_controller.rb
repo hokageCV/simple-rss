@@ -48,12 +48,10 @@ class FoldersController < ApplicationController
   def refresh_feed
     GC.start
 
-    feeds =  @folder.feeds.active
+    feeds = @folder.feeds.active
     feed_urls = feeds.pluck(:url)
 
-    result = FeedManager.fetch_feeds(feed_urls)
-    all_feeds_data = result[:feeds]
-    FeedManager.save_feed_articles(all_feeds_data)
+    FeedManager.fetch_and_save_feeds(feed_urls)
 
     GC.start
 

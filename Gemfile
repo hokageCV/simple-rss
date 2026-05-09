@@ -71,7 +71,7 @@ end
 
 gem "minitest", "~> 6.0"
 gem "ffi", "~> 1.17"
-gem "tailwindcss-rails"
+gem "tailwindcss-rails", "~> 3.0"
 gem "feedjira"
 gem "httparty"
 gem "nokogiri", "~> 1.19"
