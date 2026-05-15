@@ -1,0 +1,23 @@
+<dialog id="turbo-confirm-dialog" closedby="any"
+            class="p-6 rounded-lg shadow-xl border border-gray-200 bg-baseBg-8 backdrop:bg-black/50"
+            aria-labelledby="turbo-confirm-title" aria-describedby="turbo-confirm-message">
+  <header class="mb-4">
+    <hgroup>
+      <h3 id="turbo-confirm-title" class="text-xl font-semibold text-text-1">Confirm</h3>
+      <p id="turbo-confirm-message" class="text-text-2 mt-1"></p>
+    </hgroup>
+  </header>
+
+  <footer class="flex justify-end gap-2">
+    <button type="button" commandfor="turbo-confirm-dialog" command="close"
+            class="px-4 py-2 rounded-lg bg-gray-500 hover:bg-gray-600 text-white font-medium transition-colors">
+      Cancel
+    </button>
+    <form method="dialog">
+      <button type="submit" value="confirm"
+              class="px-4 py-2 rounded-lg bg-red-500 hover:bg-red-600 text-white font-medium transition-colors">
+        Confirm
+      </button>
+    </form>
+  </footer>
+</dialog>
