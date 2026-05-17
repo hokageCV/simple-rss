@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article
+  before_action :set_article, except: :check_read_status
 
   # GET /articles or /articles.json
   def index
@@ -49,6 +49,12 @@ class ArticlesController < ApplicationController
       format.html { redirect_to @article, notice: "Article status updated." }
       format.json { render json: { status: @article.status }, status: :ok }
     end
+  end
+
+  def check_read_status
+    ids = params[:ids]
+    read_ids = Current.user.articles.where(id: ids, status: "read").pluck(:id)
+    render json: { read_ids: read_ids }
   end
 
   def summary

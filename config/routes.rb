@@ -22,6 +22,10 @@ Rails.application.routes.draw do
       post :summary
       post :save_to_raindrop
     end
+
+    collection do
+      get :check_read_status
+    end
   end
 
   resources :users do
