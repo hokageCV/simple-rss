@@ -30,7 +30,7 @@ class FeedsController < ApplicationController
     @feed.name = feed_data&.fetch(:name, "No name")
     @feed.url = feed_data&.fetch(:url, feed_params[:url])
     @feed.generator = feed_generator(feed_params[:url])
-    @feed.skip_summarization = feed_params[:skip_summarization]
+    @feed.skip_summarization = skip_summarization(@feed.generator)
 
     respond_to do |format|
       if @feed.save
@@ -117,4 +117,11 @@ class FeedsController < ApplicationController
     end
   end
 
+  def skip_summarization(generator)
+    if [ Feed::GENERATORS[:youtube], Feed::GENERATORS[:reddit] ].include?(generator)
+      true
+    else
+      feed_params[:skip_summarization]
+    end
+  end
 end
