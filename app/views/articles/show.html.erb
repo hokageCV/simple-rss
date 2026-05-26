@@ -1,4 +1,5 @@
-<div class="mx-auto md:w-2/3 w-full flex">
+<% is_youtube = @article.feed.generator == Feed::GENERATORS[:youtube] %>
+<div class="mx-auto <%= is_youtube ? 'max-w-4xl' : 'md:w-2/3' %> w-full flex">
   <div class="mx-auto">
     <% if flash[:notice].present? %>
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice">

@@ -4,11 +4,22 @@
   data-status="<%= article.status %>"
 >
   <header class="article-header pb-5">
+    <% is_youtube = article.feed.generator == Feed::GENERATORS[:youtube] %>
+
     <h1 class="text-4xl font-bold">
-      <%= link_to article.title, article.url, class: ' hover:underline', target: (article.content.present? ? '_blank' : nil), rel: (article.content.present? ? 'noopener noreferrer' : nil) %>
+      <%= link_to article.title, article.url,
+          class: 'hover:underline',
+          target: (article.content.present? || is_youtube ? '_blank' : nil),
+          rel: (article.content.present? || is_youtube ? 'noopener noreferrer' : nil) %>
     </h1>
 
     <div class="meta text-sm text-gray-500">
+      <% if is_youtube %>
+        <span class="inline-block px-2 py-0.5 text-xs font-semibold uppercase tracking-wider bg-red-600/20 text-red-400 rounded my-2">
+          YouTube
+        </span>
+      <% end %>
+
       <p>
         By
         <span class="font-semibold">

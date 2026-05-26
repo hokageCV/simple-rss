@@ -2,6 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+.custom-select,
+.custom-select::picker(select) {
+  appearance: base-select;
+}
+
+.custom-select {
+  padding-block: 0.625rem;
+  padding-inline: 0.75rem;
+}
+
+.custom-select option {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: #e2e8f0;
+  background: rgba(13, 33, 52, 0.95);
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.custom-select option:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.custom-select option:checked {
+  background: rgba(57, 163, 237, 0.12);
+}
+
+.custom-select option::checkmark {
+  display: none;
+}
+
+.custom-select::picker-icon {
+  color: rgba(255, 255, 255, 0.4);
+  transition: rotate 0.2s ease;
+}
+
+.custom-select:open::picker-icon {
+  rotate: 180deg;
+}
+
+::picker(select) {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: rgba(13, 33, 52, 0.97);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
 [popover]::backdrop {
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(2px);

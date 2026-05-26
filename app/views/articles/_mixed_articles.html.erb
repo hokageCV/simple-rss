@@ -1,0 +1,17 @@
+<% show_author ||= false %>
+
+<div data-controller="stale-article-cleaner">
+  <% articles.slice_when { |a, b| a.feed.generator != b.feed.generator }.each do |chunk| %>
+    <% if chunk.first.feed.generator == Feed::GENERATORS[:youtube] %>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+        <% chunk.each do |article| %>
+          <%= render 'articles/article_card', article: article %>
+        <% end %>
+      </div>
+    <% else %>
+      <% chunk.each do |article| %>
+        <%= render 'articles/article_list_item', article: article, show_author: show_author %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

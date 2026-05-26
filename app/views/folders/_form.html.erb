@@ -1,9 +1,8 @@
 <%= form_with(model: folder, class: "contents", local: true) do |form| %>
   <% if folder.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(folder.errors.count, "error") %> prohibited this folder from being saved:</h2>
-
-      <ul>
+    <div class="p-4 mb-6 rounded-lg border border-red-500/20 bg-red-500/5 text-red-400">
+      <h2 class="text-sm font-medium mb-2"><%= pluralize(folder.errors.count, "error") %> prohibited this folder from being saved:</h2>
+      <ul class="list-disc list-inside text-xs space-y-0.5">
         <% folder.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -11,22 +10,22 @@
     </div>
   <% end %>
 
-  <div class="my-5">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-400 text-baseBg-8 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="mb-4">
+    <%= form.label :name, class: "block text-xs font-medium text-text-4 uppercase tracking-wider mb-1.5" %>
+    <%= form.text_field :name, class: "w-full px-3 py-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06] text-text-2 text-sm placeholder:text-text-4/50 focus:outline-none focus:border-accent/40 transition-colors" %>
   </div>
 
   <% if @folder.persisted? %>
-    <div class="my-5">
-      <%= form.label :feed_ids, "Feeds" %>
-      <%= form.collection_select :feed_ids, @user.feeds, :id, :name,
-        { selected: @folder.feed_ids },
-        { multiple: true, class: "w-full p-2 border rounded", id: "folder_feed_ids" }
-      %>
+    <div class="mb-6">
+      <%= form.label :feed_ids, class: "block text-xs font-medium text-text-4 uppercase tracking-wider mb-1.5" %>
+      <%= select_tag "folder[feed_ids][]",
+        options_from_collection_for_select(@user.feeds.alphabetically, :id, :name, @folder.feed_ids),
+        multiple: true, id: "folder_feed_ids" %>
     </div>
   <% end %>
 
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-accent text-baseBg-8 inline-block font-medium cursor-pointer" %>
+  <div class="flex items-center gap-3">
+    <%= form.submit class: "px-5 py-2.5 rounded-lg text-sm font-medium bg-accent/90 text-white hover:bg-accent transition-colors cursor-pointer" %>
+    <%= link_to "Cancel", folder.persisted? ? folder_path(folder) : folders_path, class: "px-5 py-2.5 rounded-lg text-sm font-medium border border-white/[0.08] text-text-3 hover:text-text-1 hover:border-white/[0.16] transition-colors" %>
   </div>
 <% end %>

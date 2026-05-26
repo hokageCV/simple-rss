@@ -1,7 +1,6 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">New feed</h1>
-
-  <%= render "form", feed: @feed %>
-
-  <%= link_to 'Back to feeds', feeds_path, class: 'ml-2 rounded-lg py-3 px-5 border border-2 border-accent inline-block font-medium' %>
+<div class="max-w-xl mx-auto px-4 py-8">
+  <div class="rounded-xl bg-white/[0.02] ring-1 ring-white/[0.04] p-6">
+    <h1 class="text-2xl font-semibold text-text-1 mb-6">New Feed</h1>
+    <%= render "form", feed: @feed %>
+  </div>
 </div>

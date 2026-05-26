@@ -1,18 +1,30 @@
-<div class="w-full">
+<div class="max-w-3xl mx-auto px-4 py-8">
   <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <div class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 mb-6" id="notice">
+      <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+      <%= notice %>
+    </div>
   <% end %>
 
   <% content_for :title, "Folders" %>
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Folders</h1>
-    <%= link_to "New folder", new_folder_path, class: "rounded-lg py-3 px-5 bg-accent text-baseBg-8 block font-medium" %>
+  <div class="flex justify-between items-center mb-8">
+    <div>
+      <h1 class="font-bold text-3xl text-text-1">Folders</h1>
+      <p class="text-sm text-text-4 mt-1"><%= @folders.size %> folders</p>
+    </div>
+    <%= link_to new_folder_path,
+      class: "inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-sm font-medium bg-accent/90 text-white hover:bg-accent transition-colors" do %>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+      </svg>
+      New Folder
+    <% end %>
   </div>
 
-  <ul id="folders" class="min-w-full">
+  <ul id="folders" class="space-y-2">
     <% @folders.each do |folder| %>
-     <li><%= link_to folder.name, folder %></li>
+      <li><%= render folder %></li>
     <% end %>
   </ul>
 </div>

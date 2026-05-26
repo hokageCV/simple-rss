@@ -1,0 +1,15 @@
+<div id="<%= dom_id folder %>" class="group flex items-center gap-4 px-5 py-4 rounded-xl bg-white/[0.02] ring-1 ring-white/[0.04] hover:bg-white/[0.04] transition-colors">
+  <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-accent/15 text-accent">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
+    </svg>
+  </div>
+
+  <div class="flex-1 min-w-0">
+    <%= link_to folder.name, folder, class: "text-sm font-medium text-text-2 hover:text-accent transition-colors" %>
+  </div>
+
+  <div class="flex-shrink-0 text-right">
+    <span class="text-xs text-text-4"><%= folder.feeds.size %> feeds</span>
+  </div>
+</div>

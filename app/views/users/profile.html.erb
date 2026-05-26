@@ -1,84 +1,168 @@
-<div class='w-full'>
+<div class="max-w-3xl mx-auto px-4 py-8 space-y-8">
 
   <% if flash[:alert] %>
-    <div class="bg-red-500 text-white p-4 rounded-md mb-4 w-2/4">
+    <div class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium border border-red-500/30 bg-red-500/10 text-red-300">
+      <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
       <%= flash[:alert] %>
     </div>
   <% end %>
 
   <% if flash[:notice] %>
-    <div class="bg-green-500 text-white p-4 rounded-md mb-4 w-2/4">
+    <div class="flex items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium border border-emerald-500/30 bg-emerald-500/10 text-emerald-300">
+      <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
       <%= flash[:notice] %>
     </div>
   <% end %>
 
-  <h3 class='text-4xl'>Details</h3>
-
-  <div class='flex items-center'>
-    <label class='block mr-3'>Name:</label>
-    <%= tag.input value: @user.name,
-      readonly: true,
-      class: 'mt-1 p-2 bg-text-1 text-slate-800 border rounded-md w-2/4'
-    %>
+  <div class="flex items-center gap-5">
+    <div class="w-14 h-14 rounded-xl bg-accent/15 flex items-center justify-center text-accent text-xl font-bold ring-1 ring-accent/25 flex-shrink-0">
+      <%= @user.name.first.upcase %>
+    </div>
+    <div>
+      <h2 class="text-2xl font-semibold text-text-1 leading-tight"><%= @user.name %></h2>
+      <p class="text-sm text-text-4"><%= @user.email_address %></p>
+    </div>
   </div>
 
-  <div class='flex items-center mt-3 '>
-    <label class='block mr-3'>Email:</label>
-    <%= tag.input value: @user.email_address,
-      readonly: true,
-      class: 'mt-1 p-2 bg-text-1 text-slate-700 border rounded-md w-2/4'
-    %>
-  </div>
+  <section class="rounded-xl bg-white/[0.02] ring-1 ring-white/[0.04] p-6 space-y-5">
+    <h3 class="text-sm font-semibold uppercase tracking-wider text-text-4">Account</h3>
 
-  <div class="mt-6">
-    <h4 class="text-xl font-medium">Reset Password</h4>
-    <p class="text-lg">Click the button below to change your password.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="space-y-1.5">
+        <label class="text-xs font-medium text-text-4 uppercase tracking-wider">Name</label>
+        <%= tag.input value: @user.name, readonly: true,
+          class: "w-full px-3 py-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06] text-text-2 text-sm readonly:text-text-3 focus:outline-none focus:border-accent/40 transition-colors" %>
+      </div>
+      <div class="space-y-1.5">
+        <label class="text-xs font-medium text-text-4 uppercase tracking-wider">Email</label>
+        <%= tag.input value: @user.email_address, readonly: true,
+          class: "w-full px-3 py-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06] text-text-2 text-sm readonly:text-text-3 focus:outline-none focus:border-accent/40 transition-colors" %>
+      </div>
+    </div>
 
-    <%= link_to edit_password_path(token: @user.password_reset_token),
-          class: "mt-2 w-full max-w-xs py-3 px-5 rounded-lg font-medium bg-blue-600 text-white hover:bg-blue-700 text-center block" do %>
-      Reset Password
+    <div class="flex items-center justify-between gap-4 pt-2 border-t border-white/[0.04]">
+      <div>
+        <p class="text-sm font-medium text-text-2">Password</p>
+        <p class="text-xs text-text-4 mt-0.5">Change your account password</p>
+      </div>
+      <%= link_to edit_password_path(token: @user.password_reset_token),
+        class: "flex-shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium border border-white/[0.08] text-text-3 hover:text-text-1 hover:border-white/[0.12] hover:bg-white/[0.02] transition-colors" do %>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+        Reset
+      <% end %>
+    </div>
+  </section>
+
+  <section class="rounded-xl bg-white/[0.02] ring-1 ring-white/[0.04] p-6 space-y-5">
+    <h3 class="text-sm font-semibold uppercase tracking-wider text-text-4">API Key</h3>
+
+    <% if @user.api_key? %>
+      <div class="flex items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 flex-shrink-0"></span>
+          <span class="text-sm text-text-2">API key configured</span>
+        </div>
+        <%= form_with model: @user, url: update_api_key_users_path, method: :patch do |form| %>
+          <%= form.hidden_field :api_key, value: "" %>
+          <%= form.submit "Remove",
+            class: "px-4 py-1.5 rounded-lg text-xs font-medium border border-red-500/20 text-red-400 hover:bg-red-500/10 hover:border-red-500/30 transition-colors cursor-pointer",
+            data: { confirm: "Are you sure you want to remove your API key?" } %>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="text-sm text-text-4">No API key saved</p>
     <% end %>
-  </div>
 
-  <hr class="mt-6 mb-2"/>
-
-  <%= render "api_key" %>
-  <hr class="mt-6 mb-2"/>
-
-  <h3 class="text-4xl font-semibold mb-8">Data</h3>
-  <div class="mt-6">
-
-    <h4 class="text-xl font-medium">Export OPML</h4>
-    <p class="text-lg">You can export your OPML file to back up your data or share it with others.</p>
-    <%= link_to export_opml_users_path, class: 'max-w-xs rounded-lg py-3 px-5 bg-accent text-baseBg-8 block text-center font-medium transition duration-200 hover:bg-accent-dark' do %>
-      Export OPML
+    <%= form_with(model: @user, url: update_api_key_users_path, method: :patch, local: true) do |form| %>
+      <div class="space-y-1.5">
+        <label class="text-xs font-medium text-text-4 uppercase tracking-wider">
+          <%= @user.api_key? ? "Update key" : "Add key" %>
+        </label>
+        <div class="flex gap-2">
+          <%= form.password_field :api_key, placeholder: "sk-...",
+            class: "flex-1 px-3 py-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06] text-text-2 text-sm placeholder:text-text-4/50 focus:outline-none focus:border-accent/40 transition-colors" %>
+          <%= form.submit "Save",
+            class: "px-5 py-2.5 rounded-lg text-sm font-medium bg-accent/90 text-white hover:bg-accent transition-colors cursor-pointer" %>
+        </div>
+      </div>
     <% end %>
-  </div>
+  </section>
 
-  <div class="mt-6">
-    <h4 class="text-xl font-medium">Import OPML</h4>
-    <p class="text-lg">Upload OPML file to import your.</p>
+  <section class="rounded-xl bg-white/[0.02] ring-1 ring-white/[0.04] p-6 space-y-5">
+    <h3 class="text-sm font-semibold uppercase tracking-wider text-text-4">Data</h3>
 
-    <%= form_with(url: import_via_opml_user_path, local: true, method: :post, enctype: "multipart/form-data") do |form| %>
-      <div class="space-y-2">
-        <%= form.file_field :opml_file,
-          accept: '.opml',
-          required: true,
-          class: 'block w-full text-sm border rounded-lg focus:ring-primary focus:border-primary max-w-xs'
-        %>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <div class="flex-1 space-y-2">
+        <p class="text-sm font-medium text-text-2">Export OPML</p>
+        <p class="text-xs text-text-4">Back up your subscriptions or migrate to another reader.</p>
+        <%= link_to export_opml_users_path,
+          class: "inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium bg-accent/90 text-white hover:bg-accent transition-colors mt-3" do %>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          Export
+        <% end %>
       </div>
 
-      <div class="mt-4">
-        <%= form.submit "Import Feeds from OPML",
-          class: 'w-full py-3 px-5 rounded-lg font-medium bg-accent text-baseBg-8 max-w-xs hover:cursor-pointer'
-        %>
+      <div class="hidden sm:block w-px bg-white/[0.04]"></div>
+
+      <div class="flex-1 space-y-2">
+        <p class="text-sm font-medium text-text-2">Import OPML</p>
+        <p class="text-xs text-text-4">Bring your subscriptions from another reader.</p>
+        <%= form_with(url: import_via_opml_user_path, local: true, method: :post, enctype: "multipart/form-data") do |form| %>
+          <div class="flex items-center gap-2 mt-3">
+            <%= form.file_field :opml_file, accept: ".opml", required: true,
+              class: "flex-1 text-xs text-text-3 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:text-xs file:font-medium file:border file:border-white/[0.08] file:bg-transparent file:text-text-3 file:hover:bg-white/[0.04] file:transition-colors file:cursor-pointer" %>
+            <%= form.submit "Import",
+              class: "flex-shrink-0 px-4 py-2 rounded-lg text-sm font-medium border border-white/[0.08] text-text-3 hover:text-text-1 hover:border-white/[0.12] hover:bg-white/[0.02] transition-colors cursor-pointer" %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
 
-  <%= render "clear_old_articles" %>
-  <hr class="mt-8 mb-6" />
+    <div class="flex items-center justify-between gap-4 pt-2 border-t border-white/[0.04]">
+      <div>
+        <p class="text-sm font-medium text-text-2">Clear old articles</p>
+        <p class="text-xs text-text-4 mt-0.5">Remove read articles older than a month</p>
+      </div>
+      <%= button_to clear_old_articles_user_path(@user), method: :delete,
+        class: "flex-shrink-0 px-4 py-2 rounded-lg text-xs font-medium border border-red-500/20 text-red-400 hover:bg-red-500/10 hover:border-red-500/30 transition-colors",
+        data: { confirm: "Delete all read articles older than 30 days?" } do %>
+        Clear
+      <% end %>
+    </div>
+  </section>
 
-  <%= render "integrations" %>
-  <div class="mb-8"></div>
+  <section class="rounded-xl bg-white/[0.02] ring-1 ring-white/[0.04] p-6 space-y-5">
+    <h3 class="text-sm font-semibold uppercase tracking-wider text-text-4">Integrations</h3>
+
+    <div class="space-y-4">
+      <h4 class="text-sm font-medium text-text-2">Raindrop.io</h4>
+
+      <% if @raindrop_account.present? %>
+        <div class="flex items-center justify-between gap-4">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 flex-shrink-0"></span>
+            <span class="text-sm text-text-3">
+              Connected <%= @raindrop_account.connected_at.strftime("%b %d, %Y") %>
+            </span>
+          </div>
+          <%= button_to oauth_raindrop_disconnect_path, method: :delete,
+            class: "px-4 py-1.5 rounded-lg text-xs font-medium border border-red-500/20 text-red-400 hover:bg-red-500/10 hover:border-red-500/30 transition-colors",
+            data: { confirm: "Disconnect from Raindrop.io?", turbo_confirm: "Disconnect from Raindrop.io?" } do %>
+            Disconnect
+          <% end %>
+        </div>
+      <% else %>
+        <div class="flex items-center justify-between gap-4">
+          <p class="text-sm text-text-4">Save articles directly to your Raindrop collections.</p>
+          <%= link_to oauth_raindrop_connect_path,
+            class: "flex-shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium bg-blue-600/90 text-white hover:bg-blue-600 transition-colors" do %>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+            Connect
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </section>
+
+  <div class="pb-12"></div>
 </div>

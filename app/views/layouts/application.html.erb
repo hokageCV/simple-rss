@@ -27,7 +27,7 @@
   </head>
 
   <body class='bg-baseBg-8 text-text-1 min-h-screen w-auto font-transitional'>
-    <div class='flex h-full'>
+    <div class='flex min-h-screen'>
       <% if Current.user.present? %>
         <%= render 'shared/sidebar' %>
       <% end %>
