@@ -1,0 +1,15 @@
+{
+  "$schema": "https://opencode.ai",
+  "mcp": {
+    "grepika": {
+      "type": "local",
+      "enabled": true,
+      "command": ["npx", "-y", "@agentika/grepika", "--mcp"]
+    },
+    "tilth": {
+      "type": "local",
+      "enabled": true,
+      "command": ["npx", "-y", "tilth", "--mcp"]
+    }
+  },
+}

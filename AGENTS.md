@@ -1,143 +1,80 @@
-# AGENTS.md - Development Guide for simple-rss
+# AGENTS.md
 
-## Project Overview
-
-A Rails 8 RSS aggregator application with features including RSS feed subscription, article reading, OPML import/export, Raindrop.io integration, AI-powered summaries (OpenAI), and text-to-speech playback.
-
-## Technology Stack
-
-- Ruby: 3.3.4 (see `.ruby-version`)
-- Rails: 8.0.1
-- Database: SQLite (dev/test), PostgreSQL (production)
-- Testing: Minitest (Rails default)
+## Stack
+- Ruby 3.3.4, Rails 8
+- SQLite (dev/test), PostgreSQL (prod)
+- Testing: Minitest
 - Styling: Tailwind CSS
-- Linting: Rubocop (rails-omakase style)
+- Linting: Rubocop (rails-omakase)
 
----
-
-## Build/Lint/Test Commands
-
-### Setup
-```bash
-bundle install          # Install dependencies
-rails db:migrate       # Run migrations
-rails tailwindcss:build # Build assets
+## Commands
+```
+bundle install                          # deps
+rails db:migrate                        # migrate
+rails db:seed                           # seed
+rails db:reset                          # reset (migrate+seed)
+rails db:migrate RAILS_ENV=test
+rails tailwindcss:build                 # build CSS
+rails tailwindcss:watch                 # dev watch
+rails server                            # dev server
+rails s -e production                   # prod
+rails test                              # all tests
+rails test test/models/user_test.rb     # single file
+rails test:system                       # system tests
+rubocop                                 # lint
+rubocop app/models/user.rb              # lint file
+rubocop --a                             # auto-fix
+rails console                           # dev console
 ```
 
-### Running the Application
-```bash
-rails server           # Start dev server (localhost:3000)
-rails s -e production  # Run in production mode
-```
+## Code Navigation & File Reading
 
-### Testing
-```bash
-rails test                      # Run all tests
-rails test test/models/user_test.rb              # Run single test file
-rails test test/models/user_test.rb -n test_name # Run specific test
-rails test:system             # System tests only (requires Chrome)
-```
+**Primary principle: minimize context consumption.** Read outlines first, then targeted sections. Be surgical.
 
-### Linting & Code Quality
-```bash
-rubocop                        # Run rubocop on all files
-rubocop app/models/user.rb     # Lint specific file
-rubocop --a                    # Auto-fix issues
-```
+### Tool Hierarchy
+| Need | Primary Tool | Approach |
+|------|--------------|----------|
+| Directory overview | grepika | `toc` |
+| Find code (NL/regex) | grepika | `search` (requires index) |
+| File structure | grepika | `outline` → `get` with line range |
+| Symbol definitions | tilth | `search` — definition-first |
+| What calls X? | tilth | `search kind:callers` |
+
+### Quick Decision
+- "Find files about X topic" → **grepika** (NL search)
+- "Where is Y defined?" → **tilth** (structural)
+- "What calls Z?" → **tilth** (callers)
+- Regex/text pattern → **grepika** (grep mode)
+
+## Code Style
+
+### Naming
+- PascalCase classes/modules (UserFeed, ArticleService)
+- snake_case methods/vars (fetch_feeds, article_count)
+- snake_case files matching class name (user_feed.rb)
+
+### Layout
+- app/{models,controllers,views,helpers,services}/
+- 2-space indent, 120 char max, no trailing whitespace
+
+### Frontend
+- ERB + Tailwind CSS classes
+- Stimulus for JS; Turbo for SPA interactions
+- Partials: _partial_name.html.erb
 
 ### Database
-```bash
-rails db:migrate              # Run migrations
-rails db:rollback             # Rollback last migration
-rails db:seed                 # Seed database
-rails db:reset                # Reset database (migrate + seed)
-rails db:migrate RAILS_ENV=test  # Run migrations in test env
-```
-
-### Assets
-```bash
-rails tailwindcss:watch       # Watch mode for dev
-rails tailwindcss:build       # Build for production
-```
-
-### Console
-```bash
-rails console                 # Development console
-rails console -e staging      # Staging console
-```
-
----
-
-## Code Style Guidelines
-
-### General Principles
-- Follow Rails conventions and RESTful routing
-- Use idiomatic Ruby and Rails patterns
-- Prefer convention over configuration
-
-### Naming Conventions
-- Classes/Modules: `PascalCase` (e.g., `UserFeed`, `ArticleService`)
-- Methods/variables: `snake_case` (e.g., `fetch_feeds`, `article_count`)
-- Database tables: `snake_case`, plural (e.g., `users`, `feed_folders`)
-- Files: `snake_case` matching class names (e.g., `user_feed.rb`)
-
-### File Organization
-- Models in `app/models/`
-- Controllers in `app/controllers/`
-- Views in `app/views/` (matching controller/controller/action structure)
-- Helpers in `app/helpers/`
-- Services/queries in `app/models/` or `app/services/` (use subdirectories)
-
-### Imports
-```ruby
-require "rails_helper"  # In test files
-
-# Standard library
-require "json"
-require "open-uri"
-
-# Gems
-require "feedjira"
-require "httparty"
-```
-
-### Formatting
-- 2-space indentation (no tabs)
-- Max line length: 120 characters (rubocop default)
-- Use empty lines to separate logical sections
-- No trailing whitespace
+- ActiveRecord queries (where, joins, includes)
+- Use migrations, use transactions for multi-step ops
+- Avoid raw SQL
 
 ### Error Handling
-- Use custom exceptions for domain-specific errors:
-  ```ruby
-  class FeedFetchError < StandardError; end
-  ```
-- Rescue specific exceptions, avoid bare `rescue`
-- Use `raise` with descriptive messages
-- Let exceptions propagate in service objects; handle at controller level
-
-### Database/AR Patterns
-- Use ActiveRecord query methods (`where`, `joins`, `includes`)
-- Avoid raw SQL unless necessary
-- Use migrations for schema changes (`rails g migration`)
-- Use transactions for multi-step database operations
-
-### Views
-- Use ERB with Tailwind CSS classes
-- Avoid inline JavaScript; use Stimulus controllers
-- Use Turbo/Stimulus for SPA-like interactions
-- Follow Rails naming for partials (`_partial_name.html.erb`)
+- Custom exceptions (FeedFetchError < StandardError)
+- Rescue specific types; propagate in services; handle in controllers
 
 ### Testing
-- Write model/controller tests in `test/`
-- Use fixtures for test data
+- Tests in test/ with fixtures
 - Test edge cases and error conditions
-- Follow Rails testing conventions
 
----
-
-## Important Notes
-
-- GoodJob: ActiveJob adapter is configured for async job processing
-- Environment Variables: See `.env.example` for required vars (API keys, encryption keys)
-- Secrets: Never commit secrets; use environment variables
+## Notes
+- GoodJob: ActiveJob adapter for async jobs
+- API keys in .env.example; never commit secrets
