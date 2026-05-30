@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="stroll-tracker"
 export default class extends Controller {
-  static targets = ["sentinel"];
+  static targets = ["sentinel", "link"];
 
   connect() {
     const articleStatus = this.element.dataset.status;
@@ -43,7 +43,9 @@ export default class extends Controller {
       if (!response.ok) return;
 
       this.element.dataset.status = 'read';
-      document.getElementById(`status_text_article_${articleId}`).innerText = 'Read'
+      document.getElementById(`status_text_article_${articleId}`).innerText = 'Read';
+      this.linkTarget.removeAttribute('target');
+      this.linkTarget.removeAttribute('rel');
     } catch (error) {
       console.error("Error marking article as read:", error);
     }

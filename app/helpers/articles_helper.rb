@@ -1,4 +1,12 @@
 module ArticlesHelper
+  def open_article_in_new_tab?(article)
+    has_content = article.content.present?
+    is_youtube = article.feed.generator == Feed::GENERATORS[:youtube]
+    is_read = article.status == 'read'
+
+    (has_content || is_youtube) && !is_read
+  end
+
   def render_summary(article)
     content_tag(:div, class: "bg-baseBg-5 p-4 max-w-screen-md rounded rounded-lg my-5", data: { controller: "read" }) do
       content_tag(:p, "Summary", class: "text-xl") +

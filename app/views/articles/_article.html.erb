@@ -9,8 +9,9 @@
     <h1 class="text-4xl font-bold">
       <%= link_to article.title, article.url,
           class: 'hover:underline',
-          target: (article.content.present? || is_youtube ? '_blank' : nil),
-          rel: (article.content.present? || is_youtube ? 'noopener noreferrer' : nil) %>
+          target: (open_article_in_new_tab?(article) ? '_blank' : nil),
+          rel: (open_article_in_new_tab?(article) ? 'noopener noreferrer' : nil),
+          data: { scroll_tracker_target: 'link' } %>
     </h1>
 
     <div class="meta text-sm text-gray-500">
