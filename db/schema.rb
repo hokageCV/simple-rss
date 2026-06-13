@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_04_25_142518) do
+ActiveRecord::Schema[8.0].define(version: 2026_06_13_000000) do
   create_table "articles", force: :cascade do |t|
     t.integer "feed_id", null: false
     t.string "title", null: false
@@ -204,6 +204,8 @@ ActiveRecord::Schema[8.0].define(version: 2026_04_25_142518) do
     t.datetime "updated_at", null: false
     t.text "api_key"
     t.boolean "is_admin", default: false, null: false
+    t.string "provider", default: "openai", null: false
+    t.string "model"
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 

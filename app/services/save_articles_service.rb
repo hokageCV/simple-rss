@@ -36,6 +36,6 @@ class SaveArticlesService
   end
 
   def should_summarize_articles?
-    !@feed.skip_summarization && @feed.user.api_key.present?
+    @feed.user.ai_configured?
   end
 end

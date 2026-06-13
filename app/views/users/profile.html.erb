@@ -53,36 +53,82 @@
     </div>
   </section>
 
-  <section class="rounded-xl bg-white/[0.02] ring-1 ring-white/[0.04] p-6 space-y-5">
-    <h3 class="text-sm font-semibold uppercase tracking-wider text-text-4">API Key</h3>
+  <section
+    class="rounded-xl bg-white/[0.02] ring-1 ring-white/[0.04] p-6 space-y-5"
+    data-controller="api-key-form"
+    data-api-key-form-saved-model-value="<%= @user.model %>"
+  >
+    <h3 class="text-sm font-semibold uppercase tracking-wider text-text-4">AI Configuration</h3>
 
-    <% if @user.api_key? %>
+    <% if @user.ai_configured? %>
       <div class="flex items-center justify-between gap-4">
         <div class="flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-emerald-400 flex-shrink-0"></span>
-          <span class="text-sm text-text-2">API key configured</span>
+          <span class="text-sm text-text-2">
+            <%= @user.provider.titleize %> · <%= @user.model %>
+          </span>
         </div>
         <%= form_with model: @user, url: update_api_key_users_path, method: :patch do |form| %>
           <%= form.hidden_field :api_key, value: "" %>
           <%= form.submit "Remove",
             class: "px-4 py-1.5 rounded-lg text-xs font-medium border border-red-500/20 text-red-400 hover:bg-red-500/10 hover:border-red-500/30 transition-colors cursor-pointer",
-            data: { confirm: "Are you sure you want to remove your API key?" } %>
+            data: { confirm: "Remove AI configuration?" } %>
         <% end %>
       </div>
     <% else %>
-      <p class="text-sm text-text-4">No API key saved</p>
+      <p class="text-sm text-text-4">No AI configuration saved</p>
     <% end %>
 
-    <%= form_with(model: @user, url: update_api_key_users_path, method: :patch, local: true) do |form| %>
-      <div class="space-y-1.5">
-        <label class="text-xs font-medium text-text-4 uppercase tracking-wider">
-          <%= @user.api_key? ? "Update key" : "Add key" %>
-        </label>
-        <div class="flex gap-2">
-          <%= form.password_field :api_key, placeholder: "sk-...",
-            class: "flex-1 px-3 py-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06] text-text-2 text-sm placeholder:text-text-4/50 focus:outline-none focus:border-accent/40 transition-colors" %>
-          <%= form.submit "Save",
-            class: "px-5 py-2.5 rounded-lg text-sm font-medium bg-accent/90 text-white hover:bg-accent transition-colors cursor-pointer" %>
+    <%= form_with(model: @user, url: update_api_key_users_path, method: :patch, local: true,
+          html: { id: "api-key-form" }) do |form| %>
+      <div class="space-y-3">
+        <div class="grid grid-cols-2 gap-3">
+          <div class="space-y-1.5">
+            <label class="text-xs font-medium text-text-4 uppercase tracking-wider">Provider</label>
+            <%= form.select :provider,
+              User::PROVIDERS.map { |p| [p.titleize, p] },
+              { selected: @user.provider },
+              { id: "provider-select",
+                class: "w-full px-3 py-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06] text-text-2 text-sm focus:outline-none focus:border-accent/40 transition-colors appearance-none",
+                data: { "api-key-form-target": "provider", action: "change->api-key-form#providerChanged" } } %>
+          </div>
+          <div class="space-y-1.5">
+            <label class="text-xs font-medium text-text-4 uppercase tracking-wider">Model</label>
+            <%= form.select :model,
+              [],
+              {},
+              { id: "model-select",
+                class: "w-full px-3 py-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06] text-text-2 text-sm focus:outline-none focus:border-accent/40 transition-colors appearance-none disabled:opacity-40",
+                data: { "api-key-form-target": "model" },
+                disabled: @user.provider.blank? } %>
+          </div>
+        </div>
+
+        <div class="space-y-1.5">
+          <label class="text-xs font-medium text-text-4 uppercase tracking-wider">
+            <%= @user.ai_configured? ? "Update key" : "Add key" %>
+          </label>
+          <div class="flex gap-2">
+            <%= form.password_field :api_key,
+              placeholder: @user.ai_configured? ? "•••••••••••• (enter new to change)" : "sk-...",
+              class: "flex-1 px-3 py-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06] text-text-2 text-sm placeholder:text-text-4/50 focus:outline-none focus:border-accent/40 transition-colors",
+              data: { "api-key-form-target": "apiKey" } %>
+            <%= form.submit "Save",
+              class: "px-5 py-2.5 rounded-lg text-sm font-medium bg-accent/90 text-white hover:bg-accent transition-colors cursor-pointer" %>
+            <button type="button"
+              class="px-5 py-2.5 rounded-lg text-sm font-medium border border-white/[0.08] text-text-3 hover:text-text-1 hover:border-white/[0.12] hover:bg-white/[0.02] transition-colors cursor-pointer disabled:opacity-40"
+              data-action="click->api-key-form#testKey"
+              data-api-key-form-target="testBtn">
+              <span data-api-key-form-target="testLabel">Test</span>
+              <span data-api-key-form-target="testSpinner" class="hidden">
+                <svg class="animate-spin h-4 w-4 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div data-api-key-form-target="testResult" class="hidden text-xs mt-1"></div>
         </div>
       </div>
     <% end %>

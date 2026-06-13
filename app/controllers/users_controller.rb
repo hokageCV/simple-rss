@@ -39,15 +39,38 @@ class UsersController < ApplicationController
   end
 
   def update_api_key
-    new_key = params[:user][:api_key].presence
+    api_key_val = params[:user][:api_key].presence
 
-    if @user.update(api_key: new_key)
-      flash[:notice] = new_key ? "API key updated successfully." : "API key removed successfully."
+    attrs = if api_key_val
+               {
+                 api_key: api_key_val,
+                 provider: params[:user][:provider].presence,
+                 model: params[:user][:model].presence
+               }
     else
-      flash[:alert] = "Failed to update API Key"
+               { api_key: nil, model: nil }
+    end
+
+    if @user.update(attrs)
+      flash[:notice] = api_key_val ? "AI configuration saved." : "AI configuration removed."
+    else
+      flash[:alert] = @user.errors.full_messages.to_sentence
     end
 
     redirect_to request.referer || root_path
+  end
+
+  def test_api_key
+    result = TestApiKeyService.new(params[:provider], params[:api_key], params[:model]).call
+    render json: result
+  end
+
+  def models_for_provider
+    provider = params[:provider].to_s
+    models = RubyLLM.models.by_provider(provider).chat_models
+      .sort_by { |m| m.created_at ? -m.created_at.to_i : 0 }
+      .map { |m| { id: m.id, name: m.display_name || m.name || m.id } }
+    render json: models
   end
 
   def clear_old_articles

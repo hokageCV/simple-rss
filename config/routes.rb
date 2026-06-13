@@ -38,6 +38,8 @@ Rails.application.routes.draw do
     collection do
       get :export_opml
       patch :update_api_key
+      post :test_api_key
+      get :models_for_provider
     end
   end
 

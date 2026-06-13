@@ -2,16 +2,15 @@ class SummarizeArticle
   def initialize(article)
     @article = article
     @instructions = summarize_instructions
-
-    @user_context = RubyLLM.context do |config|
-      config.openai_api_key = article.user.api_key
-    end
+    @provider = article.user.provider
+    @model = article.user.model
+    @user_context = article.user.llm_context
   end
 
   def call
     response = RubyLLM::Instrumentation.with(user_id: @article.user_id) do
       @user_context
-        .chat(model: summarize_model, provider: :openai)
+        .chat(model: @model, provider: @provider.to_sym)
         .with_instructions(@instructions)
         .with_temperature(0.4)
         .ask(@article.content)
@@ -27,10 +26,6 @@ class SummarizeArticle
 
   def summarize_instructions
     ENV.fetch("SUMMARIZE_INSTRUCTIONS")
-  end
-
-  def summarize_model
-    ENV.fetch("SUMMARIZE_MODEL")
   end
 
   def handle_gem_error(error)

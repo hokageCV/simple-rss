@@ -6,7 +6,7 @@
   <div
     id="<%= dom_id(article, :summary) %>"
     data-controller="handle-summary"
-    data-handle-summary-has-api-key-value="<%= Current.user.api_key.present? %>"
+    data-handle-summary-has-api-key-value="<%= Current.user.ai_configured? %>"
   >
 
     <button
