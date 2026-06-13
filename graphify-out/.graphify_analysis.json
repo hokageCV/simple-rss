@@ -1,0 +1,765 @@
+{
+  "communities": {
+    "0": [
+      "controllers_folders_controller_folderscontroller_refresh_feed",
+      "controllers_home_controller_homecontroller_update_feeds",
+      "controllers_users_controller",
+      "controllers_users_controller_userscontroller",
+      "controllers_users_controller_userscontroller_clear_old_articles",
+      "controllers_users_controller_userscontroller_export_opml",
+      "controllers_users_controller_userscontroller_import_via_opml",
+      "controllers_users_controller_userscontroller_models_for_provider",
+      "controllers_users_controller_userscontroller_profile",
+      "controllers_users_controller_userscontroller_set_flash_message",
+      "controllers_users_controller_userscontroller_set_user",
+      "controllers_users_controller_userscontroller_test_api_key",
+      "controllers_users_controller_userscontroller_update_api_key",
+      "models_current",
+      "models_current_current",
+      "oauth_raindrop_controller",
+      "oauth_raindrop_controller_raindropcontroller",
+      "oauth_raindrop_controller_raindropcontroller_authorization_url",
+      "oauth_raindrop_controller_raindropcontroller_callback",
+      "oauth_raindrop_controller_raindropcontroller_connect",
+      "oauth_raindrop_controller_raindropcontroller_disconnect",
+      "oauth_raindrop_controller_raindropcontroller_exchange_code_for_token",
+      "raindrop_error",
+      "raindrop_error_apierror",
+      "raindrop_error_error",
+      "raindrop_error_ratelimited",
+      "raindrop_error_tokenrefreshed",
+      "raindrop_error_unauthorized",
+      "services_feed_manager",
+      "services_feed_manager_feedmanager",
+      "services_feed_manager_feedmanager_fetch_and_save_feeds",
+      "services_feed_manager_feedmanager_fetch_feeds",
+      "services_feed_manager_feedmanager_insert_new_feeds",
+      "services_feed_manager_feedmanager_save_feed_articles"
+    ],
+    "1": [
+      "application_cable_connection",
+      "application_cable_connection_connection",
+      "application_cable_connection_connection_connect",
+      "application_cable_connection_connection_set_current_user",
+      "constraints_admin_constraint",
+      "constraints_admin_constraint_adminconstraint",
+      "constraints_admin_constraint_adminconstraint_matches",
+      "controllers_feeds_controller_feedscontroller_index",
+      "controllers_home_controller",
+      "controllers_home_controller_homecontroller",
+      "controllers_home_controller_homecontroller_index",
+      "controllers_home_controller_homecontroller_set_user",
+      "models_user",
+      "models_user_user",
+      "models_user_user_admin",
+      "models_user_user_ai_configured",
+      "models_user_user_api_key_config_for",
+      "models_user_user_build_llm_context",
+      "models_user_user_llm_context",
+      "models_user_user_raindrop_connected",
+      "services_save_articles_service",
+      "services_save_articles_service_savearticlesservice",
+      "services_save_articles_service_savearticlesservice_call",
+      "services_save_articles_service_savearticlesservice_include_article",
+      "services_save_articles_service_savearticlesservice_initialize",
+      "services_save_articles_service_savearticlesservice_should_summarize_articles",
+      "services_summarize_article_summarizearticle_initialize",
+      "services_test_api_key_service",
+      "services_test_api_key_service_testapikeyservice",
+      "services_test_api_key_service_testapikeyservice_call",
+      "services_test_api_key_service_testapikeyservice_initialize"
+    ],
+    "2": [
+      "controllers_articles_controller",
+      "controllers_articles_controller_articlescontroller",
+      "controllers_articles_controller_articlescontroller_article_params",
+      "controllers_articles_controller_articlescontroller_check_read_status",
+      "controllers_articles_controller_articlescontroller_create",
+      "controllers_articles_controller_articlescontroller_destroy",
+      "controllers_articles_controller_articlescontroller_edit",
+      "controllers_articles_controller_articlescontroller_index",
+      "controllers_articles_controller_articlescontroller_new",
+      "controllers_articles_controller_articlescontroller_save_to_raindrop",
+      "controllers_articles_controller_articlescontroller_set_article",
+      "controllers_articles_controller_articlescontroller_show",
+      "controllers_articles_controller_articlescontroller_summary",
+      "controllers_articles_controller_articlescontroller_toggle_status",
+      "controllers_articles_controller_articlescontroller_update",
+      "helpers_articles_helper_render_summary",
+      "jobs_summarize_article_job",
+      "jobs_summarize_article_job_summarizearticlejob",
+      "jobs_summarize_article_job_summarizearticlejob_perform",
+      "models_article",
+      "models_article_article",
+      "models_article_article_clear_old_articles",
+      "models_article_article_is_read",
+      "models_article_article_toggle_status",
+      "services_save_article_to_raindrop",
+      "services_save_article_to_raindrop_savearticletoraindrop",
+      "services_save_article_to_raindrop_savearticletoraindrop_call",
+      "services_save_article_to_raindrop_savearticletoraindrop_initialize"
+    ],
+    "3": [
+      "concerns_authentication",
+      "concerns_authentication_after_authentication_url",
+      "concerns_authentication_allow_unauthenticated_access",
+      "concerns_authentication_authenticated",
+      "concerns_authentication_find_session_by_cookie",
+      "concerns_authentication_request_authentication",
+      "concerns_authentication_require_authentication",
+      "concerns_authentication_resume_session",
+      "concerns_authentication_start_new_session_for",
+      "concerns_authentication_terminate_session",
+      "controllers_registrations_controller",
+      "controllers_registrations_controller_registrationscontroller",
+      "controllers_registrations_controller_registrationscontroller_create",
+      "controllers_registrations_controller_registrationscontroller_new",
+      "controllers_registrations_controller_registrationscontroller_safe_params",
+      "controllers_sessions_controller",
+      "controllers_sessions_controller_sessionscontroller",
+      "controllers_sessions_controller_sessionscontroller_create",
+      "controllers_sessions_controller_sessionscontroller_destroy",
+      "controllers_sessions_controller_sessionscontroller_new",
+      "models_session",
+      "models_session_session"
+    ],
+    "4": [
+      "raindrop_client",
+      "raindrop_client_client",
+      "raindrop_client_client_access_token",
+      "raindrop_client_client_auth_headers",
+      "raindrop_client_client_create_bookmark",
+      "raindrop_client_client_handle_response",
+      "raindrop_client_client_initialize",
+      "raindrop_client_client_refresh_access_token",
+      "raindrop_client_client_refresh_and_retry",
+      "raindrop_client_client_refresh_token",
+      "raindrop_exporter",
+      "raindrop_exporter_exporter",
+      "raindrop_exporter_exporter_client",
+      "raindrop_exporter_exporter_export",
+      "raindrop_exporter_exporter_initialize",
+      "raindrop_exporter_exporter_payload_for"
+    ],
+    "5": [
+      "controllers_feeds_controller",
+      "controllers_feeds_controller_feedscontroller",
+      "controllers_feeds_controller_feedscontroller_create",
+      "controllers_feeds_controller_feedscontroller_destroy",
+      "controllers_feeds_controller_feedscontroller_edit",
+      "controllers_feeds_controller_feedscontroller_feed_generator",
+      "controllers_feeds_controller_feedscontroller_feed_params",
+      "controllers_feeds_controller_feedscontroller_new",
+      "controllers_feeds_controller_feedscontroller_set_feed",
+      "controllers_feeds_controller_feedscontroller_show",
+      "controllers_feeds_controller_feedscontroller_skip_summarization",
+      "controllers_feeds_controller_feedscontroller_toggle_pause",
+      "controllers_feeds_controller_feedscontroller_update",
+      "controllers_feeds_controller_feedscontroller_update_articles"
+    ],
+    "6": [
+      "controllers_folders_controller",
+      "controllers_folders_controller_folderscontroller",
+      "controllers_folders_controller_folderscontroller_create",
+      "controllers_folders_controller_folderscontroller_destroy",
+      "controllers_folders_controller_folderscontroller_edit",
+      "controllers_folders_controller_folderscontroller_index",
+      "controllers_folders_controller_folderscontroller_mark_all_as_read",
+      "controllers_folders_controller_folderscontroller_new",
+      "controllers_folders_controller_folderscontroller_safe_params",
+      "controllers_folders_controller_folderscontroller_set_folder",
+      "controllers_folders_controller_folderscontroller_set_user",
+      "controllers_folders_controller_folderscontroller_show",
+      "controllers_folders_controller_folderscontroller_update"
+    ],
+    "7": [
+      "controllers_api_key_form_controller",
+      "controllers_api_key_form_controller_connect",
+      "controllers_api_key_form_controller_destroytomselect",
+      "controllers_api_key_form_controller_destroytomselects",
+      "controllers_api_key_form_controller_disconnect",
+      "controllers_api_key_form_controller_fetchmodels",
+      "controllers_api_key_form_controller_inittomselect",
+      "controllers_api_key_form_controller_populatemodels",
+      "controllers_api_key_form_controller_providerchanged",
+      "controllers_api_key_form_controller_settesting",
+      "controllers_api_key_form_controller_showresult",
+      "controllers_api_key_form_controller_testkey"
+    ],
+    "8": [
+      "helpers_articles_helper",
+      "helpers_articles_helper_open_article_in_new_tab",
+      "helpers_articles_helper_render_content",
+      "helpers_articles_helper_render_image",
+      "helpers_articles_helper_render_youtube_actions",
+      "helpers_articles_helper_render_youtube_content",
+      "helpers_articles_helper_render_youtube_description",
+      "helpers_articles_helper_render_youtube_hero",
+      "models_feed",
+      "models_feed_feed"
+    ],
+    "9": [
+      "controllers_read_controller",
+      "controllers_read_controller_connect",
+      "controllers_read_controller_getcontent",
+      "controllers_read_controller_pausespeech",
+      "controllers_read_controller_resumespeech",
+      "controllers_read_controller_startspeech",
+      "controllers_read_controller_toggleplaypause",
+      "controllers_read_controller_updateplaypausebutton"
+    ],
+    "10": [
+      "services_fetch_feed_service",
+      "services_fetch_feed_service_fetchfeedservice",
+      "services_fetch_feed_service_fetchfeedservice_article_image_url",
+      "services_fetch_feed_service_fetchfeedservice_call",
+      "services_fetch_feed_service_fetchfeedservice_fetch_feed",
+      "services_fetch_feed_service_fetchfeedservice_format_feed",
+      "services_fetch_feed_service_fetchfeedservice_initialize",
+      "services_fetch_feed_service_fetchfeedservice_parse_feed"
+    ],
+    "11": [
+      "controllers_optimistic_remove_controller",
+      "controllers_optimistic_remove_controller_connect",
+      "controllers_optimistic_remove_controller_disconnect",
+      "controllers_optimistic_remove_controller_handleclick",
+      "controllers_optimistic_remove_controller_handlesubmitend"
+    ],
+    "12": [
+      "controllers_scroll_tracker_controller",
+      "controllers_scroll_tracker_controller_connect",
+      "controllers_scroll_tracker_controller_disconnect",
+      "controllers_scroll_tracker_controller_handleintersect",
+      "controllers_scroll_tracker_controller_markasread"
+    ],
+    "13": [
+      "controllers_sidebar_controller",
+      "controllers_sidebar_controller_connect",
+      "controllers_sidebar_controller_disconnect",
+      "controllers_sidebar_controller_handleshortcut",
+      "controllers_sidebar_controller_toggle"
+    ],
+    "14": [
+      "services_generate_opml_service",
+      "services_generate_opml_service_generateopmlservice",
+      "services_generate_opml_service_generateopmlservice_call",
+      "services_generate_opml_service_generateopmlservice_generate_outlines",
+      "services_generate_opml_service_generateopmlservice_initialize"
+    ],
+    "15": [
+      "services_summarize_article",
+      "services_summarize_article_summarizearticle",
+      "services_summarize_article_summarizearticle_call",
+      "services_summarize_article_summarizearticle_handle_gem_error",
+      "services_summarize_article_summarizearticle_summarize_instructions"
+    ],
+    "16": [
+      "controllers_handle_summary_controller",
+      "controllers_handle_summary_controller_connect",
+      "controllers_handle_summary_controller_handleclick",
+      "controllers_handle_summary_controller_showpopover"
+    ],
+    "17": [
+      "controllers_stale_article_cleaner_controller",
+      "controllers_stale_article_cleaner_controller_cleanstalearticles",
+      "controllers_stale_article_cleaner_controller_connect",
+      "controllers_stale_article_cleaner_controller_disconnect"
+    ],
+    "18": [
+      "javascript_application",
+      "javascript_application_confirmbutton",
+      "javascript_application_dialog",
+      "javascript_application_messageelement"
+    ],
+    "19": [
+      "monitoring_user_metrics_controller",
+      "monitoring_user_metrics_controller_usermetricscontroller",
+      "monitoring_user_metrics_controller_usermetricscontroller_index",
+      "monitoring_user_metrics_controller_usermetricscontroller_user_display_name"
+    ],
+    "20": [
+      "services_parse_opml_service",
+      "services_parse_opml_service_parseopmlservice",
+      "services_parse_opml_service_parseopmlservice_call",
+      "services_parse_opml_service_parseopmlservice_initialize"
+    ],
+    "21": [
+      "migrate_20250101091343_create_users",
+      "migrate_20250101091343_create_users_createusers",
+      "migrate_20250101091343_create_users_createusers_change"
+    ],
+    "22": [
+      "migrate_20250101091354_create_sessions",
+      "migrate_20250101091354_create_sessions_createsessions",
+      "migrate_20250101091354_create_sessions_createsessions_change"
+    ],
+    "23": [
+      "migrate_20250104192634_create_feeds",
+      "migrate_20250104192634_create_feeds_createfeeds",
+      "migrate_20250104192634_create_feeds_createfeeds_change"
+    ],
+    "24": [
+      "migrate_20250105151019_create_articles",
+      "migrate_20250105151019_create_articles_createarticles",
+      "migrate_20250105151019_create_articles_createarticles_change"
+    ],
+    "25": [
+      "migrate_20250121175523_add_unique_constraint_to_feeds",
+      "migrate_20250121175523_add_unique_constraint_to_feeds_adduniqueconstrainttofeeds",
+      "migrate_20250121175523_add_unique_constraint_to_feeds_adduniqueconstrainttofeeds_change"
+    ],
+    "26": [
+      "migrate_20250126080155_add_summary_to_article",
+      "migrate_20250126080155_add_summary_to_article_addsummarytoarticle",
+      "migrate_20250126080155_add_summary_to_article_addsummarytoarticle_change"
+    ],
+    "27": [
+      "migrate_20250207120000_add_skip_summarization_to_feeds",
+      "migrate_20250207120000_add_skip_summarization_to_feeds_addskipsummarizationtofeeds",
+      "migrate_20250207120000_add_skip_summarization_to_feeds_addskipsummarizationtofeeds_change"
+    ],
+    "28": [
+      "migrate_20250301075836_add_api_key_to_users",
+      "migrate_20250301075836_add_api_key_to_users_addapikeytousers",
+      "migrate_20250301075836_add_api_key_to_users_addapikeytousers_change"
+    ],
+    "29": [
+      "migrate_20250316131537_add_is_paused_to_feeds",
+      "migrate_20250316131537_add_is_paused_to_feeds_addispausedtofeeds",
+      "migrate_20250316131537_add_is_paused_to_feeds_addispausedtofeeds_change"
+    ],
+    "30": [
+      "migrate_20250412191038_create_folders",
+      "migrate_20250412191038_create_folders_createfolders",
+      "migrate_20250412191038_create_folders_createfolders_change"
+    ],
+    "31": [
+      "migrate_20250412191302_create_feed_folders",
+      "migrate_20250412191302_create_feed_folders_createfeedfolders",
+      "migrate_20250412191302_create_feed_folders_createfeedfolders_change"
+    ],
+    "32": [
+      "migrate_20250413142155_add_image_url_to_article",
+      "migrate_20250413142155_add_image_url_to_article_addimageurltoarticle",
+      "migrate_20250413142155_add_image_url_to_article_addimageurltoarticle_change"
+    ],
+    "33": [
+      "migrate_20251220161002_create_external_accounts",
+      "migrate_20251220161002_create_external_accounts_createexternalaccounts",
+      "migrate_20251220161002_create_external_accounts_createexternalaccounts_change"
+    ],
+    "34": [
+      "migrate_20260107150819_create_good_jobs",
+      "migrate_20260107150819_create_good_jobs_creategoodjobs",
+      "migrate_20260107150819_create_good_jobs_creategoodjobs_change"
+    ],
+    "35": [
+      "migrate_20260425141649_create_ruby_llm_monitoring_events_ruby_llm_monitoring",
+      "migrate_20260425141649_create_ruby_llm_monitoring_events_ruby_llm_monitoring_createrubyllmmonitoringevents",
+      "migrate_20260425141649_create_ruby_llm_monitoring_events_ruby_llm_monitoring_createrubyllmmonitoringevents_change"
+    ],
+    "36": [
+      "migrate_20260425141650_add_thinking_tokens_to_ruby_llm_monitoring_events_ruby_llm_monitoring",
+      "migrate_20260425141650_add_thinking_tokens_to_ruby_llm_monitoring_events_ruby_llm_monitoring_addthinkingtokenstorubyllmmonitoringevents",
+      "migrate_20260425141650_add_thinking_tokens_to_ruby_llm_monitoring_events_ruby_llm_monitoring_addthinkingtokenstorubyllmmonitoringevents_change"
+    ],
+    "37": [
+      "migrate_20260425142518_add_is_admin_to_users",
+      "migrate_20260425142518_add_is_admin_to_users_addisadmintousers",
+      "migrate_20260425142518_add_is_admin_to_users_addisadmintousers_change"
+    ],
+    "38": [
+      "migrate_20260613000000_add_provider_and_model_to_users",
+      "migrate_20260613000000_add_provider_and_model_to_users_addproviderandmodeltousers",
+      "migrate_20260613000000_add_provider_and_model_to_users_addproviderandmodeltousers_change"
+    ],
+    "39": [
+      "opencode_package",
+      "opencode_package_dependencies",
+      "opencode_package_dependencies_opencode_ai_plugin"
+    ],
+    "40": [
+      "previews_passwords_mailer_preview",
+      "previews_passwords_mailer_preview_passwordsmailerpreview",
+      "previews_passwords_mailer_preview_passwordsmailerpreview_reset"
+    ],
+    "41": [
+      "config_application",
+      "config_application_application"
+    ],
+    "42": [
+      "config_tailwind_config",
+      "config_tailwind_config_defaulttheme"
+    ],
+    "43": [
+      "controllers_application",
+      "controllers_application_application"
+    ],
+    "44": [
+      "controllers_application_controller",
+      "controllers_application_controller_applicationcontroller"
+    ],
+    "45": [
+      "controllers_articles_controller_test",
+      "controllers_articles_controller_test_articlescontrollertest"
+    ],
+    "46": [
+      "controllers_feeds_controller_test",
+      "controllers_feeds_controller_test_feedscontrollertest"
+    ],
+    "47": [
+      "controllers_hello_controller",
+      "controllers_hello_controller_connect"
+    ],
+    "48": [
+      "controllers_home_controller_test",
+      "controllers_home_controller_test_homecontrollertest"
+    ],
+    "49": [
+      "helpers_application_helper",
+      "helpers_application_helper_format_date"
+    ],
+    "50": [
+      "helpers_form_helper",
+      "helpers_form_helper_input_field"
+    ],
+    "51": [
+      "initializers_console_methods",
+      "initializers_console_methods_dp"
+    ],
+    "52": [
+      "initializers_good_job",
+      "initializers_good_job_sql"
+    ],
+    "53": [
+      "jobs_application_job",
+      "jobs_application_job_applicationjob"
+    ],
+    "54": [
+      "mailers_application_mailer",
+      "mailers_application_mailer_applicationmailer"
+    ],
+    "55": [
+      "models_application_record",
+      "models_application_record_applicationrecord"
+    ],
+    "56": [
+      "models_article_test",
+      "models_article_test_articletest"
+    ],
+    "57": [
+      "models_external_account",
+      "models_external_account_externalaccount"
+    ],
+    "58": [
+      "models_feed_folder",
+      "models_feed_folder_feedfolder"
+    ],
+    "59": [
+      "models_feed_test",
+      "models_feed_test_feedtest"
+    ],
+    "60": [
+      "models_folder",
+      "models_folder_folder"
+    ],
+    "61": [
+      "models_user_test",
+      "models_user_test_usertest"
+    ],
+    "62": [
+      "plugins_graphify",
+      "plugins_graphify_graphifyplugin"
+    ],
+    "63": [
+      "system_articles_test",
+      "system_articles_test_articlestest"
+    ],
+    "64": [
+      "system_feeds_test",
+      "system_feeds_test_feedstest"
+    ],
+    "65": [
+      "test_application_system_test_case",
+      "test_application_system_test_case_applicationsystemtestcase"
+    ],
+    "66": [
+      "test_test_helper",
+      "test_test_helper_testcase"
+    ],
+    "67": [
+      "config_boot"
+    ],
+    "68": [
+      "config_environment"
+    ],
+    "69": [
+      "config_importmap"
+    ],
+    "70": [
+      "config_puma"
+    ],
+    "71": [
+      "config_routes"
+    ],
+    "72": [
+      "controllers_index"
+    ],
+    "73": [
+      "db_cable_schema"
+    ],
+    "74": [
+      "db_cache_schema"
+    ],
+    "75": [
+      "db_schema"
+    ],
+    "76": [
+      "db_seeds"
+    ],
+    "77": [
+      "environments_development"
+    ],
+    "78": [
+      "environments_production"
+    ],
+    "79": [
+      "environments_test"
+    ],
+    "80": [
+      "helpers_feeds_helper"
+    ],
+    "81": [
+      "helpers_home_helper"
+    ],
+    "82": [
+      "initializers_assets"
+    ],
+    "83": [
+      "initializers_content_security_policy"
+    ],
+    "84": [
+      "initializers_filter_parameter_logging"
+    ],
+    "85": [
+      "initializers_inflections"
+    ],
+    "86": [
+      "initializers_ruby_llm"
+    ],
+    "87": [
+      "javascripts_folders"
+    ],
+    "88": [
+      "pwa_service_worker"
+    ],
+    "89": [
+      "routes_oauth"
+    ]
+  },
+  "cohesion": {
+    "0": 0.07308377896613191,
+    "1": 0.07956989247311828,
+    "2": 0.082010582010582,
+    "3": 0.1038961038961039,
+    "4": 0.15833333333333333,
+    "5": 0.1978021978021978,
+    "6": 0.15384615384615385,
+    "7": 0.2727272727272727,
+    "8": 0.35555555555555557,
+    "9": 0.32142857142857145,
+    "10": 0.35714285714285715,
+    "11": 0.4,
+    "12": 0.4,
+    "13": 0.5,
+    "14": 0.4,
+    "15": 0.5,
+    "16": 0.6666666666666666,
+    "17": 0.5,
+    "18": 0.5,
+    "19": 0.5,
+    "20": 0.5,
+    "21": 0.6666666666666666,
+    "22": 0.6666666666666666,
+    "23": 0.6666666666666666,
+    "24": 0.6666666666666666,
+    "25": 0.6666666666666666,
+    "26": 0.6666666666666666,
+    "27": 0.6666666666666666,
+    "28": 0.6666666666666666,
+    "29": 0.6666666666666666,
+    "30": 0.6666666666666666,
+    "31": 0.6666666666666666,
+    "32": 0.6666666666666666,
+    "33": 0.6666666666666666,
+    "34": 0.6666666666666666,
+    "35": 0.6666666666666666,
+    "36": 0.6666666666666666,
+    "37": 0.6666666666666666,
+    "38": 0.6666666666666666,
+    "39": 0.6666666666666666,
+    "40": 0.6666666666666666,
+    "41": 1.0,
+    "42": 1.0,
+    "43": 1.0,
+    "44": 1.0,
+    "45": 1.0,
+    "46": 1.0,
+    "47": 1.0,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 1.0,
+    "58": 1.0,
+    "59": 1.0,
+    "60": 1.0,
+    "61": 1.0,
+    "62": 1.0,
+    "63": 1.0,
+    "64": 1.0,
+    "65": 1.0,
+    "66": 1.0,
+    "67": 1.0,
+    "68": 1.0,
+    "69": 1.0,
+    "70": 1.0,
+    "71": 1.0,
+    "72": 1.0,
+    "73": 1.0,
+    "74": 1.0,
+    "75": 1.0,
+    "76": 1.0,
+    "77": 1.0,
+    "78": 1.0,
+    "79": 1.0,
+    "80": 1.0,
+    "81": 1.0,
+    "82": 1.0,
+    "83": 1.0,
+    "84": 1.0,
+    "85": 1.0,
+    "86": 1.0,
+    "87": 1.0,
+    "88": 1.0,
+    "89": 1.0
+  },
+  "gods": [
+    {
+      "id": "models_user_user",
+      "label": "User",
+      "degree": 21
+    },
+    {
+      "id": "controllers_articles_controller_articlescontroller",
+      "label": "ArticlesController",
+      "degree": 14
+    },
+    {
+      "id": "controllers_feeds_controller_feedscontroller",
+      "label": "FeedsController",
+      "degree": 14
+    },
+    {
+      "id": "controllers_folders_controller_folderscontroller",
+      "label": "FoldersController",
+      "degree": 13
+    },
+    {
+      "id": "controllers_users_controller_userscontroller",
+      "label": "UsersController",
+      "degree": 10
+    },
+    {
+      "id": "raindrop_client_client",
+      "label": "Client",
+      "degree": 9
+    },
+    {
+      "id": "raindrop_error_error",
+      "label": "Error",
+      "degree": 9
+    },
+    {
+      "id": "services_fetch_feed_service_fetchfeedservice",
+      "label": "FetchFeedService",
+      "degree": 7
+    },
+    {
+      "id": "oauth_raindrop_controller_raindropcontroller",
+      "label": "RaindropController",
+      "degree": 6
+    },
+    {
+      "id": "helpers_articles_helper_render_youtube_content",
+      "label": "render_youtube_content()",
+      "degree": 5
+    }
+  ],
+  "surprises": [
+    {
+      "source": "resume_session()",
+      "target": "Session",
+      "source_files": [
+        "app/controllers/concerns/authentication.rb",
+        "app/models/session.rb"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source"
+    },
+    {
+      "source": "start_new_session_for()",
+      "target": "Session",
+      "source_files": [
+        "app/controllers/concerns/authentication.rb",
+        "app/models/session.rb"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source"
+    },
+    {
+      "source": "terminate_session()",
+      "target": "Session",
+      "source_files": [
+        "app/controllers/concerns/authentication.rb",
+        "app/models/session.rb"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source"
+    },
+    {
+      "source": "open_article_in_new_tab?()",
+      "target": "Feed",
+      "source_files": [
+        "app/helpers/articles_helper.rb",
+        "app/models/feed.rb"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source"
+    },
+    {
+      "source": "render_content()",
+      "target": "Feed",
+      "source_files": [
+        "app/helpers/articles_helper.rb",
+        "app/models/feed.rb"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

@@ -12,4 +12,7 @@
       "command": ["npx", "-y", "tilth", "--mcp"]
     }
   },
+  "plugin": [
+    ".opencode/plugins/graphify.js"
+  ]
 }

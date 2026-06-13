@@ -34,6 +34,7 @@ rails console                           # dev console
 ### Tool Hierarchy
 | Need | Primary Tool | Approach |
 |------|--------------|----------|
+| Cross-file flows & dependencies | graphify | query / browse — maps macro-structural connections and documentation links |
 | Directory overview | grepika | `toc` |
 | Find code (NL/regex) | grepika | `search` (requires index) |
 | File structure | grepika | `outline` → `get` with line range |
@@ -41,6 +42,7 @@ rails console                           # dev console
 | What calls X? | tilth | `search kind:callers` |
 
 ### Quick Decision
+- "How do structural components interact across the repository?" → graphify (macro-architecture & dependencies)
 - "Find files about X topic" → **grepika** (NL search)
 - "Where is Y defined?" → **tilth** (structural)
 - "What calls Z?" → **tilth** (callers)
@@ -78,3 +80,16 @@ rails console                           # dev console
 ## Notes
 - GoodJob: ActiveJob adapter for async jobs
 - API keys in .env.example; never commit secrets
+
+## graphify
+
+This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
+
+When the user types `/graphify`, invoke the `skill` tool with `skill: "graphify"` before doing anything else.
+
+Rules:
+- For codebase questions, first run `graphify query "<question>"` when graphify-out/graph.json exists. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.
+- Dirty graphify-out/ files are expected after hooks or incremental updates; dirty graph files are not a reason to skip graphify. Only skip graphify if the task is about stale or incorrect graph output, or the user explicitly says not to use it.
+- If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
+- Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
+- After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).

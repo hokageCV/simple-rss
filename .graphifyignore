@@ -1,0 +1,12 @@
+# Skip non-code files that need LLM
+*.png
+*.jpg
+*.webp
+*.gif
+*.svg
+*.html
+*.txt
+*.md
+*.rst
+*.yaml
+*.yml
