@@ -12,7 +12,7 @@ class HomeController < ApplicationController
     GC.start
 
     user_feeds = @user.feeds.active
-    feed_urls = user_feeds.pluck(:url)
+    feed_urls = user_feeds.select(&:should_fetch?).pluck(:url)
 
     FeedManager.fetch_and_save_feeds(feed_urls)
 

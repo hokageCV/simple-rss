@@ -12,4 +12,10 @@ class Feed < ApplicationRecord
   scope :alphabetically, -> { order(Arel.sql("LOWER(name) ASC")) }
 
   GENERATORS = { default: "", youtube: "youtube", reddit: "reddit", substack: "substack" }.freeze
+
+  def should_fetch?
+    return true if fetch_interval.nil? || last_refreshed_at.nil?
+
+    last_refreshed_at < fetch_interval.days.ago
+  end
 end

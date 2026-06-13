@@ -49,7 +49,7 @@ class FoldersController < ApplicationController
     GC.start
 
     feeds = @folder.feeds.active
-    feed_urls = feeds.pluck(:url)
+    feed_urls = feeds.select(&:should_fetch?).pluck(:url)
 
     FeedManager.fetch_and_save_feeds(feed_urls)
 

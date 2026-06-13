@@ -41,6 +41,7 @@ class FeedManager
 
           feed.save!
           SaveArticlesService.new(feed, feed_data[:articles]).call
+          feed.touch(:last_refreshed_at)
         else
           failed_feeds << url
         end

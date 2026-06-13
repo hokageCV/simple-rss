@@ -62,6 +62,7 @@ class FeedsController < ApplicationController
     include_all_articles = params[:include_all_articles].present?
     feed_data = FetchFeedService.new(@feed.url).call
     SaveArticlesService.new(@feed, feed_data[:articles], { include_all_articles: }).call
+    @feed.touch(:last_refreshed_at)
 
     @articles = @feed.articles.recent_first
 
@@ -98,7 +99,7 @@ class FeedsController < ApplicationController
   end
 
   def feed_params
-    params.expect(feed: [ :url, :generator, :skip_summarization ]).tap do |permitted_params|
+    params.expect(feed: [ :url, :generator, :skip_summarization, :fetch_interval ]).tap do |permitted_params|
       permitted_params[:url]&.strip!
     end
   end
