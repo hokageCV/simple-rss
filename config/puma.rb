@@ -39,3 +39,16 @@ plugin :solid_queue if ENV["SOLID_QUEUE_IN_PUMA"]
 # Specify the PID file. Defaults to tmp/pids/server.pid in development.
 # In other environments, only set the PID file if requested.
 pidfile ENV["PIDFILE"] if ENV["PIDFILE"]
+
+before_worker_boot do
+  SemanticLogger.reopen
+
+  # Suppress GoodJob polling SQL noise from the scheduler thread.
+  # Remove this block to see GoodJob scheduler queries.
+  schedule_filter = ->(log) { log.thread_name !~ /^GoodJob::Scheduler/ }
+  SemanticLogger.appenders.each do |appender|
+    to_remove = appender.is_a?(SemanticLogger::Appender::File) ||
+                    appender.is_a?(SemanticLogger::Appender::IO)
+    appender.filter = schedule_filter if to_remove
+  end
+end

@@ -81,3 +81,6 @@ gem "kramdown", "~> 2.5"
 gem "ruby_llm", "~> 1.9"
 gem "ruby_llm-monitoring"
 gem "good_job", "~> 4.13"
+
+gem "lograge"
+gem "rails_semantic_logger"
