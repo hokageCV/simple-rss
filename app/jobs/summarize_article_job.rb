@@ -8,6 +8,7 @@ class SummarizeArticleJob < ApplicationJob
     return if article.blank?
     return if article.is_read?
     return if article.summary.present?
+    return if article.feed.skip_summarization
 
     SummarizeArticle.new(article).call
 
