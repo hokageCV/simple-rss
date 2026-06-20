@@ -5,10 +5,11 @@ class FeedManager
 
     feed_urls.each_with_index do |url, index|
       begin
-        feed_data = FetchFeedService.new(url).call
+        result = FetchFeedService.new(url).call
 
-        if feed_data
-          all_feeds_data << { url: url, name: feed_data[:name], articles: feed_data[:articles] }
+        if result[:status] == 200
+          fd = result[:feed_data]
+          all_feeds_data << { url: url, name: fd[:name], articles: fd[:articles] }
         else
           failed_feeds << url
         end
@@ -28,23 +29,40 @@ class FeedManager
 
     feed_urls.each_with_index do |url, index|
       begin
-        feed_data = FetchFeedService.new(url).call
+        feed = Feed.find_or_initialize_by(url: url)
 
-        if feed_data
-          feed = Feed.find_or_initialize_by(url: url)
-
-          if feed.new_record? && user_id
-            feed.assign_attributes(name: feed_data[:name], user_id: user_id)
-          elsif feed_data[:name].present?
-            feed.assign_attributes(name: feed_data[:name])
-          end
-
-          feed.save!
-          SaveArticlesService.new(feed, feed_data[:articles]).call
-          feed.touch(:last_refreshed_at)
-        else
-          failed_feeds << url
+        if feed.new_record? && user_id
+          feed.user_id = user_id
         end
+
+        result = FetchFeedService.new(url, feed: feed).call
+
+        if result[:status] == 0
+          failed_feeds << url
+          next
+        end
+
+        if result[:status] == 304 || result[:content_hash] == feed.content_hash
+          feed.touch(:last_refreshed_at)
+          next
+        end
+
+        feed_data = result[:feed_data]
+
+        if feed_data[:name].present? && feed.name != feed_data[:name]
+          feed.name = feed_data[:name]
+        end
+
+        feed.assign_attributes(
+          etag: result[:etag],
+          last_modified: result[:last_modified],
+          content_hash: result[:content_hash],
+          last_refreshed_at: Time.current
+        )
+        feed.save!
+
+        SaveArticlesService.new(feed, feed_data[:articles]).call
+
       rescue => e
         failed_feeds << url
         Rails.logger.error "🚨 Error processing feed #{url}: #{e.message}"

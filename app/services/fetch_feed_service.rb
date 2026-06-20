@@ -1,26 +1,42 @@
 class FetchFeedService
   require "httparty"
+  require "digest"
 
-  def initialize(url)
+  def initialize(url, feed: nil)
     @url = url
+    @feed = feed
   end
 
   def call
     Timeout.timeout(30) do
       response = fetch_feed
-      return nil if response&.body&.blank?
+      return failure_result unless response
+      return not_modified_result if response.code == 304
 
-      feed = parse_feed(response&.body)
-      return nil if feed&.nil?
+      body = response.body
+      return failure_result if body.blank?
 
-      format_feed(feed)
+      content_hash = Digest::SHA256.hexdigest(body)
+
+      feed = parse_feed(body)
+      return failure_result unless feed
+
+      feed_data = format_feed(feed)
+
+      {
+        status: 200,
+        feed_data: feed_data,
+        etag: response.headers["etag"],
+        last_modified: response.headers["last-modified"],
+        content_hash: content_hash
+      }
     end
   rescue Timeout::Error
     Rails.logger.error "⏰ Timeout fetching feed: #{@url}"
-    nil
+    failure_result
   rescue => e
     Rails.logger.error "🚨 Unexpected error in FetchFeedService for #{@url}: #{e.message}"
-    nil
+    failure_result
   end
 
   private
@@ -48,7 +64,11 @@ class FetchFeedService
   end
 
   def fetch_feed
-    response = HTTParty.get(@url, timeout: 20)
+    options = { timeout: 20 }
+    options[:headers] = conditional_headers if @feed
+
+    response = HTTParty.get(@url, options)
+    return response if response.code == 304
     return response if response.success?
 
     Rails.logger.info "🚧 Failed to fetch feed: #{@url}, HTTP Code: #{response.code}, Error: #{response.message}"
@@ -59,6 +79,13 @@ class FetchFeedService
   rescue StandardError => e
     Rails.logger.info "🚧 Unexpected error fetching feed: #{@url}, Error: #{e.message}"
     nil
+  end
+
+  def conditional_headers
+    headers = {}
+    headers["If-None-Match"] = @feed.etag if @feed.etag.present?
+    headers["If-Modified-Since"] = @feed.last_modified if @feed.last_modified.present?
+    headers
   end
 
   def parse_feed(xml)
@@ -82,5 +109,13 @@ class FetchFeedService
     else
       nil
     end
+  end
+
+  def not_modified_result
+    { status: 304, feed_data: nil, etag: nil, last_modified: nil, content_hash: nil }
+  end
+
+  def failure_result
+    { status: 0, feed_data: nil, etag: nil, last_modified: nil, content_hash: nil }
   end
 end

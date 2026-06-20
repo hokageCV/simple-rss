@@ -23,18 +23,26 @@ class FeedsController < ApplicationController
 
   # POST /feeds or /feeds.json
   def create
-    feed_data = FetchFeedService.new(feed_params[:url]).call
+    result = FetchFeedService.new(feed_params[:url]).call
 
     @feed = Current.user.feeds.build
 
-    @feed.name = feed_data&.fetch(:name, "No name")
-    @feed.url = feed_data&.fetch(:url, feed_params[:url])
+    @feed.name = result.dig(:feed_data, :name) || "No name"
+    @feed.url = result.dig(:feed_data, :url) || feed_params[:url]
     @feed.generator = feed_generator(feed_params[:url])
     @feed.skip_summarization = skip_summarization(@feed.generator)
 
     respond_to do |format|
       if @feed.save
-        SaveArticlesService.new(@feed, feed_data[:articles]).call
+        if result[:feed_data]&.dig(:articles).present?
+          SaveArticlesService.new(@feed, result[:feed_data][:articles]).call
+        end
+        @feed.update_columns(
+          etag: result[:etag],
+          last_modified: result[:last_modified],
+          content_hash: result[:content_hash],
+          last_refreshed_at: Time.current
+        )
 
         format.html { redirect_to @feed, notice: "Feed was successfully created." }
         format.json { render :show, status: :created, location: @feed }
@@ -60,9 +68,19 @@ class FeedsController < ApplicationController
 
   def update_articles
     include_all_articles = params[:include_all_articles].present?
-    feed_data = FetchFeedService.new(@feed.url).call
-    SaveArticlesService.new(@feed, feed_data[:articles], { include_all_articles: }).call
-    @feed.touch(:last_refreshed_at)
+    result = FetchFeedService.new(@feed.url, feed: @feed).call
+
+    if result[:status] == 304 || result[:content_hash] == @feed.content_hash
+      @feed.touch(:last_refreshed_at)
+    elsif result[:status] == 200
+      SaveArticlesService.new(@feed, result[:feed_data][:articles], { include_all_articles: }).call
+      @feed.update!(
+        etag: result[:etag],
+        last_modified: result[:last_modified],
+        content_hash: result[:content_hash],
+        last_refreshed_at: Time.current
+      )
+    end
 
     @articles = @feed.articles.recent_first
 

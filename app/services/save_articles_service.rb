@@ -8,21 +8,16 @@ class SaveArticlesService
   def call
     return if @articles_data.blank?
 
-    urls = @articles_data.map { |article| article[:url] }
-    existing_articles_set = Set.new(@feed.articles.where(url: urls).pluck(:url))
-
-    new_articles = @articles_data.filter do |article|
-      article_not_exist = !existing_articles_set.include?(article[:url])
-      article_not_exist && include_article?(article)
-    end
+    new_articles = @articles_data.filter { |article| include_article?(article) }
     return if new_articles.blank?
 
     @feed.articles.insert_all(
-      new_articles.map { |article| article.merge(user_id: @feed.user_id) }
+      new_articles.map { |article| article.merge(user_id: @feed.user_id) },
+      unique_by: :index_articles_on_feed_id_and_url
     )
 
     if should_summarize_articles?
-      new_article_urls = new_articles.pluck(:url)
+      new_article_urls = new_articles.map { |article| article[:url] }
       article_ids = @feed.articles.where(url: new_article_urls).pluck(:id)
       article_ids.each { |id| SummarizeArticleJob.perform_later(article_id: id) }
     end
