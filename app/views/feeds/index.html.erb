@@ -13,13 +13,22 @@
       <h1 class="font-bold text-3xl text-text-1">Feeds</h1>
       <p class="text-sm text-text-4 mt-1"><%= @active_feeds.size + @paused_feeds.size %> subscriptions</p>
     </div>
-    <%= link_to new_feed_path,
-      class: "inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-sm font-medium bg-accent/90 text-white hover:bg-accent transition-colors" do %>
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-      </svg>
-      New Feed
-    <% end %>
+    <div class="flex items-center gap-2">
+      <%= link_to share_feeds_path,
+        class: "inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-medium border border-white/[0.08] text-text-3 hover:text-text-1 hover:border-white/[0.16] transition-colors" do %>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+        </svg>
+        Share
+      <% end %>
+      <%= link_to new_feed_path,
+        class: "inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-sm font-medium bg-accent/90 text-white hover:bg-accent transition-colors" do %>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+        </svg>
+        New Feed
+      <% end %>
+    </div>
   </div>
 
   <div id="feeds" class="space-y-2">

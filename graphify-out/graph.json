@@ -4,14 +4,134 @@
   "graph": {},
   "nodes": [
     {
+      "label": "opencode.json",
+      "file_type": "code",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_opencode",
+      "community": 44,
+      "norm_label": "opencode.json"
+    },
+    {
+      "label": "$schema",
+      "file_type": "code",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "opencode_opencode_schema",
+      "community": 44,
+      "norm_label": "$schema"
+    },
+    {
+      "label": "mcp",
+      "file_type": "code",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "opencode_opencode_mcp",
+      "community": 44,
+      "norm_label": "mcp"
+    },
+    {
+      "label": "grepika",
+      "file_type": "code",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "opencode_opencode_mcp_grepika",
+      "community": 44,
+      "norm_label": "grepika"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "opencode_opencode_grepika_type",
+      "community": 44,
+      "norm_label": "type"
+    },
+    {
+      "label": "enabled",
+      "file_type": "code",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "opencode_opencode_grepika_enabled",
+      "community": 44,
+      "norm_label": "enabled"
+    },
+    {
+      "label": "command",
+      "file_type": "code",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "opencode_opencode_grepika_command",
+      "community": 44,
+      "norm_label": "command"
+    },
+    {
+      "label": "tilth",
+      "file_type": "code",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "opencode_opencode_mcp_tilth",
+      "community": 44,
+      "norm_label": "tilth"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "opencode_opencode_tilth_type",
+      "community": 44,
+      "norm_label": "type"
+    },
+    {
+      "label": "enabled",
+      "file_type": "code",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "opencode_opencode_tilth_enabled",
+      "community": 44,
+      "norm_label": "enabled"
+    },
+    {
+      "label": "command",
+      "file_type": "code",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "opencode_opencode_tilth_command",
+      "community": 44,
+      "norm_label": "command"
+    },
+    {
+      "label": "plugin",
+      "file_type": "code",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "opencode_opencode_plugin",
+      "community": 44,
+      "norm_label": "plugin"
+    },
+    {
       "label": "package.json",
       "file_type": "code",
       "source_file": ".opencode/package.json",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "opencode_package",
       "community": 39,
-      "norm_label": "package.json",
-      "id": "opencode_package"
+      "norm_label": "package.json"
     },
     {
       "label": "dependencies",
@@ -19,9 +139,9 @@
       "source_file": ".opencode/package.json",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "opencode_package_dependencies",
       "community": 39,
-      "norm_label": "dependencies",
-      "id": "opencode_package_dependencies"
+      "norm_label": "dependencies"
     },
     {
       "label": "@opencode-ai/plugin",
@@ -29,9 +149,9 @@
       "source_file": ".opencode/package.json",
       "source_location": "L3",
       "_origin": "ast",
+      "id": "opencode_package_dependencies_opencode_ai_plugin",
       "community": 39,
-      "norm_label": "@opencode-ai/plugin",
-      "id": "opencode_package_dependencies_opencode_ai_plugin"
+      "norm_label": "@opencode-ai/plugin"
     },
     {
       "label": "graphify.js",
@@ -39,9 +159,9 @@
       "source_file": ".opencode/plugins/graphify.js",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "plugins_graphify",
       "community": 62,
-      "norm_label": "graphify.js",
-      "id": "plugins_graphify"
+      "norm_label": "graphify.js"
     },
     {
       "label": "GraphifyPlugin()",
@@ -49,9 +169,9 @@
       "source_file": ".opencode/plugins/graphify.js",
       "source_location": "L6",
       "_origin": "ast",
+      "id": "plugins_graphify_graphifyplugin",
       "community": 62,
-      "norm_label": "graphifyplugin()",
-      "id": "plugins_graphify_graphifyplugin"
+      "norm_label": "graphifyplugin()"
     },
     {
       "label": "folders.js",
@@ -59,9 +179,9 @@
       "source_file": "app/assets/javascripts/folders.js",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "javascripts_folders",
       "community": 87,
-      "norm_label": "folders.js",
-      "id": "javascripts_folders"
+      "norm_label": "folders.js"
     },
     {
       "label": "connection.rb",
@@ -69,9 +189,9 @@
       "source_file": "app/channels/application_cable/connection.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "application_cable_connection",
       "community": 1,
-      "norm_label": "connection.rb",
-      "id": "application_cable_connection"
+      "norm_label": "connection.rb"
     },
     {
       "label": "Connection",
@@ -79,9 +199,9 @@
       "source_file": "app/channels/application_cable/connection.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "application_cable_connection_connection",
       "community": 1,
-      "norm_label": "connection",
-      "id": "application_cable_connection_connection"
+      "norm_label": "connection"
     },
     {
       "label": ".connect()",
@@ -89,9 +209,9 @@
       "source_file": "app/channels/application_cable/connection.rb",
       "source_location": "L5",
       "_origin": "ast",
+      "id": "application_cable_connection_connection_connect",
       "community": 1,
-      "norm_label": ".connect()",
-      "id": "application_cable_connection_connection_connect"
+      "norm_label": ".connect()"
     },
     {
       "label": ".set_current_user()",
@@ -99,9 +219,9 @@
       "source_file": "app/channels/application_cable/connection.rb",
       "source_location": "L10",
       "_origin": "ast",
+      "id": "application_cable_connection_connection_set_current_user",
       "community": 1,
-      "norm_label": ".set_current_user()",
-      "id": "application_cable_connection_connection_set_current_user"
+      "norm_label": ".set_current_user()"
     },
     {
       "label": "application_controller.rb",
@@ -109,9 +229,9 @@
       "source_file": "app/controllers/application_controller.rb",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 44,
-      "norm_label": "application_controller.rb",
-      "id": "controllers_application_controller"
+      "id": "controllers_application_controller",
+      "community": 1,
+      "norm_label": "application_controller.rb"
     },
     {
       "label": "ApplicationController",
@@ -119,9 +239,19 @@
       "source_file": "app/controllers/application_controller.rb",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 44,
-      "norm_label": "applicationcontroller",
-      "id": "controllers_application_controller_applicationcontroller"
+      "id": "controllers_application_controller_applicationcontroller",
+      "community": 1,
+      "norm_label": "applicationcontroller"
+    },
+    {
+      "label": ".set_current_attributes()",
+      "file_type": "code",
+      "source_file": "app/controllers/application_controller.rb",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "controllers_application_controller_applicationcontroller_set_current_attributes",
+      "community": 1,
+      "norm_label": ".set_current_attributes()"
     },
     {
       "label": "articles_controller.rb",
@@ -129,9 +259,9 @@
       "source_file": "app/controllers/articles_controller.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_articles_controller",
       "community": 2,
-      "norm_label": "articles_controller.rb",
-      "id": "controllers_articles_controller"
+      "norm_label": "articles_controller.rb"
     },
     {
       "label": "ArticlesController",
@@ -139,9 +269,9 @@
       "source_file": "app/controllers/articles_controller.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_articles_controller_articlescontroller",
       "community": 2,
-      "norm_label": "articlescontroller",
-      "id": "controllers_articles_controller_articlescontroller"
+      "norm_label": "articlescontroller"
     },
     {
       "label": ".index()",
@@ -149,9 +279,9 @@
       "source_file": "app/controllers/articles_controller.rb",
       "source_location": "L5",
       "_origin": "ast",
+      "id": "controllers_articles_controller_articlescontroller_index",
       "community": 2,
-      "norm_label": ".index()",
-      "id": "controllers_articles_controller_articlescontroller_index"
+      "norm_label": ".index()"
     },
     {
       "label": ".show()",
@@ -159,9 +289,9 @@
       "source_file": "app/controllers/articles_controller.rb",
       "source_location": "L10",
       "_origin": "ast",
+      "id": "controllers_articles_controller_articlescontroller_show",
       "community": 2,
-      "norm_label": ".show()",
-      "id": "controllers_articles_controller_articlescontroller_show"
+      "norm_label": ".show()"
     },
     {
       "label": ".new()",
@@ -169,9 +299,9 @@
       "source_file": "app/controllers/articles_controller.rb",
       "source_location": "L14",
       "_origin": "ast",
+      "id": "controllers_articles_controller_articlescontroller_new",
       "community": 2,
-      "norm_label": ".new()",
-      "id": "controllers_articles_controller_articlescontroller_new"
+      "norm_label": ".new()"
     },
     {
       "label": ".edit()",
@@ -179,9 +309,9 @@
       "source_file": "app/controllers/articles_controller.rb",
       "source_location": "L19",
       "_origin": "ast",
+      "id": "controllers_articles_controller_articlescontroller_edit",
       "community": 2,
-      "norm_label": ".edit()",
-      "id": "controllers_articles_controller_articlescontroller_edit"
+      "norm_label": ".edit()"
     },
     {
       "label": ".create()",
@@ -189,9 +319,9 @@
       "source_file": "app/controllers/articles_controller.rb",
       "source_location": "L23",
       "_origin": "ast",
+      "id": "controllers_articles_controller_articlescontroller_create",
       "community": 2,
-      "norm_label": ".create()",
-      "id": "controllers_articles_controller_articlescontroller_create"
+      "norm_label": ".create()"
     },
     {
       "label": ".toggle_status()",
@@ -199,9 +329,9 @@
       "source_file": "app/controllers/articles_controller.rb",
       "source_location": "L37",
       "_origin": "ast",
+      "id": "controllers_articles_controller_articlescontroller_toggle_status",
       "community": 2,
-      "norm_label": ".toggle_status()",
-      "id": "controllers_articles_controller_articlescontroller_toggle_status"
+      "norm_label": ".toggle_status()"
     },
     {
       "label": ".check_read_status()",
@@ -209,9 +339,9 @@
       "source_file": "app/controllers/articles_controller.rb",
       "source_location": "L54",
       "_origin": "ast",
+      "id": "controllers_articles_controller_articlescontroller_check_read_status",
       "community": 2,
-      "norm_label": ".check_read_status()",
-      "id": "controllers_articles_controller_articlescontroller_check_read_status"
+      "norm_label": ".check_read_status()"
     },
     {
       "label": ".summary()",
@@ -219,9 +349,9 @@
       "source_file": "app/controllers/articles_controller.rb",
       "source_location": "L60",
       "_origin": "ast",
+      "id": "controllers_articles_controller_articlescontroller_summary",
       "community": 2,
-      "norm_label": ".summary()",
-      "id": "controllers_articles_controller_articlescontroller_summary"
+      "norm_label": ".summary()"
     },
     {
       "label": ".update()",
@@ -229,9 +359,9 @@
       "source_file": "app/controllers/articles_controller.rb",
       "source_location": "L75",
       "_origin": "ast",
+      "id": "controllers_articles_controller_articlescontroller_update",
       "community": 2,
-      "norm_label": ".update()",
-      "id": "controllers_articles_controller_articlescontroller_update"
+      "norm_label": ".update()"
     },
     {
       "label": ".destroy()",
@@ -239,9 +369,9 @@
       "source_file": "app/controllers/articles_controller.rb",
       "source_location": "L88",
       "_origin": "ast",
+      "id": "controllers_articles_controller_articlescontroller_destroy",
       "community": 2,
-      "norm_label": ".destroy()",
-      "id": "controllers_articles_controller_articlescontroller_destroy"
+      "norm_label": ".destroy()"
     },
     {
       "label": ".save_to_raindrop()",
@@ -249,9 +379,9 @@
       "source_file": "app/controllers/articles_controller.rb",
       "source_location": "L97",
       "_origin": "ast",
+      "id": "controllers_articles_controller_articlescontroller_save_to_raindrop",
       "community": 2,
-      "norm_label": ".save_to_raindrop()",
-      "id": "controllers_articles_controller_articlescontroller_save_to_raindrop"
+      "norm_label": ".save_to_raindrop()"
     },
     {
       "label": ".set_article()",
@@ -259,9 +389,9 @@
       "source_file": "app/controllers/articles_controller.rb",
       "source_location": "L107",
       "_origin": "ast",
+      "id": "controllers_articles_controller_articlescontroller_set_article",
       "community": 2,
-      "norm_label": ".set_article()",
-      "id": "controllers_articles_controller_articlescontroller_set_article"
+      "norm_label": ".set_article()"
     },
     {
       "label": ".article_params()",
@@ -269,9 +399,9 @@
       "source_file": "app/controllers/articles_controller.rb",
       "source_location": "L116",
       "_origin": "ast",
+      "id": "controllers_articles_controller_articlescontroller_article_params",
       "community": 2,
-      "norm_label": ".article_params()",
-      "id": "controllers_articles_controller_articlescontroller_article_params"
+      "norm_label": ".article_params()"
     },
     {
       "label": "authentication.rb",
@@ -279,9 +409,9 @@
       "source_file": "app/controllers/concerns/authentication.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "concerns_authentication",
       "community": 3,
-      "norm_label": "authentication.rb",
-      "id": "concerns_authentication"
+      "norm_label": "authentication.rb"
     },
     {
       "label": "allow_unauthenticated_access()",
@@ -289,9 +419,9 @@
       "source_file": "app/controllers/concerns/authentication.rb",
       "source_location": "L10",
       "_origin": "ast",
+      "id": "concerns_authentication_allow_unauthenticated_access",
       "community": 3,
-      "norm_label": "allow_unauthenticated_access()",
-      "id": "concerns_authentication_allow_unauthenticated_access"
+      "norm_label": "allow_unauthenticated_access()"
     },
     {
       "label": "authenticated?()",
@@ -299,9 +429,9 @@
       "source_file": "app/controllers/concerns/authentication.rb",
       "source_location": "L16",
       "_origin": "ast",
+      "id": "concerns_authentication_authenticated",
       "community": 3,
-      "norm_label": "authenticated?()",
-      "id": "concerns_authentication_authenticated"
+      "norm_label": "authenticated?()"
     },
     {
       "label": "require_authentication()",
@@ -309,9 +439,9 @@
       "source_file": "app/controllers/concerns/authentication.rb",
       "source_location": "L20",
       "_origin": "ast",
+      "id": "concerns_authentication_require_authentication",
       "community": 3,
-      "norm_label": "require_authentication()",
-      "id": "concerns_authentication_require_authentication"
+      "norm_label": "require_authentication()"
     },
     {
       "label": "resume_session()",
@@ -319,9 +449,9 @@
       "source_file": "app/controllers/concerns/authentication.rb",
       "source_location": "L24",
       "_origin": "ast",
+      "id": "concerns_authentication_resume_session",
       "community": 3,
-      "norm_label": "resume_session()",
-      "id": "concerns_authentication_resume_session"
+      "norm_label": "resume_session()"
     },
     {
       "label": "find_session_by_cookie()",
@@ -329,9 +459,9 @@
       "source_file": "app/controllers/concerns/authentication.rb",
       "source_location": "L28",
       "_origin": "ast",
+      "id": "concerns_authentication_find_session_by_cookie",
       "community": 3,
-      "norm_label": "find_session_by_cookie()",
-      "id": "concerns_authentication_find_session_by_cookie"
+      "norm_label": "find_session_by_cookie()"
     },
     {
       "label": "request_authentication()",
@@ -339,9 +469,9 @@
       "source_file": "app/controllers/concerns/authentication.rb",
       "source_location": "L32",
       "_origin": "ast",
+      "id": "concerns_authentication_request_authentication",
       "community": 3,
-      "norm_label": "request_authentication()",
-      "id": "concerns_authentication_request_authentication"
+      "norm_label": "request_authentication()"
     },
     {
       "label": "after_authentication_url()",
@@ -349,9 +479,9 @@
       "source_file": "app/controllers/concerns/authentication.rb",
       "source_location": "L37",
       "_origin": "ast",
+      "id": "concerns_authentication_after_authentication_url",
       "community": 3,
-      "norm_label": "after_authentication_url()",
-      "id": "concerns_authentication_after_authentication_url"
+      "norm_label": "after_authentication_url()"
     },
     {
       "label": "start_new_session_for()",
@@ -359,9 +489,9 @@
       "source_file": "app/controllers/concerns/authentication.rb",
       "source_location": "L41",
       "_origin": "ast",
+      "id": "concerns_authentication_start_new_session_for",
       "community": 3,
-      "norm_label": "start_new_session_for()",
-      "id": "concerns_authentication_start_new_session_for"
+      "norm_label": "start_new_session_for()"
     },
     {
       "label": "terminate_session()",
@@ -369,9 +499,9 @@
       "source_file": "app/controllers/concerns/authentication.rb",
       "source_location": "L48",
       "_origin": "ast",
+      "id": "concerns_authentication_terminate_session",
       "community": 3,
-      "norm_label": "terminate_session()",
-      "id": "concerns_authentication_terminate_session"
+      "norm_label": "terminate_session()"
     },
     {
       "label": "feeds_controller.rb",
@@ -379,9 +509,9 @@
       "source_file": "app/controllers/feeds_controller.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_feeds_controller",
       "community": 5,
-      "norm_label": "feeds_controller.rb",
-      "id": "controllers_feeds_controller"
+      "norm_label": "feeds_controller.rb"
     },
     {
       "label": "FeedsController",
@@ -389,9 +519,9 @@
       "source_file": "app/controllers/feeds_controller.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_feeds_controller_feedscontroller",
       "community": 5,
-      "norm_label": "feedscontroller",
-      "id": "controllers_feeds_controller_feedscontroller"
+      "norm_label": "feedscontroller"
     },
     {
       "label": ".index()",
@@ -399,129 +529,139 @@
       "source_file": "app/controllers/feeds_controller.rb",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 1,
-      "norm_label": ".index()",
-      "id": "controllers_feeds_controller_feedscontroller_index"
+      "id": "controllers_feeds_controller_feedscontroller_index",
+      "community": 5,
+      "norm_label": ".index()"
+    },
+    {
+      "label": ".share()",
+      "file_type": "code",
+      "source_file": "app/controllers/feeds_controller.rb",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "controllers_feeds_controller_feedscontroller_share",
+      "community": 5,
+      "norm_label": ".share()"
     },
     {
       "label": ".show()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L11",
+      "source_location": "L16",
       "_origin": "ast",
+      "id": "controllers_feeds_controller_feedscontroller_show",
       "community": 5,
-      "norm_label": ".show()",
-      "id": "controllers_feeds_controller_feedscontroller_show"
+      "norm_label": ".show()"
     },
     {
       "label": ".new()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L16",
+      "source_location": "L21",
       "_origin": "ast",
+      "id": "controllers_feeds_controller_feedscontroller_new",
       "community": 5,
-      "norm_label": ".new()",
-      "id": "controllers_feeds_controller_feedscontroller_new"
+      "norm_label": ".new()"
     },
     {
       "label": ".edit()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L21",
+      "source_location": "L26",
       "_origin": "ast",
+      "id": "controllers_feeds_controller_feedscontroller_edit",
       "community": 5,
-      "norm_label": ".edit()",
-      "id": "controllers_feeds_controller_feedscontroller_edit"
+      "norm_label": ".edit()"
     },
     {
       "label": ".create()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L25",
+      "source_location": "L30",
       "_origin": "ast",
+      "id": "controllers_feeds_controller_feedscontroller_create",
       "community": 5,
-      "norm_label": ".create()",
-      "id": "controllers_feeds_controller_feedscontroller_create"
+      "norm_label": ".create()"
     },
     {
       "label": ".update()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L49",
+      "source_location": "L62",
       "_origin": "ast",
+      "id": "controllers_feeds_controller_feedscontroller_update",
       "community": 5,
-      "norm_label": ".update()",
-      "id": "controllers_feeds_controller_feedscontroller_update"
+      "norm_label": ".update()"
     },
     {
       "label": ".update_articles()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L61",
+      "source_location": "L74",
       "_origin": "ast",
+      "id": "controllers_feeds_controller_feedscontroller_update_articles",
       "community": 5,
-      "norm_label": ".update_articles()",
-      "id": "controllers_feeds_controller_feedscontroller_update_articles"
+      "norm_label": ".update_articles()"
     },
     {
       "label": ".toggle_pause()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L73",
+      "source_location": "L97",
       "_origin": "ast",
+      "id": "controllers_feeds_controller_feedscontroller_toggle_pause",
       "community": 5,
-      "norm_label": ".toggle_pause()",
-      "id": "controllers_feeds_controller_feedscontroller_toggle_pause"
+      "norm_label": ".toggle_pause()"
     },
     {
       "label": ".destroy()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L84",
+      "source_location": "L108",
       "_origin": "ast",
+      "id": "controllers_feeds_controller_feedscontroller_destroy",
       "community": 5,
-      "norm_label": ".destroy()",
-      "id": "controllers_feeds_controller_feedscontroller_destroy"
+      "norm_label": ".destroy()"
     },
     {
       "label": ".set_feed()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L96",
+      "source_location": "L120",
       "_origin": "ast",
+      "id": "controllers_feeds_controller_feedscontroller_set_feed",
       "community": 5,
-      "norm_label": ".set_feed()",
-      "id": "controllers_feeds_controller_feedscontroller_set_feed"
+      "norm_label": ".set_feed()"
     },
     {
       "label": ".feed_params()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L100",
+      "source_location": "L124",
       "_origin": "ast",
+      "id": "controllers_feeds_controller_feedscontroller_feed_params",
       "community": 5,
-      "norm_label": ".feed_params()",
-      "id": "controllers_feeds_controller_feedscontroller_feed_params"
+      "norm_label": ".feed_params()"
     },
     {
       "label": ".feed_generator()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L106",
+      "source_location": "L130",
       "_origin": "ast",
+      "id": "controllers_feeds_controller_feedscontroller_feed_generator",
       "community": 5,
-      "norm_label": ".feed_generator()",
-      "id": "controllers_feeds_controller_feedscontroller_feed_generator"
+      "norm_label": ".feed_generator()"
     },
     {
       "label": ".skip_summarization()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L120",
+      "source_location": "L144",
       "_origin": "ast",
+      "id": "controllers_feeds_controller_feedscontroller_skip_summarization",
       "community": 5,
-      "norm_label": ".skip_summarization()",
-      "id": "controllers_feeds_controller_feedscontroller_skip_summarization"
+      "norm_label": ".skip_summarization()"
     },
     {
       "label": "folders_controller.rb",
@@ -529,9 +669,9 @@
       "source_file": "app/controllers/folders_controller.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_folders_controller",
       "community": 6,
-      "norm_label": "folders_controller.rb",
-      "id": "controllers_folders_controller"
+      "norm_label": "folders_controller.rb"
     },
     {
       "label": "FoldersController",
@@ -539,9 +679,9 @@
       "source_file": "app/controllers/folders_controller.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_folders_controller_folderscontroller",
       "community": 6,
-      "norm_label": "folderscontroller",
-      "id": "controllers_folders_controller_folderscontroller"
+      "norm_label": "folderscontroller"
     },
     {
       "label": ".index()",
@@ -549,9 +689,9 @@
       "source_file": "app/controllers/folders_controller.rb",
       "source_location": "L5",
       "_origin": "ast",
+      "id": "controllers_folders_controller_folderscontroller_index",
       "community": 6,
-      "norm_label": ".index()",
-      "id": "controllers_folders_controller_folderscontroller_index"
+      "norm_label": ".index()"
     },
     {
       "label": ".new()",
@@ -559,9 +699,9 @@
       "source_file": "app/controllers/folders_controller.rb",
       "source_location": "L9",
       "_origin": "ast",
+      "id": "controllers_folders_controller_folderscontroller_new",
       "community": 6,
-      "norm_label": ".new()",
-      "id": "controllers_folders_controller_folderscontroller_new"
+      "norm_label": ".new()"
     },
     {
       "label": ".create()",
@@ -569,9 +709,9 @@
       "source_file": "app/controllers/folders_controller.rb",
       "source_location": "L13",
       "_origin": "ast",
+      "id": "controllers_folders_controller_folderscontroller_create",
       "community": 6,
-      "norm_label": ".create()",
-      "id": "controllers_folders_controller_folderscontroller_create"
+      "norm_label": ".create()"
     },
     {
       "label": ".show()",
@@ -579,9 +719,9 @@
       "source_file": "app/controllers/folders_controller.rb",
       "source_location": "L23",
       "_origin": "ast",
+      "id": "controllers_folders_controller_folderscontroller_show",
       "community": 6,
-      "norm_label": ".show()",
-      "id": "controllers_folders_controller_folderscontroller_show"
+      "norm_label": ".show()"
     },
     {
       "label": ".edit()",
@@ -589,9 +729,9 @@
       "source_file": "app/controllers/folders_controller.rb",
       "source_location": "L27",
       "_origin": "ast",
+      "id": "controllers_folders_controller_folderscontroller_edit",
       "community": 6,
-      "norm_label": ".edit()",
-      "id": "controllers_folders_controller_folderscontroller_edit"
+      "norm_label": ".edit()"
     },
     {
       "label": ".update()",
@@ -599,9 +739,9 @@
       "source_file": "app/controllers/folders_controller.rb",
       "source_location": "L30",
       "_origin": "ast",
+      "id": "controllers_folders_controller_folderscontroller_update",
       "community": 6,
-      "norm_label": ".update()",
-      "id": "controllers_folders_controller_folderscontroller_update"
+      "norm_label": ".update()"
     },
     {
       "label": ".refresh_feed()",
@@ -609,9 +749,9 @@
       "source_file": "app/controllers/folders_controller.rb",
       "source_location": "L48",
       "_origin": "ast",
+      "id": "controllers_folders_controller_folderscontroller_refresh_feed",
       "community": 0,
-      "norm_label": ".refresh_feed()",
-      "id": "controllers_folders_controller_folderscontroller_refresh_feed"
+      "norm_label": ".refresh_feed()"
     },
     {
       "label": ".destroy()",
@@ -619,9 +759,9 @@
       "source_file": "app/controllers/folders_controller.rb",
       "source_location": "L63",
       "_origin": "ast",
+      "id": "controllers_folders_controller_folderscontroller_destroy",
       "community": 6,
-      "norm_label": ".destroy()",
-      "id": "controllers_folders_controller_folderscontroller_destroy"
+      "norm_label": ".destroy()"
     },
     {
       "label": ".mark_all_as_read()",
@@ -629,9 +769,9 @@
       "source_file": "app/controllers/folders_controller.rb",
       "source_location": "L68",
       "_origin": "ast",
+      "id": "controllers_folders_controller_folderscontroller_mark_all_as_read",
       "community": 6,
-      "norm_label": ".mark_all_as_read()",
-      "id": "controllers_folders_controller_folderscontroller_mark_all_as_read"
+      "norm_label": ".mark_all_as_read()"
     },
     {
       "label": ".safe_params()",
@@ -639,9 +779,9 @@
       "source_file": "app/controllers/folders_controller.rb",
       "source_location": "L77",
       "_origin": "ast",
+      "id": "controllers_folders_controller_folderscontroller_safe_params",
       "community": 6,
-      "norm_label": ".safe_params()",
-      "id": "controllers_folders_controller_folderscontroller_safe_params"
+      "norm_label": ".safe_params()"
     },
     {
       "label": ".set_user()",
@@ -649,9 +789,9 @@
       "source_file": "app/controllers/folders_controller.rb",
       "source_location": "L81",
       "_origin": "ast",
+      "id": "controllers_folders_controller_folderscontroller_set_user",
       "community": 6,
-      "norm_label": ".set_user()",
-      "id": "controllers_folders_controller_folderscontroller_set_user"
+      "norm_label": ".set_user()"
     },
     {
       "label": ".set_folder()",
@@ -659,9 +799,9 @@
       "source_file": "app/controllers/folders_controller.rb",
       "source_location": "L85",
       "_origin": "ast",
+      "id": "controllers_folders_controller_folderscontroller_set_folder",
       "community": 6,
-      "norm_label": ".set_folder()",
-      "id": "controllers_folders_controller_folderscontroller_set_folder"
+      "norm_label": ".set_folder()"
     },
     {
       "label": "home_controller.rb",
@@ -669,9 +809,9 @@
       "source_file": "app/controllers/home_controller.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_home_controller",
       "community": 1,
-      "norm_label": "home_controller.rb",
-      "id": "controllers_home_controller"
+      "norm_label": "home_controller.rb"
     },
     {
       "label": "HomeController",
@@ -679,9 +819,9 @@
       "source_file": "app/controllers/home_controller.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_home_controller_homecontroller",
       "community": 1,
-      "norm_label": "homecontroller",
-      "id": "controllers_home_controller_homecontroller"
+      "norm_label": "homecontroller"
     },
     {
       "label": ".index()",
@@ -689,9 +829,9 @@
       "source_file": "app/controllers/home_controller.rb",
       "source_location": "L4",
       "_origin": "ast",
+      "id": "controllers_home_controller_homecontroller_index",
       "community": 1,
-      "norm_label": ".index()",
-      "id": "controllers_home_controller_homecontroller_index"
+      "norm_label": ".index()"
     },
     {
       "label": ".update_feeds()",
@@ -699,9 +839,9 @@
       "source_file": "app/controllers/home_controller.rb",
       "source_location": "L11",
       "_origin": "ast",
+      "id": "controllers_home_controller_homecontroller_update_feeds",
       "community": 0,
-      "norm_label": ".update_feeds()",
-      "id": "controllers_home_controller_homecontroller_update_feeds"
+      "norm_label": ".update_feeds()"
     },
     {
       "label": ".set_user()",
@@ -709,9 +849,9 @@
       "source_file": "app/controllers/home_controller.rb",
       "source_location": "L29",
       "_origin": "ast",
+      "id": "controllers_home_controller_homecontroller_set_user",
       "community": 1,
-      "norm_label": ".set_user()",
-      "id": "controllers_home_controller_homecontroller_set_user"
+      "norm_label": ".set_user()"
     },
     {
       "label": "raindrop_controller.rb",
@@ -719,9 +859,9 @@
       "source_file": "app/controllers/oauth/raindrop_controller.rb",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": "raindrop_controller.rb",
-      "id": "oauth_raindrop_controller"
+      "id": "oauth_raindrop_controller",
+      "community": 1,
+      "norm_label": "raindrop_controller.rb"
     },
     {
       "label": "RaindropController",
@@ -729,9 +869,9 @@
       "source_file": "app/controllers/oauth/raindrop_controller.rb",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": "raindropcontroller",
-      "id": "oauth_raindrop_controller_raindropcontroller"
+      "id": "oauth_raindrop_controller_raindropcontroller",
+      "community": 1,
+      "norm_label": "raindropcontroller"
     },
     {
       "label": ".connect()",
@@ -739,9 +879,9 @@
       "source_file": "app/controllers/oauth/raindrop_controller.rb",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": ".connect()",
-      "id": "oauth_raindrop_controller_raindropcontroller_connect"
+      "id": "oauth_raindrop_controller_raindropcontroller_connect",
+      "community": 1,
+      "norm_label": ".connect()"
     },
     {
       "label": ".callback()",
@@ -749,9 +889,9 @@
       "source_file": "app/controllers/oauth/raindrop_controller.rb",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": ".callback()",
-      "id": "oauth_raindrop_controller_raindropcontroller_callback"
+      "id": "oauth_raindrop_controller_raindropcontroller_callback",
+      "community": 1,
+      "norm_label": ".callback()"
     },
     {
       "label": ".disconnect()",
@@ -759,9 +899,9 @@
       "source_file": "app/controllers/oauth/raindrop_controller.rb",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": ".disconnect()",
-      "id": "oauth_raindrop_controller_raindropcontroller_disconnect"
+      "id": "oauth_raindrop_controller_raindropcontroller_disconnect",
+      "community": 1,
+      "norm_label": ".disconnect()"
     },
     {
       "label": ".authorization_url()",
@@ -769,9 +909,9 @@
       "source_file": "app/controllers/oauth/raindrop_controller.rb",
       "source_location": "L39",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": ".authorization_url()",
-      "id": "oauth_raindrop_controller_raindropcontroller_authorization_url"
+      "id": "oauth_raindrop_controller_raindropcontroller_authorization_url",
+      "community": 1,
+      "norm_label": ".authorization_url()"
     },
     {
       "label": ".exchange_code_for_token()",
@@ -779,9 +919,9 @@
       "source_file": "app/controllers/oauth/raindrop_controller.rb",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": ".exchange_code_for_token()",
-      "id": "oauth_raindrop_controller_raindropcontroller_exchange_code_for_token"
+      "id": "oauth_raindrop_controller_raindropcontroller_exchange_code_for_token",
+      "community": 1,
+      "norm_label": ".exchange_code_for_token()"
     },
     {
       "label": "registrations_controller.rb",
@@ -789,9 +929,9 @@
       "source_file": "app/controllers/registrations_controller.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_registrations_controller",
       "community": 3,
-      "norm_label": "registrations_controller.rb",
-      "id": "controllers_registrations_controller"
+      "norm_label": "registrations_controller.rb"
     },
     {
       "label": "RegistrationsController",
@@ -799,9 +939,9 @@
       "source_file": "app/controllers/registrations_controller.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_registrations_controller_registrationscontroller",
       "community": 3,
-      "norm_label": "registrationscontroller",
-      "id": "controllers_registrations_controller_registrationscontroller"
+      "norm_label": "registrationscontroller"
     },
     {
       "label": ".new()",
@@ -809,9 +949,9 @@
       "source_file": "app/controllers/registrations_controller.rb",
       "source_location": "L10",
       "_origin": "ast",
+      "id": "controllers_registrations_controller_registrationscontroller_new",
       "community": 3,
-      "norm_label": ".new()",
-      "id": "controllers_registrations_controller_registrationscontroller_new"
+      "norm_label": ".new()"
     },
     {
       "label": ".create()",
@@ -819,9 +959,9 @@
       "source_file": "app/controllers/registrations_controller.rb",
       "source_location": "L14",
       "_origin": "ast",
+      "id": "controllers_registrations_controller_registrationscontroller_create",
       "community": 3,
-      "norm_label": ".create()",
-      "id": "controllers_registrations_controller_registrationscontroller_create"
+      "norm_label": ".create()"
     },
     {
       "label": ".safe_params()",
@@ -829,9 +969,9 @@
       "source_file": "app/controllers/registrations_controller.rb",
       "source_location": "L41",
       "_origin": "ast",
+      "id": "controllers_registrations_controller_registrationscontroller_safe_params",
       "community": 3,
-      "norm_label": ".safe_params()",
-      "id": "controllers_registrations_controller_registrationscontroller_safe_params"
+      "norm_label": ".safe_params()"
     },
     {
       "label": "user_metrics_controller.rb",
@@ -839,9 +979,9 @@
       "source_file": "app/controllers/ruby_llm/monitoring/user_metrics_controller.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "monitoring_user_metrics_controller",
       "community": 19,
-      "norm_label": "user_metrics_controller.rb",
-      "id": "monitoring_user_metrics_controller"
+      "norm_label": "user_metrics_controller.rb"
     },
     {
       "label": "UserMetricsController",
@@ -849,9 +989,9 @@
       "source_file": "app/controllers/ruby_llm/monitoring/user_metrics_controller.rb",
       "source_location": "L3",
       "_origin": "ast",
+      "id": "monitoring_user_metrics_controller_usermetricscontroller",
       "community": 19,
-      "norm_label": "usermetricscontroller",
-      "id": "monitoring_user_metrics_controller_usermetricscontroller"
+      "norm_label": "usermetricscontroller"
     },
     {
       "label": ".index()",
@@ -859,9 +999,9 @@
       "source_file": "app/controllers/ruby_llm/monitoring/user_metrics_controller.rb",
       "source_location": "L4",
       "_origin": "ast",
+      "id": "monitoring_user_metrics_controller_usermetricscontroller_index",
       "community": 19,
-      "norm_label": ".index()",
-      "id": "monitoring_user_metrics_controller_usermetricscontroller_index"
+      "norm_label": ".index()"
     },
     {
       "label": ".user_display_name()",
@@ -869,9 +1009,9 @@
       "source_file": "app/controllers/ruby_llm/monitoring/user_metrics_controller.rb",
       "source_location": "L8",
       "_origin": "ast",
+      "id": "monitoring_user_metrics_controller_usermetricscontroller_user_display_name",
       "community": 19,
-      "norm_label": ".user_display_name()",
-      "id": "monitoring_user_metrics_controller_usermetricscontroller_user_display_name"
+      "norm_label": ".user_display_name()"
     },
     {
       "label": "sessions_controller.rb",
@@ -879,9 +1019,9 @@
       "source_file": "app/controllers/sessions_controller.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_sessions_controller",
       "community": 3,
-      "norm_label": "sessions_controller.rb",
-      "id": "controllers_sessions_controller"
+      "norm_label": "sessions_controller.rb"
     },
     {
       "label": "SessionsController",
@@ -889,9 +1029,9 @@
       "source_file": "app/controllers/sessions_controller.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_sessions_controller_sessionscontroller",
       "community": 3,
-      "norm_label": "sessionscontroller",
-      "id": "controllers_sessions_controller_sessionscontroller"
+      "norm_label": "sessionscontroller"
     },
     {
       "label": ".new()",
@@ -899,9 +1039,9 @@
       "source_file": "app/controllers/sessions_controller.rb",
       "source_location": "L5",
       "_origin": "ast",
+      "id": "controllers_sessions_controller_sessionscontroller_new",
       "community": 3,
-      "norm_label": ".new()",
-      "id": "controllers_sessions_controller_sessionscontroller_new"
+      "norm_label": ".new()"
     },
     {
       "label": ".create()",
@@ -909,9 +1049,9 @@
       "source_file": "app/controllers/sessions_controller.rb",
       "source_location": "L8",
       "_origin": "ast",
+      "id": "controllers_sessions_controller_sessionscontroller_create",
       "community": 3,
-      "norm_label": ".create()",
-      "id": "controllers_sessions_controller_sessionscontroller_create"
+      "norm_label": ".create()"
     },
     {
       "label": ".destroy()",
@@ -919,9 +1059,9 @@
       "source_file": "app/controllers/sessions_controller.rb",
       "source_location": "L17",
       "_origin": "ast",
+      "id": "controllers_sessions_controller_sessionscontroller_destroy",
       "community": 3,
-      "norm_label": ".destroy()",
-      "id": "controllers_sessions_controller_sessionscontroller_destroy"
+      "norm_label": ".destroy()"
     },
     {
       "label": "users_controller.rb",
@@ -929,9 +1069,9 @@
       "source_file": "app/controllers/users_controller.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_users_controller",
       "community": 0,
-      "norm_label": "users_controller.rb",
-      "id": "controllers_users_controller"
+      "norm_label": "users_controller.rb"
     },
     {
       "label": "UsersController",
@@ -939,9 +1079,9 @@
       "source_file": "app/controllers/users_controller.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_users_controller_userscontroller",
       "community": 0,
-      "norm_label": "userscontroller",
-      "id": "controllers_users_controller_userscontroller"
+      "norm_label": "userscontroller"
     },
     {
       "label": ".export_opml()",
@@ -949,9 +1089,9 @@
       "source_file": "app/controllers/users_controller.rb",
       "source_location": "L4",
       "_origin": "ast",
+      "id": "controllers_users_controller_userscontroller_export_opml",
       "community": 0,
-      "norm_label": ".export_opml()",
-      "id": "controllers_users_controller_userscontroller_export_opml"
+      "norm_label": ".export_opml()"
     },
     {
       "label": ".import_via_opml()",
@@ -959,9 +1099,9 @@
       "source_file": "app/controllers/users_controller.rb",
       "source_location": "L13",
       "_origin": "ast",
+      "id": "controllers_users_controller_userscontroller_import_via_opml",
       "community": 0,
-      "norm_label": ".import_via_opml()",
-      "id": "controllers_users_controller_userscontroller_import_via_opml"
+      "norm_label": ".import_via_opml()"
     },
     {
       "label": ".profile()",
@@ -969,9 +1109,9 @@
       "source_file": "app/controllers/users_controller.rb",
       "source_location": "L37",
       "_origin": "ast",
+      "id": "controllers_users_controller_userscontroller_profile",
       "community": 0,
-      "norm_label": ".profile()",
-      "id": "controllers_users_controller_userscontroller_profile"
+      "norm_label": ".profile()"
     },
     {
       "label": ".update_api_key()",
@@ -979,9 +1119,9 @@
       "source_file": "app/controllers/users_controller.rb",
       "source_location": "L41",
       "_origin": "ast",
+      "id": "controllers_users_controller_userscontroller_update_api_key",
       "community": 0,
-      "norm_label": ".update_api_key()",
-      "id": "controllers_users_controller_userscontroller_update_api_key"
+      "norm_label": ".update_api_key()"
     },
     {
       "label": ".test_api_key()",
@@ -989,9 +1129,9 @@
       "source_file": "app/controllers/users_controller.rb",
       "source_location": "L63",
       "_origin": "ast",
+      "id": "controllers_users_controller_userscontroller_test_api_key",
       "community": 0,
-      "norm_label": ".test_api_key()",
-      "id": "controllers_users_controller_userscontroller_test_api_key"
+      "norm_label": ".test_api_key()"
     },
     {
       "label": ".models_for_provider()",
@@ -999,9 +1139,9 @@
       "source_file": "app/controllers/users_controller.rb",
       "source_location": "L68",
       "_origin": "ast",
+      "id": "controllers_users_controller_userscontroller_models_for_provider",
       "community": 0,
-      "norm_label": ".models_for_provider()",
-      "id": "controllers_users_controller_userscontroller_models_for_provider"
+      "norm_label": ".models_for_provider()"
     },
     {
       "label": ".clear_old_articles()",
@@ -1009,9 +1149,9 @@
       "source_file": "app/controllers/users_controller.rb",
       "source_location": "L76",
       "_origin": "ast",
+      "id": "controllers_users_controller_userscontroller_clear_old_articles",
       "community": 0,
-      "norm_label": ".clear_old_articles()",
-      "id": "controllers_users_controller_userscontroller_clear_old_articles"
+      "norm_label": ".clear_old_articles()"
     },
     {
       "label": ".set_user()",
@@ -1019,9 +1159,9 @@
       "source_file": "app/controllers/users_controller.rb",
       "source_location": "L83",
       "_origin": "ast",
+      "id": "controllers_users_controller_userscontroller_set_user",
       "community": 0,
-      "norm_label": ".set_user()",
-      "id": "controllers_users_controller_userscontroller_set_user"
+      "norm_label": ".set_user()"
     },
     {
       "label": ".set_flash_message()",
@@ -1029,9 +1169,9 @@
       "source_file": "app/controllers/users_controller.rb",
       "source_location": "L87",
       "_origin": "ast",
+      "id": "controllers_users_controller_userscontroller_set_flash_message",
       "community": 0,
-      "norm_label": ".set_flash_message()",
-      "id": "controllers_users_controller_userscontroller_set_flash_message"
+      "norm_label": ".set_flash_message()"
     },
     {
       "label": "application_helper.rb",
@@ -1039,9 +1179,9 @@
       "source_file": "app/helpers/application_helper.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "helpers_application_helper",
       "community": 49,
-      "norm_label": "application_helper.rb",
-      "id": "helpers_application_helper"
+      "norm_label": "application_helper.rb"
     },
     {
       "label": "format_date()",
@@ -1049,9 +1189,9 @@
       "source_file": "app/helpers/application_helper.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "helpers_application_helper_format_date",
       "community": 49,
-      "norm_label": "format_date()",
-      "id": "helpers_application_helper_format_date"
+      "norm_label": "format_date()"
     },
     {
       "label": "articles_helper.rb",
@@ -1059,9 +1199,9 @@
       "source_file": "app/helpers/articles_helper.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "helpers_articles_helper",
       "community": 8,
-      "norm_label": "articles_helper.rb",
-      "id": "helpers_articles_helper"
+      "norm_label": "articles_helper.rb"
     },
     {
       "label": "open_article_in_new_tab?()",
@@ -1069,9 +1209,9 @@
       "source_file": "app/helpers/articles_helper.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "helpers_articles_helper_open_article_in_new_tab",
       "community": 8,
-      "norm_label": "open_article_in_new_tab?()",
-      "id": "helpers_articles_helper_open_article_in_new_tab"
+      "norm_label": "open_article_in_new_tab?()"
     },
     {
       "label": "render_summary()",
@@ -1079,9 +1219,9 @@
       "source_file": "app/helpers/articles_helper.rb",
       "source_location": "L10",
       "_origin": "ast",
+      "id": "helpers_articles_helper_render_summary",
       "community": 2,
-      "norm_label": "render_summary()",
-      "id": "helpers_articles_helper_render_summary"
+      "norm_label": "render_summary()"
     },
     {
       "label": "render_content()",
@@ -1089,9 +1229,9 @@
       "source_file": "app/helpers/articles_helper.rb",
       "source_location": "L22",
       "_origin": "ast",
+      "id": "helpers_articles_helper_render_content",
       "community": 8,
-      "norm_label": "render_content()",
-      "id": "helpers_articles_helper_render_content"
+      "norm_label": "render_content()"
     },
     {
       "label": "render_image()",
@@ -1099,9 +1239,9 @@
       "source_file": "app/helpers/articles_helper.rb",
       "source_location": "L38",
       "_origin": "ast",
+      "id": "helpers_articles_helper_render_image",
       "community": 8,
-      "norm_label": "render_image()",
-      "id": "helpers_articles_helper_render_image"
+      "norm_label": "render_image()"
     },
     {
       "label": "render_youtube_content()",
@@ -1109,9 +1249,9 @@
       "source_file": "app/helpers/articles_helper.rb",
       "source_location": "L46",
       "_origin": "ast",
+      "id": "helpers_articles_helper_render_youtube_content",
       "community": 8,
-      "norm_label": "render_youtube_content()",
-      "id": "helpers_articles_helper_render_youtube_content"
+      "norm_label": "render_youtube_content()"
     },
     {
       "label": "render_youtube_hero()",
@@ -1119,9 +1259,9 @@
       "source_file": "app/helpers/articles_helper.rb",
       "source_location": "L54",
       "_origin": "ast",
+      "id": "helpers_articles_helper_render_youtube_hero",
       "community": 8,
-      "norm_label": "render_youtube_hero()",
-      "id": "helpers_articles_helper_render_youtube_hero"
+      "norm_label": "render_youtube_hero()"
     },
     {
       "label": "render_youtube_actions()",
@@ -1129,9 +1269,9 @@
       "source_file": "app/helpers/articles_helper.rb",
       "source_location": "L63",
       "_origin": "ast",
+      "id": "helpers_articles_helper_render_youtube_actions",
       "community": 8,
-      "norm_label": "render_youtube_actions()",
-      "id": "helpers_articles_helper_render_youtube_actions"
+      "norm_label": "render_youtube_actions()"
     },
     {
       "label": "render_youtube_description()",
@@ -1139,9 +1279,9 @@
       "source_file": "app/helpers/articles_helper.rb",
       "source_location": "L87",
       "_origin": "ast",
+      "id": "helpers_articles_helper_render_youtube_description",
       "community": 8,
-      "norm_label": "render_youtube_description()",
-      "id": "helpers_articles_helper_render_youtube_description"
+      "norm_label": "render_youtube_description()"
     },
     {
       "label": "feeds_helper.rb",
@@ -1149,9 +1289,9 @@
       "source_file": "app/helpers/feeds_helper.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "helpers_feeds_helper",
       "community": 80,
-      "norm_label": "feeds_helper.rb",
-      "id": "helpers_feeds_helper"
+      "norm_label": "feeds_helper.rb"
     },
     {
       "label": "form_helper.rb",
@@ -1159,9 +1299,9 @@
       "source_file": "app/helpers/form_helper.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "helpers_form_helper",
       "community": 50,
-      "norm_label": "form_helper.rb",
-      "id": "helpers_form_helper"
+      "norm_label": "form_helper.rb"
     },
     {
       "label": "input_field()",
@@ -1169,9 +1309,9 @@
       "source_file": "app/helpers/form_helper.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "helpers_form_helper_input_field",
       "community": 50,
-      "norm_label": "input_field()",
-      "id": "helpers_form_helper_input_field"
+      "norm_label": "input_field()"
     },
     {
       "label": "home_helper.rb",
@@ -1179,9 +1319,9 @@
       "source_file": "app/helpers/home_helper.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "helpers_home_helper",
       "community": 81,
-      "norm_label": "home_helper.rb",
-      "id": "helpers_home_helper"
+      "norm_label": "home_helper.rb"
     },
     {
       "label": "application.js",
@@ -1189,9 +1329,9 @@
       "source_file": "app/javascript/application.js",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "javascript_application",
       "community": 18,
-      "norm_label": "application.js",
-      "id": "javascript_application"
+      "norm_label": "application.js"
     },
     {
       "label": "dialog",
@@ -1199,9 +1339,9 @@
       "source_file": "app/javascript/application.js",
       "source_location": "L5",
       "_origin": "ast",
+      "id": "javascript_application_dialog",
       "community": 18,
-      "norm_label": "dialog",
-      "id": "javascript_application_dialog"
+      "norm_label": "dialog"
     },
     {
       "label": "messageElement",
@@ -1209,9 +1349,9 @@
       "source_file": "app/javascript/application.js",
       "source_location": "L6",
       "_origin": "ast",
+      "id": "javascript_application_messageelement",
       "community": 18,
-      "norm_label": "messageelement",
-      "id": "javascript_application_messageelement"
+      "norm_label": "messageelement"
     },
     {
       "label": "confirmButton",
@@ -1219,9 +1359,9 @@
       "source_file": "app/javascript/application.js",
       "source_location": "L7",
       "_origin": "ast",
+      "id": "javascript_application_confirmbutton",
       "community": 18,
-      "norm_label": "confirmbutton",
-      "id": "javascript_application_confirmbutton"
+      "norm_label": "confirmbutton"
     },
     {
       "label": "api_key_form_controller.js",
@@ -1229,9 +1369,9 @@
       "source_file": "app/javascript/controllers/api_key_form_controller.js",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_api_key_form_controller",
       "community": 7,
-      "norm_label": "api_key_form_controller.js",
-      "id": "controllers_api_key_form_controller"
+      "norm_label": "api_key_form_controller.js"
     },
     {
       "label": "connect()",
@@ -1239,9 +1379,9 @@
       "source_file": "app/javascript/controllers/api_key_form_controller.js",
       "source_location": "L7",
       "_origin": "ast",
+      "id": "controllers_api_key_form_controller_connect",
       "community": 7,
-      "norm_label": "connect()",
-      "id": "controllers_api_key_form_controller_connect"
+      "norm_label": "connect()"
     },
     {
       "label": "disconnect()",
@@ -1249,9 +1389,9 @@
       "source_file": "app/javascript/controllers/api_key_form_controller.js",
       "source_location": "L14",
       "_origin": "ast",
+      "id": "controllers_api_key_form_controller_disconnect",
       "community": 7,
-      "norm_label": "disconnect()",
-      "id": "controllers_api_key_form_controller_disconnect"
+      "norm_label": "disconnect()"
     },
     {
       "label": "providerChanged()",
@@ -1259,9 +1399,9 @@
       "source_file": "app/javascript/controllers/api_key_form_controller.js",
       "source_location": "L18",
       "_origin": "ast",
+      "id": "controllers_api_key_form_controller_providerchanged",
       "community": 7,
-      "norm_label": "providerchanged()",
-      "id": "controllers_api_key_form_controller_providerchanged"
+      "norm_label": "providerchanged()"
     },
     {
       "label": "fetchModels()",
@@ -1269,9 +1409,9 @@
       "source_file": "app/javascript/controllers/api_key_form_controller.js",
       "source_location": "L25",
       "_origin": "ast",
+      "id": "controllers_api_key_form_controller_fetchmodels",
       "community": 7,
-      "norm_label": "fetchmodels()",
-      "id": "controllers_api_key_form_controller_fetchmodels"
+      "norm_label": "fetchmodels()"
     },
     {
       "label": "populateModels()",
@@ -1279,9 +1419,9 @@
       "source_file": "app/javascript/controllers/api_key_form_controller.js",
       "source_location": "L37",
       "_origin": "ast",
+      "id": "controllers_api_key_form_controller_populatemodels",
       "community": 7,
-      "norm_label": "populatemodels()",
-      "id": "controllers_api_key_form_controller_populatemodels"
+      "norm_label": "populatemodels()"
     },
     {
       "label": "testKey()",
@@ -1289,9 +1429,9 @@
       "source_file": "app/javascript/controllers/api_key_form_controller.js",
       "source_location": "L53",
       "_origin": "ast",
+      "id": "controllers_api_key_form_controller_testkey",
       "community": 7,
-      "norm_label": "testkey()",
-      "id": "controllers_api_key_form_controller_testkey"
+      "norm_label": "testkey()"
     },
     {
       "label": "setTesting()",
@@ -1299,9 +1439,9 @@
       "source_file": "app/javascript/controllers/api_key_form_controller.js",
       "source_location": "L91",
       "_origin": "ast",
+      "id": "controllers_api_key_form_controller_settesting",
       "community": 7,
-      "norm_label": "settesting()",
-      "id": "controllers_api_key_form_controller_settesting"
+      "norm_label": "settesting()"
     },
     {
       "label": "showResult()",
@@ -1309,9 +1449,9 @@
       "source_file": "app/javascript/controllers/api_key_form_controller.js",
       "source_location": "L97",
       "_origin": "ast",
+      "id": "controllers_api_key_form_controller_showresult",
       "community": 7,
-      "norm_label": "showresult()",
-      "id": "controllers_api_key_form_controller_showresult"
+      "norm_label": "showresult()"
     },
     {
       "label": "initTomSelect()",
@@ -1319,9 +1459,9 @@
       "source_file": "app/javascript/controllers/api_key_form_controller.js",
       "source_location": "L103",
       "_origin": "ast",
+      "id": "controllers_api_key_form_controller_inittomselect",
       "community": 7,
-      "norm_label": "inittomselect()",
-      "id": "controllers_api_key_form_controller_inittomselect"
+      "norm_label": "inittomselect()"
     },
     {
       "label": "destroyTomSelect()",
@@ -1329,9 +1469,9 @@
       "source_file": "app/javascript/controllers/api_key_form_controller.js",
       "source_location": "L113",
       "_origin": "ast",
+      "id": "controllers_api_key_form_controller_destroytomselect",
       "community": 7,
-      "norm_label": "destroytomselect()",
-      "id": "controllers_api_key_form_controller_destroytomselect"
+      "norm_label": "destroytomselect()"
     },
     {
       "label": "destroyTomSelects()",
@@ -1339,9 +1479,9 @@
       "source_file": "app/javascript/controllers/api_key_form_controller.js",
       "source_location": "L122",
       "_origin": "ast",
+      "id": "controllers_api_key_form_controller_destroytomselects",
       "community": 7,
-      "norm_label": "destroytomselects()",
-      "id": "controllers_api_key_form_controller_destroytomselects"
+      "norm_label": "destroytomselects()"
     },
     {
       "label": "application.js",
@@ -1349,9 +1489,9 @@
       "source_file": "app/javascript/controllers/application.js",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_application",
       "community": 43,
-      "norm_label": "application.js",
-      "id": "controllers_application"
+      "norm_label": "application.js"
     },
     {
       "label": "application",
@@ -1359,9 +1499,9 @@
       "source_file": "app/javascript/controllers/application.js",
       "source_location": "L3",
       "_origin": "ast",
+      "id": "controllers_application_application",
       "community": 43,
-      "norm_label": "application",
-      "id": "controllers_application_application"
+      "norm_label": "application"
     },
     {
       "label": "handle_summary_controller.js",
@@ -1369,9 +1509,9 @@
       "source_file": "app/javascript/controllers/handle_summary_controller.js",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_handle_summary_controller",
       "community": 16,
-      "norm_label": "handle_summary_controller.js",
-      "id": "controllers_handle_summary_controller"
+      "norm_label": "handle_summary_controller.js"
     },
     {
       "label": "connect()",
@@ -1379,9 +1519,9 @@
       "source_file": "app/javascript/controllers/handle_summary_controller.js",
       "source_location": "L7",
       "_origin": "ast",
+      "id": "controllers_handle_summary_controller_connect",
       "community": 16,
-      "norm_label": "connect()",
-      "id": "controllers_handle_summary_controller_connect"
+      "norm_label": "connect()"
     },
     {
       "label": "handleClick()",
@@ -1389,9 +1529,9 @@
       "source_file": "app/javascript/controllers/handle_summary_controller.js",
       "source_location": "L11",
       "_origin": "ast",
+      "id": "controllers_handle_summary_controller_handleclick",
       "community": 16,
-      "norm_label": "handleclick()",
-      "id": "controllers_handle_summary_controller_handleclick"
+      "norm_label": "handleclick()"
     },
     {
       "label": "showPopover()",
@@ -1399,9 +1539,9 @@
       "source_file": "app/javascript/controllers/handle_summary_controller.js",
       "source_location": "L20",
       "_origin": "ast",
+      "id": "controllers_handle_summary_controller_showpopover",
       "community": 16,
-      "norm_label": "showpopover()",
-      "id": "controllers_handle_summary_controller_showpopover"
+      "norm_label": "showpopover()"
     },
     {
       "label": "hello_controller.js",
@@ -1409,9 +1549,9 @@
       "source_file": "app/javascript/controllers/hello_controller.js",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_hello_controller",
       "community": 47,
-      "norm_label": "hello_controller.js",
-      "id": "controllers_hello_controller"
+      "norm_label": "hello_controller.js"
     },
     {
       "label": "connect()",
@@ -1419,9 +1559,9 @@
       "source_file": "app/javascript/controllers/hello_controller.js",
       "source_location": "L4",
       "_origin": "ast",
+      "id": "controllers_hello_controller_connect",
       "community": 47,
-      "norm_label": "connect()",
-      "id": "controllers_hello_controller_connect"
+      "norm_label": "connect()"
     },
     {
       "label": "index.js",
@@ -1429,9 +1569,9 @@
       "source_file": "app/javascript/controllers/index.js",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_index",
       "community": 72,
-      "norm_label": "index.js",
-      "id": "controllers_index"
+      "norm_label": "index.js"
     },
     {
       "label": "optimistic_remove_controller.js",
@@ -1439,9 +1579,9 @@
       "source_file": "app/javascript/controllers/optimistic_remove_controller.js",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_optimistic_remove_controller",
       "community": 11,
-      "norm_label": "optimistic_remove_controller.js",
-      "id": "controllers_optimistic_remove_controller"
+      "norm_label": "optimistic_remove_controller.js"
     },
     {
       "label": "connect()",
@@ -1449,9 +1589,9 @@
       "source_file": "app/javascript/controllers/optimistic_remove_controller.js",
       "source_location": "L4",
       "_origin": "ast",
+      "id": "controllers_optimistic_remove_controller_connect",
       "community": 11,
-      "norm_label": "connect()",
-      "id": "controllers_optimistic_remove_controller_connect"
+      "norm_label": "connect()"
     },
     {
       "label": "disconnect()",
@@ -1459,9 +1599,9 @@
       "source_file": "app/javascript/controllers/optimistic_remove_controller.js",
       "source_location": "L9",
       "_origin": "ast",
+      "id": "controllers_optimistic_remove_controller_disconnect",
       "community": 11,
-      "norm_label": "disconnect()",
-      "id": "controllers_optimistic_remove_controller_disconnect"
+      "norm_label": "disconnect()"
     },
     {
       "label": "handleClick()",
@@ -1469,9 +1609,9 @@
       "source_file": "app/javascript/controllers/optimistic_remove_controller.js",
       "source_location": "L14",
       "_origin": "ast",
+      "id": "controllers_optimistic_remove_controller_handleclick",
       "community": 11,
-      "norm_label": "handleclick()",
-      "id": "controllers_optimistic_remove_controller_handleclick"
+      "norm_label": "handleclick()"
     },
     {
       "label": "handleSubmitEnd()",
@@ -1479,9 +1619,9 @@
       "source_file": "app/javascript/controllers/optimistic_remove_controller.js",
       "source_location": "L25",
       "_origin": "ast",
+      "id": "controllers_optimistic_remove_controller_handlesubmitend",
       "community": 11,
-      "norm_label": "handlesubmitend()",
-      "id": "controllers_optimistic_remove_controller_handlesubmitend"
+      "norm_label": "handlesubmitend()"
     },
     {
       "label": "read_controller.js",
@@ -1489,9 +1629,9 @@
       "source_file": "app/javascript/controllers/read_controller.js",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_read_controller",
       "community": 9,
-      "norm_label": "read_controller.js",
-      "id": "controllers_read_controller"
+      "norm_label": "read_controller.js"
     },
     {
       "label": "connect()",
@@ -1499,9 +1639,9 @@
       "source_file": "app/javascript/controllers/read_controller.js",
       "source_location": "L7",
       "_origin": "ast",
+      "id": "controllers_read_controller_connect",
       "community": 9,
-      "norm_label": "connect()",
-      "id": "controllers_read_controller_connect"
+      "norm_label": "connect()"
     },
     {
       "label": "getContent()",
@@ -1509,9 +1649,9 @@
       "source_file": "app/javascript/controllers/read_controller.js",
       "source_location": "L12",
       "_origin": "ast",
+      "id": "controllers_read_controller_getcontent",
       "community": 9,
-      "norm_label": "getcontent()",
-      "id": "controllers_read_controller_getcontent"
+      "norm_label": "getcontent()"
     },
     {
       "label": "startSpeech()",
@@ -1519,9 +1659,9 @@
       "source_file": "app/javascript/controllers/read_controller.js",
       "source_location": "L22",
       "_origin": "ast",
+      "id": "controllers_read_controller_startspeech",
       "community": 9,
-      "norm_label": "startspeech()",
-      "id": "controllers_read_controller_startspeech"
+      "norm_label": "startspeech()"
     },
     {
       "label": "pauseSpeech()",
@@ -1529,9 +1669,9 @@
       "source_file": "app/javascript/controllers/read_controller.js",
       "source_location": "L47",
       "_origin": "ast",
+      "id": "controllers_read_controller_pausespeech",
       "community": 9,
-      "norm_label": "pausespeech()",
-      "id": "controllers_read_controller_pausespeech"
+      "norm_label": "pausespeech()"
     },
     {
       "label": "resumeSpeech()",
@@ -1539,9 +1679,9 @@
       "source_file": "app/javascript/controllers/read_controller.js",
       "source_location": "L52",
       "_origin": "ast",
+      "id": "controllers_read_controller_resumespeech",
       "community": 9,
-      "norm_label": "resumespeech()",
-      "id": "controllers_read_controller_resumespeech"
+      "norm_label": "resumespeech()"
     },
     {
       "label": "togglePlayPause()",
@@ -1549,9 +1689,9 @@
       "source_file": "app/javascript/controllers/read_controller.js",
       "source_location": "L57",
       "_origin": "ast",
+      "id": "controllers_read_controller_toggleplaypause",
       "community": 9,
-      "norm_label": "toggleplaypause()",
-      "id": "controllers_read_controller_toggleplaypause"
+      "norm_label": "toggleplaypause()"
     },
     {
       "label": "updatePlayPauseButton()",
@@ -1559,9 +1699,9 @@
       "source_file": "app/javascript/controllers/read_controller.js",
       "source_location": "L69",
       "_origin": "ast",
+      "id": "controllers_read_controller_updateplaypausebutton",
       "community": 9,
-      "norm_label": "updateplaypausebutton()",
-      "id": "controllers_read_controller_updateplaypausebutton"
+      "norm_label": "updateplaypausebutton()"
     },
     {
       "label": "scroll_tracker_controller.js",
@@ -1569,9 +1709,9 @@
       "source_file": "app/javascript/controllers/scroll_tracker_controller.js",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_scroll_tracker_controller",
       "community": 12,
-      "norm_label": "scroll_tracker_controller.js",
-      "id": "controllers_scroll_tracker_controller"
+      "norm_label": "scroll_tracker_controller.js"
     },
     {
       "label": "connect()",
@@ -1579,9 +1719,9 @@
       "source_file": "app/javascript/controllers/scroll_tracker_controller.js",
       "source_location": "L7",
       "_origin": "ast",
+      "id": "controllers_scroll_tracker_controller_connect",
       "community": 12,
-      "norm_label": "connect()",
-      "id": "controllers_scroll_tracker_controller_connect"
+      "norm_label": "connect()"
     },
     {
       "label": "disconnect()",
@@ -1589,9 +1729,9 @@
       "source_file": "app/javascript/controllers/scroll_tracker_controller.js",
       "source_location": "L19",
       "_origin": "ast",
+      "id": "controllers_scroll_tracker_controller_disconnect",
       "community": 12,
-      "norm_label": "disconnect()",
-      "id": "controllers_scroll_tracker_controller_disconnect"
+      "norm_label": "disconnect()"
     },
     {
       "label": "handleIntersect()",
@@ -1599,9 +1739,9 @@
       "source_file": "app/javascript/controllers/scroll_tracker_controller.js",
       "source_location": "L23",
       "_origin": "ast",
+      "id": "controllers_scroll_tracker_controller_handleintersect",
       "community": 12,
-      "norm_label": "handleintersect()",
-      "id": "controllers_scroll_tracker_controller_handleintersect"
+      "norm_label": "handleintersect()"
     },
     {
       "label": "markAsRead()",
@@ -1609,9 +1749,59 @@
       "source_file": "app/javascript/controllers/scroll_tracker_controller.js",
       "source_location": "L29",
       "_origin": "ast",
+      "id": "controllers_scroll_tracker_controller_markasread",
       "community": 12,
-      "norm_label": "markasread()",
-      "id": "controllers_scroll_tracker_controller_markasread"
+      "norm_label": "markasread()"
+    },
+    {
+      "label": "share_links_controller.js",
+      "file_type": "code",
+      "source_file": "app/javascript/controllers/share_links_controller.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "controllers_share_links_controller",
+      "community": 53,
+      "norm_label": "share_links_controller.js"
+    },
+    {
+      "label": "connect()",
+      "file_type": "code",
+      "source_file": "app/javascript/controllers/share_links_controller.js",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "controllers_share_links_controller_connect",
+      "community": 53,
+      "norm_label": "connect()"
+    },
+    {
+      "label": "toggleAll()",
+      "file_type": "code",
+      "source_file": "app/javascript/controllers/share_links_controller.js",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "controllers_share_links_controller_toggleall",
+      "community": 53,
+      "norm_label": "toggleall()"
+    },
+    {
+      "label": "generate()",
+      "file_type": "code",
+      "source_file": "app/javascript/controllers/share_links_controller.js",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "controllers_share_links_controller_generate",
+      "community": 53,
+      "norm_label": "generate()"
+    },
+    {
+      "label": "copy()",
+      "file_type": "code",
+      "source_file": "app/javascript/controllers/share_links_controller.js",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "controllers_share_links_controller_copy",
+      "community": 53,
+      "norm_label": "copy()"
     },
     {
       "label": "sidebar_controller.js",
@@ -1619,9 +1809,9 @@
       "source_file": "app/javascript/controllers/sidebar_controller.js",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_sidebar_controller",
       "community": 13,
-      "norm_label": "sidebar_controller.js",
-      "id": "controllers_sidebar_controller"
+      "norm_label": "sidebar_controller.js"
     },
     {
       "label": "connect()",
@@ -1629,9 +1819,9 @@
       "source_file": "app/javascript/controllers/sidebar_controller.js",
       "source_location": "L5",
       "_origin": "ast",
+      "id": "controllers_sidebar_controller_connect",
       "community": 13,
-      "norm_label": "connect()",
-      "id": "controllers_sidebar_controller_connect"
+      "norm_label": "connect()"
     },
     {
       "label": "disconnect()",
@@ -1639,9 +1829,9 @@
       "source_file": "app/javascript/controllers/sidebar_controller.js",
       "source_location": "L9",
       "_origin": "ast",
+      "id": "controllers_sidebar_controller_disconnect",
       "community": 13,
-      "norm_label": "disconnect()",
-      "id": "controllers_sidebar_controller_disconnect"
+      "norm_label": "disconnect()"
     },
     {
       "label": "handleShortcut()",
@@ -1649,9 +1839,9 @@
       "source_file": "app/javascript/controllers/sidebar_controller.js",
       "source_location": "L13",
       "_origin": "ast",
+      "id": "controllers_sidebar_controller_handleshortcut",
       "community": 13,
-      "norm_label": "handleshortcut()",
-      "id": "controllers_sidebar_controller_handleshortcut"
+      "norm_label": "handleshortcut()"
     },
     {
       "label": "toggle()",
@@ -1659,9 +1849,9 @@
       "source_file": "app/javascript/controllers/sidebar_controller.js",
       "source_location": "L20",
       "_origin": "ast",
+      "id": "controllers_sidebar_controller_toggle",
       "community": 13,
-      "norm_label": "toggle()",
-      "id": "controllers_sidebar_controller_toggle"
+      "norm_label": "toggle()"
     },
     {
       "label": "stale_article_cleaner_controller.js",
@@ -1669,9 +1859,9 @@
       "source_file": "app/javascript/controllers/stale_article_cleaner_controller.js",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_stale_article_cleaner_controller",
       "community": 17,
-      "norm_label": "stale_article_cleaner_controller.js",
-      "id": "controllers_stale_article_cleaner_controller"
+      "norm_label": "stale_article_cleaner_controller.js"
     },
     {
       "label": "connect()",
@@ -1679,9 +1869,9 @@
       "source_file": "app/javascript/controllers/stale_article_cleaner_controller.js",
       "source_location": "L4",
       "_origin": "ast",
+      "id": "controllers_stale_article_cleaner_controller_connect",
       "community": 17,
-      "norm_label": "connect()",
-      "id": "controllers_stale_article_cleaner_controller_connect"
+      "norm_label": "connect()"
     },
     {
       "label": "disconnect()",
@@ -1689,9 +1879,9 @@
       "source_file": "app/javascript/controllers/stale_article_cleaner_controller.js",
       "source_location": "L8",
       "_origin": "ast",
+      "id": "controllers_stale_article_cleaner_controller_disconnect",
       "community": 17,
-      "norm_label": "disconnect()",
-      "id": "controllers_stale_article_cleaner_controller_disconnect"
+      "norm_label": "disconnect()"
     },
     {
       "label": "#cleanStaleArticles()",
@@ -1699,9 +1889,9 @@
       "source_file": "app/javascript/controllers/stale_article_cleaner_controller.js",
       "source_location": "L18",
       "_origin": "ast",
+      "id": "controllers_stale_article_cleaner_controller_cleanstalearticles",
       "community": 17,
-      "norm_label": "#cleanstalearticles()",
-      "id": "controllers_stale_article_cleaner_controller_cleanstalearticles"
+      "norm_label": "#cleanstalearticles()"
     },
     {
       "label": "application_job.rb",
@@ -1709,9 +1899,9 @@
       "source_file": "app/jobs/application_job.rb",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 53,
-      "norm_label": "application_job.rb",
-      "id": "jobs_application_job"
+      "id": "jobs_application_job",
+      "community": 0,
+      "norm_label": "application_job.rb"
     },
     {
       "label": "ApplicationJob",
@@ -1719,9 +1909,19 @@
       "source_file": "app/jobs/application_job.rb",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 53,
-      "norm_label": "applicationjob",
-      "id": "jobs_application_job_applicationjob"
+      "id": "jobs_application_job_applicationjob",
+      "community": 0,
+      "norm_label": "applicationjob"
+    },
+    {
+      "label": ".with_semantic_logging()",
+      "file_type": "code",
+      "source_file": "app/jobs/application_job.rb",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "jobs_application_job_applicationjob_with_semantic_logging",
+      "community": 0,
+      "norm_label": ".with_semantic_logging()"
     },
     {
       "label": "summarize_article_job.rb",
@@ -1729,9 +1929,9 @@
       "source_file": "app/jobs/summarize_article_job.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "jobs_summarize_article_job",
       "community": 2,
-      "norm_label": "summarize_article_job.rb",
-      "id": "jobs_summarize_article_job"
+      "norm_label": "summarize_article_job.rb"
     },
     {
       "label": "SummarizeArticleJob",
@@ -1739,9 +1939,9 @@
       "source_file": "app/jobs/summarize_article_job.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "jobs_summarize_article_job_summarizearticlejob",
       "community": 2,
-      "norm_label": "summarizearticlejob",
-      "id": "jobs_summarize_article_job_summarizearticlejob"
+      "norm_label": "summarizearticlejob"
     },
     {
       "label": ".perform()",
@@ -1749,9 +1949,49 @@
       "source_file": "app/jobs/summarize_article_job.rb",
       "source_location": "L6",
       "_origin": "ast",
+      "id": "jobs_summarize_article_job_summarizearticlejob_perform",
       "community": 2,
-      "norm_label": ".perform()",
-      "id": "jobs_summarize_article_job_summarizearticlejob_perform"
+      "norm_label": ".perform()"
+    },
+    {
+      "label": "simple_rss_formatter.rb",
+      "file_type": "code",
+      "source_file": "app/lib/simple_rss_formatter.rb",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "lib_simple_rss_formatter",
+      "community": 90,
+      "norm_label": "simple_rss_formatter.rb"
+    },
+    {
+      "label": "SimpleRssFormatter",
+      "file_type": "code",
+      "source_file": "app/lib/simple_rss_formatter.rb",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "lib_simple_rss_formatter_simplerssformatter",
+      "community": 90,
+      "norm_label": "simplerssformatter"
+    },
+    {
+      "label": ".time()",
+      "file_type": "code",
+      "source_file": "app/lib/simple_rss_formatter.rb",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "lib_simple_rss_formatter_simplerssformatter_time",
+      "community": 90,
+      "norm_label": ".time()"
+    },
+    {
+      "label": ".process_info()",
+      "file_type": "code",
+      "source_file": "app/lib/simple_rss_formatter.rb",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "lib_simple_rss_formatter_simplerssformatter_process_info",
+      "community": 90,
+      "norm_label": ".process_info()"
     },
     {
       "label": "application_mailer.rb",
@@ -1759,9 +1999,9 @@
       "source_file": "app/mailers/application_mailer.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "mailers_application_mailer",
       "community": 54,
-      "norm_label": "application_mailer.rb",
-      "id": "mailers_application_mailer"
+      "norm_label": "application_mailer.rb"
     },
     {
       "label": "ApplicationMailer",
@@ -1769,9 +2009,9 @@
       "source_file": "app/mailers/application_mailer.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "mailers_application_mailer_applicationmailer",
       "community": 54,
-      "norm_label": "applicationmailer",
-      "id": "mailers_application_mailer_applicationmailer"
+      "norm_label": "applicationmailer"
     },
     {
       "label": "application_record.rb",
@@ -1779,9 +2019,9 @@
       "source_file": "app/models/application_record.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_application_record",
       "community": 55,
-      "norm_label": "application_record.rb",
-      "id": "models_application_record"
+      "norm_label": "application_record.rb"
     },
     {
       "label": "ApplicationRecord",
@@ -1789,9 +2029,9 @@
       "source_file": "app/models/application_record.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_application_record_applicationrecord",
       "community": 55,
-      "norm_label": "applicationrecord",
-      "id": "models_application_record_applicationrecord"
+      "norm_label": "applicationrecord"
     },
     {
       "label": "article.rb",
@@ -1799,9 +2039,9 @@
       "source_file": "app/models/article.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_article",
       "community": 2,
-      "norm_label": "article.rb",
-      "id": "models_article"
+      "norm_label": "article.rb"
     },
     {
       "label": "Article",
@@ -1809,9 +2049,9 @@
       "source_file": "app/models/article.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_article_article",
       "community": 2,
-      "norm_label": "article",
-      "id": "models_article_article"
+      "norm_label": "article"
     },
     {
       "label": ".toggle_status!()",
@@ -1819,9 +2059,9 @@
       "source_file": "app/models/article.rb",
       "source_location": "L19",
       "_origin": "ast",
+      "id": "models_article_article_toggle_status",
       "community": 2,
-      "norm_label": ".toggle_status!()",
-      "id": "models_article_article_toggle_status"
+      "norm_label": ".toggle_status!()"
     },
     {
       "label": ".clear_old_articles()",
@@ -1829,9 +2069,9 @@
       "source_file": "app/models/article.rb",
       "source_location": "L24",
       "_origin": "ast",
+      "id": "models_article_article_clear_old_articles",
       "community": 2,
-      "norm_label": ".clear_old_articles()",
-      "id": "models_article_article_clear_old_articles"
+      "norm_label": ".clear_old_articles()"
     },
     {
       "label": ".is_read?()",
@@ -1839,9 +2079,9 @@
       "source_file": "app/models/article.rb",
       "source_location": "L28",
       "_origin": "ast",
+      "id": "models_article_article_is_read",
       "community": 2,
-      "norm_label": ".is_read?()",
-      "id": "models_article_article_is_read"
+      "norm_label": ".is_read?()"
     },
     {
       "label": "current.rb",
@@ -1849,9 +2089,9 @@
       "source_file": "app/models/current.rb",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": "current.rb",
-      "id": "models_current"
+      "id": "models_current",
+      "community": 5,
+      "norm_label": "current.rb"
     },
     {
       "label": "Current",
@@ -1859,9 +2099,9 @@
       "source_file": "app/models/current.rb",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
-      "norm_label": "current",
-      "id": "models_current_current"
+      "id": "models_current_current",
+      "community": 5,
+      "norm_label": "current"
     },
     {
       "label": "external_account.rb",
@@ -1869,9 +2109,9 @@
       "source_file": "app/models/external_account.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_external_account",
       "community": 57,
-      "norm_label": "external_account.rb",
-      "id": "models_external_account"
+      "norm_label": "external_account.rb"
     },
     {
       "label": "ExternalAccount",
@@ -1879,9 +2119,9 @@
       "source_file": "app/models/external_account.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_external_account_externalaccount",
       "community": 57,
-      "norm_label": "externalaccount",
-      "id": "models_external_account_externalaccount"
+      "norm_label": "externalaccount"
     },
     {
       "label": "feed.rb",
@@ -1889,9 +2129,9 @@
       "source_file": "app/models/feed.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_feed",
       "community": 8,
-      "norm_label": "feed.rb",
-      "id": "models_feed"
+      "norm_label": "feed.rb"
     },
     {
       "label": "Feed",
@@ -1899,9 +2139,19 @@
       "source_file": "app/models/feed.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_feed_feed",
       "community": 8,
-      "norm_label": "feed",
-      "id": "models_feed_feed"
+      "norm_label": "feed"
+    },
+    {
+      "label": ".should_fetch?()",
+      "file_type": "code",
+      "source_file": "app/models/feed.rb",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "models_feed_feed_should_fetch",
+      "community": 8,
+      "norm_label": ".should_fetch?()"
     },
     {
       "label": "feed_folder.rb",
@@ -1909,9 +2159,9 @@
       "source_file": "app/models/feed_folder.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_feed_folder",
       "community": 58,
-      "norm_label": "feed_folder.rb",
-      "id": "models_feed_folder"
+      "norm_label": "feed_folder.rb"
     },
     {
       "label": "FeedFolder",
@@ -1919,9 +2169,9 @@
       "source_file": "app/models/feed_folder.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_feed_folder_feedfolder",
       "community": 58,
-      "norm_label": "feedfolder",
-      "id": "models_feed_folder_feedfolder"
+      "norm_label": "feedfolder"
     },
     {
       "label": "folder.rb",
@@ -1929,9 +2179,9 @@
       "source_file": "app/models/folder.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_folder",
       "community": 60,
-      "norm_label": "folder.rb",
-      "id": "models_folder"
+      "norm_label": "folder.rb"
     },
     {
       "label": "Folder",
@@ -1939,9 +2189,9 @@
       "source_file": "app/models/folder.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_folder_folder",
       "community": 60,
-      "norm_label": "folder",
-      "id": "models_folder_folder"
+      "norm_label": "folder"
     },
     {
       "label": "session.rb",
@@ -1949,9 +2199,9 @@
       "source_file": "app/models/session.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_session",
       "community": 3,
-      "norm_label": "session.rb",
-      "id": "models_session"
+      "norm_label": "session.rb"
     },
     {
       "label": "Session",
@@ -1959,9 +2209,9 @@
       "source_file": "app/models/session.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_session_session",
       "community": 3,
-      "norm_label": "session",
-      "id": "models_session_session"
+      "norm_label": "session"
     },
     {
       "label": "user.rb",
@@ -1969,9 +2219,9 @@
       "source_file": "app/models/user.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_user",
       "community": 1,
-      "norm_label": "user.rb",
-      "id": "models_user"
+      "norm_label": "user.rb"
     },
     {
       "label": "User",
@@ -1979,9 +2229,9 @@
       "source_file": "app/models/user.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_user_user",
       "community": 1,
-      "norm_label": "user",
-      "id": "models_user_user"
+      "norm_label": "user"
     },
     {
       "label": ".api_key_config_for()",
@@ -1989,9 +2239,9 @@
       "source_file": "app/models/user.rb",
       "source_location": "L13",
       "_origin": "ast",
+      "id": "models_user_user_api_key_config_for",
       "community": 1,
-      "norm_label": ".api_key_config_for()",
-      "id": "models_user_user_api_key_config_for"
+      "norm_label": ".api_key_config_for()"
     },
     {
       "label": ".build_llm_context()",
@@ -1999,9 +2249,9 @@
       "source_file": "app/models/user.rb",
       "source_location": "L17",
       "_origin": "ast",
+      "id": "models_user_user_build_llm_context",
       "community": 1,
-      "norm_label": ".build_llm_context()",
-      "id": "models_user_user_build_llm_context"
+      "norm_label": ".build_llm_context()"
     },
     {
       "label": ".llm_context()",
@@ -2009,9 +2259,9 @@
       "source_file": "app/models/user.rb",
       "source_location": "L23",
       "_origin": "ast",
+      "id": "models_user_user_llm_context",
       "community": 1,
-      "norm_label": ".llm_context()",
-      "id": "models_user_user_llm_context"
+      "norm_label": ".llm_context()"
     },
     {
       "label": ".ai_configured?()",
@@ -2019,9 +2269,9 @@
       "source_file": "app/models/user.rb",
       "source_location": "L47",
       "_origin": "ast",
-      "community": 1,
-      "norm_label": ".ai_configured?()",
-      "id": "models_user_user_ai_configured"
+      "id": "models_user_user_ai_configured",
+      "community": 5,
+      "norm_label": ".ai_configured?()"
     },
     {
       "label": ".raindrop_connected?()",
@@ -2029,9 +2279,9 @@
       "source_file": "app/models/user.rb",
       "source_location": "L51",
       "_origin": "ast",
+      "id": "models_user_user_raindrop_connected",
       "community": 1,
-      "norm_label": ".raindrop_connected?()",
-      "id": "models_user_user_raindrop_connected"
+      "norm_label": ".raindrop_connected?()"
     },
     {
       "label": ".admin?()",
@@ -2039,9 +2289,9 @@
       "source_file": "app/models/user.rb",
       "source_location": "L55",
       "_origin": "ast",
+      "id": "models_user_user_admin",
       "community": 1,
-      "norm_label": ".admin?()",
-      "id": "models_user_user_admin"
+      "norm_label": ".admin?()"
     },
     {
       "label": "feed_manager.rb",
@@ -2049,9 +2299,9 @@
       "source_file": "app/services/feed_manager.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "services_feed_manager",
       "community": 0,
-      "norm_label": "feed_manager.rb",
-      "id": "services_feed_manager"
+      "norm_label": "feed_manager.rb"
     },
     {
       "label": "FeedManager",
@@ -2059,9 +2309,9 @@
       "source_file": "app/services/feed_manager.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "services_feed_manager_feedmanager",
       "community": 0,
-      "norm_label": "feedmanager",
-      "id": "services_feed_manager_feedmanager"
+      "norm_label": "feedmanager"
     },
     {
       "label": ".fetch_feeds()",
@@ -2069,39 +2319,39 @@
       "source_file": "app/services/feed_manager.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "services_feed_manager_feedmanager_fetch_feeds",
       "community": 0,
-      "norm_label": ".fetch_feeds()",
-      "id": "services_feed_manager_feedmanager_fetch_feeds"
+      "norm_label": ".fetch_feeds()"
     },
     {
       "label": ".fetch_and_save_feeds()",
       "file_type": "code",
       "source_file": "app/services/feed_manager.rb",
-      "source_location": "L26",
+      "source_location": "L27",
       "_origin": "ast",
+      "id": "services_feed_manager_feedmanager_fetch_and_save_feeds",
       "community": 0,
-      "norm_label": ".fetch_and_save_feeds()",
-      "id": "services_feed_manager_feedmanager_fetch_and_save_feeds"
+      "norm_label": ".fetch_and_save_feeds()"
     },
     {
       "label": ".insert_new_feeds()",
       "file_type": "code",
       "source_file": "app/services/feed_manager.rb",
-      "source_location": "L58",
+      "source_location": "L77",
       "_origin": "ast",
+      "id": "services_feed_manager_feedmanager_insert_new_feeds",
       "community": 0,
-      "norm_label": ".insert_new_feeds()",
-      "id": "services_feed_manager_feedmanager_insert_new_feeds"
+      "norm_label": ".insert_new_feeds()"
     },
     {
       "label": ".save_feed_articles()",
       "file_type": "code",
       "source_file": "app/services/feed_manager.rb",
-      "source_location": "L69",
+      "source_location": "L88",
       "_origin": "ast",
+      "id": "services_feed_manager_feedmanager_save_feed_articles",
       "community": 0,
-      "norm_label": ".save_feed_articles()",
-      "id": "services_feed_manager_feedmanager_save_feed_articles"
+      "norm_label": ".save_feed_articles()"
     },
     {
       "label": "fetch_feed_service.rb",
@@ -2109,9 +2359,9 @@
       "source_file": "app/services/fetch_feed_service.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "services_fetch_feed_service",
       "community": 10,
-      "norm_label": "fetch_feed_service.rb",
-      "id": "services_fetch_feed_service"
+      "norm_label": "fetch_feed_service.rb"
     },
     {
       "label": "FetchFeedService",
@@ -2119,69 +2369,99 @@
       "source_file": "app/services/fetch_feed_service.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "services_fetch_feed_service_fetchfeedservice",
       "community": 10,
-      "norm_label": "fetchfeedservice",
-      "id": "services_fetch_feed_service_fetchfeedservice"
+      "norm_label": "fetchfeedservice"
     },
     {
       "label": ".initialize()",
       "file_type": "code",
       "source_file": "app/services/fetch_feed_service.rb",
-      "source_location": "L4",
+      "source_location": "L5",
       "_origin": "ast",
+      "id": "services_fetch_feed_service_fetchfeedservice_initialize",
       "community": 10,
-      "norm_label": ".initialize()",
-      "id": "services_fetch_feed_service_fetchfeedservice_initialize"
+      "norm_label": ".initialize()"
     },
     {
       "label": ".call()",
       "file_type": "code",
       "source_file": "app/services/fetch_feed_service.rb",
-      "source_location": "L8",
+      "source_location": "L10",
       "_origin": "ast",
+      "id": "services_fetch_feed_service_fetchfeedservice_call",
       "community": 10,
-      "norm_label": ".call()",
-      "id": "services_fetch_feed_service_fetchfeedservice_call"
+      "norm_label": ".call()"
     },
     {
       "label": ".format_feed()",
       "file_type": "code",
       "source_file": "app/services/fetch_feed_service.rb",
-      "source_location": "L28",
+      "source_location": "L44",
       "_origin": "ast",
+      "id": "services_fetch_feed_service_fetchfeedservice_format_feed",
       "community": 10,
-      "norm_label": ".format_feed()",
-      "id": "services_fetch_feed_service_fetchfeedservice_format_feed"
+      "norm_label": ".format_feed()"
     },
     {
       "label": ".fetch_feed()",
       "file_type": "code",
       "source_file": "app/services/fetch_feed_service.rb",
-      "source_location": "L50",
+      "source_location": "L66",
       "_origin": "ast",
+      "id": "services_fetch_feed_service_fetchfeedservice_fetch_feed",
       "community": 10,
-      "norm_label": ".fetch_feed()",
-      "id": "services_fetch_feed_service_fetchfeedservice_fetch_feed"
+      "norm_label": ".fetch_feed()"
+    },
+    {
+      "label": ".conditional_headers()",
+      "file_type": "code",
+      "source_file": "app/services/fetch_feed_service.rb",
+      "source_location": "L84",
+      "_origin": "ast",
+      "id": "services_fetch_feed_service_fetchfeedservice_conditional_headers",
+      "community": 10,
+      "norm_label": ".conditional_headers()"
     },
     {
       "label": ".parse_feed()",
       "file_type": "code",
       "source_file": "app/services/fetch_feed_service.rb",
-      "source_location": "L64",
+      "source_location": "L91",
       "_origin": "ast",
+      "id": "services_fetch_feed_service_fetchfeedservice_parse_feed",
       "community": 10,
-      "norm_label": ".parse_feed()",
-      "id": "services_fetch_feed_service_fetchfeedservice_parse_feed"
+      "norm_label": ".parse_feed()"
     },
     {
       "label": ".article_image_url()",
       "file_type": "code",
       "source_file": "app/services/fetch_feed_service.rb",
-      "source_location": "L77",
+      "source_location": "L104",
       "_origin": "ast",
+      "id": "services_fetch_feed_service_fetchfeedservice_article_image_url",
       "community": 10,
-      "norm_label": ".article_image_url()",
-      "id": "services_fetch_feed_service_fetchfeedservice_article_image_url"
+      "norm_label": ".article_image_url()"
+    },
+    {
+      "label": ".not_modified_result()",
+      "file_type": "code",
+      "source_file": "app/services/fetch_feed_service.rb",
+      "source_location": "L114",
+      "_origin": "ast",
+      "id": "services_fetch_feed_service_fetchfeedservice_not_modified_result",
+      "community": 10,
+      "norm_label": ".not_modified_result()"
+    },
+    {
+      "label": ".failure_result()",
+      "file_type": "code",
+      "source_file": "app/services/fetch_feed_service.rb",
+      "source_location": "L118",
+      "_origin": "ast",
+      "id": "services_fetch_feed_service_fetchfeedservice_failure_result",
+      "community": 10,
+      "norm_label": ".failure_result()"
     },
     {
       "label": "generate_opml_service.rb",
@@ -2189,9 +2469,9 @@
       "source_file": "app/services/generate_opml_service.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "services_generate_opml_service",
       "community": 14,
-      "norm_label": "generate_opml_service.rb",
-      "id": "services_generate_opml_service"
+      "norm_label": "generate_opml_service.rb"
     },
     {
       "label": "GenerateOpmlService",
@@ -2199,9 +2479,9 @@
       "source_file": "app/services/generate_opml_service.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "services_generate_opml_service_generateopmlservice",
       "community": 14,
-      "norm_label": "generateopmlservice",
-      "id": "services_generate_opml_service_generateopmlservice"
+      "norm_label": "generateopmlservice"
     },
     {
       "label": ".initialize()",
@@ -2209,9 +2489,9 @@
       "source_file": "app/services/generate_opml_service.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "services_generate_opml_service_generateopmlservice_initialize",
       "community": 14,
-      "norm_label": ".initialize()",
-      "id": "services_generate_opml_service_generateopmlservice_initialize"
+      "norm_label": ".initialize()"
     },
     {
       "label": ".call()",
@@ -2219,9 +2499,9 @@
       "source_file": "app/services/generate_opml_service.rb",
       "source_location": "L6",
       "_origin": "ast",
+      "id": "services_generate_opml_service_generateopmlservice_call",
       "community": 14,
-      "norm_label": ".call()",
-      "id": "services_generate_opml_service_generateopmlservice_call"
+      "norm_label": ".call()"
     },
     {
       "label": ".generate_outlines()",
@@ -2229,9 +2509,9 @@
       "source_file": "app/services/generate_opml_service.rb",
       "source_location": "L27",
       "_origin": "ast",
+      "id": "services_generate_opml_service_generateopmlservice_generate_outlines",
       "community": 14,
-      "norm_label": ".generate_outlines()",
-      "id": "services_generate_opml_service_generateopmlservice_generate_outlines"
+      "norm_label": ".generate_outlines()"
     },
     {
       "label": "parse_opml_service.rb",
@@ -2239,9 +2519,9 @@
       "source_file": "app/services/parse_opml_service.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "services_parse_opml_service",
       "community": 20,
-      "norm_label": "parse_opml_service.rb",
-      "id": "services_parse_opml_service"
+      "norm_label": "parse_opml_service.rb"
     },
     {
       "label": "ParseOpmlService",
@@ -2249,9 +2529,9 @@
       "source_file": "app/services/parse_opml_service.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "services_parse_opml_service_parseopmlservice",
       "community": 20,
-      "norm_label": "parseopmlservice",
-      "id": "services_parse_opml_service_parseopmlservice"
+      "norm_label": "parseopmlservice"
     },
     {
       "label": ".initialize()",
@@ -2259,9 +2539,9 @@
       "source_file": "app/services/parse_opml_service.rb",
       "source_location": "L4",
       "_origin": "ast",
+      "id": "services_parse_opml_service_parseopmlservice_initialize",
       "community": 20,
-      "norm_label": ".initialize()",
-      "id": "services_parse_opml_service_parseopmlservice_initialize"
+      "norm_label": ".initialize()"
     },
     {
       "label": ".call()",
@@ -2269,9 +2549,9 @@
       "source_file": "app/services/parse_opml_service.rb",
       "source_location": "L8",
       "_origin": "ast",
+      "id": "services_parse_opml_service_parseopmlservice_call",
       "community": 20,
-      "norm_label": ".call()",
-      "id": "services_parse_opml_service_parseopmlservice_call"
+      "norm_label": ".call()"
     },
     {
       "label": "client.rb",
@@ -2279,9 +2559,9 @@
       "source_file": "app/services/providers/raindrop/client.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "raindrop_client",
       "community": 4,
-      "norm_label": "client.rb",
-      "id": "raindrop_client"
+      "norm_label": "client.rb"
     },
     {
       "label": "Client",
@@ -2289,9 +2569,9 @@
       "source_file": "app/services/providers/raindrop/client.rb",
       "source_location": "L3",
       "_origin": "ast",
+      "id": "raindrop_client_client",
       "community": 4,
-      "norm_label": "client",
-      "id": "raindrop_client_client"
+      "norm_label": "client"
     },
     {
       "label": ".initialize()",
@@ -2299,9 +2579,9 @@
       "source_file": "app/services/providers/raindrop/client.rb",
       "source_location": "L9",
       "_origin": "ast",
+      "id": "raindrop_client_client_initialize",
       "community": 4,
-      "norm_label": ".initialize()",
-      "id": "raindrop_client_client_initialize"
+      "norm_label": ".initialize()"
     },
     {
       "label": ".create_bookmark()",
@@ -2309,9 +2589,9 @@
       "source_file": "app/services/providers/raindrop/client.rb",
       "source_location": "L13",
       "_origin": "ast",
+      "id": "raindrop_client_client_create_bookmark",
       "community": 4,
-      "norm_label": ".create_bookmark()",
-      "id": "raindrop_client_client_create_bookmark"
+      "norm_label": ".create_bookmark()"
     },
     {
       "label": ".access_token()",
@@ -2319,9 +2599,9 @@
       "source_file": "app/services/providers/raindrop/client.rb",
       "source_location": "L27",
       "_origin": "ast",
+      "id": "raindrop_client_client_access_token",
       "community": 4,
-      "norm_label": ".access_token()",
-      "id": "raindrop_client_client_access_token"
+      "norm_label": ".access_token()"
     },
     {
       "label": ".refresh_token()",
@@ -2329,9 +2609,9 @@
       "source_file": "app/services/providers/raindrop/client.rb",
       "source_location": "L31",
       "_origin": "ast",
+      "id": "raindrop_client_client_refresh_token",
       "community": 4,
-      "norm_label": ".refresh_token()",
-      "id": "raindrop_client_client_refresh_token"
+      "norm_label": ".refresh_token()"
     },
     {
       "label": ".auth_headers()",
@@ -2339,9 +2619,9 @@
       "source_file": "app/services/providers/raindrop/client.rb",
       "source_location": "L35",
       "_origin": "ast",
+      "id": "raindrop_client_client_auth_headers",
       "community": 4,
-      "norm_label": ".auth_headers()",
-      "id": "raindrop_client_client_auth_headers"
+      "norm_label": ".auth_headers()"
     },
     {
       "label": ".handle_response()",
@@ -2349,9 +2629,9 @@
       "source_file": "app/services/providers/raindrop/client.rb",
       "source_location": "L41",
       "_origin": "ast",
+      "id": "raindrop_client_client_handle_response",
       "community": 4,
-      "norm_label": ".handle_response()",
-      "id": "raindrop_client_client_handle_response"
+      "norm_label": ".handle_response()"
     },
     {
       "label": ".refresh_and_retry()",
@@ -2359,9 +2639,9 @@
       "source_file": "app/services/providers/raindrop/client.rb",
       "source_location": "L54",
       "_origin": "ast",
+      "id": "raindrop_client_client_refresh_and_retry",
       "community": 4,
-      "norm_label": ".refresh_and_retry()",
-      "id": "raindrop_client_client_refresh_and_retry"
+      "norm_label": ".refresh_and_retry()"
     },
     {
       "label": ".refresh_access_token!()",
@@ -2369,9 +2649,9 @@
       "source_file": "app/services/providers/raindrop/client.rb",
       "source_location": "L68",
       "_origin": "ast",
+      "id": "raindrop_client_client_refresh_access_token",
       "community": 4,
-      "norm_label": ".refresh_access_token!()",
-      "id": "raindrop_client_client_refresh_access_token"
+      "norm_label": ".refresh_access_token!()"
     },
     {
       "label": "error.rb",
@@ -2379,9 +2659,9 @@
       "source_file": "app/services/providers/raindrop/error.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "raindrop_error",
       "community": 0,
-      "norm_label": "error.rb",
-      "id": "raindrop_error"
+      "norm_label": "error.rb"
     },
     {
       "label": "Error",
@@ -2389,9 +2669,9 @@
       "source_file": "app/services/providers/raindrop/error.rb",
       "source_location": "L3",
       "_origin": "ast",
+      "id": "raindrop_error_error",
       "community": 0,
-      "norm_label": "error",
-      "id": "raindrop_error_error"
+      "norm_label": "error"
     },
     {
       "label": "Unauthorized",
@@ -2399,9 +2679,9 @@
       "source_file": "app/services/providers/raindrop/error.rb",
       "source_location": "L5",
       "_origin": "ast",
+      "id": "raindrop_error_unauthorized",
       "community": 0,
-      "norm_label": "unauthorized",
-      "id": "raindrop_error_unauthorized"
+      "norm_label": "unauthorized"
     },
     {
       "label": "RateLimited",
@@ -2409,9 +2689,9 @@
       "source_file": "app/services/providers/raindrop/error.rb",
       "source_location": "L6",
       "_origin": "ast",
+      "id": "raindrop_error_ratelimited",
       "community": 0,
-      "norm_label": "ratelimited",
-      "id": "raindrop_error_ratelimited"
+      "norm_label": "ratelimited"
     },
     {
       "label": "ApiError",
@@ -2419,9 +2699,9 @@
       "source_file": "app/services/providers/raindrop/error.rb",
       "source_location": "L7",
       "_origin": "ast",
+      "id": "raindrop_error_apierror",
       "community": 0,
-      "norm_label": "apierror",
-      "id": "raindrop_error_apierror"
+      "norm_label": "apierror"
     },
     {
       "label": "TokenRefreshed",
@@ -2429,9 +2709,9 @@
       "source_file": "app/services/providers/raindrop/error.rb",
       "source_location": "L8",
       "_origin": "ast",
+      "id": "raindrop_error_tokenrefreshed",
       "community": 0,
-      "norm_label": "tokenrefreshed",
-      "id": "raindrop_error_tokenrefreshed"
+      "norm_label": "tokenrefreshed"
     },
     {
       "label": "exporter.rb",
@@ -2439,9 +2719,9 @@
       "source_file": "app/services/providers/raindrop/exporter.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "raindrop_exporter",
       "community": 4,
-      "norm_label": "exporter.rb",
-      "id": "raindrop_exporter"
+      "norm_label": "exporter.rb"
     },
     {
       "label": "Exporter",
@@ -2449,9 +2729,9 @@
       "source_file": "app/services/providers/raindrop/exporter.rb",
       "source_location": "L3",
       "_origin": "ast",
+      "id": "raindrop_exporter_exporter",
       "community": 4,
-      "norm_label": "exporter",
-      "id": "raindrop_exporter_exporter"
+      "norm_label": "exporter"
     },
     {
       "label": ".initialize()",
@@ -2459,9 +2739,9 @@
       "source_file": "app/services/providers/raindrop/exporter.rb",
       "source_location": "L4",
       "_origin": "ast",
+      "id": "raindrop_exporter_exporter_initialize",
       "community": 4,
-      "norm_label": ".initialize()",
-      "id": "raindrop_exporter_exporter_initialize"
+      "norm_label": ".initialize()"
     },
     {
       "label": ".export()",
@@ -2469,9 +2749,9 @@
       "source_file": "app/services/providers/raindrop/exporter.rb",
       "source_location": "L8",
       "_origin": "ast",
+      "id": "raindrop_exporter_exporter_export",
       "community": 4,
-      "norm_label": ".export()",
-      "id": "raindrop_exporter_exporter_export"
+      "norm_label": ".export()"
     },
     {
       "label": ".client()",
@@ -2479,9 +2759,9 @@
       "source_file": "app/services/providers/raindrop/exporter.rb",
       "source_location": "L20",
       "_origin": "ast",
+      "id": "raindrop_exporter_exporter_client",
       "community": 4,
-      "norm_label": ".client()",
-      "id": "raindrop_exporter_exporter_client"
+      "norm_label": ".client()"
     },
     {
       "label": ".payload_for()",
@@ -2489,9 +2769,9 @@
       "source_file": "app/services/providers/raindrop/exporter.rb",
       "source_location": "L24",
       "_origin": "ast",
+      "id": "raindrop_exporter_exporter_payload_for",
       "community": 4,
-      "norm_label": ".payload_for()",
-      "id": "raindrop_exporter_exporter_payload_for"
+      "norm_label": ".payload_for()"
     },
     {
       "label": "save_article_to_raindrop.rb",
@@ -2499,9 +2779,9 @@
       "source_file": "app/services/save_article_to_raindrop.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "services_save_article_to_raindrop",
       "community": 2,
-      "norm_label": "save_article_to_raindrop.rb",
-      "id": "services_save_article_to_raindrop"
+      "norm_label": "save_article_to_raindrop.rb"
     },
     {
       "label": "SaveArticleToRaindrop",
@@ -2509,9 +2789,9 @@
       "source_file": "app/services/save_article_to_raindrop.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "services_save_article_to_raindrop_savearticletoraindrop",
       "community": 2,
-      "norm_label": "savearticletoraindrop",
-      "id": "services_save_article_to_raindrop_savearticletoraindrop"
+      "norm_label": "savearticletoraindrop"
     },
     {
       "label": ".initialize()",
@@ -2519,9 +2799,9 @@
       "source_file": "app/services/save_article_to_raindrop.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "services_save_article_to_raindrop_savearticletoraindrop_initialize",
       "community": 2,
-      "norm_label": ".initialize()",
-      "id": "services_save_article_to_raindrop_savearticletoraindrop_initialize"
+      "norm_label": ".initialize()"
     },
     {
       "label": ".call()",
@@ -2529,9 +2809,9 @@
       "source_file": "app/services/save_article_to_raindrop.rb",
       "source_location": "L7",
       "_origin": "ast",
+      "id": "services_save_article_to_raindrop_savearticletoraindrop_call",
       "community": 2,
-      "norm_label": ".call()",
-      "id": "services_save_article_to_raindrop_savearticletoraindrop_call"
+      "norm_label": ".call()"
     },
     {
       "label": "save_articles_service.rb",
@@ -2539,9 +2819,9 @@
       "source_file": "app/services/save_articles_service.rb",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
-      "norm_label": "save_articles_service.rb",
-      "id": "services_save_articles_service"
+      "id": "services_save_articles_service",
+      "community": 5,
+      "norm_label": "save_articles_service.rb"
     },
     {
       "label": "SaveArticlesService",
@@ -2549,9 +2829,9 @@
       "source_file": "app/services/save_articles_service.rb",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
-      "norm_label": "savearticlesservice",
-      "id": "services_save_articles_service_savearticlesservice"
+      "id": "services_save_articles_service_savearticlesservice",
+      "community": 5,
+      "norm_label": "savearticlesservice"
     },
     {
       "label": ".initialize()",
@@ -2559,9 +2839,9 @@
       "source_file": "app/services/save_articles_service.rb",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 1,
-      "norm_label": ".initialize()",
-      "id": "services_save_articles_service_savearticlesservice_initialize"
+      "id": "services_save_articles_service_savearticlesservice_initialize",
+      "community": 5,
+      "norm_label": ".initialize()"
     },
     {
       "label": ".call()",
@@ -2569,29 +2849,29 @@
       "source_file": "app/services/save_articles_service.rb",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 1,
-      "norm_label": ".call()",
-      "id": "services_save_articles_service_savearticlesservice_call"
+      "id": "services_save_articles_service_savearticlesservice_call",
+      "community": 5,
+      "norm_label": ".call()"
     },
     {
       "label": ".include_article?()",
       "file_type": "code",
       "source_file": "app/services/save_articles_service.rb",
-      "source_location": "L33",
+      "source_location": "L28",
       "_origin": "ast",
-      "community": 1,
-      "norm_label": ".include_article?()",
-      "id": "services_save_articles_service_savearticlesservice_include_article"
+      "id": "services_save_articles_service_savearticlesservice_include_article",
+      "community": 5,
+      "norm_label": ".include_article?()"
     },
     {
       "label": ".should_summarize_articles?()",
       "file_type": "code",
       "source_file": "app/services/save_articles_service.rb",
-      "source_location": "L38",
+      "source_location": "L33",
       "_origin": "ast",
-      "community": 1,
-      "norm_label": ".should_summarize_articles?()",
-      "id": "services_save_articles_service_savearticlesservice_should_summarize_articles"
+      "id": "services_save_articles_service_savearticlesservice_should_summarize_articles",
+      "community": 5,
+      "norm_label": ".should_summarize_articles?()"
     },
     {
       "label": "summarize_article.rb",
@@ -2599,9 +2879,9 @@
       "source_file": "app/services/summarize_article.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "services_summarize_article",
       "community": 15,
-      "norm_label": "summarize_article.rb",
-      "id": "services_summarize_article"
+      "norm_label": "summarize_article.rb"
     },
     {
       "label": "SummarizeArticle",
@@ -2609,9 +2889,9 @@
       "source_file": "app/services/summarize_article.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "services_summarize_article_summarizearticle",
       "community": 15,
-      "norm_label": "summarizearticle",
-      "id": "services_summarize_article_summarizearticle"
+      "norm_label": "summarizearticle"
     },
     {
       "label": ".initialize()",
@@ -2619,9 +2899,9 @@
       "source_file": "app/services/summarize_article.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "services_summarize_article_summarizearticle_initialize",
       "community": 1,
-      "norm_label": ".initialize()",
-      "id": "services_summarize_article_summarizearticle_initialize"
+      "norm_label": ".initialize()"
     },
     {
       "label": ".call()",
@@ -2629,9 +2909,9 @@
       "source_file": "app/services/summarize_article.rb",
       "source_location": "L10",
       "_origin": "ast",
+      "id": "services_summarize_article_summarizearticle_call",
       "community": 15,
-      "norm_label": ".call()",
-      "id": "services_summarize_article_summarizearticle_call"
+      "norm_label": ".call()"
     },
     {
       "label": ".summarize_instructions()",
@@ -2639,9 +2919,9 @@
       "source_file": "app/services/summarize_article.rb",
       "source_location": "L27",
       "_origin": "ast",
+      "id": "services_summarize_article_summarizearticle_summarize_instructions",
       "community": 15,
-      "norm_label": ".summarize_instructions()",
-      "id": "services_summarize_article_summarizearticle_summarize_instructions"
+      "norm_label": ".summarize_instructions()"
     },
     {
       "label": ".handle_gem_error()",
@@ -2649,9 +2929,9 @@
       "source_file": "app/services/summarize_article.rb",
       "source_location": "L31",
       "_origin": "ast",
+      "id": "services_summarize_article_summarizearticle_handle_gem_error",
       "community": 15,
-      "norm_label": ".handle_gem_error()",
-      "id": "services_summarize_article_summarizearticle_handle_gem_error"
+      "norm_label": ".handle_gem_error()"
     },
     {
       "label": "test_api_key_service.rb",
@@ -2659,9 +2939,9 @@
       "source_file": "app/services/test_api_key_service.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "services_test_api_key_service",
       "community": 1,
-      "norm_label": "test_api_key_service.rb",
-      "id": "services_test_api_key_service"
+      "norm_label": "test_api_key_service.rb"
     },
     {
       "label": "TestApiKeyService",
@@ -2669,9 +2949,9 @@
       "source_file": "app/services/test_api_key_service.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "services_test_api_key_service_testapikeyservice",
       "community": 1,
-      "norm_label": "testapikeyservice",
-      "id": "services_test_api_key_service_testapikeyservice"
+      "norm_label": "testapikeyservice"
     },
     {
       "label": ".initialize()",
@@ -2679,9 +2959,9 @@
       "source_file": "app/services/test_api_key_service.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "services_test_api_key_service_testapikeyservice_initialize",
       "community": 1,
-      "norm_label": ".initialize()",
-      "id": "services_test_api_key_service_testapikeyservice_initialize"
+      "norm_label": ".initialize()"
     },
     {
       "label": ".call()",
@@ -2689,9 +2969,9 @@
       "source_file": "app/services/test_api_key_service.rb",
       "source_location": "L8",
       "_origin": "ast",
+      "id": "services_test_api_key_service_testapikeyservice_call",
       "community": 1,
-      "norm_label": ".call()",
-      "id": "services_test_api_key_service_testapikeyservice_call"
+      "norm_label": ".call()"
     },
     {
       "label": "service-worker.js",
@@ -2699,9 +2979,9 @@
       "source_file": "app/views/pwa/service-worker.js",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "pwa_service_worker",
       "community": 88,
-      "norm_label": "service-worker.js",
-      "id": "pwa_service_worker"
+      "norm_label": "service-worker.js"
     },
     {
       "label": "application.rb",
@@ -2709,9 +2989,9 @@
       "source_file": "config/application.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "config_application",
       "community": 41,
-      "norm_label": "application.rb",
-      "id": "config_application"
+      "norm_label": "application.rb"
     },
     {
       "label": "Application",
@@ -2719,9 +2999,9 @@
       "source_file": "config/application.rb",
       "source_location": "L10",
       "_origin": "ast",
+      "id": "config_application_application",
       "community": 41,
-      "norm_label": "application",
-      "id": "config_application_application"
+      "norm_label": "application"
     },
     {
       "label": "boot.rb",
@@ -2729,9 +3009,9 @@
       "source_file": "config/boot.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "config_boot",
       "community": 67,
-      "norm_label": "boot.rb",
-      "id": "config_boot"
+      "norm_label": "boot.rb"
     },
     {
       "label": "environment.rb",
@@ -2739,9 +3019,9 @@
       "source_file": "config/environment.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "config_environment",
       "community": 68,
-      "norm_label": "environment.rb",
-      "id": "config_environment"
+      "norm_label": "environment.rb"
     },
     {
       "label": "development.rb",
@@ -2749,9 +3029,9 @@
       "source_file": "config/environments/development.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "environments_development",
       "community": 77,
-      "norm_label": "development.rb",
-      "id": "environments_development"
+      "norm_label": "development.rb"
     },
     {
       "label": "production.rb",
@@ -2759,9 +3039,9 @@
       "source_file": "config/environments/production.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "environments_production",
       "community": 78,
-      "norm_label": "production.rb",
-      "id": "environments_production"
+      "norm_label": "production.rb"
     },
     {
       "label": "test.rb",
@@ -2769,9 +3049,9 @@
       "source_file": "config/environments/test.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "environments_test",
       "community": 79,
-      "norm_label": "test.rb",
-      "id": "environments_test"
+      "norm_label": "test.rb"
     },
     {
       "label": "importmap.rb",
@@ -2779,9 +3059,9 @@
       "source_file": "config/importmap.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "config_importmap",
       "community": 69,
-      "norm_label": "importmap.rb",
-      "id": "config_importmap"
+      "norm_label": "importmap.rb"
     },
     {
       "label": "assets.rb",
@@ -2789,9 +3069,9 @@
       "source_file": "config/initializers/assets.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "initializers_assets",
       "community": 82,
-      "norm_label": "assets.rb",
-      "id": "initializers_assets"
+      "norm_label": "assets.rb"
     },
     {
       "label": "console_methods.rb",
@@ -2799,9 +3079,9 @@
       "source_file": "config/initializers/console_methods.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "initializers_console_methods",
       "community": 51,
-      "norm_label": "console_methods.rb",
-      "id": "initializers_console_methods"
+      "norm_label": "console_methods.rb"
     },
     {
       "label": "dp()",
@@ -2809,9 +3089,9 @@
       "source_file": "config/initializers/console_methods.rb",
       "source_location": "L16",
       "_origin": "ast",
+      "id": "initializers_console_methods_dp",
       "community": 51,
-      "norm_label": "dp()",
-      "id": "initializers_console_methods_dp"
+      "norm_label": "dp()"
     },
     {
       "label": "content_security_policy.rb",
@@ -2819,9 +3099,9 @@
       "source_file": "config/initializers/content_security_policy.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "initializers_content_security_policy",
       "community": 83,
-      "norm_label": "content_security_policy.rb",
-      "id": "initializers_content_security_policy"
+      "norm_label": "content_security_policy.rb"
     },
     {
       "label": "filter_parameter_logging.rb",
@@ -2829,9 +3109,9 @@
       "source_file": "config/initializers/filter_parameter_logging.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "initializers_filter_parameter_logging",
       "community": 84,
-      "norm_label": "filter_parameter_logging.rb",
-      "id": "initializers_filter_parameter_logging"
+      "norm_label": "filter_parameter_logging.rb"
     },
     {
       "label": "good_job.rb",
@@ -2839,9 +3119,9 @@
       "source_file": "config/initializers/good_job.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "initializers_good_job",
       "community": 52,
-      "norm_label": "good_job.rb",
-      "id": "initializers_good_job"
+      "norm_label": "good_job.rb"
     },
     {
       "label": "sql()",
@@ -2849,9 +3129,9 @@
       "source_file": "config/initializers/good_job.rb",
       "source_location": "L6",
       "_origin": "ast",
+      "id": "initializers_good_job_sql",
       "community": 52,
-      "norm_label": "sql()",
-      "id": "initializers_good_job_sql"
+      "norm_label": "sql()"
     },
     {
       "label": "inflections.rb",
@@ -2859,9 +3139,19 @@
       "source_file": "config/initializers/inflections.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "initializers_inflections",
       "community": 85,
-      "norm_label": "inflections.rb",
-      "id": "initializers_inflections"
+      "norm_label": "inflections.rb"
+    },
+    {
+      "label": "lograge.rb",
+      "file_type": "code",
+      "source_file": "config/initializers/lograge.rb",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "initializers_lograge",
+      "community": 94,
+      "norm_label": "lograge.rb"
     },
     {
       "label": "ruby_llm.rb",
@@ -2869,9 +3159,19 @@
       "source_file": "config/initializers/ruby_llm.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "initializers_ruby_llm",
       "community": 86,
-      "norm_label": "ruby_llm.rb",
-      "id": "initializers_ruby_llm"
+      "norm_label": "ruby_llm.rb"
+    },
+    {
+      "label": "semantic_logger.rb",
+      "file_type": "code",
+      "source_file": "config/initializers/semantic_logger.rb",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "initializers_semantic_logger",
+      "community": 95,
+      "norm_label": "semantic_logger.rb"
     },
     {
       "label": "puma.rb",
@@ -2879,9 +3179,9 @@
       "source_file": "config/puma.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "config_puma",
       "community": 70,
-      "norm_label": "puma.rb",
-      "id": "config_puma"
+      "norm_label": "puma.rb"
     },
     {
       "label": "routes.rb",
@@ -2889,9 +3189,9 @@
       "source_file": "config/routes.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "config_routes",
       "community": 71,
-      "norm_label": "routes.rb",
-      "id": "config_routes"
+      "norm_label": "routes.rb"
     },
     {
       "label": "oauth.rb",
@@ -2899,9 +3199,9 @@
       "source_file": "config/routes/oauth.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "routes_oauth",
       "community": 89,
-      "norm_label": "oauth.rb",
-      "id": "routes_oauth"
+      "norm_label": "oauth.rb"
     },
     {
       "label": "tailwind.config.js",
@@ -2909,9 +3209,9 @@
       "source_file": "config/tailwind.config.js",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "config_tailwind_config",
       "community": 42,
-      "norm_label": "tailwind.config.js",
-      "id": "config_tailwind_config"
+      "norm_label": "tailwind.config.js"
     },
     {
       "label": "defaultTheme",
@@ -2919,9 +3219,9 @@
       "source_file": "config/tailwind.config.js",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "config_tailwind_config_defaulttheme",
       "community": 42,
-      "norm_label": "defaulttheme",
-      "id": "config_tailwind_config_defaulttheme"
+      "norm_label": "defaulttheme"
     },
     {
       "label": "cable_schema.rb",
@@ -2929,9 +3229,9 @@
       "source_file": "db/cable_schema.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "db_cable_schema",
       "community": 73,
-      "norm_label": "cable_schema.rb",
-      "id": "db_cable_schema"
+      "norm_label": "cable_schema.rb"
     },
     {
       "label": "cache_schema.rb",
@@ -2939,9 +3239,9 @@
       "source_file": "db/cache_schema.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "db_cache_schema",
       "community": 74,
-      "norm_label": "cache_schema.rb",
-      "id": "db_cache_schema"
+      "norm_label": "cache_schema.rb"
     },
     {
       "label": "20250101091343_create_users.rb",
@@ -2949,9 +3249,9 @@
       "source_file": "db/migrate/20250101091343_create_users.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250101091343_create_users",
       "community": 21,
-      "norm_label": "20250101091343_create_users.rb",
-      "id": "migrate_20250101091343_create_users"
+      "norm_label": "20250101091343_create_users.rb"
     },
     {
       "label": "CreateUsers",
@@ -2959,9 +3259,9 @@
       "source_file": "db/migrate/20250101091343_create_users.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250101091343_create_users_createusers",
       "community": 21,
-      "norm_label": "createusers",
-      "id": "migrate_20250101091343_create_users_createusers"
+      "norm_label": "createusers"
     },
     {
       "label": ".change()",
@@ -2969,9 +3269,9 @@
       "source_file": "db/migrate/20250101091343_create_users.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "migrate_20250101091343_create_users_createusers_change",
       "community": 21,
-      "norm_label": ".change()",
-      "id": "migrate_20250101091343_create_users_createusers_change"
+      "norm_label": ".change()"
     },
     {
       "label": "20250101091354_create_sessions.rb",
@@ -2979,9 +3279,9 @@
       "source_file": "db/migrate/20250101091354_create_sessions.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250101091354_create_sessions",
       "community": 22,
-      "norm_label": "20250101091354_create_sessions.rb",
-      "id": "migrate_20250101091354_create_sessions"
+      "norm_label": "20250101091354_create_sessions.rb"
     },
     {
       "label": "CreateSessions",
@@ -2989,9 +3289,9 @@
       "source_file": "db/migrate/20250101091354_create_sessions.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250101091354_create_sessions_createsessions",
       "community": 22,
-      "norm_label": "createsessions",
-      "id": "migrate_20250101091354_create_sessions_createsessions"
+      "norm_label": "createsessions"
     },
     {
       "label": ".change()",
@@ -2999,9 +3299,9 @@
       "source_file": "db/migrate/20250101091354_create_sessions.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "migrate_20250101091354_create_sessions_createsessions_change",
       "community": 22,
-      "norm_label": ".change()",
-      "id": "migrate_20250101091354_create_sessions_createsessions_change"
+      "norm_label": ".change()"
     },
     {
       "label": "20250104192634_create_feeds.rb",
@@ -3009,9 +3309,9 @@
       "source_file": "db/migrate/20250104192634_create_feeds.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250104192634_create_feeds",
       "community": 23,
-      "norm_label": "20250104192634_create_feeds.rb",
-      "id": "migrate_20250104192634_create_feeds"
+      "norm_label": "20250104192634_create_feeds.rb"
     },
     {
       "label": "CreateFeeds",
@@ -3019,9 +3319,9 @@
       "source_file": "db/migrate/20250104192634_create_feeds.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250104192634_create_feeds_createfeeds",
       "community": 23,
-      "norm_label": "createfeeds",
-      "id": "migrate_20250104192634_create_feeds_createfeeds"
+      "norm_label": "createfeeds"
     },
     {
       "label": ".change()",
@@ -3029,9 +3329,9 @@
       "source_file": "db/migrate/20250104192634_create_feeds.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "migrate_20250104192634_create_feeds_createfeeds_change",
       "community": 23,
-      "norm_label": ".change()",
-      "id": "migrate_20250104192634_create_feeds_createfeeds_change"
+      "norm_label": ".change()"
     },
     {
       "label": "20250105151019_create_articles.rb",
@@ -3039,9 +3339,9 @@
       "source_file": "db/migrate/20250105151019_create_articles.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250105151019_create_articles",
       "community": 24,
-      "norm_label": "20250105151019_create_articles.rb",
-      "id": "migrate_20250105151019_create_articles"
+      "norm_label": "20250105151019_create_articles.rb"
     },
     {
       "label": "CreateArticles",
@@ -3049,9 +3349,9 @@
       "source_file": "db/migrate/20250105151019_create_articles.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250105151019_create_articles_createarticles",
       "community": 24,
-      "norm_label": "createarticles",
-      "id": "migrate_20250105151019_create_articles_createarticles"
+      "norm_label": "createarticles"
     },
     {
       "label": ".change()",
@@ -3059,9 +3359,9 @@
       "source_file": "db/migrate/20250105151019_create_articles.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "migrate_20250105151019_create_articles_createarticles_change",
       "community": 24,
-      "norm_label": ".change()",
-      "id": "migrate_20250105151019_create_articles_createarticles_change"
+      "norm_label": ".change()"
     },
     {
       "label": "20250121175523_add_unique_constraint_to_feeds.rb",
@@ -3069,9 +3369,9 @@
       "source_file": "db/migrate/20250121175523_add_unique_constraint_to_feeds.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250121175523_add_unique_constraint_to_feeds",
       "community": 25,
-      "norm_label": "20250121175523_add_unique_constraint_to_feeds.rb",
-      "id": "migrate_20250121175523_add_unique_constraint_to_feeds"
+      "norm_label": "20250121175523_add_unique_constraint_to_feeds.rb"
     },
     {
       "label": "AddUniqueConstraintToFeeds",
@@ -3079,9 +3379,9 @@
       "source_file": "db/migrate/20250121175523_add_unique_constraint_to_feeds.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250121175523_add_unique_constraint_to_feeds_adduniqueconstrainttofeeds",
       "community": 25,
-      "norm_label": "adduniqueconstrainttofeeds",
-      "id": "migrate_20250121175523_add_unique_constraint_to_feeds_adduniqueconstrainttofeeds"
+      "norm_label": "adduniqueconstrainttofeeds"
     },
     {
       "label": ".change()",
@@ -3089,9 +3389,9 @@
       "source_file": "db/migrate/20250121175523_add_unique_constraint_to_feeds.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "migrate_20250121175523_add_unique_constraint_to_feeds_adduniqueconstrainttofeeds_change",
       "community": 25,
-      "norm_label": ".change()",
-      "id": "migrate_20250121175523_add_unique_constraint_to_feeds_adduniqueconstrainttofeeds_change"
+      "norm_label": ".change()"
     },
     {
       "label": "20250126080155_add_summary_to_article.rb",
@@ -3099,9 +3399,9 @@
       "source_file": "db/migrate/20250126080155_add_summary_to_article.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250126080155_add_summary_to_article",
       "community": 26,
-      "norm_label": "20250126080155_add_summary_to_article.rb",
-      "id": "migrate_20250126080155_add_summary_to_article"
+      "norm_label": "20250126080155_add_summary_to_article.rb"
     },
     {
       "label": "AddSummaryToArticle",
@@ -3109,9 +3409,9 @@
       "source_file": "db/migrate/20250126080155_add_summary_to_article.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250126080155_add_summary_to_article_addsummarytoarticle",
       "community": 26,
-      "norm_label": "addsummarytoarticle",
-      "id": "migrate_20250126080155_add_summary_to_article_addsummarytoarticle"
+      "norm_label": "addsummarytoarticle"
     },
     {
       "label": ".change()",
@@ -3119,9 +3419,9 @@
       "source_file": "db/migrate/20250126080155_add_summary_to_article.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "migrate_20250126080155_add_summary_to_article_addsummarytoarticle_change",
       "community": 26,
-      "norm_label": ".change()",
-      "id": "migrate_20250126080155_add_summary_to_article_addsummarytoarticle_change"
+      "norm_label": ".change()"
     },
     {
       "label": "20250207120000_add_skip_summarization_to_feeds.rb",
@@ -3129,9 +3429,9 @@
       "source_file": "db/migrate/20250207120000_add_skip_summarization_to_feeds.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250207120000_add_skip_summarization_to_feeds",
       "community": 27,
-      "norm_label": "20250207120000_add_skip_summarization_to_feeds.rb",
-      "id": "migrate_20250207120000_add_skip_summarization_to_feeds"
+      "norm_label": "20250207120000_add_skip_summarization_to_feeds.rb"
     },
     {
       "label": "AddSkipSummarizationToFeeds",
@@ -3139,9 +3439,9 @@
       "source_file": "db/migrate/20250207120000_add_skip_summarization_to_feeds.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250207120000_add_skip_summarization_to_feeds_addskipsummarizationtofeeds",
       "community": 27,
-      "norm_label": "addskipsummarizationtofeeds",
-      "id": "migrate_20250207120000_add_skip_summarization_to_feeds_addskipsummarizationtofeeds"
+      "norm_label": "addskipsummarizationtofeeds"
     },
     {
       "label": ".change()",
@@ -3149,9 +3449,9 @@
       "source_file": "db/migrate/20250207120000_add_skip_summarization_to_feeds.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "migrate_20250207120000_add_skip_summarization_to_feeds_addskipsummarizationtofeeds_change",
       "community": 27,
-      "norm_label": ".change()",
-      "id": "migrate_20250207120000_add_skip_summarization_to_feeds_addskipsummarizationtofeeds_change"
+      "norm_label": ".change()"
     },
     {
       "label": "20250301075836_add_api_key_to_users.rb",
@@ -3159,9 +3459,9 @@
       "source_file": "db/migrate/20250301075836_add_api_key_to_users.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250301075836_add_api_key_to_users",
       "community": 28,
-      "norm_label": "20250301075836_add_api_key_to_users.rb",
-      "id": "migrate_20250301075836_add_api_key_to_users"
+      "norm_label": "20250301075836_add_api_key_to_users.rb"
     },
     {
       "label": "AddApiKeyToUsers",
@@ -3169,9 +3469,9 @@
       "source_file": "db/migrate/20250301075836_add_api_key_to_users.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250301075836_add_api_key_to_users_addapikeytousers",
       "community": 28,
-      "norm_label": "addapikeytousers",
-      "id": "migrate_20250301075836_add_api_key_to_users_addapikeytousers"
+      "norm_label": "addapikeytousers"
     },
     {
       "label": ".change()",
@@ -3179,9 +3479,9 @@
       "source_file": "db/migrate/20250301075836_add_api_key_to_users.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "migrate_20250301075836_add_api_key_to_users_addapikeytousers_change",
       "community": 28,
-      "norm_label": ".change()",
-      "id": "migrate_20250301075836_add_api_key_to_users_addapikeytousers_change"
+      "norm_label": ".change()"
     },
     {
       "label": "20250316131537_add_is_paused_to_feeds.rb",
@@ -3189,9 +3489,9 @@
       "source_file": "db/migrate/20250316131537_add_is_paused_to_feeds.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250316131537_add_is_paused_to_feeds",
       "community": 29,
-      "norm_label": "20250316131537_add_is_paused_to_feeds.rb",
-      "id": "migrate_20250316131537_add_is_paused_to_feeds"
+      "norm_label": "20250316131537_add_is_paused_to_feeds.rb"
     },
     {
       "label": "AddIsPausedToFeeds",
@@ -3199,9 +3499,9 @@
       "source_file": "db/migrate/20250316131537_add_is_paused_to_feeds.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250316131537_add_is_paused_to_feeds_addispausedtofeeds",
       "community": 29,
-      "norm_label": "addispausedtofeeds",
-      "id": "migrate_20250316131537_add_is_paused_to_feeds_addispausedtofeeds"
+      "norm_label": "addispausedtofeeds"
     },
     {
       "label": ".change()",
@@ -3209,9 +3509,9 @@
       "source_file": "db/migrate/20250316131537_add_is_paused_to_feeds.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "migrate_20250316131537_add_is_paused_to_feeds_addispausedtofeeds_change",
       "community": 29,
-      "norm_label": ".change()",
-      "id": "migrate_20250316131537_add_is_paused_to_feeds_addispausedtofeeds_change"
+      "norm_label": ".change()"
     },
     {
       "label": "20250412191038_create_folders.rb",
@@ -3219,9 +3519,9 @@
       "source_file": "db/migrate/20250412191038_create_folders.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250412191038_create_folders",
       "community": 30,
-      "norm_label": "20250412191038_create_folders.rb",
-      "id": "migrate_20250412191038_create_folders"
+      "norm_label": "20250412191038_create_folders.rb"
     },
     {
       "label": "CreateFolders",
@@ -3229,9 +3529,9 @@
       "source_file": "db/migrate/20250412191038_create_folders.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250412191038_create_folders_createfolders",
       "community": 30,
-      "norm_label": "createfolders",
-      "id": "migrate_20250412191038_create_folders_createfolders"
+      "norm_label": "createfolders"
     },
     {
       "label": ".change()",
@@ -3239,9 +3539,9 @@
       "source_file": "db/migrate/20250412191038_create_folders.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "migrate_20250412191038_create_folders_createfolders_change",
       "community": 30,
-      "norm_label": ".change()",
-      "id": "migrate_20250412191038_create_folders_createfolders_change"
+      "norm_label": ".change()"
     },
     {
       "label": "20250412191302_create_feed_folders.rb",
@@ -3249,9 +3549,9 @@
       "source_file": "db/migrate/20250412191302_create_feed_folders.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250412191302_create_feed_folders",
       "community": 31,
-      "norm_label": "20250412191302_create_feed_folders.rb",
-      "id": "migrate_20250412191302_create_feed_folders"
+      "norm_label": "20250412191302_create_feed_folders.rb"
     },
     {
       "label": "CreateFeedFolders",
@@ -3259,9 +3559,9 @@
       "source_file": "db/migrate/20250412191302_create_feed_folders.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250412191302_create_feed_folders_createfeedfolders",
       "community": 31,
-      "norm_label": "createfeedfolders",
-      "id": "migrate_20250412191302_create_feed_folders_createfeedfolders"
+      "norm_label": "createfeedfolders"
     },
     {
       "label": ".change()",
@@ -3269,9 +3569,9 @@
       "source_file": "db/migrate/20250412191302_create_feed_folders.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "migrate_20250412191302_create_feed_folders_createfeedfolders_change",
       "community": 31,
-      "norm_label": ".change()",
-      "id": "migrate_20250412191302_create_feed_folders_createfeedfolders_change"
+      "norm_label": ".change()"
     },
     {
       "label": "20250413142155_add_image_url_to_article.rb",
@@ -3279,9 +3579,9 @@
       "source_file": "db/migrate/20250413142155_add_image_url_to_article.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250413142155_add_image_url_to_article",
       "community": 32,
-      "norm_label": "20250413142155_add_image_url_to_article.rb",
-      "id": "migrate_20250413142155_add_image_url_to_article"
+      "norm_label": "20250413142155_add_image_url_to_article.rb"
     },
     {
       "label": "AddImageUrlToArticle",
@@ -3289,9 +3589,9 @@
       "source_file": "db/migrate/20250413142155_add_image_url_to_article.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20250413142155_add_image_url_to_article_addimageurltoarticle",
       "community": 32,
-      "norm_label": "addimageurltoarticle",
-      "id": "migrate_20250413142155_add_image_url_to_article_addimageurltoarticle"
+      "norm_label": "addimageurltoarticle"
     },
     {
       "label": ".change()",
@@ -3299,9 +3599,9 @@
       "source_file": "db/migrate/20250413142155_add_image_url_to_article.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "migrate_20250413142155_add_image_url_to_article_addimageurltoarticle_change",
       "community": 32,
-      "norm_label": ".change()",
-      "id": "migrate_20250413142155_add_image_url_to_article_addimageurltoarticle_change"
+      "norm_label": ".change()"
     },
     {
       "label": "20251220161002_create_external_accounts.rb",
@@ -3309,9 +3609,9 @@
       "source_file": "db/migrate/20251220161002_create_external_accounts.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20251220161002_create_external_accounts",
       "community": 33,
-      "norm_label": "20251220161002_create_external_accounts.rb",
-      "id": "migrate_20251220161002_create_external_accounts"
+      "norm_label": "20251220161002_create_external_accounts.rb"
     },
     {
       "label": "CreateExternalAccounts",
@@ -3319,9 +3619,9 @@
       "source_file": "db/migrate/20251220161002_create_external_accounts.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20251220161002_create_external_accounts_createexternalaccounts",
       "community": 33,
-      "norm_label": "createexternalaccounts",
-      "id": "migrate_20251220161002_create_external_accounts_createexternalaccounts"
+      "norm_label": "createexternalaccounts"
     },
     {
       "label": ".change()",
@@ -3329,9 +3629,9 @@
       "source_file": "db/migrate/20251220161002_create_external_accounts.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "migrate_20251220161002_create_external_accounts_createexternalaccounts_change",
       "community": 33,
-      "norm_label": ".change()",
-      "id": "migrate_20251220161002_create_external_accounts_createexternalaccounts_change"
+      "norm_label": ".change()"
     },
     {
       "label": "20260107150819_create_good_jobs.rb",
@@ -3339,9 +3639,9 @@
       "source_file": "db/migrate/20260107150819_create_good_jobs.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20260107150819_create_good_jobs",
       "community": 34,
-      "norm_label": "20260107150819_create_good_jobs.rb",
-      "id": "migrate_20260107150819_create_good_jobs"
+      "norm_label": "20260107150819_create_good_jobs.rb"
     },
     {
       "label": "CreateGoodJobs",
@@ -3349,9 +3649,9 @@
       "source_file": "db/migrate/20260107150819_create_good_jobs.rb",
       "source_location": "L3",
       "_origin": "ast",
+      "id": "migrate_20260107150819_create_good_jobs_creategoodjobs",
       "community": 34,
-      "norm_label": "creategoodjobs",
-      "id": "migrate_20260107150819_create_good_jobs_creategoodjobs"
+      "norm_label": "creategoodjobs"
     },
     {
       "label": ".change()",
@@ -3359,9 +3659,9 @@
       "source_file": "db/migrate/20260107150819_create_good_jobs.rb",
       "source_location": "L4",
       "_origin": "ast",
+      "id": "migrate_20260107150819_create_good_jobs_creategoodjobs_change",
       "community": 34,
-      "norm_label": ".change()",
-      "id": "migrate_20260107150819_create_good_jobs_creategoodjobs_change"
+      "norm_label": ".change()"
     },
     {
       "label": "20260425141649_create_ruby_llm_monitoring_events.ruby_llm_monitoring.rb",
@@ -3369,9 +3669,9 @@
       "source_file": "db/migrate/20260425141649_create_ruby_llm_monitoring_events.ruby_llm_monitoring.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20260425141649_create_ruby_llm_monitoring_events_ruby_llm_monitoring",
       "community": 35,
-      "norm_label": "20260425141649_create_ruby_llm_monitoring_events.ruby_llm_monitoring.rb",
-      "id": "migrate_20260425141649_create_ruby_llm_monitoring_events_ruby_llm_monitoring"
+      "norm_label": "20260425141649_create_ruby_llm_monitoring_events.ruby_llm_monitoring.rb"
     },
     {
       "label": "CreateRubyLLMMonitoringEvents",
@@ -3379,9 +3679,9 @@
       "source_file": "db/migrate/20260425141649_create_ruby_llm_monitoring_events.ruby_llm_monitoring.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "migrate_20260425141649_create_ruby_llm_monitoring_events_ruby_llm_monitoring_createrubyllmmonitoringevents",
       "community": 35,
-      "norm_label": "createrubyllmmonitoringevents",
-      "id": "migrate_20260425141649_create_ruby_llm_monitoring_events_ruby_llm_monitoring_createrubyllmmonitoringevents"
+      "norm_label": "createrubyllmmonitoringevents"
     },
     {
       "label": ".change()",
@@ -3389,9 +3689,9 @@
       "source_file": "db/migrate/20260425141649_create_ruby_llm_monitoring_events.ruby_llm_monitoring.rb",
       "source_location": "L5",
       "_origin": "ast",
+      "id": "migrate_20260425141649_create_ruby_llm_monitoring_events_ruby_llm_monitoring_createrubyllmmonitoringevents_change",
       "community": 35,
-      "norm_label": ".change()",
-      "id": "migrate_20260425141649_create_ruby_llm_monitoring_events_ruby_llm_monitoring_createrubyllmmonitoringevents_change"
+      "norm_label": ".change()"
     },
     {
       "label": "20260425141650_add_thinking_tokens_to_ruby_llm_monitoring_events.ruby_llm_monitoring.rb",
@@ -3399,9 +3699,9 @@
       "source_file": "db/migrate/20260425141650_add_thinking_tokens_to_ruby_llm_monitoring_events.ruby_llm_monitoring.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20260425141650_add_thinking_tokens_to_ruby_llm_monitoring_events_ruby_llm_monitoring",
       "community": 36,
-      "norm_label": "20260425141650_add_thinking_tokens_to_ruby_llm_monitoring_events.ruby_llm_monitoring.rb",
-      "id": "migrate_20260425141650_add_thinking_tokens_to_ruby_llm_monitoring_events_ruby_llm_monitoring"
+      "norm_label": "20260425141650_add_thinking_tokens_to_ruby_llm_monitoring_events.ruby_llm_monitoring.rb"
     },
     {
       "label": "AddThinkingTokensToRubyLLMMonitoringEvents",
@@ -3409,9 +3709,9 @@
       "source_file": "db/migrate/20260425141650_add_thinking_tokens_to_ruby_llm_monitoring_events.ruby_llm_monitoring.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "migrate_20260425141650_add_thinking_tokens_to_ruby_llm_monitoring_events_ruby_llm_monitoring_addthinkingtokenstorubyllmmonitoringevents",
       "community": 36,
-      "norm_label": "addthinkingtokenstorubyllmmonitoringevents",
-      "id": "migrate_20260425141650_add_thinking_tokens_to_ruby_llm_monitoring_events_ruby_llm_monitoring_addthinkingtokenstorubyllmmonitoringevents"
+      "norm_label": "addthinkingtokenstorubyllmmonitoringevents"
     },
     {
       "label": ".change()",
@@ -3419,9 +3719,9 @@
       "source_file": "db/migrate/20260425141650_add_thinking_tokens_to_ruby_llm_monitoring_events.ruby_llm_monitoring.rb",
       "source_location": "L5",
       "_origin": "ast",
+      "id": "migrate_20260425141650_add_thinking_tokens_to_ruby_llm_monitoring_events_ruby_llm_monitoring_addthinkingtokenstorubyllmmonitoringevents_change",
       "community": 36,
-      "norm_label": ".change()",
-      "id": "migrate_20260425141650_add_thinking_tokens_to_ruby_llm_monitoring_events_ruby_llm_monitoring_addthinkingtokenstorubyllmmonitoringevents_change"
+      "norm_label": ".change()"
     },
     {
       "label": "20260425142518_add_is_admin_to_users.rb",
@@ -3429,9 +3729,9 @@
       "source_file": "db/migrate/20260425142518_add_is_admin_to_users.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20260425142518_add_is_admin_to_users",
       "community": 37,
-      "norm_label": "20260425142518_add_is_admin_to_users.rb",
-      "id": "migrate_20260425142518_add_is_admin_to_users"
+      "norm_label": "20260425142518_add_is_admin_to_users.rb"
     },
     {
       "label": "AddIsAdminToUsers",
@@ -3439,9 +3739,9 @@
       "source_file": "db/migrate/20260425142518_add_is_admin_to_users.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20260425142518_add_is_admin_to_users_addisadmintousers",
       "community": 37,
-      "norm_label": "addisadmintousers",
-      "id": "migrate_20260425142518_add_is_admin_to_users_addisadmintousers"
+      "norm_label": "addisadmintousers"
     },
     {
       "label": ".change()",
@@ -3449,9 +3749,9 @@
       "source_file": "db/migrate/20260425142518_add_is_admin_to_users.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "migrate_20260425142518_add_is_admin_to_users_addisadmintousers_change",
       "community": 37,
-      "norm_label": ".change()",
-      "id": "migrate_20260425142518_add_is_admin_to_users_addisadmintousers_change"
+      "norm_label": ".change()"
     },
     {
       "label": "20260613000000_add_provider_and_model_to_users.rb",
@@ -3459,9 +3759,9 @@
       "source_file": "db/migrate/20260613000000_add_provider_and_model_to_users.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20260613000000_add_provider_and_model_to_users",
       "community": 38,
-      "norm_label": "20260613000000_add_provider_and_model_to_users.rb",
-      "id": "migrate_20260613000000_add_provider_and_model_to_users"
+      "norm_label": "20260613000000_add_provider_and_model_to_users.rb"
     },
     {
       "label": "AddProviderAndModelToUsers",
@@ -3469,9 +3769,9 @@
       "source_file": "db/migrate/20260613000000_add_provider_and_model_to_users.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "migrate_20260613000000_add_provider_and_model_to_users_addproviderandmodeltousers",
       "community": 38,
-      "norm_label": "addproviderandmodeltousers",
-      "id": "migrate_20260613000000_add_provider_and_model_to_users_addproviderandmodeltousers"
+      "norm_label": "addproviderandmodeltousers"
     },
     {
       "label": ".change()",
@@ -3479,9 +3779,99 @@
       "source_file": "db/migrate/20260613000000_add_provider_and_model_to_users.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "migrate_20260613000000_add_provider_and_model_to_users_addproviderandmodeltousers_change",
       "community": 38,
-      "norm_label": ".change()",
-      "id": "migrate_20260613000000_add_provider_and_model_to_users_addproviderandmodeltousers_change"
+      "norm_label": ".change()"
+    },
+    {
+      "label": "20260613182327_add_fetch_interval_to_feeds.rb",
+      "file_type": "code",
+      "source_file": "db/migrate/20260613182327_add_fetch_interval_to_feeds.rb",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "migrate_20260613182327_add_fetch_interval_to_feeds",
+      "community": 91,
+      "norm_label": "20260613182327_add_fetch_interval_to_feeds.rb"
+    },
+    {
+      "label": "AddFetchIntervalToFeeds",
+      "file_type": "code",
+      "source_file": "db/migrate/20260613182327_add_fetch_interval_to_feeds.rb",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "migrate_20260613182327_add_fetch_interval_to_feeds_addfetchintervaltofeeds",
+      "community": 91,
+      "norm_label": "addfetchintervaltofeeds"
+    },
+    {
+      "label": ".change()",
+      "file_type": "code",
+      "source_file": "db/migrate/20260613182327_add_fetch_interval_to_feeds.rb",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "migrate_20260613182327_add_fetch_interval_to_feeds_addfetchintervaltofeeds_change",
+      "community": 91,
+      "norm_label": ".change()"
+    },
+    {
+      "label": "20260621000001_add_caching_columns_to_feeds.rb",
+      "file_type": "code",
+      "source_file": "db/migrate/20260621000001_add_caching_columns_to_feeds.rb",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "migrate_20260621000001_add_caching_columns_to_feeds",
+      "community": 92,
+      "norm_label": "20260621000001_add_caching_columns_to_feeds.rb"
+    },
+    {
+      "label": "AddCachingColumnsToFeeds",
+      "file_type": "code",
+      "source_file": "db/migrate/20260621000001_add_caching_columns_to_feeds.rb",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "migrate_20260621000001_add_caching_columns_to_feeds_addcachingcolumnstofeeds",
+      "community": 92,
+      "norm_label": "addcachingcolumnstofeeds"
+    },
+    {
+      "label": ".change()",
+      "file_type": "code",
+      "source_file": "db/migrate/20260621000001_add_caching_columns_to_feeds.rb",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "migrate_20260621000001_add_caching_columns_to_feeds_addcachingcolumnstofeeds_change",
+      "community": 92,
+      "norm_label": ".change()"
+    },
+    {
+      "label": "20260621000002_add_unique_index_on_feed_id_and_url_to_articles.rb",
+      "file_type": "code",
+      "source_file": "db/migrate/20260621000002_add_unique_index_on_feed_id_and_url_to_articles.rb",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "migrate_20260621000002_add_unique_index_on_feed_id_and_url_to_articles",
+      "community": 93,
+      "norm_label": "20260621000002_add_unique_index_on_feed_id_and_url_to_articles.rb"
+    },
+    {
+      "label": "AddUniqueIndexOnFeedIdAndUrlToArticles",
+      "file_type": "code",
+      "source_file": "db/migrate/20260621000002_add_unique_index_on_feed_id_and_url_to_articles.rb",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "migrate_20260621000002_add_unique_index_on_feed_id_and_url_to_articles_adduniqueindexonfeedidandurltoarticles",
+      "community": 93,
+      "norm_label": "adduniqueindexonfeedidandurltoarticles"
+    },
+    {
+      "label": ".change()",
+      "file_type": "code",
+      "source_file": "db/migrate/20260621000002_add_unique_index_on_feed_id_and_url_to_articles.rb",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "migrate_20260621000002_add_unique_index_on_feed_id_and_url_to_articles_adduniqueindexonfeedidandurltoarticles_change",
+      "community": 93,
+      "norm_label": ".change()"
     },
     {
       "label": "schema.rb",
@@ -3489,9 +3879,9 @@
       "source_file": "db/schema.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "db_schema",
       "community": 75,
-      "norm_label": "schema.rb",
-      "id": "db_schema"
+      "norm_label": "schema.rb"
     },
     {
       "label": "seeds.rb",
@@ -3499,9 +3889,9 @@
       "source_file": "db/seeds.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "db_seeds",
       "community": 76,
-      "norm_label": "seeds.rb",
-      "id": "db_seeds"
+      "norm_label": "seeds.rb"
     },
     {
       "label": "admin_constraint.rb",
@@ -3509,9 +3899,9 @@
       "source_file": "lib/constraints/admin_constraint.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "constraints_admin_constraint",
       "community": 1,
-      "norm_label": "admin_constraint.rb",
-      "id": "constraints_admin_constraint"
+      "norm_label": "admin_constraint.rb"
     },
     {
       "label": "AdminConstraint",
@@ -3519,9 +3909,9 @@
       "source_file": "lib/constraints/admin_constraint.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "constraints_admin_constraint_adminconstraint",
       "community": 1,
-      "norm_label": "adminconstraint",
-      "id": "constraints_admin_constraint_adminconstraint"
+      "norm_label": "adminconstraint"
     },
     {
       "label": ".matches?()",
@@ -3529,9 +3919,9 @@
       "source_file": "lib/constraints/admin_constraint.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "constraints_admin_constraint_adminconstraint_matches",
       "community": 1,
-      "norm_label": ".matches?()",
-      "id": "constraints_admin_constraint_adminconstraint_matches"
+      "norm_label": ".matches?()"
     },
     {
       "label": "application_system_test_case.rb",
@@ -3539,9 +3929,9 @@
       "source_file": "test/application_system_test_case.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "test_application_system_test_case",
       "community": 65,
-      "norm_label": "application_system_test_case.rb",
-      "id": "test_application_system_test_case"
+      "norm_label": "application_system_test_case.rb"
     },
     {
       "label": "ApplicationSystemTestCase",
@@ -3549,9 +3939,9 @@
       "source_file": "test/application_system_test_case.rb",
       "source_location": "L3",
       "_origin": "ast",
+      "id": "test_application_system_test_case_applicationsystemtestcase",
       "community": 65,
-      "norm_label": "applicationsystemtestcase",
-      "id": "test_application_system_test_case_applicationsystemtestcase"
+      "norm_label": "applicationsystemtestcase"
     },
     {
       "label": "articles_controller_test.rb",
@@ -3559,9 +3949,9 @@
       "source_file": "test/controllers/articles_controller_test.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_articles_controller_test",
       "community": 45,
-      "norm_label": "articles_controller_test.rb",
-      "id": "controllers_articles_controller_test"
+      "norm_label": "articles_controller_test.rb"
     },
     {
       "label": "ArticlesControllerTest",
@@ -3569,9 +3959,9 @@
       "source_file": "test/controllers/articles_controller_test.rb",
       "source_location": "L3",
       "_origin": "ast",
+      "id": "controllers_articles_controller_test_articlescontrollertest",
       "community": 45,
-      "norm_label": "articlescontrollertest",
-      "id": "controllers_articles_controller_test_articlescontrollertest"
+      "norm_label": "articlescontrollertest"
     },
     {
       "label": "feeds_controller_test.rb",
@@ -3579,9 +3969,9 @@
       "source_file": "test/controllers/feeds_controller_test.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_feeds_controller_test",
       "community": 46,
-      "norm_label": "feeds_controller_test.rb",
-      "id": "controllers_feeds_controller_test"
+      "norm_label": "feeds_controller_test.rb"
     },
     {
       "label": "FeedsControllerTest",
@@ -3589,9 +3979,9 @@
       "source_file": "test/controllers/feeds_controller_test.rb",
       "source_location": "L3",
       "_origin": "ast",
+      "id": "controllers_feeds_controller_test_feedscontrollertest",
       "community": 46,
-      "norm_label": "feedscontrollertest",
-      "id": "controllers_feeds_controller_test_feedscontrollertest"
+      "norm_label": "feedscontrollertest"
     },
     {
       "label": "home_controller_test.rb",
@@ -3599,9 +3989,9 @@
       "source_file": "test/controllers/home_controller_test.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "controllers_home_controller_test",
       "community": 48,
-      "norm_label": "home_controller_test.rb",
-      "id": "controllers_home_controller_test"
+      "norm_label": "home_controller_test.rb"
     },
     {
       "label": "HomeControllerTest",
@@ -3609,9 +3999,9 @@
       "source_file": "test/controllers/home_controller_test.rb",
       "source_location": "L3",
       "_origin": "ast",
+      "id": "controllers_home_controller_test_homecontrollertest",
       "community": 48,
-      "norm_label": "homecontrollertest",
-      "id": "controllers_home_controller_test_homecontrollertest"
+      "norm_label": "homecontrollertest"
     },
     {
       "label": "passwords_mailer_preview.rb",
@@ -3619,9 +4009,9 @@
       "source_file": "test/mailers/previews/passwords_mailer_preview.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "previews_passwords_mailer_preview",
       "community": 40,
-      "norm_label": "passwords_mailer_preview.rb",
-      "id": "previews_passwords_mailer_preview"
+      "norm_label": "passwords_mailer_preview.rb"
     },
     {
       "label": "PasswordsMailerPreview",
@@ -3629,9 +4019,9 @@
       "source_file": "test/mailers/previews/passwords_mailer_preview.rb",
       "source_location": "L2",
       "_origin": "ast",
+      "id": "previews_passwords_mailer_preview_passwordsmailerpreview",
       "community": 40,
-      "norm_label": "passwordsmailerpreview",
-      "id": "previews_passwords_mailer_preview_passwordsmailerpreview"
+      "norm_label": "passwordsmailerpreview"
     },
     {
       "label": ".reset()",
@@ -3639,9 +4029,9 @@
       "source_file": "test/mailers/previews/passwords_mailer_preview.rb",
       "source_location": "L4",
       "_origin": "ast",
+      "id": "previews_passwords_mailer_preview_passwordsmailerpreview_reset",
       "community": 40,
-      "norm_label": ".reset()",
-      "id": "previews_passwords_mailer_preview_passwordsmailerpreview_reset"
+      "norm_label": ".reset()"
     },
     {
       "label": "article_test.rb",
@@ -3649,9 +4039,9 @@
       "source_file": "test/models/article_test.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_article_test",
       "community": 56,
-      "norm_label": "article_test.rb",
-      "id": "models_article_test"
+      "norm_label": "article_test.rb"
     },
     {
       "label": "ArticleTest",
@@ -3659,9 +4049,9 @@
       "source_file": "test/models/article_test.rb",
       "source_location": "L3",
       "_origin": "ast",
+      "id": "models_article_test_articletest",
       "community": 56,
-      "norm_label": "articletest",
-      "id": "models_article_test_articletest"
+      "norm_label": "articletest"
     },
     {
       "label": "feed_test.rb",
@@ -3669,9 +4059,9 @@
       "source_file": "test/models/feed_test.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_feed_test",
       "community": 59,
-      "norm_label": "feed_test.rb",
-      "id": "models_feed_test"
+      "norm_label": "feed_test.rb"
     },
     {
       "label": "FeedTest",
@@ -3679,9 +4069,9 @@
       "source_file": "test/models/feed_test.rb",
       "source_location": "L3",
       "_origin": "ast",
+      "id": "models_feed_test_feedtest",
       "community": 59,
-      "norm_label": "feedtest",
-      "id": "models_feed_test_feedtest"
+      "norm_label": "feedtest"
     },
     {
       "label": "user_test.rb",
@@ -3689,9 +4079,9 @@
       "source_file": "test/models/user_test.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "models_user_test",
       "community": 61,
-      "norm_label": "user_test.rb",
-      "id": "models_user_test"
+      "norm_label": "user_test.rb"
     },
     {
       "label": "UserTest",
@@ -3699,9 +4089,9 @@
       "source_file": "test/models/user_test.rb",
       "source_location": "L3",
       "_origin": "ast",
+      "id": "models_user_test_usertest",
       "community": 61,
-      "norm_label": "usertest",
-      "id": "models_user_test_usertest"
+      "norm_label": "usertest"
     },
     {
       "label": "articles_test.rb",
@@ -3709,9 +4099,9 @@
       "source_file": "test/system/articles_test.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "system_articles_test",
       "community": 63,
-      "norm_label": "articles_test.rb",
-      "id": "system_articles_test"
+      "norm_label": "articles_test.rb"
     },
     {
       "label": "ArticlesTest",
@@ -3719,9 +4109,9 @@
       "source_file": "test/system/articles_test.rb",
       "source_location": "L3",
       "_origin": "ast",
+      "id": "system_articles_test_articlestest",
       "community": 63,
-      "norm_label": "articlestest",
-      "id": "system_articles_test_articlestest"
+      "norm_label": "articlestest"
     },
     {
       "label": "feeds_test.rb",
@@ -3729,9 +4119,9 @@
       "source_file": "test/system/feeds_test.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "system_feeds_test",
       "community": 64,
-      "norm_label": "feeds_test.rb",
-      "id": "system_feeds_test"
+      "norm_label": "feeds_test.rb"
     },
     {
       "label": "FeedsTest",
@@ -3739,9 +4129,9 @@
       "source_file": "test/system/feeds_test.rb",
       "source_location": "L3",
       "_origin": "ast",
+      "id": "system_feeds_test_feedstest",
       "community": 64,
-      "norm_label": "feedstest",
-      "id": "system_feeds_test_feedstest"
+      "norm_label": "feedstest"
     },
     {
       "label": "test_helper.rb",
@@ -3749,9 +4139,9 @@
       "source_file": "test/test_helper.rb",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "test_test_helper",
       "community": 66,
-      "norm_label": "test_helper.rb",
-      "id": "test_test_helper"
+      "norm_label": "test_helper.rb"
     },
     {
       "label": "TestCase",
@@ -3759,12 +4149,122 @@
       "source_file": "test/test_helper.rb",
       "source_location": "L6",
       "_origin": "ast",
+      "id": "test_test_helper_testcase",
       "community": 66,
-      "norm_label": "testcase",
-      "id": "test_test_helper_testcase"
+      "norm_label": "testcase"
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "opencode_opencode",
+      "target": "opencode_opencode_mcp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "opencode_opencode",
+      "target": "opencode_opencode_plugin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "opencode_opencode",
+      "target": "opencode_opencode_schema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "opencode_opencode_mcp",
+      "target": "opencode_opencode_mcp_grepika",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "opencode_opencode_mcp",
+      "target": "opencode_opencode_mcp_tilth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "opencode_opencode_mcp_grepika",
+      "target": "opencode_opencode_grepika_command",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "opencode_opencode_mcp_grepika",
+      "target": "opencode_opencode_grepika_enabled",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "opencode_opencode_mcp_grepika",
+      "target": "opencode_opencode_grepika_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "opencode_opencode_mcp_tilth",
+      "target": "opencode_opencode_tilth_command",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "opencode_opencode_mcp_tilth",
+      "target": "opencode_opencode_tilth_enabled",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/opencode.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "opencode_opencode_mcp_tilth",
+      "target": "opencode_opencode_tilth_type",
+      "confidence_score": 1.0
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -3845,6 +4345,27 @@
       "confidence_score": 1.0,
       "source": "controllers_application_controller",
       "target": "controllers_application_controller_applicationcontroller"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/controllers/application_controller.rb",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "controllers_application_controller_applicationcontroller",
+      "target": "controllers_application_controller_applicationcontroller_set_current_attributes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/controllers/application_controller.rb",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "controllers_application_controller_applicationcontroller_set_current_attributes",
+      "target": "models_user_user"
     },
     {
       "relation": "contains",
@@ -4348,6 +4869,16 @@
       "source_file": "app/controllers/feeds_controller.rb",
       "source_location": "L11",
       "weight": 1.0,
+      "source": "controllers_feeds_controller_feedscontroller",
+      "target": "controllers_feeds_controller_feedscontroller_share",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/controllers/feeds_controller.rb",
+      "source_location": "L11",
+      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "controllers_feeds_controller_feedscontroller",
       "target": "controllers_feeds_controller_feedscontroller_show"
@@ -4406,6 +4937,17 @@
     {
       "relation": "calls",
       "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/controllers/feeds_controller.rb",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "controllers_feeds_controller_feedscontroller_share",
+      "target": "models_user_user"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/controllers/feeds_controller.rb",
       "source_location": "L26",
@@ -4453,6 +4995,17 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "app/controllers/feeds_controller.rb",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "controllers_feeds_controller_feedscontroller_create",
+      "target": "models_current_current"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/controllers/feeds_controller.rb",
       "source_location": "L28",
       "weight": 1.0,
       "source": "controllers_feeds_controller_feedscontroller_create",
@@ -4468,6 +5021,39 @@
       "confidence_score": 1.0,
       "source": "controllers_feeds_controller_feedscontroller_toggle_pause",
       "target": "controllers_feeds_controller_feedscontroller_update"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/controllers/feeds_controller.rb",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "controllers_feeds_controller_feedscontroller_update_articles",
+      "target": "models_current_current"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/jobs/summarize_article_job.rb",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "jobs_summarize_article_job_summarizearticlejob_perform",
+      "target": "controllers_feeds_controller_feedscontroller_skip_summarization"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/services/save_articles_service.rb",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "services_save_articles_service_savearticlesservice_should_summarize_articles",
+      "target": "controllers_feeds_controller_feedscontroller_skip_summarization"
     },
     {
       "relation": "contains",
@@ -5748,6 +6334,46 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "app/javascript/controllers/share_links_controller.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "controllers_share_links_controller",
+      "target": "controllers_share_links_controller_connect",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/javascript/controllers/share_links_controller.js",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "controllers_share_links_controller",
+      "target": "controllers_share_links_controller_copy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/javascript/controllers/share_links_controller.js",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "controllers_share_links_controller",
+      "target": "controllers_share_links_controller_generate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/javascript/controllers/share_links_controller.js",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "controllers_share_links_controller",
+      "target": "controllers_share_links_controller_toggleall",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "app/javascript/controllers/sidebar_controller.js",
       "source_location": "L5",
       "weight": 1.0,
@@ -5837,6 +6463,27 @@
       "target": "jobs_application_job_applicationjob"
     },
     {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/jobs/application_job.rb",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "jobs_application_job_applicationjob",
+      "target": "jobs_application_job_applicationjob_with_semantic_logging",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/jobs/application_job.rb",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "jobs_application_job_applicationjob_with_semantic_logging",
+      "target": "raindrop_error_error"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/jobs/summarize_article_job.rb",
@@ -5866,6 +6513,47 @@
       "weight": 1.0,
       "source": "jobs_summarize_article_job_summarizearticlejob_perform",
       "target": "models_article_article_is_read"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/jobs/summarize_article_job.rb",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "jobs_summarize_article_job_summarizearticlejob_perform",
+      "target": "models_feed_feed"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/lib/simple_rss_formatter.rb",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "lib_simple_rss_formatter",
+      "target": "lib_simple_rss_formatter_simplerssformatter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/lib/simple_rss_formatter.rb",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "lib_simple_rss_formatter_simplerssformatter",
+      "target": "lib_simple_rss_formatter_simplerssformatter_process_info",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/lib/simple_rss_formatter.rb",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "lib_simple_rss_formatter_simplerssformatter",
+      "target": "lib_simple_rss_formatter_simplerssformatter_time",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5954,6 +6642,17 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "app/services/feed_manager.rb",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "services_feed_manager_feedmanager_fetch_and_save_feeds",
+      "target": "models_current_current"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/services/feed_manager.rb",
       "source_location": "L62",
       "weight": 1.0,
       "source": "services_feed_manager_feedmanager_insert_new_feeds",
@@ -5978,6 +6677,16 @@
       "confidence_score": 1.0,
       "source": "models_feed",
       "target": "models_feed_feed"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/models/feed.rb",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "models_feed_feed",
+      "target": "models_feed_feed_should_fetch",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -6295,6 +7004,26 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/services/fetch_feed_service.rb",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "services_fetch_feed_service_fetchfeedservice",
+      "target": "services_fetch_feed_service_fetchfeedservice_conditional_headers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/services/fetch_feed_service.rb",
+      "source_location": "L118",
+      "weight": 1.0,
+      "source": "services_fetch_feed_service_fetchfeedservice",
+      "target": "services_fetch_feed_service_fetchfeedservice_failure_result",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/services/fetch_feed_service.rb",
       "source_location": "L50",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -6320,6 +7049,16 @@
       "confidence_score": 1.0,
       "source": "services_fetch_feed_service_fetchfeedservice",
       "target": "services_fetch_feed_service_fetchfeedservice_initialize"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/services/fetch_feed_service.rb",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "services_fetch_feed_service_fetchfeedservice",
+      "target": "services_fetch_feed_service_fetchfeedservice_not_modified_result",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -7297,6 +8036,66 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "db/migrate/20260613182327_add_fetch_interval_to_feeds.rb",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "migrate_20260613182327_add_fetch_interval_to_feeds",
+      "target": "migrate_20260613182327_add_fetch_interval_to_feeds_addfetchintervaltofeeds",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrate/20260613182327_add_fetch_interval_to_feeds.rb",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "migrate_20260613182327_add_fetch_interval_to_feeds_addfetchintervaltofeeds",
+      "target": "migrate_20260613182327_add_fetch_interval_to_feeds_addfetchintervaltofeeds_change",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrate/20260621000001_add_caching_columns_to_feeds.rb",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "migrate_20260621000001_add_caching_columns_to_feeds",
+      "target": "migrate_20260621000001_add_caching_columns_to_feeds_addcachingcolumnstofeeds",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrate/20260621000001_add_caching_columns_to_feeds.rb",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "migrate_20260621000001_add_caching_columns_to_feeds_addcachingcolumnstofeeds",
+      "target": "migrate_20260621000001_add_caching_columns_to_feeds_addcachingcolumnstofeeds_change",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrate/20260621000002_add_unique_index_on_feed_id_and_url_to_articles.rb",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "migrate_20260621000002_add_unique_index_on_feed_id_and_url_to_articles",
+      "target": "migrate_20260621000002_add_unique_index_on_feed_id_and_url_to_articles_adduniqueindexonfeedidandurltoarticles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "db/migrate/20260621000002_add_unique_index_on_feed_id_and_url_to_articles.rb",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "migrate_20260621000002_add_unique_index_on_feed_id_and_url_to_articles_adduniqueindexonfeedidandurltoarticles",
+      "target": "migrate_20260621000002_add_unique_index_on_feed_id_and_url_to_articles_adduniqueindexonfeedidandurltoarticles_change",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "lib/constraints/admin_constraint.rb",
       "source_location": "L1",
       "weight": 1.0,
@@ -7436,5 +8235,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "aae7c52df946cab99adaf5e1deee338b26a09608"
+  "built_at_commit": "0dab9426e7875bc38e8bf9475f5d791452c36c08"
 }

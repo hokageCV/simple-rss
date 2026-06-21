@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   resources :registrations, except: [ :index, :show, :destroy ]
 
   resources :feeds do
+    collection do
+      get :share
+    end
+
     member do
       patch :update_articles
       patch :toggle_pause

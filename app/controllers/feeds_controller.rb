@@ -7,6 +7,10 @@ class FeedsController < ApplicationController
     @paused_feeds = Current.user.feeds.all.paused.alphabetically
   end
 
+  def share
+    @feeds = Current.user.feeds.alphabetically
+  end
+
   # GET /feeds/1 or /feeds/1.json
   def show
     @articles = @feed.articles.unread.recent_first
