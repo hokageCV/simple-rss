@@ -96,10 +96,34 @@ class ArticlesController < ApplicationController
 
   def save_to_raindrop
     SaveArticleToRaindrop.new(article: @article, user: Current.user).call
-    redirect_to root_path, notice: "Saved to Raindrop"
+
+    respond_to do |format|
+      format.turbo_stream do
+        flash.now[:notice] = "Saved to Raindrop"
+        render "save_to_raindrop"
+      end
+      format.html { redirect_to root_path, notice: "Saved to Raindrop" }
+    end
   rescue ActiveRecord::RecordInvalid, StandardError => e
     Rails.logger.error("Save to Raindrop failed: #{e.message}")
-    redirect_to article_path(@article), alert: "Failed to save article to Raindrop"
+
+    respond_to do |format|
+      format.turbo_stream do
+        flash.now[:alert] = "Failed to save article to Raindrop"
+        render turbo_stream: [
+          turbo_stream.replace(
+            "save_to_raindrop_#{helpers.dom_id(@article)}",
+            partial: "articles/raindrop_button",
+            locals: { article: @article }
+          ),
+          turbo_stream.update(
+            helpers.dom_id(@article, :status_text),
+            html: @article.status.capitalize
+          )
+        ]
+      end
+      format.html { redirect_to article_path(@article), alert: "Failed to save article to Raindrop" }
+    end
   end
 
   private

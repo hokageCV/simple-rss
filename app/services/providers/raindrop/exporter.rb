@@ -1,3 +1,5 @@
+require_relative "error"
+
 module Providers
   module Raindrop
     class Exporter
@@ -8,7 +10,7 @@ module Providers
       def export(article)
         client.create_bookmark(payload_for(article))
         true
-      rescue TokenRefreshed
+      rescue ::Providers::Raindrop::TokenRefreshed
         client.create_bookmark(payload_for(article))
         true
       end

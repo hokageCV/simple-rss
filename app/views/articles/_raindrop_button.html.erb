@@ -1,0 +1,6 @@
+<%= button_to 'Save to Raindrop',
+  save_to_raindrop_article_path(article),
+  method: :post,
+  form: { data: { turbo_stream: true, controller: "raindrop-save" } },
+  class: 'px-2 py-1 text-sm text-gray-700 bg-gray-200 rounded hover:bg-gray-300 cursor-pointer'
+%>
