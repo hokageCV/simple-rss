@@ -1,0 +1,7 @@
+<div id="<%= dom_id(article, :toggle_button) %>">
+  <%= button_to toggle_status_article_path(article.id), method: :patch,
+      class: 'inline-flex items-center gap-1.5 px-2 py-1 text-sm text-gray-700 bg-gray-200 rounded hover:bg-gray-300 cursor-pointer' do %>
+    <%= render partial: "articles/#{article.status == 'unread' ? 'eye_icon' : 'eye_off_icon'}" %>
+    <%= article.status == 'unread' ? 'Mark as read' : 'Mark as unread' %>
+  <% end %>
+</div>

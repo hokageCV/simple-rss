@@ -330,7 +330,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "controllers_articles_controller_articlescontroller_toggle_status",
-      "community": 2,
+      "community": 15,
       "norm_label": ".toggle_status()"
     },
     {
@@ -387,7 +387,7 @@
       "label": ".set_article()",
       "file_type": "code",
       "source_file": "app/controllers/articles_controller.rb",
-      "source_location": "L107",
+      "source_location": "L136",
       "_origin": "ast",
       "id": "controllers_articles_controller_articlescontroller_set_article",
       "community": 2,
@@ -397,7 +397,7 @@
       "label": ".article_params()",
       "file_type": "code",
       "source_file": "app/controllers/articles_controller.rb",
-      "source_location": "L116",
+      "source_location": "L145",
       "_origin": "ast",
       "id": "controllers_articles_controller_articlescontroller_article_params",
       "community": 2,
@@ -537,7 +537,7 @@
       "label": ".share()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L11",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "controllers_feeds_controller_feedscontroller_share",
       "community": 5,
@@ -547,7 +547,7 @@
       "label": ".show()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L16",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "controllers_feeds_controller_feedscontroller_show",
       "community": 5,
@@ -557,7 +557,7 @@
       "label": ".new()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L21",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "controllers_feeds_controller_feedscontroller_new",
       "community": 5,
@@ -567,7 +567,7 @@
       "label": ".edit()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L26",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "controllers_feeds_controller_feedscontroller_edit",
       "community": 5,
@@ -577,7 +577,7 @@
       "label": ".create()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L30",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "controllers_feeds_controller_feedscontroller_create",
       "community": 5,
@@ -587,7 +587,7 @@
       "label": ".update()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L62",
+      "source_location": "L61",
       "_origin": "ast",
       "id": "controllers_feeds_controller_feedscontroller_update",
       "community": 5,
@@ -597,7 +597,7 @@
       "label": ".update_articles()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L74",
+      "source_location": "L73",
       "_origin": "ast",
       "id": "controllers_feeds_controller_feedscontroller_update_articles",
       "community": 5,
@@ -607,7 +607,7 @@
       "label": ".toggle_pause()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L97",
+      "source_location": "L96",
       "_origin": "ast",
       "id": "controllers_feeds_controller_feedscontroller_toggle_pause",
       "community": 5,
@@ -617,7 +617,7 @@
       "label": ".destroy()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L108",
+      "source_location": "L107",
       "_origin": "ast",
       "id": "controllers_feeds_controller_feedscontroller_destroy",
       "community": 5,
@@ -627,7 +627,7 @@
       "label": ".set_feed()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L120",
+      "source_location": "L119",
       "_origin": "ast",
       "id": "controllers_feeds_controller_feedscontroller_set_feed",
       "community": 5,
@@ -637,7 +637,7 @@
       "label": ".feed_params()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L124",
+      "source_location": "L123",
       "_origin": "ast",
       "id": "controllers_feeds_controller_feedscontroller_feed_params",
       "community": 5,
@@ -647,7 +647,7 @@
       "label": ".feed_generator()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L130",
+      "source_location": "L129",
       "_origin": "ast",
       "id": "controllers_feeds_controller_feedscontroller_feed_generator",
       "community": 5,
@@ -657,7 +657,7 @@
       "label": ".skip_summarization()",
       "file_type": "code",
       "source_file": "app/controllers/feeds_controller.rb",
-      "source_location": "L144",
+      "source_location": "L143",
       "_origin": "ast",
       "id": "controllers_feeds_controller_feedscontroller_skip_summarization",
       "community": 5,
@@ -1624,6 +1624,56 @@
       "norm_label": "handlesubmitend()"
     },
     {
+      "label": "raindrop_save_controller.js",
+      "file_type": "code",
+      "source_file": "app/javascript/controllers/raindrop_save_controller.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "controllers_raindrop_save_controller",
+      "community": 96,
+      "norm_label": "raindrop_save_controller.js"
+    },
+    {
+      "label": "connect()",
+      "file_type": "code",
+      "source_file": "app/javascript/controllers/raindrop_save_controller.js",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "controllers_raindrop_save_controller_connect",
+      "community": 96,
+      "norm_label": "connect()"
+    },
+    {
+      "label": "disconnect()",
+      "file_type": "code",
+      "source_file": "app/javascript/controllers/raindrop_save_controller.js",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "controllers_raindrop_save_controller_disconnect",
+      "community": 96,
+      "norm_label": "disconnect()"
+    },
+    {
+      "label": "handleClick()",
+      "file_type": "code",
+      "source_file": "app/javascript/controllers/raindrop_save_controller.js",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "controllers_raindrop_save_controller_handleclick",
+      "community": 96,
+      "norm_label": "handleclick()"
+    },
+    {
+      "label": "revert()",
+      "file_type": "code",
+      "source_file": "app/javascript/controllers/raindrop_save_controller.js",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "controllers_raindrop_save_controller_revert",
+      "community": 96,
+      "norm_label": "revert()"
+    },
+    {
       "label": "read_controller.js",
       "file_type": "code",
       "source_file": "app/javascript/controllers/read_controller.js",
@@ -1930,7 +1980,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "jobs_summarize_article_job",
-      "community": 2,
+      "community": 15,
       "norm_label": "summarize_article_job.rb"
     },
     {
@@ -1940,7 +1990,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "jobs_summarize_article_job_summarizearticlejob",
-      "community": 2,
+      "community": 15,
       "norm_label": "summarizearticlejob"
     },
     {
@@ -1950,7 +2000,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "jobs_summarize_article_job_summarizearticlejob_perform",
-      "community": 2,
+      "community": 15,
       "norm_label": ".perform()"
     },
     {
@@ -2040,7 +2090,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "models_article",
-      "community": 2,
+      "community": 15,
       "norm_label": "article.rb"
     },
     {
@@ -2050,7 +2100,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "models_article_article",
-      "community": 2,
+      "community": 15,
       "norm_label": "article"
     },
     {
@@ -2060,7 +2110,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "models_article_article_toggle_status",
-      "community": 2,
+      "community": 15,
       "norm_label": ".toggle_status!()"
     },
     {
@@ -2070,7 +2120,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "models_article_article_clear_old_articles",
-      "community": 2,
+      "community": 15,
       "norm_label": ".clear_old_articles()"
     },
     {
@@ -2080,7 +2130,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "models_article_article_is_read",
-      "community": 2,
+      "community": 15,
       "norm_label": ".is_read?()"
     },
     {
@@ -2090,7 +2140,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "models_current",
-      "community": 5,
+      "community": 0,
       "norm_label": "current.rb"
     },
     {
@@ -2100,7 +2150,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "models_current_current",
-      "community": 5,
+      "community": 0,
       "norm_label": "current"
     },
     {
@@ -2727,7 +2777,7 @@
       "label": "Exporter",
       "file_type": "code",
       "source_file": "app/services/providers/raindrop/exporter.rb",
-      "source_location": "L3",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "raindrop_exporter_exporter",
       "community": 4,
@@ -2737,7 +2787,7 @@
       "label": ".initialize()",
       "file_type": "code",
       "source_file": "app/services/providers/raindrop/exporter.rb",
-      "source_location": "L4",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "raindrop_exporter_exporter_initialize",
       "community": 4,
@@ -2747,7 +2797,7 @@
       "label": ".export()",
       "file_type": "code",
       "source_file": "app/services/providers/raindrop/exporter.rb",
-      "source_location": "L8",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "raindrop_exporter_exporter_export",
       "community": 4,
@@ -2757,7 +2807,7 @@
       "label": ".client()",
       "file_type": "code",
       "source_file": "app/services/providers/raindrop/exporter.rb",
-      "source_location": "L20",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "raindrop_exporter_exporter_client",
       "community": 4,
@@ -2767,7 +2817,7 @@
       "label": ".payload_for()",
       "file_type": "code",
       "source_file": "app/services/providers/raindrop/exporter.rb",
-      "source_location": "L24",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "raindrop_exporter_exporter_payload_for",
       "community": 4,
@@ -2780,7 +2830,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_save_article_to_raindrop",
-      "community": 2,
+      "community": 15,
       "norm_label": "save_article_to_raindrop.rb"
     },
     {
@@ -2790,7 +2840,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_save_article_to_raindrop_savearticletoraindrop",
-      "community": 2,
+      "community": 15,
       "norm_label": "savearticletoraindrop"
     },
     {
@@ -2800,7 +2850,7 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "services_save_article_to_raindrop_savearticletoraindrop_initialize",
-      "community": 2,
+      "community": 15,
       "norm_label": ".initialize()"
     },
     {
@@ -2810,7 +2860,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "services_save_article_to_raindrop_savearticletoraindrop_call",
-      "community": 2,
+      "community": 15,
       "norm_label": ".call()"
     },
     {
@@ -2880,7 +2930,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_summarize_article",
-      "community": 15,
+      "community": 2,
       "norm_label": "summarize_article.rb"
     },
     {
@@ -2890,7 +2940,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_summarize_article_summarizearticle",
-      "community": 15,
+      "community": 2,
       "norm_label": "summarizearticle"
     },
     {
@@ -2910,7 +2960,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "services_summarize_article_summarizearticle_call",
-      "community": 15,
+      "community": 2,
       "norm_label": ".call()"
     },
     {
@@ -2920,7 +2970,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "services_summarize_article_summarizearticle_summarize_instructions",
-      "community": 15,
+      "community": 2,
       "norm_label": ".summarize_instructions()"
     },
     {
@@ -2930,7 +2980,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "services_summarize_article_summarizearticle_handle_gem_error",
-      "community": 15,
+      "community": 2,
       "norm_label": ".handle_gem_error()"
     },
     {
@@ -4161,9 +4211,9 @@
       "source_file": ".opencode/opencode.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "opencode_opencode",
-      "target": "opencode_opencode_mcp",
-      "confidence_score": 1.0
+      "target": "opencode_opencode_mcp"
     },
     {
       "relation": "contains",
@@ -4171,9 +4221,9 @@
       "source_file": ".opencode/opencode.json",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "opencode_opencode",
-      "target": "opencode_opencode_plugin",
-      "confidence_score": 1.0
+      "target": "opencode_opencode_plugin"
     },
     {
       "relation": "contains",
@@ -4181,9 +4231,9 @@
       "source_file": ".opencode/opencode.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "opencode_opencode",
-      "target": "opencode_opencode_schema",
-      "confidence_score": 1.0
+      "target": "opencode_opencode_schema"
     },
     {
       "relation": "contains",
@@ -4191,9 +4241,9 @@
       "source_file": ".opencode/opencode.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "opencode_opencode_mcp",
-      "target": "opencode_opencode_mcp_grepika",
-      "confidence_score": 1.0
+      "target": "opencode_opencode_mcp_grepika"
     },
     {
       "relation": "contains",
@@ -4201,9 +4251,9 @@
       "source_file": ".opencode/opencode.json",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "opencode_opencode_mcp",
-      "target": "opencode_opencode_mcp_tilth",
-      "confidence_score": 1.0
+      "target": "opencode_opencode_mcp_tilth"
     },
     {
       "relation": "contains",
@@ -4211,9 +4261,9 @@
       "source_file": ".opencode/opencode.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "opencode_opencode_mcp_grepika",
-      "target": "opencode_opencode_grepika_command",
-      "confidence_score": 1.0
+      "target": "opencode_opencode_grepika_command"
     },
     {
       "relation": "contains",
@@ -4221,9 +4271,9 @@
       "source_file": ".opencode/opencode.json",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "opencode_opencode_mcp_grepika",
-      "target": "opencode_opencode_grepika_enabled",
-      "confidence_score": 1.0
+      "target": "opencode_opencode_grepika_enabled"
     },
     {
       "relation": "contains",
@@ -4231,9 +4281,9 @@
       "source_file": ".opencode/opencode.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "opencode_opencode_mcp_grepika",
-      "target": "opencode_opencode_grepika_type",
-      "confidence_score": 1.0
+      "target": "opencode_opencode_grepika_type"
     },
     {
       "relation": "contains",
@@ -4241,9 +4291,9 @@
       "source_file": ".opencode/opencode.json",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "opencode_opencode_mcp_tilth",
-      "target": "opencode_opencode_tilth_command",
-      "confidence_score": 1.0
+      "target": "opencode_opencode_tilth_command"
     },
     {
       "relation": "contains",
@@ -4251,9 +4301,9 @@
       "source_file": ".opencode/opencode.json",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "opencode_opencode_mcp_tilth",
-      "target": "opencode_opencode_tilth_enabled",
-      "confidence_score": 1.0
+      "target": "opencode_opencode_tilth_enabled"
     },
     {
       "relation": "contains",
@@ -4261,9 +4311,9 @@
       "source_file": ".opencode/opencode.json",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "opencode_opencode_mcp_tilth",
-      "target": "opencode_opencode_tilth_type",
-      "confidence_score": 1.0
+      "target": "opencode_opencode_tilth_type"
     },
     {
       "relation": "contains",
@@ -4352,9 +4402,9 @@
       "source_file": "app/controllers/application_controller.rb",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "controllers_application_controller_applicationcontroller",
-      "target": "controllers_application_controller_applicationcontroller_set_current_attributes",
-      "confidence_score": 1.0
+      "target": "controllers_application_controller_applicationcontroller_set_current_attributes"
     },
     {
       "relation": "calls",
@@ -4605,6 +4655,17 @@
       "weight": 1.0,
       "source": "services_summarize_article_summarizearticle_call",
       "target": "controllers_articles_controller_articlescontroller_summary"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/controllers/articles_controller.rb",
+      "source_location": "L119",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "controllers_articles_controller_articlescontroller_save_to_raindrop",
+      "target": "controllers_articles_controller_articlescontroller_update"
     },
     {
       "relation": "calls",
@@ -4869,9 +4930,9 @@
       "source_file": "app/controllers/feeds_controller.rb",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "controllers_feeds_controller_feedscontroller",
-      "target": "controllers_feeds_controller_feedscontroller_share",
-      "confidence_score": 1.0
+      "target": "controllers_feeds_controller_feedscontroller_share"
     },
     {
       "relation": "method",
@@ -6202,6 +6263,46 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "app/javascript/controllers/raindrop_save_controller.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "controllers_raindrop_save_controller",
+      "target": "controllers_raindrop_save_controller_connect"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/javascript/controllers/raindrop_save_controller.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "controllers_raindrop_save_controller",
+      "target": "controllers_raindrop_save_controller_disconnect"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/javascript/controllers/raindrop_save_controller.js",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "controllers_raindrop_save_controller",
+      "target": "controllers_raindrop_save_controller_handleclick"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/javascript/controllers/raindrop_save_controller.js",
+      "source_location": "L51",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "controllers_raindrop_save_controller",
+      "target": "controllers_raindrop_save_controller_revert"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "app/javascript/controllers/read_controller.js",
       "source_location": "L7",
       "weight": 1.0,
@@ -6337,9 +6438,9 @@
       "source_file": "app/javascript/controllers/share_links_controller.js",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "controllers_share_links_controller",
-      "target": "controllers_share_links_controller_connect",
-      "confidence_score": 1.0
+      "target": "controllers_share_links_controller_connect"
     },
     {
       "relation": "contains",
@@ -6347,9 +6448,9 @@
       "source_file": "app/javascript/controllers/share_links_controller.js",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "controllers_share_links_controller",
-      "target": "controllers_share_links_controller_copy",
-      "confidence_score": 1.0
+      "target": "controllers_share_links_controller_copy"
     },
     {
       "relation": "contains",
@@ -6357,9 +6458,9 @@
       "source_file": "app/javascript/controllers/share_links_controller.js",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "controllers_share_links_controller",
-      "target": "controllers_share_links_controller_generate",
-      "confidence_score": 1.0
+      "target": "controllers_share_links_controller_generate"
     },
     {
       "relation": "contains",
@@ -6367,9 +6468,9 @@
       "source_file": "app/javascript/controllers/share_links_controller.js",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "controllers_share_links_controller",
-      "target": "controllers_share_links_controller_toggleall",
-      "confidence_score": 1.0
+      "target": "controllers_share_links_controller_toggleall"
     },
     {
       "relation": "contains",
@@ -6468,9 +6569,9 @@
       "source_file": "app/jobs/application_job.rb",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_application_job_applicationjob",
-      "target": "jobs_application_job_applicationjob_with_semantic_logging",
-      "confidence_score": 1.0
+      "target": "jobs_application_job_applicationjob_with_semantic_logging"
     },
     {
       "relation": "calls",
@@ -6531,9 +6632,9 @@
       "source_file": "app/lib/simple_rss_formatter.rb",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_simple_rss_formatter",
-      "target": "lib_simple_rss_formatter_simplerssformatter",
-      "confidence_score": 1.0
+      "target": "lib_simple_rss_formatter_simplerssformatter"
     },
     {
       "relation": "method",
@@ -6541,9 +6642,9 @@
       "source_file": "app/lib/simple_rss_formatter.rb",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_simple_rss_formatter_simplerssformatter",
-      "target": "lib_simple_rss_formatter_simplerssformatter_process_info",
-      "confidence_score": 1.0
+      "target": "lib_simple_rss_formatter_simplerssformatter_process_info"
     },
     {
       "relation": "method",
@@ -6551,9 +6652,9 @@
       "source_file": "app/lib/simple_rss_formatter.rb",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_simple_rss_formatter_simplerssformatter",
-      "target": "lib_simple_rss_formatter_simplerssformatter_time",
-      "confidence_score": 1.0
+      "target": "lib_simple_rss_formatter_simplerssformatter_time"
     },
     {
       "relation": "contains",
@@ -6684,9 +6785,9 @@
       "source_file": "app/models/feed.rb",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "models_feed_feed",
-      "target": "models_feed_feed_should_fetch",
-      "confidence_score": 1.0
+      "target": "models_feed_feed_should_fetch"
     },
     {
       "relation": "contains",
@@ -7006,9 +7107,9 @@
       "source_file": "app/services/fetch_feed_service.rb",
       "source_location": "L84",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_fetch_feed_service_fetchfeedservice",
-      "target": "services_fetch_feed_service_fetchfeedservice_conditional_headers",
-      "confidence_score": 1.0
+      "target": "services_fetch_feed_service_fetchfeedservice_conditional_headers"
     },
     {
       "relation": "method",
@@ -7016,9 +7117,9 @@
       "source_file": "app/services/fetch_feed_service.rb",
       "source_location": "L118",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_fetch_feed_service_fetchfeedservice",
-      "target": "services_fetch_feed_service_fetchfeedservice_failure_result",
-      "confidence_score": 1.0
+      "target": "services_fetch_feed_service_fetchfeedservice_failure_result"
     },
     {
       "relation": "method",
@@ -7056,9 +7157,9 @@
       "source_file": "app/services/fetch_feed_service.rb",
       "source_location": "L114",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_fetch_feed_service_fetchfeedservice",
-      "target": "services_fetch_feed_service_fetchfeedservice_not_modified_result",
-      "confidence_score": 1.0
+      "target": "services_fetch_feed_service_fetchfeedservice_not_modified_result"
     },
     {
       "relation": "method",
@@ -8039,9 +8140,9 @@
       "source_file": "db/migrate/20260613182327_add_fetch_interval_to_feeds.rb",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "migrate_20260613182327_add_fetch_interval_to_feeds",
-      "target": "migrate_20260613182327_add_fetch_interval_to_feeds_addfetchintervaltofeeds",
-      "confidence_score": 1.0
+      "target": "migrate_20260613182327_add_fetch_interval_to_feeds_addfetchintervaltofeeds"
     },
     {
       "relation": "method",
@@ -8049,9 +8150,9 @@
       "source_file": "db/migrate/20260613182327_add_fetch_interval_to_feeds.rb",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "migrate_20260613182327_add_fetch_interval_to_feeds_addfetchintervaltofeeds",
-      "target": "migrate_20260613182327_add_fetch_interval_to_feeds_addfetchintervaltofeeds_change",
-      "confidence_score": 1.0
+      "target": "migrate_20260613182327_add_fetch_interval_to_feeds_addfetchintervaltofeeds_change"
     },
     {
       "relation": "contains",
@@ -8059,9 +8160,9 @@
       "source_file": "db/migrate/20260621000001_add_caching_columns_to_feeds.rb",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "migrate_20260621000001_add_caching_columns_to_feeds",
-      "target": "migrate_20260621000001_add_caching_columns_to_feeds_addcachingcolumnstofeeds",
-      "confidence_score": 1.0
+      "target": "migrate_20260621000001_add_caching_columns_to_feeds_addcachingcolumnstofeeds"
     },
     {
       "relation": "method",
@@ -8069,9 +8170,9 @@
       "source_file": "db/migrate/20260621000001_add_caching_columns_to_feeds.rb",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "migrate_20260621000001_add_caching_columns_to_feeds_addcachingcolumnstofeeds",
-      "target": "migrate_20260621000001_add_caching_columns_to_feeds_addcachingcolumnstofeeds_change",
-      "confidence_score": 1.0
+      "target": "migrate_20260621000001_add_caching_columns_to_feeds_addcachingcolumnstofeeds_change"
     },
     {
       "relation": "contains",
@@ -8079,9 +8180,9 @@
       "source_file": "db/migrate/20260621000002_add_unique_index_on_feed_id_and_url_to_articles.rb",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "migrate_20260621000002_add_unique_index_on_feed_id_and_url_to_articles",
-      "target": "migrate_20260621000002_add_unique_index_on_feed_id_and_url_to_articles_adduniqueindexonfeedidandurltoarticles",
-      "confidence_score": 1.0
+      "target": "migrate_20260621000002_add_unique_index_on_feed_id_and_url_to_articles_adduniqueindexonfeedidandurltoarticles"
     },
     {
       "relation": "method",
@@ -8089,9 +8190,9 @@
       "source_file": "db/migrate/20260621000002_add_unique_index_on_feed_id_and_url_to_articles.rb",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "migrate_20260621000002_add_unique_index_on_feed_id_and_url_to_articles_adduniqueindexonfeedidandurltoarticles",
-      "target": "migrate_20260621000002_add_unique_index_on_feed_id_and_url_to_articles_adduniqueindexonfeedidandurltoarticles_change",
-      "confidence_score": 1.0
+      "target": "migrate_20260621000002_add_unique_index_on_feed_id_and_url_to_articles_adduniqueindexonfeedidandurltoarticles_change"
     },
     {
       "relation": "contains",
@@ -8235,5 +8336,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "0dab9426e7875bc38e8bf9475f5d791452c36c08"
+  "built_at_commit": "e66e5395979fd6a1ff1e7cffcf84190063dac244"
 }

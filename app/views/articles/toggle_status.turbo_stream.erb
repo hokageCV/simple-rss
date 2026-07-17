@@ -1,3 +1,7 @@
 <%= turbo_stream.update(dom_id(@article, :status_text)) do %>
   <%= @article.status.capitalize %>
 <% end %>
+
+<%= turbo_stream.update(dom_id(@article, :toggle_button)) do %>
+  <%= render partial: "articles/toggle_button", locals: { article: @article } %>
+<% end %>

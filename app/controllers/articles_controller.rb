@@ -119,6 +119,11 @@ class ArticlesController < ApplicationController
           turbo_stream.update(
             helpers.dom_id(@article, :status_text),
             html: @article.status.capitalize
+          ),
+          turbo_stream.update(
+            helpers.dom_id(@article, :toggle_button),
+            partial: "articles/toggle_button",
+            locals: { article: @article }
           )
         ]
       end

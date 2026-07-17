@@ -1,16 +1,16 @@
-# Graph Report - simple-rss  (2026-06-21)
+# Graph Report - simple-rss  (2026-07-17)
 
 ## Corpus Check
-- 120 files · ~11,081 words
+- 121 files · ~11,303 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 415 nodes · 398 edges · 96 communities (45 shown, 51 thin omitted)
+- 420 nodes · 403 edges · 97 communities (46 shown, 51 thin omitted)
 - Extraction: 85% EXTRACTED · 15% INFERRED · 0% AMBIGUOUS · INFERRED: 59 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0dab9426`
+- Built from commit: `e66e5395`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -104,27 +104,23 @@
 ## Import Cycles
 - None detected.
 
-## Communities (96 total, 51 thin omitted)
+## Communities (97 total, 51 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.09
-Nodes (8): UsersController, ApplicationJob, ApiError, Error, RateLimited, TokenRefreshed, Unauthorized, FeedManager
+Cohesion: 0.08
+Nodes (9): UsersController, ApplicationJob, Current, ApiError, Error, RateLimited, TokenRefreshed, Unauthorized (+1 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.07
 Nodes (7): Connection, AdminConstraint, ApplicationController, HomeController, User, RaindropController, TestApiKeyService
 
 ### Community 2 - "Community 2"
-Cohesion: 0.08
-Nodes (5): ArticlesController, render_summary(), SummarizeArticleJob, Article, SaveArticleToRaindrop
+Cohesion: 0.13
+Nodes (3): ArticlesController, render_summary(), SummarizeArticle
 
 ### Community 3 - "Community 3"
 Cohesion: 0.10
 Nodes (6): resume_session(), start_new_session_for(), terminate_session(), RegistrationsController, SessionsController, Session
-
-### Community 5 - "Community 5"
-Cohesion: 0.11
-Nodes (3): FeedsController, Current, SaveArticlesService
 
 ### Community 7 - "Community 7"
 Cohesion: 0.27
@@ -137,6 +133,10 @@ Nodes (8): open_article_in_new_tab?(), render_content(), render_image(), render_
 ### Community 9 - "Community 9"
 Cohesion: 0.32
 Nodes (4): getContent(), startSpeech(), togglePlayPause(), updatePlayPauseButton()
+
+### Community 15 - "Community 15"
+Cohesion: 0.15
+Nodes (3): SummarizeArticleJob, Article, SaveArticleToRaindrop
 
 ### Community 18 - "Community 18"
 Cohesion: 0.50
@@ -155,16 +155,16 @@ Nodes (11): command, enabled, type, mcp, grepika, tilth, plugin, $schema (+3 mor
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `User` connect `Community 1` to `Community 0`, `Community 2`, `Community 5`, `Community 6`?**
-  _High betweenness centrality (0.099) - this node is a cross-community bridge._
+  _High betweenness centrality (0.097) - this node is a cross-community bridge._
 - **Why does `Error` connect `Community 0` to `Community 10`, `Community 1`, `Community 2`, `Community 3`?**
-  _High betweenness centrality (0.078) - this node is a cross-community bridge._
+  _High betweenness centrality (0.077) - this node is a cross-community bridge._
+- **Why does `ArticlesController` connect `Community 2` to `Community 15`?**
+  _High betweenness centrality (0.058) - this node is a cross-community bridge._
 - **Are the 16 inferred relationships involving `User` (e.g. with `.set_current_user()` and `.matches?()`) actually correct?**
   _`User` has 16 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `$schema`, `type`, `enabled` to the rest of the system?**
   _34 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.0873015873015873 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08275862068965517 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.07196969696969698 - nodes in this community are weakly interconnected._
-- **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.082010582010582 - nodes in this community are weakly interconnected._

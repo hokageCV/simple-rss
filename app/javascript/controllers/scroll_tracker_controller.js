@@ -44,6 +44,8 @@ export default class extends Controller {
 
       this.element.dataset.status = 'read';
       document.getElementById(`status_text_article_${articleId}`).innerText = 'Read';
+      const toggleBtn = document.querySelector(`#toggle_button_article_${articleId} button`);
+      if (toggleBtn) toggleBtn.textContent = 'Mark as unread';
       this.linkTarget.removeAttribute('target');
       this.linkTarget.removeAttribute('rel');
     } catch (error) {

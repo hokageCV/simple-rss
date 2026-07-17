@@ -36,11 +36,7 @@
       </p>
 
       <div class="flex flex-wrap gap-2">
-        <%= button_to 'Mark as read/unread',
-          toggle_status_article_path(article.id),
-          method: :patch,
-          class: 'px-2 py-1 text-sm text-gray-700 bg-gray-200 rounded hover:bg-gray-300 cursor-pointer'
-        %>
+        <%= render partial: "articles/toggle_button", locals: { article: article } %>
 
         <% if Current.user.raindrop_connected? %>
           <div id="save_to_raindrop_<%= dom_id(article) %>">
