@@ -28,4 +28,8 @@ class Article < ApplicationRecord
   def is_read?
     self.status == STATUSES[:read]
   end
+
+  def mark_as_read!
+    update!(status: STATUSES[:read])
+  end
 end

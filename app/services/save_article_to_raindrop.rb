@@ -11,7 +11,7 @@ class SaveArticleToRaindrop
       .new(raindrop_account)
       .export(article)
 
-    article.toggle_status!
+    article.mark_as_read!
   end
 
   private
