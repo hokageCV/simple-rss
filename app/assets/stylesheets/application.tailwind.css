@@ -99,3 +99,12 @@ dialog:not([open])::backdrop {
 body:has(dialog:modal) {
   overflow: hidden;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #0d2134 inset !important;
+  -webkit-text-fill-color: #a6c8e8 !important;
+  caret-color: #a6c8e8 !important;
+}
