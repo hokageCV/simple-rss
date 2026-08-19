@@ -1,6 +1,8 @@
 <div class='flex items-center mb-2 p-1 rounded-md transition-transform duration-200 hover:bg-sidebarBg-7'>
-  <%= link_to folders_path  do %>
-    <span class="[[data-expanded=true]_&]:hidden">&#x1F4C1; Folder</span>
-    <span class="[[data-expanded=false]_&]:hidden">&#x1F4C1;</span>
+  <%= link_to folders_path, class: "flex items-center gap-2" do %>
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
+    </svg>
+    <span class="[[data-expanded=true]_&]:hidden">Folder</span>
   <% end%>
 </div>
