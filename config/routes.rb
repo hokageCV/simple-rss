@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     member do
       get :profile
       post :import_via_opml
+      post :refresh_feeds
       delete :clear_old_articles
     end
 

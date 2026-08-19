@@ -78,6 +78,17 @@ class UsersController < ApplicationController
     redirect_to profile_user_path(@user.id), notice: "Old read articles deleted."
   end
 
+  def refresh_feeds
+    selected_types = Array(params[:feed_types]).presence || %w[default substack]
+    generators = selected_types.map { |type| Feed::GENERATORS[type.to_sym] }.compact
+
+    FeedManager.fetch_and_save_feeds(@user.feeds.active.where(generator: generators).pluck(:url))
+    redirect_to profile_user_path(@user.id), notice: "Feeds refreshed."
+  rescue => e
+    Rails.logger.error "🚨 Error refreshing feeds: #{e.message}"
+    redirect_to profile_user_path(@user.id), alert: "Failed to refresh some feeds. Please try again."
+  end
+
   private
 
   def set_user

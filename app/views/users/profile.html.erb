@@ -175,6 +175,22 @@
         Clear
       <% end %>
     </div>
+
+    <div class="pt-2 border-t border-white/[0.04]">
+      <p class="text-sm font-medium text-text-2">Refresh feeds</p>
+      <p class="text-xs text-text-4 mt-0.5">Fetch active feeds now, ignoring their fetch intervals</p>
+
+      <%= form_with url: refresh_feeds_user_path(@user), method: :post, local: true do |form| %>
+        <div class="mt-3 max-w-xs">
+          <%= form.label :feed_types, "Feed types", class: "block text-xs font-medium text-text-4 uppercase tracking-wider mb-1.5" %>
+          <%= select_tag "feed_types[]",
+            options_for_select(Feed::GENERATORS.keys.map { |k| [k.to_s.humanize, k.to_s] }, %w[default substack]),
+            multiple: true, id: "feed-type-select" %>
+        </div>
+
+        <%= form.submit "Refresh", class: "mt-3 px-4 py-2 rounded-lg text-xs font-medium bg-accent/90 text-white hover:bg-accent transition-colors cursor-pointer" %>
+      <% end %>
+    </div>
   </section>
 
   <section class="rounded-xl bg-white/[0.02] ring-1 ring-white/[0.04] p-6 space-y-5">

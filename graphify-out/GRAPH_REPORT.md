@@ -1,16 +1,16 @@
-# Graph Report - simple-rss  (2026-07-17)
+# Graph Report - simple-rss  (2026-08-19)
 
 ## Corpus Check
-- 121 files · ~11,303 words
+- 123 files · ~11,504 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 420 nodes · 403 edges · 97 communities (46 shown, 51 thin omitted)
-- Extraction: 85% EXTRACTED · 15% INFERRED · 0% AMBIGUOUS · INFERRED: 59 edges (avg confidence: 0.8)
+- 425 nodes · 409 edges · 99 communities (47 shown, 52 thin omitted)
+- Extraction: 85% EXTRACTED · 15% INFERRED · 0% AMBIGUOUS · INFERRED: 62 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e66e5395`
+- Built from commit: `286ac000`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -76,15 +76,16 @@
 - [[_COMMUNITY_Community 91|Community 91]]
 - [[_COMMUNITY_Community 92|Community 92]]
 - [[_COMMUNITY_Community 93|Community 93]]
+- [[_COMMUNITY_Community 97|Community 97]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `User` - 23 edges
 2. `FeedsController` - 15 edges
 3. `ArticlesController` - 14 edges
 4. `FoldersController` - 13 edges
-5. `UsersController` - 10 edges
-6. `FetchFeedService` - 10 edges
-7. `Error` - 10 edges
+5. `UsersController` - 11 edges
+6. `Error` - 11 edges
+7. `FetchFeedService` - 10 edges
 8. `Client` - 9 edges
 9. `RaindropController` - 6 edges
 10. `Current` - 6 edges
@@ -104,7 +105,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (97 total, 51 thin omitted)
+## Communities (99 total, 52 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.08
@@ -122,6 +123,10 @@ Nodes (3): ArticlesController, render_summary(), SummarizeArticle
 Cohesion: 0.10
 Nodes (6): resume_session(), start_new_session_for(), terminate_session(), RegistrationsController, SessionsController, Session
 
+### Community 5 - "Community 5"
+Cohesion: 0.10
+Nodes (3): FeedsController, SummarizeArticleJob, SaveArticlesService
+
 ### Community 7 - "Community 7"
 Cohesion: 0.27
 Nodes (10): connect(), destroyTomSelect(), destroyTomSelects(), disconnect(), fetchModels(), initTomSelect(), providerChanged(), setTesting() (+2 more)
@@ -134,10 +139,6 @@ Nodes (8): open_article_in_new_tab?(), render_content(), render_image(), render_
 Cohesion: 0.32
 Nodes (4): getContent(), startSpeech(), togglePlayPause(), updatePlayPauseButton()
 
-### Community 15 - "Community 15"
-Cohesion: 0.15
-Nodes (3): SummarizeArticleJob, Article, SaveArticleToRaindrop
-
 ### Community 18 - "Community 18"
 Cohesion: 0.50
 Nodes (3): confirmButton, dialog, messageElement
@@ -147,24 +148,24 @@ Cohesion: 0.17
 Nodes (11): command, enabled, type, mcp, grepika, tilth, plugin, $schema (+3 more)
 
 ## Knowledge Gaps
-- **34 isolated node(s):** `$schema`, `type`, `enabled`, `command`, `type` (+29 more)
+- **35 isolated node(s):** `$schema`, `type`, `enabled`, `command`, `type` (+30 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **51 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **52 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `User` connect `Community 1` to `Community 0`, `Community 2`, `Community 5`, `Community 6`?**
-  _High betweenness centrality (0.097) - this node is a cross-community bridge._
+  _High betweenness centrality (0.093) - this node is a cross-community bridge._
 - **Why does `Error` connect `Community 0` to `Community 10`, `Community 1`, `Community 2`, `Community 3`?**
-  _High betweenness centrality (0.077) - this node is a cross-community bridge._
+  _High betweenness centrality (0.078) - this node is a cross-community bridge._
 - **Why does `ArticlesController` connect `Community 2` to `Community 15`?**
   _High betweenness centrality (0.058) - this node is a cross-community bridge._
 - **Are the 16 inferred relationships involving `User` (e.g. with `.set_current_user()` and `.matches?()`) actually correct?**
   _`User` has 16 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `$schema`, `type`, `enabled` to the rest of the system?**
-  _34 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _35 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.08275862068965517 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08387096774193549 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.07196969696969698 - nodes in this community are weakly interconnected._

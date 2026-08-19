@@ -184,6 +184,16 @@
       "norm_label": "folders.js"
     },
     {
+      "label": "users.js",
+      "file_type": "code",
+      "source_file": "app/assets/javascripts/users.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "javascripts_users",
+      "community": 98,
+      "norm_label": "users.js"
+    },
+    {
       "label": "connection.rb",
       "file_type": "code",
       "source_file": "app/channels/application_cable/connection.rb",
@@ -1154,10 +1164,20 @@
       "norm_label": ".clear_old_articles()"
     },
     {
+      "label": ".refresh_feeds()",
+      "file_type": "code",
+      "source_file": "app/controllers/users_controller.rb",
+      "source_location": "L81",
+      "_origin": "ast",
+      "id": "controllers_users_controller_userscontroller_refresh_feeds",
+      "community": 0,
+      "norm_label": ".refresh_feeds()"
+    },
+    {
       "label": ".set_user()",
       "file_type": "code",
       "source_file": "app/controllers/users_controller.rb",
-      "source_location": "L83",
+      "source_location": "L94",
       "_origin": "ast",
       "id": "controllers_users_controller_userscontroller_set_user",
       "community": 0,
@@ -1167,7 +1187,7 @@
       "label": ".set_flash_message()",
       "file_type": "code",
       "source_file": "app/controllers/users_controller.rb",
-      "source_location": "L87",
+      "source_location": "L98",
       "_origin": "ast",
       "id": "controllers_users_controller_userscontroller_set_flash_message",
       "community": 0,
@@ -1980,7 +2000,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "jobs_summarize_article_job",
-      "community": 15,
+      "community": 5,
       "norm_label": "summarize_article_job.rb"
     },
     {
@@ -1990,7 +2010,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "jobs_summarize_article_job_summarizearticlejob",
-      "community": 15,
+      "community": 5,
       "norm_label": "summarizearticlejob"
     },
     {
@@ -2000,7 +2020,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "jobs_summarize_article_job_summarizearticlejob_perform",
-      "community": 15,
+      "community": 5,
       "norm_label": ".perform()"
     },
     {
@@ -2132,6 +2152,16 @@
       "id": "models_article_article_is_read",
       "community": 15,
       "norm_label": ".is_read?()"
+    },
+    {
+      "label": ".mark_as_read!()",
+      "file_type": "code",
+      "source_file": "app/models/article.rb",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "models_article_article_mark_as_read",
+      "community": 15,
+      "norm_label": ".mark_as_read!()"
     },
     {
       "label": "current.rb",
@@ -4054,6 +4084,26 @@
       "norm_label": "homecontrollertest"
     },
     {
+      "label": "users_controller_test.rb",
+      "file_type": "code",
+      "source_file": "test/controllers/users_controller_test.rb",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "controllers_users_controller_test",
+      "community": 97,
+      "norm_label": "users_controller_test.rb"
+    },
+    {
+      "label": "UsersControllerTest",
+      "file_type": "code",
+      "source_file": "test/controllers/users_controller_test.rb",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "controllers_users_controller_test_userscontrollertest",
+      "community": 97,
+      "norm_label": "userscontrollertest"
+    },
+    {
       "label": "passwords_mailer_preview.rb",
       "file_type": "code",
       "source_file": "test/mailers/previews/passwords_mailer_preview.rb",
@@ -5652,6 +5702,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/controllers/users_controller.rb",
+      "source_location": "L81",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "controllers_users_controller_userscontroller",
+      "target": "controllers_users_controller_userscontroller_refresh_feeds"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/controllers/users_controller.rb",
       "source_location": "L87",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -5742,6 +5802,28 @@
       "weight": 1.0,
       "source": "controllers_users_controller_userscontroller_profile",
       "target": "models_user_user"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/controllers/users_controller.rb",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "controllers_users_controller_userscontroller_refresh_feeds",
+      "target": "raindrop_error_error"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/controllers/users_controller.rb",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "controllers_users_controller_userscontroller_refresh_feeds",
+      "target": "services_feed_manager_feedmanager_fetch_and_save_feeds"
     },
     {
       "relation": "calls",
@@ -6710,6 +6792,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/models/article.rb",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_article_article",
+      "target": "models_article_article_mark_as_read"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/models/article.rb",
       "source_location": "L19",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -6726,6 +6818,17 @@
       "weight": 1.0,
       "source": "services_save_article_to_raindrop_savearticletoraindrop_call",
       "target": "models_article_article_toggle_status"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/services/save_article_to_raindrop.rb",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "services_save_article_to_raindrop_savearticletoraindrop_call",
+      "target": "models_article_article_mark_as_read"
     },
     {
       "relation": "contains",
@@ -8257,6 +8360,16 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "test/controllers/users_controller_test.rb",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "controllers_users_controller_test",
+      "target": "controllers_users_controller_test_userscontrollertest"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "test/mailers/previews/passwords_mailer_preview.rb",
       "source_location": "L2",
       "weight": 1.0,
@@ -8336,5 +8449,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e66e5395979fd6a1ff1e7cffcf84190063dac244"
+  "built_at_commit": "286ac000d6ddb89ea049df29c573ebb881d9c83d"
 }
