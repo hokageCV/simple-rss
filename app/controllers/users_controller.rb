@@ -38,6 +38,16 @@ class UsersController < ApplicationController
     @raindrop_account = Current.user.external_accounts.find_by(provider: "raindrop")
   end
 
+  def update_preferences
+    if @user.update(user_preferences_params)
+      flash[:notice] = "Preferences saved."
+    else
+      flash[:alert] = @user.errors.full_messages.to_sentence
+    end
+
+    redirect_to profile_user_path(@user)
+  end
+
   def update_api_key
     api_key_val = params[:user][:api_key].presence
 
@@ -101,5 +111,9 @@ class UsersController < ApplicationController
     else
       { notice: "Feeds successfully imported." }
     end
+  end
+
+  def user_preferences_params
+    params.require(:user).permit(:summarize_articles)
   end
 end

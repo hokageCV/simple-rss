@@ -1,4 +1,6 @@
-<% if article.summary.present? %>
+<% if !Current.user.summarize_articles? %>
+  <%# render nothing %>
+<% elsif article.summary.present? %>
   <%= render_summary(article) %>
 <% elsif article.feed.skip_summarization %>
   <%# render nothing %>

@@ -36,7 +36,7 @@
             </span>
           </div>
 
-          <% if article.content.present? %>
+          <% if article.content.present? && Current.user.summarize_articles? %>
             <div class="relative flex flex-col items-center group/button">
               <%= button_to summary_article_path(article),
                 method: :post,

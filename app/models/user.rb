@@ -48,6 +48,10 @@ class User < ApplicationRecord
     api_key.present? && model.present?
   end
 
+  def summarize_articles?
+    summarize_articles
+  end
+
   def raindrop_connected?
     external_accounts.exists?(provider: "raindrop")
   end

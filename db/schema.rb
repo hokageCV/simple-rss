@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_06_21_000002) do
+ActiveRecord::Schema[8.0].define(version: 2026_08_31_000001) do
   create_table "articles", force: :cascade do |t|
     t.integer "feed_id", null: false
     t.string "title", null: false
@@ -212,6 +212,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_06_21_000002) do
     t.boolean "is_admin", default: false, null: false
     t.string "provider", default: "openai", null: false
     t.string "model"
+    t.boolean "summarize_articles", default: true, null: false
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 

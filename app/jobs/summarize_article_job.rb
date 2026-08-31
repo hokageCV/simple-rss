@@ -6,6 +6,7 @@ class SummarizeArticleJob < ApplicationJob
   def perform(article_id:)
     article = Article.find_by(id: article_id)
     return if article.blank?
+    return if not article.user.summarize_articles?
     return if article.is_read?
     return if article.summary.present?
     return if article.feed.skip_summarization

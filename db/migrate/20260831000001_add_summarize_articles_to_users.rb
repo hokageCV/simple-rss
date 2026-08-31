@@ -1,0 +1,5 @@
+class AddSummarizeArticlesToUsers < ActiveRecord::Migration[8.0]
+  def change
+    add_column :users, :summarize_articles, :boolean, default: true, null: false
+  end
+end

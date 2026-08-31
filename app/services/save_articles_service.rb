@@ -31,6 +31,6 @@ class SaveArticlesService
   end
 
   def should_summarize_articles?
-    @feed.user.ai_configured? && !@feed.skip_summarization
+    @feed.user.ai_configured? && @feed.user.summarize_articles? && !@feed.skip_summarization
   end
 end
