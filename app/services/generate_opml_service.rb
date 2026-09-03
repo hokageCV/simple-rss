@@ -25,8 +25,32 @@ class GenerateOpmlService
   private
 
   def generate_outlines
-    @user.feeds.alphabetically.map do |feed|
-      "\t\t<outline type=\"rss\" text=\"#{feed.name}\" title=\"#{feed.name}\" xmlUrl=\"#{feed.url}\" />"
-    end.join("\n")
+    feeds = @user.feeds.includes(:folders).alphabetically
+    by_folder = feeds.each_with_object({}) do |feed, hash|
+      if feed.folders.any?
+        feed.folders.each { |folder| (hash[folder.name] ||= []) << feed }
+      else
+        (hash[nil] ||= []) << feed
+      end
+    end
+
+    lines = []
+
+    by_folder.each do |folder_name, folder_feeds|
+      if folder_name
+        lines << "\t\t<outline text=\"#{folder_name}\" title=\"#{folder_name}\">"
+        folder_feeds.each { |f| lines << feed_outline(f, depth: 3) }
+        lines << "\t\t</outline>"
+      else
+        folder_feeds.each { |f| lines << feed_outline(f, depth: 2) }
+      end
+    end
+
+    lines.join("\n")
+  end
+
+  def feed_outline(feed, depth:)
+    tabs = "\t" * depth
+    "#{tabs}<outline type=\"rss\" text=\"#{feed.name}\" title=\"#{feed.name}\" xmlUrl=\"#{feed.url}\" />"
   end
 end
