@@ -1,16 +1,16 @@
-# Graph Report - simple-rss  (2026-08-19)
+# Graph Report - simple-rss  (2026-09-05)
 
 ## Corpus Check
-- 123 files · ~11,504 words
+- 133 files · ~12,096 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 425 nodes · 409 edges · 99 communities (47 shown, 52 thin omitted)
-- Extraction: 85% EXTRACTED · 15% INFERRED · 0% AMBIGUOUS · INFERRED: 62 edges (avg confidence: 0.8)
+- 439 nodes · 426 edges · 101 communities (48 shown, 53 thin omitted)
+- Extraction: 85% EXTRACTED · 15% INFERRED · 0% AMBIGUOUS · INFERRED: 65 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `286ac000`
+- Built from commit: `97d7f020`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -77,13 +77,14 @@
 - [[_COMMUNITY_Community 92|Community 92]]
 - [[_COMMUNITY_Community 93|Community 93]]
 - [[_COMMUNITY_Community 97|Community 97]]
+- [[_COMMUNITY_Community 100|Community 100]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `User` - 23 edges
+1. `User` - 25 edges
 2. `FeedsController` - 15 edges
 3. `ArticlesController` - 14 edges
 4. `FoldersController` - 13 edges
-5. `UsersController` - 11 edges
+5. `UsersController` - 13 edges
 6. `Error` - 11 edges
 7. `FetchFeedService` - 10 edges
 8. `Client` - 9 edges
@@ -105,15 +106,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (99 total, 52 thin omitted)
+## Communities (101 total, 53 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.08
-Nodes (9): UsersController, ApplicationJob, Current, ApiError, Error, RateLimited, TokenRefreshed, Unauthorized (+1 more)
+Cohesion: 0.07
+Nodes (9): HomeController, UsersController, ApplicationJob, ApiError, Error, RateLimited, TokenRefreshed, Unauthorized (+1 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.07
-Nodes (7): Connection, AdminConstraint, ApplicationController, HomeController, User, RaindropController, TestApiKeyService
+Cohesion: 0.06
+Nodes (8): Connection, AdminConstraint, ApplicationController, SummarizeArticleJob, User, RaindropController, SaveArticlesService, TestApiKeyService
 
 ### Community 2 - "Community 2"
 Cohesion: 0.13
@@ -122,10 +123,6 @@ Nodes (3): ArticlesController, render_summary(), SummarizeArticle
 ### Community 3 - "Community 3"
 Cohesion: 0.10
 Nodes (6): resume_session(), start_new_session_for(), terminate_session(), RegistrationsController, SessionsController, Session
-
-### Community 5 - "Community 5"
-Cohesion: 0.10
-Nodes (3): FeedsController, SummarizeArticleJob, SaveArticlesService
 
 ### Community 7 - "Community 7"
 Cohesion: 0.27
@@ -139,6 +136,10 @@ Nodes (8): open_article_in_new_tab?(), render_content(), render_image(), render_
 Cohesion: 0.32
 Nodes (4): getContent(), startSpeech(), togglePlayPause(), updatePlayPauseButton()
 
+### Community 15 - "Community 15"
+Cohesion: 0.13
+Nodes (3): Article, Exporter, SaveArticleToRaindrop
+
 ### Community 18 - "Community 18"
 Cohesion: 0.50
 Nodes (3): confirmButton, dialog, messageElement
@@ -148,24 +149,24 @@ Cohesion: 0.17
 Nodes (11): command, enabled, type, mcp, grepika, tilth, plugin, $schema (+3 more)
 
 ## Knowledge Gaps
-- **35 isolated node(s):** `$schema`, `type`, `enabled`, `command`, `type` (+30 more)
+- **33 isolated node(s):** `$schema`, `type`, `enabled`, `command`, `type` (+28 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **52 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **53 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `User` connect `Community 1` to `Community 0`, `Community 2`, `Community 5`, `Community 6`?**
-  _High betweenness centrality (0.093) - this node is a cross-community bridge._
+  _High betweenness centrality (0.100) - this node is a cross-community bridge._
 - **Why does `Error` connect `Community 0` to `Community 10`, `Community 1`, `Community 2`, `Community 3`?**
-  _High betweenness centrality (0.078) - this node is a cross-community bridge._
+  _High betweenness centrality (0.072) - this node is a cross-community bridge._
 - **Why does `ArticlesController` connect `Community 2` to `Community 15`?**
-  _High betweenness centrality (0.058) - this node is a cross-community bridge._
-- **Are the 16 inferred relationships involving `User` (e.g. with `.set_current_user()` and `.matches?()`) actually correct?**
-  _`User` has 16 INFERRED edges - model-reasoned connections that need verification._
+  _High betweenness centrality (0.042) - this node is a cross-community bridge._
+- **Are the 17 inferred relationships involving `User` (e.g. with `.set_current_user()` and `.matches?()`) actually correct?**
+  _`User` has 17 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `$schema`, `type`, `enabled` to the rest of the system?**
-  _35 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _33 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.08387096774193549 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07058823529411765 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.07196969696969698 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0641025641025641 - nodes in this community are weakly interconnected._

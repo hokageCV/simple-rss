@@ -1,7 +1,11 @@
 require "test_helper"
 
 class FeedsControllerTest < ActionDispatch::IntegrationTest
+  STUB_MUTEX = Mutex.new
+
   setup do
+    @user = users(:one)
+    sign_in_as(@user)
     @feed = feeds(:one)
   end
 
@@ -16,8 +20,18 @@ class FeedsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create feed" do
-    assert_difference("Feed.count") do
-      post feeds_url, params: { feed: { name: @feed.name, url: @feed.url, user_id: @feed.user_id } }
+    feed_data = {
+      status: 200,
+      feed_data: { name: "Ruby Weekly", url: "https://rubyweekly.com/feed", articles: [] },
+      etag: nil,
+      last_modified: nil,
+      content_hash: "abc123"
+    }
+
+    stub_fetch_feed_service(feed_data) do
+      assert_difference("Feed.count") do
+        post feeds_url, params: { feed: { url: feed_data[:feed_data][:url] } }
+      end
     end
 
     assert_redirected_to feed_url(Feed.last)
@@ -44,5 +58,22 @@ class FeedsControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to feeds_url
+  end
+
+  private
+
+  def stub_fetch_feed_service(feed_data)
+    singleton = FetchFeedService.singleton_class
+    result = Object.new
+    result.define_singleton_method(:call) { feed_data }
+
+    STUB_MUTEX.synchronize do
+      singleton.define_method(:new) { |*| result }
+      begin
+        yield
+      ensure
+        singleton.remove_method(:new)
+      end
+    end
   end
 end

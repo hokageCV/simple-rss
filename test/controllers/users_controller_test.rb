@@ -1,7 +1,10 @@
 require "test_helper"
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
+  STUB_MUTEX = Mutex.new
+
   setup do
+    sign_in_as(users(:one))
     @user = users(:one)
     @feed = feeds(:one)
     @feed.update!(fetch_interval: 7, last_refreshed_at: 1.hour.ago)
@@ -13,7 +16,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     paused_feed = @user.feeds.create!(name: "Paused", url: "paused.example.com", is_paused: true)
     fetched_urls = nil
 
-    FeedManager.stub(:fetch_and_save_feeds, ->(urls) { fetched_urls = urls }) do
+    stub_fetch_and_save_feeds(->(urls) { fetched_urls = urls }) do
       post refresh_feeds_user_url(@user)
     end
 
@@ -27,10 +30,28 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     youtube_feed = @user.feeds.create!(name: "YouTube", url: "yt.example.com", generator: "youtube")
     fetched_urls = nil
 
-    FeedManager.stub(:fetch_and_save_feeds, ->(urls) { fetched_urls = urls }) do
+    stub_fetch_and_save_feeds(->(urls) { fetched_urls = urls }) do
       post refresh_feeds_user_url(@user), params: { feed_types: [ "youtube" ] }
     end
 
     assert_equal [ youtube_feed.url ], fetched_urls
+  end
+
+  private
+
+  def stub_fetch_and_save_feeds(behavior)
+    singleton = FeedManager.singleton_class
+    original = singleton.instance_method(:fetch_and_save_feeds)
+
+    STUB_MUTEX.synchronize do
+      singleton.define_method(:fetch_and_save_feeds) do |urls, **|
+        behavior.call(urls)
+      end
+      begin
+        yield
+      ensure
+        singleton.define_method(:fetch_and_save_feeds, original)
+      end
+    end
   end
 end

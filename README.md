@@ -69,13 +69,23 @@ Workflow to reset demo data: `rails db:clean && rails db:seed`
 
 ## Testing
 
+Run the test suite with a single command (starts the test Postgres container, preps the test database, then runs the tests):
+
+```bash
+./bin/test                    # full suite
+./bin/test test/models/user_test.rb     # single file
+./bin/test test/controllers/feeds_controller_test.rb:22  # single test
+```
+
+The equivalent manual steps, if you prefer to run them separately:
+
 - Start the test database (PostgreSQL on port 5433)
 ```bash
 docker compose -f docker-compose.test.yml up -d
 ```
-- Prepare the test database
+- Prepare the test database (RAILS_ENV=test keeps the env check on the test DB, so the dev database isn't required)
 ```bash
-rails db:test:prepare
+RAILS_ENV=test rails db:test:prepare
 ```
 - Run tests
 ```bash

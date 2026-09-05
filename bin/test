@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Ensure the test database container is running
+docker compose -f docker-compose.test.yml up -d
+
+# Ensure the test database schema is up to date (RAILS_ENV=test so the
+# environment check connects to the test DB, not the dev one)
+RAILS_ENV=test rails db:test:prepare
+
+exec rails test "$@"

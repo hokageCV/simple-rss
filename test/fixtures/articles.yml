@@ -3,15 +3,15 @@
 one:
   feed: one
   title: MyString
-  url: MyString
+  url: http://example.com/one
   published_at: 2025-01-05 20:40:20
   user: one
-  status: MyString
+  status: unread
 
 two:
   feed: two
   title: MyString
-  url: MyString
+  url: http://example.com/two
   published_at: 2025-01-05 20:40:20
   user: two
-  status: MyString
+  status: read

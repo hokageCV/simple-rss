@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, except: :check_read_status
+  before_action :set_article, only: %i[ show edit update destroy toggle_status summary save_to_raindrop ]
 
   # GET /articles or /articles.json
   def index

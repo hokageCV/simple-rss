@@ -2,6 +2,7 @@ require "test_helper"
 
 class ArticlesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in_as(users(:one))
     @article = articles(:one)
   end
 
@@ -17,7 +18,7 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create article" do
     assert_difference("Article.count") do
-      post articles_url, params: { article: { feed_id: @article.feed_id, published_at: @article.published_at, status: @article.status, title: @article.title, url: @article.url, user_id: @article.user_id } }
+      post articles_url, params: { article: { feed_id: @article.feed_id, published_at: @article.published_at, status: "unread", title: @article.title, url: "http://example.com/new-article", user_id: @article.user_id } }
     end
 
     assert_redirected_to article_url(Article.last)

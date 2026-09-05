@@ -141,10 +141,8 @@ class FeedsController < ApplicationController
   end
 
   def skip_summarization(generator)
-    if [ Feed::GENERATORS[:youtube], Feed::GENERATORS[:reddit] ].include?(generator)
-      true
-    else
-      feed_params[:skip_summarization]
-    end
+    return true if [ Feed::GENERATORS[:youtube], Feed::GENERATORS[:reddit] ].include?(generator)
+
+    ActiveModel::Type::Boolean.new.cast(feed_params[:skip_summarization]) || false
   end
 end
