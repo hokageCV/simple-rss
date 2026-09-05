@@ -43,7 +43,23 @@ Before the first run, copy the environment config and fill in the API keys you h
 cp .env.example .env
 ```
 
-The application runs at <http://localhost:3000>.
+Seed the database with sample users (test/dev only; raises in production):
+
+```bash
+rails db:seed
+```
+
+The seeded users (password: `Test@123`):
+- `shoyo@gmail.com` — has 3 feeds in a `newsletters` folder
+- `kakashi@gmail.com` — no feeds
+
+Clear all data (test/dev only; raises in production):
+
+```bash
+rails db:clean
+```
+
+Workflow to reset demo data: `rails db:clean && rails db:seed`
 
 ### Running the pieces separately
 
