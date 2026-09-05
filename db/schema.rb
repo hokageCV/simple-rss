@@ -11,12 +11,15 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[8.0].define(version: 2026_08_31_000001) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "pg_catalog.plpgsql"
+
   create_table "articles", force: :cascade do |t|
-    t.integer "feed_id", null: false
+    t.bigint "feed_id", null: false
     t.string "title", null: false
     t.string "url", null: false
     t.datetime "published_at"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.string "status", default: "unread"
     t.text "content"
     t.text "description"
@@ -56,12 +59,12 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_31_000001) do
   create_table "feeds", force: :cascade do |t|
     t.string "name"
     t.string "url"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "skip_summarization", default: false, null: false
     t.boolean "is_paused", default: false, null: false
     t.string "generator", default: "", null: false
-    t.boolean "skip_summarization", default: false, null: false
     t.datetime "last_refreshed_at"
     t.integer "fetch_interval"
     t.string "etag"
@@ -194,7 +197,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_08_31_000001) do
   end
 
   create_table "sessions", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.string "ip_address"
     t.string "user_agent"
     t.datetime "created_at", null: false

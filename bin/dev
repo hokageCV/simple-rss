@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Ensure the development database container is running
+docker compose up -d
+
+exec bin/foreman start -f Procfile.dev -p 3000

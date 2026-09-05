@@ -1,0 +1,15 @@
+services:
+  test-postgres:
+    image: postgres:16
+    container_name: simple_rss_test
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: simple_rss_test
+    ports:
+      - "5433:5432"
+    volumes:
+      - simple_rss_test_data:/var/lib/postgresql/data
+
+volumes:
+  simple_rss_test_data:
