@@ -46,4 +46,14 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to articles_url
   end
+
+  test "toggle_status stream re-renders title link without new-tab target when marked read" do
+    @article.update!(content: "some content", status: "unread")
+    patch toggle_status_article_url(@article), headers: { "Accept" => "text/vnd.turbo-stream.html" }
+
+    assert_response :success
+    assert_equal "read", @article.reload.status
+    assert_match "title_link_article_#{@article.id}", response.body
+    assert_no_match(/target="_blank"/, response.body)
+  end
 end

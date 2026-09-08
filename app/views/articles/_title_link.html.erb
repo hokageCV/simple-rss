@@ -1,0 +1,7 @@
+<span id="<%= dom_id(article, :title_link) %>">
+  <%= link_to article.title, article.url,
+      class: 'hover:underline',
+      target: (open_article_in_new_tab?(article) ? '_blank' : nil),
+      rel: (open_article_in_new_tab?(article) ? 'noopener noreferrer' : nil),
+      data: { scroll_tracker_target: 'link' } %>
+</span>

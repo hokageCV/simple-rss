@@ -2,7 +2,7 @@
 
 ## Stack
 - Ruby 3.3.4, Rails 8
-- SQLite (dev/test), PostgreSQL (prod)
+- PostgreSQL (dev/test/prod; dev port 5432, test port 5433)
 - Testing: Minitest
 - Styling: Tailwind CSS
 - Linting: Rubocop (rails-omakase)
@@ -18,12 +18,9 @@ rails tailwindcss:build                 # build CSS
 rails tailwindcss:watch                 # dev watch
 rails server                            # dev server
 rails s -e production                   # prod
-rails test                              # all tests
-rails test test/models/user_test.rb     # single file
+./bin/test                              # all tests (starts test PG via docker-compose.test.yml, prepares schema)
+./bin/test test/models/user_test.rb     # single file (same passthrough args as rails test)
 rails test:system                       # system tests
-rubocop                                 # lint
-rubocop app/models/user.rb              # lint file
-rubocop --a                             # auto-fix
 rails console                           # dev console
 ```
 
@@ -76,6 +73,16 @@ rails console                           # dev console
 ### Testing
 - Tests in test/ with fixtures
 - Test edge cases and error conditions
+- Always run tests via `./bin/test`, never bare `rails test`: it starts the
+  test Postgres container (docker-compose.test.yml, port 5433) and runs
+  `db:test:prepare` first. Bare `rails test` fails with connection refused
+  if the container is down.
+- Keep the test DB seed-free: running `db:prepare`/`db:seed` with
+  RAILS_ENV=test leaves seed rows (feeds, feed_folders) that clash with
+  fixtures and fail with FK violations. If that happens, reset with
+  `RAILS_ENV=test rails db:drop db:create db:schema:load`.
+- Rubocop is not installed in the bundle (`bundle exec rubocop` fails), so
+  no lint step currently.
 
 ## Notes
 - GoodJob: ActiveJob adapter for async jobs

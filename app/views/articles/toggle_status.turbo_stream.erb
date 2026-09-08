@@ -5,3 +5,7 @@
 <%= turbo_stream.update(dom_id(@article, :toggle_button)) do %>
   <%= render partial: "articles/toggle_button", locals: { article: @article } %>
 <% end %>
+
+<%= turbo_stream.update(dom_id(@article, :title_link)) do %>
+  <%= render partial: "articles/title_link", locals: { article: @article } %>
+<% end %>

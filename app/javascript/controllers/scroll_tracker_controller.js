@@ -28,10 +28,12 @@ export default class extends Controller {
 
   async markAsRead() {
     try {
-      if ( this.element.dataset.status == 'read' ) return;
+      if (this.markingAsRead) return;
 
       const articleId = this.element.id.split('_').pop();
+      if (this.element.dataset.status == 'read' || this.statusTextIsRead(articleId)) return;
 
+      this.markingAsRead = true;
       const response = await fetch(`/articles/${articleId}/toggle_status`, {
         method: 'PATCH',
         headers: {
@@ -39,9 +41,11 @@ export default class extends Controller {
           'X-CSRF-Token': document.querySelector('[name="csrf-token"]').content,
         },
       });
+      this.markingAsRead = false;
 
       if (!response.ok) return;
 
+      if (this.observer && this.hasSentinelTarget) this.observer.unobserve(this.sentinelTarget);
       this.element.dataset.status = 'read';
       document.getElementById(`status_text_article_${articleId}`).innerText = 'Read';
       const toggleBtn = document.querySelector(`#toggle_button_article_${articleId} button`);
@@ -49,7 +53,13 @@ export default class extends Controller {
       this.linkTarget.removeAttribute('target');
       this.linkTarget.removeAttribute('rel');
     } catch (error) {
+      this.markingAsRead = false;
       console.error("Error marking article as read:", error);
     }
+  }
+
+  statusTextIsRead(articleId) {
+    const statusEl = document.getElementById(`status_text_article_${articleId}`);
+    return statusEl && statusEl.innerText.trim() === 'Read';
   }
 }
